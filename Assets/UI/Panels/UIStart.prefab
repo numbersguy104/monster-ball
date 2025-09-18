@@ -288,6 +288,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3111888079687628358}
   - component: {fileID: 4456821746478294510}
+  - component: {fileID: 4739042502404069722}
   m_Layer: 5
   m_Name: UIStart
   m_TagString: Untagged
@@ -326,6 +327,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7095896495804024942}
   m_CullTransparentMesh: 1
+--- !u!114 &4739042502404069722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7095896495804024942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b225a5aab7975643898a4141ba6cfef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UIMain: {fileID: 7095896495804024942, guid: 684935564f674634395a19596de67d46, type: 3}
 --- !u!1001 &2020290659484369761
 PrefabInstance:
   m_ObjectHideFlags: 0
