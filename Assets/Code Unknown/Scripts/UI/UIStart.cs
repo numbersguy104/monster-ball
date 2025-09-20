@@ -5,18 +5,18 @@ namespace UI
     public class UIStart : MonoBehaviour
     {
 
-        public GameObject UIMain;
+        public GameObject UIPrepare;
 
-        private GameObject _UIMainObj;
+        private GameObject _UIPrepareObj;
         
         public void OnStartGameBtnClick()
         {
-            if (_UIMainObj == null)
+            if (_UIPrepareObj == null)
             {
                 Canvas canvas = FindObjectOfType<Canvas>();
-                _UIMainObj = Instantiate(UIMain, canvas.transform, false);
+                _UIPrepareObj = Instantiate(UIPrepare, canvas.transform, false);
             }
-            _UIMainObj.SetActive(true);
+            _UIPrepareObj.SetActive(true);
             gameObject.SetActive(false);
         }
     }
