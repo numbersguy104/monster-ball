@@ -339,7 +339,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b225a5aab7975643898a4141ba6cfef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UIMain: {fileID: 7095896495804024942, guid: 684935564f674634395a19596de67d46, type: 3}
+  UIPrepare: {fileID: 7095896495804024942, guid: a1c7558b50b36ea4d8a216b74d64aa2f, type: 3}
 --- !u!1001 &2020290659484369761
 PrefabInstance:
   m_ObjectHideFlags: 0
