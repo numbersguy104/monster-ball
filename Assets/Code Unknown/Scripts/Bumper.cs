@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 public class Bumper: MonoBehaviour
 {
     //The velocity the bumper sets balls to on contact
-    const float BUMPER_POWER = 30.0f;
+    [SerializeField] float Power = 30.0f;
 
     Collider col;
 
@@ -20,10 +20,12 @@ public class Bumper: MonoBehaviour
         Rigidbody rb = other.GetComponent<Rigidbody>();
         if (rb != null)
         {
+            //Get the direction of the collision
             ContactPoint point = collision.GetContact(0); //Assume only 1 collision point
             Vector3 normal = point.normal;
-            rb.linearVelocity = Vector3.Normalize(normal) * -BUMPER_POWER;
-            print(rb.linearVelocity);
+
+            //Set the ball's velocity in that direction
+            rb.linearVelocity = Vector3.Normalize(normal) * -Power;
         }
     }
 }

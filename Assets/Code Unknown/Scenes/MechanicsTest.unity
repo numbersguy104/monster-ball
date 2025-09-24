@@ -466,6 +466,58 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1977606810502066679, guid: 3e67db1635fc535499b4940a0db77751, type: 3}
   m_PrefabInstance: {fileID: 1798361624152567278}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &885664680
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 885664682}
+  - component: {fileID: 885664681}
+  m_Layer: 0
+  m_Name: PointsTable
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &885664681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 885664680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06b41a47acc40d94891ce1ef842f2b5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Bumper: 0
+  SpinnerBase: 0
+  SpinnerMult: 0
+  Switch: 0
+  AllSwitch: 0
+  SmokeClearer: 0
+  Portal: 0
+  BossDamager: 0
+--- !u!4 &885664682
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 885664680}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &928136693 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6596995800793921464, guid: 675f3142de2c20b45b3b14ab352e8fb0, type: 3}
@@ -783,6 +835,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80be2a1c36b8fb848b5640e504fb25a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Power: 15
+  MaxCharge: 1
   ballPrefab: {fileID: 2386257326719710950, guid: acb7156a4df82454fbf98fbbdad97b1f, type: 3}
 --- !u!4 &2076973197
 Transform:
@@ -1086,3 +1140,4 @@ SceneRoots:
   - {fileID: 829518476}
   - {fileID: 2076973197}
   - {fileID: 1148669349}
+  - {fileID: 885664682}
