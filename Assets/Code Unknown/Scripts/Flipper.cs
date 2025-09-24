@@ -6,12 +6,12 @@ public class Flipper : MonoBehaviour
     //How far the flipper will rotate, in degrees
     //Higher number = more powerful flipper that also moves farther
     [Tooltip("How far the flipper will rotate when used (in degrees)")]
-    [SerializeField] int RotationRange = 30;
+    [SerializeField] int rotationRange = 30;
 
     //How long the flipper should take to rotate fully, in seconds
     //Shorter time = faster and more powerful flipper
     [Tooltip("How long the flipper will spend moving to its final position (in seconds)")]
-    [SerializeField] float FlipTime = 0.05f;
+    [SerializeField] float flipTime = 0.05f;
 
     float flipperProgress = 0.0f;
     enum Side { Left, Right };
@@ -41,14 +41,14 @@ public class Flipper : MonoBehaviour
         bool flipPressed = flipAction.IsPressed();
         if (flipPressed)
         {
-            flipperProgress = Mathf.Min(flipperProgress + Time.deltaTime, FlipTime);
+            flipperProgress = Mathf.Min(flipperProgress + Time.deltaTime, flipTime);
         }
         else
         {
             flipperProgress = Mathf.Max(flipperProgress - Time.deltaTime, 0.0f);
         }
 
-        float degrees = (flipperProgress / FlipTime) * RotationRange;
+        float degrees = (flipperProgress / flipTime) * rotationRange;
         if (flipperSide == Side.Left)
         {
             degrees = -degrees;

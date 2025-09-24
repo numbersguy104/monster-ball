@@ -10,19 +10,19 @@ public class PointsTable : MonoBehaviour
     //(Pinball is known for its crazy scoring numbers)
 
     [Tooltip("Points awarded for hitting a bumper")]
-    [SerializeField] long Bumper = 0L;
+    [SerializeField] long bumper = 0L;
     [Tooltip("Points awarded for spinning a spinner for the first time")]
-    [SerializeField] long SpinnerBase = 0L;
+    [SerializeField] long spinnerBase = 0L;
     [Tooltip("Compounding multiplier to points awarded for consecutive spinner spins after the first")]
-    [SerializeField] float SpinnerMult = 0f;
+    [SerializeField] float spinnerMult = 0f;
     [Tooltip("Points awarded for activating one drop switch")]
-    [SerializeField] long Switch = 0L;
+    [SerializeField] long oneSwitch = 0L;
     [Tooltip("Points awarded for activating all drop switches in a group")]
-    [SerializeField] long AllSwitch = 0L;
+    [SerializeField] long allSwitch = 0L;
     [Tooltip("Points awarded for hitting a smoke clearer")]
-    [SerializeField] long SmokeClearer = 0L;
+    [SerializeField] long smokeClearer = 0L;
     [Tooltip("Points awarded for using a portal / teleporter")]
-    [SerializeField] long Portal = 0L;
+    [SerializeField] long portal = 0L;
     [Tooltip("Points awarded for hitting a boss-damaging terrain")]
-    [SerializeField] long BossDamager = 0L;
+    [SerializeField] long bossDamager = 0L;
 }

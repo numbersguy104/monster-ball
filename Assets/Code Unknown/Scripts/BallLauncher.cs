@@ -6,16 +6,16 @@ public class BallLauncher : MonoBehaviour
     //Maximum velocity of the ball when launching it
     //This is multiplied by how long the launcher has been charged, percentage-wise
     [Tooltip("Maximum velocity to set the ball to (in meters per second)")]
-    [SerializeField] float Power = 15.0f;
+    [SerializeField] float maxPower = 8.0f;
 
     //Maximum time for the launcher to be charged
     //Holding the button longer than this will not add any more power
     [Tooltip("Time to reach maximum charge (in seconds)")]
-    [SerializeField] float MaxCharge = 1.0f;
+    [SerializeField] float maxCharge = 1.0f;
 
     bool active = true; //Whether the launcher is currently usable
     float chargeTime = 0.0f; //How long the button to "pull back" the launcher has been held, in seconds
-    GameObject ball = null;
+    GameObject ballObject = null;
 
     [SerializeField] GameObject ballPrefab;
 
@@ -24,12 +24,12 @@ public class BallLauncher : MonoBehaviour
     void Start()
     {
         chargeAction = InputSystem.actions.FindAction("Charge");
-        SpawnBall();
+        ballObject = SpawnBall();
     }
 
-    public void SpawnBall()
+    public GameObject SpawnBall()
     {
-        ball = Instantiate(ballPrefab, this.transform);
+        return Instantiate(ballPrefab, transform);
     }
 
     void Update()
@@ -44,13 +44,13 @@ public class BallLauncher : MonoBehaviour
             else if (chargeTime > Mathf.Epsilon)
             {
                 //Force on the ball scales with charge time, up to the maximum
-                float power = Mathf.Min(chargeTime, MaxCharge) / MaxCharge * Power;
+                float power = Mathf.Min(chargeTime, maxCharge) / maxCharge * maxPower;
 
-                ball.GetComponent<Rigidbody>().linearVelocity = new Vector3(0, 0, power);
+                ballObject.GetComponent<Ball>().SetVelocity(0, 0, power);
 
                 chargeTime = 0;
                 active = false;
-                ball = null;
+                ballObject = null;
             }
         }
     }

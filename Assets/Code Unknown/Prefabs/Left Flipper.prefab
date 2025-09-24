@@ -46,6 +46,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 482d7af703841464aab0dc981838fa30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotationRange: 30
+  flipTime: 0.05
   flipperSide: 0
 --- !u!54 &2226847898254983615
 Rigidbody:
@@ -139,7 +141,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 146b452d10741d44499ca267c2181b10, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -168,7 +170,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4358813056805543762}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 18805c213f213664a8fb86f9a806ce61, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
