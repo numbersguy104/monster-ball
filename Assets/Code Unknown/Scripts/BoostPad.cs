@@ -6,7 +6,7 @@ public class BoostPad : MonoBehaviour
     [Tooltip("Velocity to set the ball to (in meters per second)")]
     [SerializeField] float power = 6.0f;
 
-    private void OnTriggerStay(Collider other)
+    void OnTriggerStay(Collider other)
     {
         Ball ball = other.gameObject.GetComponent<Ball>();
         if (ball != null)
