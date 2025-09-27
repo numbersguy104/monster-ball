@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
-//生成器组件
+
 public enum SpawnerCollisionBehavior { WithCollision, WithoutCollision, Mixed }
 
 [ExecuteAlways]
@@ -9,14 +9,23 @@ public class MonsterSpawner : MonoBehaviour
     [Header("References")]
     public MonsterDatabase database;
 
-    [Header("Spawner Behavior")]
+    [Header("Spawner Collision Behavior")]
     public SpawnerCollisionBehavior collisionBehavior = SpawnerCollisionBehavior.Mixed;
 
-    [Header("Movement (spawner default, injected to spawned monster)")]
-    public MovementType movementType = MovementType.None;
-    public float movementSpeed = 1f;
+    [Header("Spawner Movement Settings")]
+    public MovementType spawnerMovementType = MovementType.None;
+    public float spawnerSpeed = 1f;
     [Tooltip("If horizontal/vertical: this is half-length (units to each side). If circular: this is radius.")]
-    public float movementLengthOrRadius = 0f;
+    public float spawnerLengthOrRadius = 0f;
+
+    private Vector3 spawnerOrigin;
+    private float angle = 0f;
+
+    [Header("Movement Injected To Spawned Monsters")]
+    public MovementType monsterMovementType = MovementType.None;
+    public float monsterSpeed = 1f;
+    [Tooltip("If horizontal/vertical: half-length. If circular: radius.")]
+    public float monsterLengthOrRadius = 0f;
 
     [Header("Runtime")]
     public bool hasSpawnedMonster = false;
@@ -25,7 +34,48 @@ public class MonsterSpawner : MonoBehaviour
     [Header("Spawn Options")]
     public bool spawnOnStart = true;
 
-    // Spawn now (manual call)
+    void Start()
+    {
+        if (!Application.isPlaying) return;
+
+        spawnerOrigin = transform.position;
+
+        if (spawnOnStart && !hasSpawnedMonster)
+            SpawnRandomMonster();
+    }
+
+    void Update()
+    {
+        if (!Application.isPlaying) return;
+
+        UpdateSpawnerMovement();
+    }
+
+    void UpdateSpawnerMovement()
+    {
+        if (spawnerMovementType == MovementType.None) return;
+
+        if (spawnerOrigin == Vector3.zero) spawnerOrigin = transform.position;
+
+        if (spawnerMovementType == MovementType.Horizontal)
+        {
+            float x = Mathf.PingPong(Time.time * spawnerSpeed, spawnerLengthOrRadius * 2) - spawnerLengthOrRadius;
+            transform.position = spawnerOrigin + new Vector3(x, 0, 0);
+        }
+        else if (spawnerMovementType == MovementType.Vertical)
+        {
+            float y = Mathf.PingPong(Time.time * spawnerSpeed, spawnerLengthOrRadius * 2) - spawnerLengthOrRadius;
+            transform.position = spawnerOrigin + new Vector3(0, y, 0);
+        }
+        else if (spawnerMovementType == MovementType.Circular)
+        {
+            angle += spawnerSpeed * Time.deltaTime;
+            float x = Mathf.Cos(angle) * spawnerLengthOrRadius;
+            float y = Mathf.Sin(angle) * spawnerLengthOrRadius;
+            transform.position = spawnerOrigin + new Vector3(x, y, 0);
+        }
+    }
+
     public string SpawnRandomMonster()
     {
         if (database == null)
@@ -48,26 +98,24 @@ public class MonsterSpawner : MonoBehaviour
             return null;
         }
 
-        // instantiate
+        // instantiate at spawner's current position
         GameObject inst = Instantiate(choice.prefab, transform.position, transform.rotation);
         var mc = inst.GetComponent<MonsterController>();
         if (mc != null)
         {
             mc.InitializeFromParam(choice);
-            // set movement parameters
-            MovementType mt = ConvertMovementType(movementType);
-            mc.SetMovement(mt, movementSpeed, movementLengthOrRadius);
+
+            // 设置怪物的运动模式，传入生成时 spawner 的位置
+            mc.SetMovement(monsterMovementType, monsterSpeed, monsterLengthOrRadius, transform.position);
         }
         else
         {
             Debug.LogWarning("Spawned prefab missing MonsterController component.");
         }
 
-        // keep track
         spawnedInstance = inst;
         hasSpawnedMonster = true;
 
-        // return ID
         return choice.monsterID;
     }
 
@@ -75,7 +123,11 @@ public class MonsterSpawner : MonoBehaviour
     {
         if (spawnedInstance != null)
         {
-            DestroyImmediate(spawnedInstance);
+            if (Application.isPlaying)
+                Destroy(spawnedInstance);
+            else
+                DestroyImmediate(spawnedInstance);
+
             spawnedInstance = null;
             hasSpawnedMonster = false;
         }
@@ -90,20 +142,5 @@ public class MonsterSpawner : MonoBehaviour
             return database.GetByCollision(MonsterCollisionType.WithCollision);
         else
             return database.GetByCollision(MonsterCollisionType.WithoutCollision);
-    }
-
-    MovementType ConvertMovementType(MovementType m)
-    {
-        return m;
-    }
-
-    // Example: auto spawn on start (for testing)
-    void Start()
-    {
-        if (!Application.isPlaying) return;
-        if (spawnOnStart && !hasSpawnedMonster)
-        {
-            SpawnRandomMonster();
-        }
     }
 }

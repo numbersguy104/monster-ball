@@ -1,6 +1,4 @@
-using UnityEngine;
-//���������ƶ�ģʽ��Horizontal / Vertical / Circular��
-public enum MovementType { None, Horizontal, Vertical, Circular }
+﻿using UnityEngine;
 
 public class MonsterMovement : MonoBehaviour
 {
@@ -15,37 +13,48 @@ public class MonsterMovement : MonoBehaviour
 
     Vector3 spawnCenter;
     float angle = 0f;
-    int dir = 1;
+    float spawnTime; // 记录生成时间
+
     void Start()
     {
-        spawnCenter = transform.position;
+        spawnTime = Time.time; // 记录怪物生成时的时间
+
+        // 如果是圆形运动，给 angle 一个随机偏移，避免所有怪物同步
+        if (movementType == MovementType.Circular)
+        {
+            angle = Random.Range(0f, Mathf.PI * 2f);
+        }
     }
 
     void Update()
     {
-        if (movementType == MovementType.Horizontal)
+        float deltaTime = Time.time - spawnTime;
+
+        switch (movementType)
         {
-            if (length <= 0) return;
-            float x = Mathf.PingPong(Time.time * speed, length * 2) - length;
-            transform.position = spawnCenter + new Vector3(x, 0, 0);
-        }
-        else if (movementType == MovementType.Vertical)
-        {
-            if (length <= 0) return;
-            float y = Mathf.PingPong(Time.time * speed, length * 2) - length;
-            transform.position = spawnCenter + new Vector3(0, y, 0);
-        }
-        else if (movementType == MovementType.Circular)
-        {
-            if (radius <= 0) return;
-            angle += speed * Time.deltaTime; // speed treated as angular speed (radians/sec)
-            float x = Mathf.Cos(angle) * radius;
-            float y = Mathf.Sin(angle) * radius;
-            transform.position = spawnCenter + new Vector3(x, y, 0);
+            case MovementType.Horizontal:
+                if (length <= 0) return;
+                float x = Mathf.PingPong(deltaTime * speed + length, length * 2) - length;
+                transform.position = spawnCenter + new Vector3(x, 0, 0);
+                break;
+
+            case MovementType.Vertical:
+                if (length <= 0) return;
+                float y = Mathf.PingPong(deltaTime * speed + length, length * 2) - length;
+                transform.position = spawnCenter + new Vector3(0, y, 0);
+                break;
+
+            case MovementType.Circular:
+                if (radius <= 0) return;
+                // 保留 angle 偏移，避免同步
+                angle += speed * Time.deltaTime;
+                float cx = Mathf.Cos(angle) * radius;
+                float cy = Mathf.Sin(angle) * radius;
+                transform.position = spawnCenter + new Vector3(cx, cy, 0);
+                break;
         }
     }
 
-    // helper to set center when spawned to ensure patrol centre is spawn point
     public void SetSpawnCenter(Vector3 center)
     {
         spawnCenter = center;

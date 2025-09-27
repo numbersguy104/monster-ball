@@ -358,10 +358,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4708bb340623ce342b97f6917b356415, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  monsterID: aiii
-  hp: 50
-  point: 50
-  gold: 50
+  monsterID: horizontal1
+  hp: 10
+  point: 10
+  gold: 10
   collisionType: 0
 --- !u!114 &-4508336463568215546
 MonoBehaviour:
@@ -375,7 +375,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 462dbed3533a1924d8ee90b569c18f44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementType: 3
+  movementType: 1
   speed: 20
   length: 30
   radius: 30

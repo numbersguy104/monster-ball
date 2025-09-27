@@ -1,5 +1,6 @@
-using UnityEngine;
-//������������ʱ�ű���Ѫ�������䡢��ײ���á��ƶ���Ϊ���ص㣩
+﻿using UnityEngine;
+
+// 单个怪物运行时脚本（血量、掉落、碰撞设置、移动行为挂载点）
 public class MonsterController : MonoBehaviour
 {
     [Header("Data")]
@@ -9,8 +10,8 @@ public class MonsterController : MonoBehaviour
     public int gold;
     public MonsterCollisionType collisionType;
 
-    CollisionSelector collisionSelector;
-    MonsterMovement movement;
+    private CollisionSelector collisionSelector;
+    private MonsterMovement movement;
 
     void Awake()
     {
@@ -32,10 +33,27 @@ public class MonsterController : MonoBehaviour
             collisionSelector.SetCollisionType(collisionType);
     }
 
-    // called by spawner to set movement params
-    public void SetMovement(MovementType type, float speed, float lengthOrRadius)
+    /// <summary>
+    /// 由 Spawner 调用，设置运动参数
+    /// </summary>
+    /*public void SetMovement(MovementType type, float speed, float lengthOrRadius, Vector3 spawnCenter)
+{
+    if (movement == null) return;
+
+    movement.movementType = type;
+    movement.speed = speed;
+    if (type == MovementType.Horizontal || type == MovementType.Vertical)
+        movement.length = lengthOrRadius;
+    else if (type == MovementType.Circular)
+        movement.radius = lengthOrRadius;
+
+    movement.SetSpawnCenter(spawnCenter); // 这里传入 spawnCenter
+}
+*/
+    public void SetMovement(MovementType type, float speed, float lengthOrRadius, Vector3 spawnCenter)
     {
         if (movement == null) return;
+
         movement.movementType = type;
         movement.speed = speed;
         if (type == MovementType.Horizontal || type == MovementType.Vertical)
@@ -43,7 +61,17 @@ public class MonsterController : MonoBehaviour
         else if (type == MovementType.Circular)
             movement.radius = lengthOrRadius;
 
-        movement.SetSpawnCenter(transform.position);
+        movement.SetSpawnCenter(spawnCenter); // 这里传入 spawnCenter
+    }
+
+
+    /// <summary>
+    /// 由 Spawner 调用，显式指定锚点（避免和 prefab 自身位置冲突）
+    /// </summary>
+    public void SetSpawnCenter(Vector3 pos)
+    {
+        if (movement != null)
+            movement.SetSpawnCenter(pos);
     }
 
     // Placeholder: on defeat, notify spawner system (future)

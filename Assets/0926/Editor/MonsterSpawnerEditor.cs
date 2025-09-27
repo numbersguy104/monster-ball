@@ -12,17 +12,23 @@ public class MonsterSpawnerEditor : Editor
     SerializedProperty spawnOnStartProp;
     SerializedProperty hasSpawnedMonsterProp;
     SerializedProperty spawnedInstanceProp;
+    SerializedProperty spawnerMovementTypeProp;
+    SerializedProperty spawnerSpeedProp;
+    SerializedProperty spawnerLengthOrRadiusProp;
 
     void OnEnable()
     {
         databaseProp = serializedObject.FindProperty("database");
         collisionBehaviorProp = serializedObject.FindProperty("collisionBehavior");
-        movementTypeProp = serializedObject.FindProperty("movementType");
-        movementSpeedProp = serializedObject.FindProperty("movementSpeed");
-        movementLengthOrRadiusProp = serializedObject.FindProperty("movementLengthOrRadius");
+        movementTypeProp = serializedObject.FindProperty("monsterMovementType");
+        movementSpeedProp = serializedObject.FindProperty("monsterSpeed");
+        movementLengthOrRadiusProp = serializedObject.FindProperty("monsterLengthOrRadius");
         spawnOnStartProp = serializedObject.FindProperty("spawnOnStart");
         hasSpawnedMonsterProp = serializedObject.FindProperty("hasSpawnedMonster");
         spawnedInstanceProp = serializedObject.FindProperty("spawnedInstance");
+        spawnerMovementTypeProp = serializedObject.FindProperty("spawnerMovementType");
+        spawnerSpeedProp = serializedObject.FindProperty("spawnerSpeed");
+        spawnerLengthOrRadiusProp = serializedObject.FindProperty("spawnerLengthOrRadius");
     }
 
     public override void OnInspectorGUI()
@@ -35,6 +41,25 @@ public class MonsterSpawnerEditor : Editor
         EditorGUILayout.LabelField("Spawner Behavior", EditorStyles.boldLabel);
 
         EditorGUILayout.PropertyField(collisionBehaviorProp);
+
+        EditorGUILayout.Space();
+        EditorGUILayout.LabelField("Spawner Movement Settings", EditorStyles.boldLabel);
+        EditorGUILayout.PropertyField(spawnerMovementTypeProp, new GUIContent("Spawner Movement Type"));
+        if ((MovementType)spawnerMovementTypeProp.enumValueIndex != MovementType.None)
+        {
+            EditorGUILayout.PropertyField(spawnerSpeedProp, new GUIContent("Spawner Speed"));
+            if ((MovementType)spawnerMovementTypeProp.enumValueIndex == MovementType.Horizontal ||
+                (MovementType)spawnerMovementTypeProp.enumValueIndex == MovementType.Vertical)
+            {
+                EditorGUILayout.PropertyField(spawnerLengthOrRadiusProp, new GUIContent("Spawner Movement Length"));
+            }
+            else if ((MovementType)spawnerMovementTypeProp.enumValueIndex == MovementType.Circular)
+            {
+                EditorGUILayout.PropertyField(spawnerLengthOrRadiusProp, new GUIContent("Spawner Radius"));
+            }
+        }
+
+
 
         EditorGUILayout.Space();
         EditorGUILayout.LabelField("Movement Settings (applied to spawned monster)", EditorStyles.boldLabel);
