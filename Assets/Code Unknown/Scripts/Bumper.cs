@@ -6,6 +6,13 @@ public class Bumper: MonoBehaviour
     //The velocity the bumper sets balls to on contact
     [SerializeField] float Power = 6.0f;
 
+    PointsTracker pt;
+
+    private void Start()
+    {
+        pt = FindAnyObjectByType<PointsTracker>();
+    }
+
     void OnCollisionEnter(Collision collision)
     {
         GameObject other = collision.gameObject;
@@ -19,6 +26,9 @@ public class Bumper: MonoBehaviour
             //Set the ball's velocity in that direction
             Vector3 newVelocity = Vector3.Normalize(normal) * -Power;
             ball.SetVelocity(newVelocity);
+
+            //Add points
+            pt.AddTerrainPoints(PointsTracker.PointSources.Bumper);
         }
     }
 }

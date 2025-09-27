@@ -16,6 +16,26 @@ public class GroupSwitch : MonoBehaviour
     //List of GroupSwitch components (including this one) in the same switch group
     List<GroupSwitch> switches = new List<GroupSwitch>();
 
+    PointsTracker pt;
+
+    void Start()
+    {
+        pt = FindAnyObjectByType<PointsTracker>();
+
+        Transform group = transform.parent.parent;
+        foreach (Transform switchParent in group)
+        {
+            foreach (Transform controller in switchParent)
+            {
+                GroupSwitch s = controller.gameObject.GetComponent<GroupSwitch>();
+                if (s != null)
+                {
+                    switches.Add(s);
+                }
+            }
+        }
+    }
+
     public void SetState(bool state)
     {
         lit = state;
@@ -43,27 +63,16 @@ public class GroupSwitch : MonoBehaviour
         return lit;
     }
 
-    void Start()
-    {
-        Transform group = transform.parent.parent;
-        foreach (Transform switchParent in group)
-        {
-            foreach (Transform controller in switchParent)
-            {
-                GroupSwitch s = controller.gameObject.GetComponent<GroupSwitch>();
-                if (s != null)
-                {
-                    switches.Add(s);
-                }
-            }
-        }
-    }
     void OnTriggerEnter(Collider other)
     {
-        Ball ball = other.gameObject.GetComponent<Ball>();
-        if (ball != null)
+        if (lit == false)
         {
-            SetState(true);
+            Ball ball = other.gameObject.GetComponent<Ball>();
+            if (ball != null)
+            {
+                pt.AddTerrainPoints(PointsTracker.PointSources.SwitchOne);
+                SetState(true);
+            }
         }
     }
 
@@ -81,9 +90,10 @@ public class GroupSwitch : MonoBehaviour
                 }
             }
 
-            //Otherwise, reset all switches in the group
+            //Otherwise, award extra points and reset all switches in the group
             foreach (GroupSwitch s in switches)
             {
+                pt.AddTerrainPoints(PointsTracker.PointSources.SwitchGroup);
                 s.SetState(false);
             }
         }

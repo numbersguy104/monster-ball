@@ -11,9 +11,13 @@ public class Teleporter : MonoBehaviour
     bool onCooldown = false;
 
     Vector3 teleportOffset;
+
+    PointsTracker pt;
+
     void Start()
     {
         teleportOffset = pairedTeleporter.transform.position - transform.position;
+        pt = FindAnyObjectByType<PointsTracker>();
     }
 
     void Disable()
@@ -31,6 +35,8 @@ public class Teleporter : MonoBehaviour
             {
                 pairedTeleporter.GetComponent<Teleporter>().Disable();
                 ball.transform.position += teleportOffset;
+
+                pt.AddTerrainPoints(PointsTracker.PointSources.Portal);
             }
         }
     }
