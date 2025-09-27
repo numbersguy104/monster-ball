@@ -16,7 +16,7 @@ public class Spinner : MonoBehaviour
     //Starting rotation (used when resetting the spinner)
     Quaternion startRotation = Quaternion.identity;
 
-    private void Start()
+    void Start()
     {
         Transform parent = transform.parent;
         foreach (Transform sibling in parent)

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5618230556291785817}
   - component: {fileID: 5218506401358492711}
   m_Layer: 0
-  m_Name: Boost Graphic
+  m_Name: Graphic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 4946369269971625157}
   - component: {fileID: 5183752282615495703}
   m_Layer: 0
-  m_Name: Boost Pad
+  m_Name: Boost Pad Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -153,3 +153,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93c49a02ba04b1d42a9d220458f0fa83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  power: 6
