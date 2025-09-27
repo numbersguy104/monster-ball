@@ -6,7 +6,7 @@ public class Bumper: MonoBehaviour
     //The velocity the bumper sets balls to on contact
     [SerializeField] float Power = 6.0f;
 
-    private void OnCollisionEnter(Collision collision)
+    void OnCollisionEnter(Collision collision)
     {
         GameObject other = collision.gameObject;
         Ball ball = other.GetComponent<Ball>();

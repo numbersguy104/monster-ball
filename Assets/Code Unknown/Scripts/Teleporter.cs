@@ -11,12 +11,12 @@ public class Teleporter : MonoBehaviour
     bool onCooldown = false;
 
     Vector3 teleportOffset;
-    private void Start()
+    void Start()
     {
         teleportOffset = pairedTeleporter.transform.position - transform.position;
     }
 
-    public void Disable()
+    void Disable()
     {
         onCooldown = true;
     }
@@ -35,7 +35,7 @@ public class Teleporter : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit(Collider other)
+    void OnTriggerExit(Collider other)
     {
         Ball ball = other.gameObject.GetComponent<Ball>();
         if (ball != null)

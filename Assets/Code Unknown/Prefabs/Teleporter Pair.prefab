@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 58969657349723198}
   - component: {fileID: 3241541952924182873}
   m_Layer: 0
-  m_Name: Teleporter Graphic
+  m_Name: Graphic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 3440261550902741192}
   - component: {fileID: 4237485152941970127}
   m_Layer: 0
-  m_Name: Teleporter A
+  m_Name: Teleporter Controller A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -199,7 +199,7 @@ GameObject:
   - component: {fileID: 1118333928784993052}
   - component: {fileID: 411366227424032176}
   m_Layer: 0
-  m_Name: Teleporter B
+  m_Name: Teleporter Controller B
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -267,7 +267,7 @@ GameObject:
   - component: {fileID: 5852149302108832915}
   - component: {fileID: 828392274659949916}
   m_Layer: 0
-  m_Name: Teleporter Graphic
+  m_Name: Graphic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
