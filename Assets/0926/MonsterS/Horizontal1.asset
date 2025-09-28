@@ -15,10 +15,10 @@ MonoBehaviour:
   monsterID: horizontal
   prefab: {fileID: 4245915190017150719, guid: 5a6c21644ac370b48aefbbc777ea320c, type: 3}
   collisionType: 0
-  movementType: 1
-  speed: 20
-  length: 20
-  radius: 20
+  movementType: 2
+  speed: 5
+  length: 5
+  radius: 5
   hp: 10
   point: 50
   gold: 50
