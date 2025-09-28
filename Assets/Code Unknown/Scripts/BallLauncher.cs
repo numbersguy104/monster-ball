@@ -13,6 +13,8 @@ public class BallLauncher : MonoBehaviour
     [Tooltip("Time to reach maximum charge (in seconds)")]
     [SerializeField] float maxCharge = 1.0f;
 
+    [SerializeField] private GameObject light;
+
     bool active = true; //Whether the launcher is currently usable
     float chargeTime = 0.0f; //How long the button to "pull back" the launcher has been held, in seconds
     GameObject ballObject = null;
@@ -25,6 +27,11 @@ public class BallLauncher : MonoBehaviour
     {
         chargeAction = InputSystem.actions.FindAction("Charge");
         ballObject = SpawnBall();
+        light.transform.position = new Vector3(
+            ballObject.transform.position.x,
+            ballObject.transform.position.y + 0.31f,
+            ballObject.transform.position.z - 0.1f
+        );
     }
 
     public GameObject SpawnBall()

@@ -4,7 +4,7 @@ public class Spinner : MonoBehaviour
 {
     //Exponential decay for the spinner's speed each second
     //Lower number = spinner comes to rest faster
-    const float SPIN_DECAY = 0.3f;
+    const float SPIN_DECAY = 0.2f;
 
     //How many rotations the spinner should rotate before returning to rest
     //This can be negative (indicating rotations in the opposite direction)
@@ -15,6 +15,8 @@ public class Spinner : MonoBehaviour
 
     //Starting rotation (used when resetting the spinner)
     Quaternion startRotation = Quaternion.identity;
+
+    PointsTracker pt;
 
     void Start()
     {
@@ -28,6 +30,8 @@ public class Spinner : MonoBehaviour
                 break;
             }
         }
+
+        pt = FindAnyObjectByType<PointsTracker>();
     }
 
     // Update is called once per frame
@@ -47,6 +51,15 @@ public class Spinner : MonoBehaviour
                 storedRotations *= Mathf.Pow(SPIN_DECAY, Time.deltaTime);
                 float degreesChange = (oldRotations - storedRotations) * 360.0f;
                 graphic.rotation *= Quaternion.AngleAxis(degreesChange, -transform.right);
+
+                //Whenever the spinner completes a full rotation...
+                //(i.e. the number of rotations crossed an integer threshold this frame)
+                float threshold = Mathf.Ceil(Mathf.Abs(storedRotations));
+                if (threshold > 0 && Mathf.Abs(oldRotations) >= threshold)
+                {
+                    //...award points, scaling based on how many rotations it has left
+                    pt.AddSpinnerPoints((int)threshold - 1);
+                }
             }
         }
     }
@@ -58,7 +71,7 @@ public class Spinner : MonoBehaviour
         {
             Vector3 ballVelocity = ball.GetVelocity();
             float velocityComponent = Vector3.Dot(ballVelocity, transform.forward);
-            storedRotations += Mathf.Floor(velocityComponent * 0.2f) * 2.0f;
+            storedRotations += Mathf.Floor(velocityComponent);
         }
     }
 }
