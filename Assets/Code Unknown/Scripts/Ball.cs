@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Ball : MonoBehaviour
@@ -6,7 +7,20 @@ public class Ball : MonoBehaviour
     void Start() {
         rb = GetComponent<Rigidbody>();
     }
-    
+
+    private void Update()
+    {
+        var light = GameObject.Find("Spot Light");
+        if (light != null)
+        {
+            light.transform.position = new Vector3(
+                transform.position.x,
+                transform.position.y + 0.31f,
+                transform.position.z - 0.1f
+            );
+        }
+    }
+
     //Set the ball's velocity to a given 3D vector
     public void SetVelocity(Vector3 v)
     {
