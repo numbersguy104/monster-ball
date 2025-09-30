@@ -4,6 +4,8 @@ using UnityEngine;
 public class Ball : MonoBehaviour
 {
     Rigidbody rb;
+    [Header("Ball Damage Settings")]
+    public int baseDamage = 1; // Basicdamage基础伤害，可在 Inspector 调整 adjust
     void Start() {
         rb = GetComponent<Rigidbody>();
     }
@@ -21,6 +23,17 @@ public class Ball : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        MonsterController monster = collision.gameObject.GetComponent<MonsterController>();
+        if (monster != null)
+        {
+            // 使用碰撞相对速度大小作为伤害加成系数
+            float accelFactor = collision.relativeVelocity.magnitude;
+
+            monster.TakeDamage(baseDamage, accelFactor);
+        }
+    }
     //Set the ball's velocity to a given 3D vector
     public void SetVelocity(Vector3 v)
     {
