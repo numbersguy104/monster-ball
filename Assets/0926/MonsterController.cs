@@ -91,6 +91,8 @@ public class MonsterController : MonoBehaviour
         GameStatsManager.Instance.AddGold(gold);
         GameStatsManager.Instance.AddScore(point);
         GameStatsManager.Instance.AddKill();
+        //test
+        GameStatsManager.Instance.AddScore(100);
         //todo: die effect
         Destroy(gameObject);
     }
