@@ -6,7 +6,7 @@ using UnityEngine.SocialPlatforms.Impl;
 public class PointsTracker : MonoBehaviour
 {
     //Track the total score
-    long score = 0L;
+    //long score = 0L;
 
     //Define point values for everything in the game
     //These are currently meant to be edited from the object the script is attached to in the Unity editor
@@ -59,8 +59,9 @@ public class PointsTracker : MonoBehaviour
     //Add a fixed number of points
     void AddPoints(long amount)
     {
-        score += amount;
-        GetComponent<TextMeshProUGUI>().text = "Score: " + score.ToString();
+        //score += amount;
+        GameStatsManager.Instance.AddScore(amount);
+        GetComponent<TextMeshProUGUI>().text = "Score: " + GameStatsManager.Instance.score.ToString();
     }
 
     //Add base points associated with a given type of terrain
@@ -79,6 +80,6 @@ public class PointsTracker : MonoBehaviour
 
     public long GetPoints()
     {
-        return score;
+        return GameStatsManager.Instance.score;
     }
 }
