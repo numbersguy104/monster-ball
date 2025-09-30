@@ -55,6 +55,7 @@ public class GameStatsManager : MonoBehaviour
     public void AddScore(long amount)
     {
         score += amount;
+        Debug.Log("Score: " + score);
     }
 
     public void AddGold(long amount)

@@ -70,6 +70,7 @@ public class MonsterSpawner : MonoBehaviour
         else if (spawnerMovementType == MovementType.Circular)
         {
             angle += spawnerSpeed * Time.deltaTime;
+            // 默认圆在 XY 平面，围绕 spawnerOrigin 公转；倾斜由 orbitRotation 应用到 monster（由 MonsterMovement 处理）
             float x = Mathf.Cos(angle) * spawnerLengthOrRadius;
             float y = Mathf.Sin(angle) * spawnerLengthOrRadius;
             transform.position = spawnerOrigin + new Vector3(x, y, 0);
@@ -98,15 +99,18 @@ public class MonsterSpawner : MonoBehaviour
             return null;
         }
 
-        // instantiate at spawner's current position
-        GameObject inst = Instantiate(choice.prefab, transform.position, transform.rotation);
+        // —— 改动：用 prefab 的原始 rotation 实例化（避免把 spawner 的 rotation 赋给怪物视觉）
+        Quaternion prefabRot = choice.prefab.transform.rotation;
+        GameObject inst = Instantiate(choice.prefab, transform.position, prefabRot);
+
         var mc = inst.GetComponent<MonsterController>();
         if (mc != null)
         {
             mc.InitializeFromParam(choice);
 
-            // 设置怪物的运动模式，传入生成时 spawner 的位置
-            mc.SetMovement(monsterMovementType, monsterSpeed, monsterLengthOrRadius, transform.position);
+            // —— 改动：把 spawner 的 rotation 作为 orbitRotation 传进去（用于轨道倾斜），同时传入 spawn center
+            mc.SetMovement(monsterMovementType, monsterSpeed, monsterLengthOrRadius, transform.position, transform.rotation);
+            // 注：SetMovement 在 MonsterController/MonsterMovement 已相应改写（见下）
         }
         else
         {
