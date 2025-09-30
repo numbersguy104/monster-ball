@@ -41,7 +41,7 @@ public class MonsterController : MonoBehaviour
         if (collisionSelector != null)
             collisionSelector.SetCollisionType(collisionType);
     }
-    public void SetMovement(MovementType type, float speed, float lengthOrRadius, Vector3 spawnCenter)
+    public void SetMovement(MovementType type, float speed, float lengthOrRadius, Vector3 spawnCenter, Quaternion orbitRotation)
     {
         if (movement == null) return;
 
@@ -52,7 +52,7 @@ public class MonsterController : MonoBehaviour
         else if (type == MovementType.Circular)
             movement.radius = lengthOrRadius;
 
-        movement.SetSpawnCenter(spawnCenter); // 这里传入 spawnCenter
+        movement.SetSpawnCenter(spawnCenter, orbitRotation);
     }
 
 

@@ -14,6 +14,8 @@ public class MonsterMovement : MonoBehaviour
     Vector3 spawnCenter;
     float angle = 0f;
     float spawnTime; // 记录生成时间
+    private Quaternion orbitRotation = Quaternion.identity;
+    private Quaternion visualRotation = Quaternion.identity;
 
     void Start()
     {
@@ -24,6 +26,7 @@ public class MonsterMovement : MonoBehaviour
         {
             angle = Random.Range(0f, Mathf.PI * 2f);
         }
+        visualRotation = transform.rotation;
     }
 
     void Update()
@@ -48,15 +51,26 @@ public class MonsterMovement : MonoBehaviour
                 if (radius <= 0) return;
                 // 保留 angle 偏移，避免同步
                 angle += speed * Time.deltaTime;
-                float cx = Mathf.Cos(angle) * radius;
+                Vector3 local = new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0f) * radius;
+                Vector3 worldOffset = orbitRotation * local;
+                transform.position = spawnCenter + worldOffset;
+                transform.rotation = visualRotation;
+                /*float cx = Mathf.Cos(angle) * radius;
                 float cy = Mathf.Sin(angle) * radius;
-                transform.position = spawnCenter + new Vector3(cx, cy, 0);
+                transform.position = spawnCenter + new Vector3(cx, cy, 0);*/
                 break;
         }
     }
 
-    public void SetSpawnCenter(Vector3 center)
+    public void SetSpawnCenter(Vector3 center , Quaternion orbitRot)
     {
         spawnCenter = center;
+        spawnTime = Time.time;
+        orbitRotation = orbitRot;
+        visualRotation = transform.rotation;
+    }
+    public void SetSpawnCenter(Vector3 center)
+    {
+        SetSpawnCenter(center, Quaternion.identity);
     }
 }
