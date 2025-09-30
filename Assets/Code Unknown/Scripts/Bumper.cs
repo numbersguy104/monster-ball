@@ -3,8 +3,9 @@ using UnityEngine.InputSystem;
 
 public class Bumper: MonoBehaviour
 {
-    //The velocity the bumper sets balls to on contact
-    [SerializeField] float Power = 6.0f;
+    //The speed the bumper sets balls to on contact
+    [Tooltip("How fast the bumper should set the ball to go on contact")]
+    [SerializeField] float power = 6.0f;
 
     PointsTracker pt;
 
@@ -24,7 +25,7 @@ public class Bumper: MonoBehaviour
             Vector3 normal = point.normal;
 
             //Set the ball's velocity in that direction
-            Vector3 newVelocity = Vector3.Normalize(normal) * -Power;
+            Vector3 newVelocity = Vector3.Normalize(normal) * -power;
             ball.SetVelocity(newVelocity);
 
             //Add points

@@ -4,7 +4,8 @@ public class Spinner : MonoBehaviour
 {
     //Exponential decay for the spinner's speed each second
     //Lower number = spinner comes to rest faster
-    const float SPIN_DECAY = 0.2f;
+    [Tooltip("Multiplier for the spinner's speed each second (visual only; no gameplay effect)")]
+    [SerializeField] float spinDecay = 0.2f;
 
     //How many rotations the spinner should rotate before returning to rest
     //This can be negative (indicating rotations in the opposite direction)
@@ -48,7 +49,7 @@ public class Spinner : MonoBehaviour
             else
             {
                 float oldRotations = storedRotations;
-                storedRotations *= Mathf.Pow(SPIN_DECAY, Time.deltaTime);
+                storedRotations *= Mathf.Pow(spinDecay, Time.deltaTime);
                 float degreesChange = (oldRotations - storedRotations) * 360.0f;
                 graphic.rotation *= Quaternion.AngleAxis(degreesChange, -transform.right);
 
