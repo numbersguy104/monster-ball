@@ -14,6 +14,10 @@ public class MonsterController : MonoBehaviour
     private CollisionSelector collisionSelector;
     private MonsterMovement movement;
 
+    [Header("UI")]
+    public GameObject healthBarPrefab;      // 拖血条 prefab
+    private MonsterHealthBar healthBarUI;   // 引用血条脚本
+
     void Awake()
     {
         collisionSelector = GetComponent<CollisionSelector>();
@@ -23,7 +27,8 @@ public class MonsterController : MonoBehaviour
     public int GetMaxHP()
     {
         // 如果需要更灵活，可以在 MonsterParam 里加一个 maxHp 字段
-        return hp <= 0 ? 1 : hp;
+        //return hp <= 0 ? 1 : hp;
+        return maxHP > 0 ? maxHP : 1;
     }
 
 
@@ -66,10 +71,37 @@ public class MonsterController : MonoBehaviour
     }
 
     // Placeholder: on defeat, notify spawner system (future)
+    void Start()
+    {
+        // 生成血条
+        if (healthBarPrefab != null)
+        {
+            // 这里假设有一个全局 WorldSpace Canvas
+            Canvas worldCanvas = FindFirstObjectByType<Canvas>();
+            GameObject barObj = Instantiate(healthBarPrefab, worldCanvas.transform);
+
+            // 设置血条跟随
+            BillboardFollow follow = barObj.GetComponent<BillboardFollow>();
+            if (follow != null)
+            {
+                follow.target = this.transform;   // 让血条跟随怪物
+                follow.offset = new Vector3(0, 2, 0);
+            }
+
+            // 设置血条数值控制
+            healthBarUI = barObj.GetComponent<MonsterHealthBar>();
+            if (healthBarUI != null)
+            {
+                healthBarUI.redBar.fillAmount = 1f;
+                healthBarUI.yellowBar.fillAmount = 1f;
+            }
+        }
+    }
     public void TakeDamage(int baseDamage, float acceleration)
     {
         // 计算伤害
-        int finalDamage = Mathf.RoundToInt(baseDamage * acceleration);
+        int finalDamage = 1;
+            //Mathf.RoundToInt(baseDamage * acceleration);
 
         // 扣血
         hp -= finalDamage;
@@ -78,6 +110,10 @@ public class MonsterController : MonoBehaviour
         GameStatsManager.Instance.AddDamage(finalDamage);
         GameStatsManager.Instance.AddScore(point / 10); // 可选：受伤时给少量分数，击杀时再加大分
 
+        if (healthBarUI != null)
+        {
+            healthBarUI.redBar.fillAmount = Mathf.Clamp01((float)hp / maxHP);
+        }
         // 判断死亡
         if (hp <= 0)
         {

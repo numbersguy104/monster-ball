@@ -13,15 +13,15 @@ public class MonsterMovement : MonoBehaviour
 
     Vector3 spawnCenter;
     float angle = 0f;
-    float spawnTime; // 记录生成时间
+    float spawnTime; 
     private Quaternion orbitRotation = Quaternion.identity;
     private Quaternion visualRotation = Quaternion.identity;
 
     void Start()
     {
-        spawnTime = Time.time; // 记录怪物生成时的时间
+        spawnTime = Time.time; 
 
-        // 如果是圆形运动，给 angle 一个随机偏移，避免所有怪物同步
+        
         if (movementType == MovementType.Circular)
         {
             angle = Random.Range(0f, Mathf.PI * 2f);
@@ -49,7 +49,7 @@ public class MonsterMovement : MonoBehaviour
 
             case MovementType.Circular:
                 if (radius <= 0) return;
-                // 保留 angle 偏移，避免同步
+                
                 angle += speed * Time.deltaTime;
                 Vector3 local = new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0f) * radius;
                 Vector3 worldOffset = orbitRotation * local;
