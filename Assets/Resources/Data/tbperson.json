@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Chen",
+    "age": 25,
+    "sex": true
+  },
+  {
+    "name": "JM",
+    "age": 23,
+    "sex": true
+  },
+  {
+    "name": "Jin",
+    "age": 25,
+    "sex": false
+  },
+  {
+    "name": "Jun",
+    "age": 23,
+    "sex": true
+  }
+]

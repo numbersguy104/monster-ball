@@ -1,3 +1,4 @@
+using cfg;
 using UnityEngine;
 
 public class MonsterLauncher : MonoBehaviour
@@ -6,5 +7,8 @@ public class MonsterLauncher : MonoBehaviour
     void Start()
     {
         var monster = Instantiate(monsterObj, transform, false);
+        // TbPerson ps = LubanTablesMgr.Instance.tables.TbPerson;
+        // var age = ps["Jin"].Age;
+        // Debug.Log(age);
     }
 }
