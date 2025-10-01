@@ -1828,8 +1828,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxPower: 8
   maxCharge: 1
-  light: {fileID: 100237260}
-  ballPrefab: {fileID: 2386257326719710950, guid: acb7156a4df82454fbf98fbbdad97b1f, type: 3}
 --- !u!4 &2076973197
 Transform:
   m_ObjectHideFlags: 0

@@ -6,20 +6,27 @@ public class Ball : MonoBehaviour
     Rigidbody rb;
     [Header("Ball Damage Settings")]
     public int baseDamage = 1; // Basicdamage, adjust in inspector
+
+    //True if the ball is in play, false if it's in the queue of future balls
+    bool active = false;
+
     void Start() {
         rb = GetComponent<Rigidbody>();
     }
 
     private void Update()
     {
-        var light = GameObject.Find("Spot Light");
-        if (light != null)
+        if (active)
         {
-            light.transform.position = new Vector3(
-                transform.position.x,
-                transform.position.y + 0.31f,
-                transform.position.z - 0.1f
-            );
+            var light = GameObject.Find("Spot Light");
+            if (light != null)
+            {
+                light.transform.position = new Vector3(
+                    transform.position.x,
+                    transform.position.y + 0.31f,
+                    transform.position.z - 0.1f
+                );
+            }
         }
     }
 
@@ -34,6 +41,24 @@ public class Ball : MonoBehaviour
             monster.TakeDamage(baseDamage, accelFactor);
         }
     }
+
+    //Set the ball to active and put it into the game board
+    public void Activate()
+    {
+        active = true;
+        BallLauncher launcher = FindAnyObjectByType<BallLauncher>();
+        transform.position = launcher.transform.position;
+        launcher.NewBall(this);
+
+        var light = GameObject.Find("Spot Light");
+
+        light.transform.position = new Vector3(
+            transform.position.x,
+            transform.position.y + 0.31f,
+            transform.position.z - 0.1f
+        );
+    }
+
     //Set the ball's velocity to a given 3D vector
     public void SetVelocity(Vector3 v)
     {
@@ -70,6 +95,11 @@ public class Ball : MonoBehaviour
     public void SetSpeed(float speed)
     {
         rb.linearVelocity = rb.linearVelocity.normalized * speed;
+    }
+
+    public bool GetActive()
+    {
+        return active;
     }
 
     //Get the ball's velocity vector

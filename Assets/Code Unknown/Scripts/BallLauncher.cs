@@ -13,35 +13,22 @@ public class BallLauncher : MonoBehaviour
     [Tooltip("Time to reach maximum charge (in seconds)")]
     [SerializeField] float maxCharge = 1.0f;
 
-    [SerializeField] private GameObject light;
+    //The current ball about to be launched. Null if there is none (i.e. if there is a ball in play)
+    Ball currentBall = null;
 
-    bool active = true; //Whether the launcher is currently usable
-    float chargeTime = 0.0f; //How long the button to "pull back" the launcher has been held, in seconds
-    GameObject ballObject = null;
-
-    [SerializeField] GameObject ballPrefab;
+    //How long the button to "pull back" the launcher has been held, in seconds
+    float chargeTime = 0.0f;
 
     InputAction chargeAction;
 
     void Start()
     {
         chargeAction = InputSystem.actions.FindAction("Charge");
-        ballObject = SpawnBall();
-        light.transform.position = new Vector3(
-            ballObject.transform.position.x,
-            ballObject.transform.position.y + 0.31f,
-            ballObject.transform.position.z - 0.1f
-        );
-    }
-
-    public GameObject SpawnBall()
-    {
-        return Instantiate(ballPrefab, transform);
     }
 
     void Update()
     {
-        if (active)
+        if (currentBall != null)
         {
             bool chargeHeld = chargeAction.IsPressed();
             if (chargeHeld)
@@ -53,12 +40,16 @@ public class BallLauncher : MonoBehaviour
                 //Force on the ball scales with charge time, up to the maximum
                 float power = Mathf.Min(chargeTime, maxCharge) / maxCharge * maxPower;
 
-                ballObject.GetComponent<Ball>().SetVelocity(0, 0, power);
+                currentBall.SetVelocity(0, 0, power);
 
                 chargeTime = 0;
-                active = false;
-                ballObject = null;
+                currentBall = null;
             }
         }
+    }
+
+    public void NewBall(Ball ball)
+    {
+        currentBall = ball;
     }
 }
