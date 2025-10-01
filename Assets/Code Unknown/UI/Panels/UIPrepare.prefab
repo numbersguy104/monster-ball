@@ -1086,6 +1086,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UIMain: {fileID: 7095896495804024942, guid: 684935564f674634395a19596de67d46, type: 3}
+  pinballMachine: {fileID: 2139279211395548540, guid: 5ff363c6951392b4d9356da565929aaf, type: 3}
 --- !u!1 &7098738221527116260
 GameObject:
   m_ObjectHideFlags: 0

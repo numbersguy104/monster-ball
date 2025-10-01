@@ -2193,6 +2193,7 @@ GameObject:
   - component: {fileID: 4811557519866184499}
   - component: {fileID: 4665438972842693207}
   - component: {fileID: 795375658542171643}
+  - component: {fileID: 8609581444417774099}
   m_Layer: 5
   m_Name: cp
   m_TagString: Untagged
@@ -2247,7 +2248,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 150
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 937fa77cbc49c3f478f9b40238343316, type: 2}
   m_sharedMaterial: {fileID: 5221812718875079178, guid: 937fa77cbc49c3f478f9b40238343316, type: 2}
@@ -2318,6 +2319,26 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &8609581444417774099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5740840124603517182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06b41a47acc40d94891ce1ef842f2b5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bumper: 200
+  spinnerBase: 500
+  spinnerMult: 1.25
+  oneSwitch: 300
+  allSwitch: 1500
+  smokeClearer: 0
+  portal: 750
+  bossDamager: 1000
 --- !u!1 &6046899666600746049
 GameObject:
   m_ObjectHideFlags: 0

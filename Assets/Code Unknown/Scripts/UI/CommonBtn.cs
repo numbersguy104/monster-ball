@@ -25,18 +25,18 @@ namespace UI
     
         public void OnPointerEnter(PointerEventData eventData)
         {
-            _currentTween?.Kill();
-            _currentTween = background.DOFillAmount(1f, duration).SetEase(Ease.OutCubic);
-            text.color = new Color(0, 0, 0, 1);
-            text.font = FontAsset1;
+            // _currentTween?.Kill();
+            // _currentTween = background.DOFillAmount(1f, duration).SetEase(Ease.OutCubic);
+            // text.color = new Color(0, 0, 0, 1);
+            // text.font = FontAsset1;
         }
 
         public void OnPointerExit(PointerEventData eventData)
         {
-            _currentTween?.Kill();
-            _currentTween = background.DOFillAmount(0f, duration).SetEase(Ease.OutCubic);
-            text.color = new Color(1, 1, 1, 1);
-            text.font = FontAsset0;
+            // _currentTween?.Kill();
+            // _currentTween = background.DOFillAmount(0f, duration).SetEase(Ease.OutCubic);
+            // text.color = new Color(1, 1, 1, 1);
+            // text.font = FontAsset0;
         }
     }
 }
