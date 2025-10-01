@@ -261,7 +261,6 @@ RectTransform:
   m_Children:
   - {fileID: 1578851261135212671}
   - {fileID: 7325292885556588501}
-  - {fileID: 73821393396466603}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -367,7 +366,7 @@ MonoBehaviour:
   hp: 10
   point: 10
   gold: 10
-  maxHP: 0
+  maxHP: 10
   collisionType: 0
 --- !u!114 &-4508336463568215546
 MonoBehaviour:
@@ -729,7 +728,7 @@ Transform:
   m_GameObject: {fileID: 9220848272049792557}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalPosition: {x: -0, y: -9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -805,84 +804,6 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 7325292885556588501}
   m_AABB:
-    m_Center: {x: -0.58135295, y: 0.17860109, z: -0.0034438968}
-    m_Extent: {x: 0.76219964, y: 0.78188795, z: 0.6265786}
+    m_Center: {x: -0.5323887, y: 0.023120299, z: -0.0010211468}
+    m_Extent: {x: 0.6477649, y: 0.4573908, z: 1.0422637}
   m_DirtyAABB: 0
---- !u!1001 &3988041038490196576
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 3577922927071859781}
-    m_Modifications:
-    - target: {fileID: 3917597430783924683, guid: 615025cb00a4abb42ac2632676ae1409, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3917597430783924683, guid: 615025cb00a4abb42ac2632676ae1409, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3917597430783924683, guid: 615025cb00a4abb42ac2632676ae1409, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3917597430783924683, guid: 615025cb00a4abb42ac2632676ae1409, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.2610016
-      objectReference: {fileID: 0}
-    - target: {fileID: 3917597430783924683, guid: 615025cb00a4abb42ac2632676ae1409, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 5.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 3917597430783924683, guid: 615025cb00a4abb42ac2632676ae1409, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 1.351436
-      objectReference: {fileID: 0}
-    - target: {fileID: 3917597430783924683, guid: 615025cb00a4abb42ac2632676ae1409, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3917597430783924683, guid: 615025cb00a4abb42ac2632676ae1409, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3917597430783924683, guid: 615025cb00a4abb42ac2632676ae1409, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3917597430783924683, guid: 615025cb00a4abb42ac2632676ae1409, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3917597430783924683, guid: 615025cb00a4abb42ac2632676ae1409, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3917597430783924683, guid: 615025cb00a4abb42ac2632676ae1409, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3917597430783924683, guid: 615025cb00a4abb42ac2632676ae1409, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3917597430783924683, guid: 615025cb00a4abb42ac2632676ae1409, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8503825472209400368, guid: 615025cb00a4abb42ac2632676ae1409, type: 3}
-      propertyPath: m_Name
-      value: HealthBar
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 615025cb00a4abb42ac2632676ae1409, type: 3}
---- !u!4 &73821393396466603 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3917597430783924683, guid: 615025cb00a4abb42ac2632676ae1409, type: 3}
-  m_PrefabInstance: {fileID: 3988041038490196576}
-  m_PrefabAsset: {fileID: 0}
