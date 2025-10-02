@@ -14,17 +14,35 @@ namespace cfg
 {
 public partial class Tables
 {
+    public TbArtifactParam TbArtifactParam {get; }
+    public TbBallParam TbBallParam {get; }
+    public TbMilestoneParam TbMilestoneParam {get; }
+    public TbMonsterParam TbMonsterParam {get; }
     public TbPerson TbPerson {get; }
+    public TbTerrainParam TbTerrainParam {get; }
+    public TbUpgradeParam TbUpgradeParam {get; }
 
     public Tables(System.Func<string, JSONNode> loader)
     {
+        TbArtifactParam = new TbArtifactParam(loader("tbartifactparam"));
+        TbBallParam = new TbBallParam(loader("tbballparam"));
+        TbMilestoneParam = new TbMilestoneParam(loader("tbmilestoneparam"));
+        TbMonsterParam = new TbMonsterParam(loader("tbmonsterparam"));
         TbPerson = new TbPerson(loader("tbperson"));
+        TbTerrainParam = new TbTerrainParam(loader("tbterrainparam"));
+        TbUpgradeParam = new TbUpgradeParam(loader("tbupgradeparam"));
         ResolveRef();
     }
     
     private void ResolveRef()
     {
+        TbArtifactParam.ResolveRef(this);
+        TbBallParam.ResolveRef(this);
+        TbMilestoneParam.ResolveRef(this);
+        TbMonsterParam.ResolveRef(this);
         TbPerson.ResolveRef(this);
+        TbTerrainParam.ResolveRef(this);
+        TbUpgradeParam.ResolveRef(this);
     }
 }
 

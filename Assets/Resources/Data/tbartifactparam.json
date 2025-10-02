@@ -1,0 +1,16 @@
+[
+  {
+    "ID": "FireTrail",
+    "ArtifactName": "Pheonix's Feather",
+    "ArtifactPrice": 100000,
+    "BallRelation": "Fireball",
+    "ArtifactDes": "Increase the fire trail left by the fireball by {0} seconds.",
+    "ArtifactType1": "Skillduration",
+    "ArtifactStat1": 4,
+    "ArtifactType2": "",
+    "ArtifactStat2": 0,
+    "ArtifactType3": "",
+    "ArtifactStat3": 0,
+    "AritfactIcon": ""
+  }
+]

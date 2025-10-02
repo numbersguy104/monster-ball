@@ -1,0 +1,62 @@
+[
+  {
+    "ID": "Pinball",
+    "BallAttack": 8,
+    "BallCritChance": 0.05,
+    "BallCritDmg": 1.25,
+    "BallSpd": 1.5,
+    "BallSize": 1.5,
+    "BallSkillReq": 0,
+    "BallSkillID": "",
+    "BallPrice": 100,
+    "BallShopChance": 80
+  },
+  {
+    "ID": "Fireball",
+    "BallAttack": 10,
+    "BallCritChance": 0.05,
+    "BallCritDmg": 1.25,
+    "BallSpd": 2,
+    "BallSize": 2,
+    "BallSkillReq": 500,
+    "BallSkillID": "FireTrail",
+    "BallPrice": 250,
+    "BallShopChance": 60
+  },
+  {
+    "ID": "Splitball",
+    "BallAttack": 5,
+    "BallCritChance": 0.25,
+    "BallCritDmg": 1.25,
+    "BallSpd": 3,
+    "BallSize": 0.75,
+    "BallSkillReq": 1000,
+    "BallSkillID": "Split",
+    "BallPrice": 400,
+    "BallShopChance": 40
+  },
+  {
+    "ID": "Spikeball",
+    "BallAttack": 12,
+    "BallCritChance": 0.25,
+    "BallCritDmg": 1.5,
+    "BallSpd": 1.5,
+    "BallSize": 3,
+    "BallSkillReq": 700,
+    "BallSkillID": "Spikeblast",
+    "BallPrice": 500,
+    "BallShopChance": 35
+  },
+  {
+    "ID": "Radiantball",
+    "BallAttack": 15,
+    "BallCritChance": 0.25,
+    "BallCritDmg": 1.25,
+    "BallSpd": 1.5,
+    "BallSize": 2,
+    "BallSkillReq": 0,
+    "BallSkillID": "Radiantspark",
+    "BallPrice": 0,
+    "BallShopChance": 0
+  }
+]

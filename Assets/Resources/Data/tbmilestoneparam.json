@@ -1,0 +1,16 @@
+[
+  {
+    "MilestoneReq": 10000,
+    "MonHPInc": 1,
+    "MonPointInc": 1,
+    "TerPointInc": 1,
+    "MonsterCount": 3
+  },
+  {
+    "MilestoneReq": 25000,
+    "MonHPInc": 1.25,
+    "MonPointInc": 1.25,
+    "TerPointInc": 1.25,
+    "MonsterCount": 4
+  }
+]

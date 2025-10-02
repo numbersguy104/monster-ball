@@ -1,0 +1,18 @@
+[
+  {
+    "ID": "SpikyBoy",
+    "Collision": true,
+    "MonsterHealth": 100,
+    "MonsterPoint": 1500,
+    "MonsterDrop": 30,
+    "Asset ID": "Spikyboy"
+  },
+  {
+    "ID": "Mushroom",
+    "Collision": false,
+    "MonsterHealth": 75,
+    "MonsterPoint": 1200,
+    "MonsterDrop": 45,
+    "Asset ID": "Mushroom"
+  }
+]

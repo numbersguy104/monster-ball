@@ -1,0 +1,12 @@
+[
+  {
+    "Bumper": 200,
+    "Spinner": 500,
+    "SpinnerMulti": 1.25,
+    "SpinnerCooldown": 5,
+    "DropSwitch": 300,
+    "BossDamager": 1000,
+    "PortalEnter": 750,
+    "SmokeClearer": 1000
+  }
+]
