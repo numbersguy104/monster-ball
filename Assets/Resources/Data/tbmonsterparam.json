@@ -5,7 +5,7 @@
     "MonsterHealth": 100,
     "MonsterPoint": 1500,
     "MonsterDrop": 30,
-    "Asset ID": "Spikyboy"
+    "Asset_ID": "Spikyboy"
   },
   {
     "ID": "Mushroom",
@@ -13,6 +13,6 @@
     "MonsterHealth": 75,
     "MonsterPoint": 1200,
     "MonsterDrop": 45,
-    "Asset ID": "Mushroom"
+    "Asset_ID": "Mushroom"
   }
 ]

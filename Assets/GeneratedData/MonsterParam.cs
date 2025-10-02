@@ -22,7 +22,7 @@ public sealed partial class MonsterParam : Luban.BeanBase
         { if(!_buf["MonsterHealth"].IsNumber) { throw new SerializationException(); }  MonsterHealth = _buf["MonsterHealth"]; }
         { if(!_buf["MonsterPoint"].IsNumber) { throw new SerializationException(); }  MonsterPoint = _buf["MonsterPoint"]; }
         { if(!_buf["MonsterDrop"].IsNumber) { throw new SerializationException(); }  MonsterDrop = _buf["MonsterDrop"]; }
-        { if(!_buf["Asset ID"].IsString) { throw new SerializationException(); }  Asset ID = _buf["Asset ID"]; }
+        { if(!_buf["Asset_ID"].IsString) { throw new SerializationException(); }  AssetID = _buf["Asset_ID"]; }
     }
 
     public static MonsterParam DeserializeMonsterParam(JSONNode _buf)
@@ -35,7 +35,7 @@ public sealed partial class MonsterParam : Luban.BeanBase
     public readonly int MonsterHealth;
     public readonly int MonsterPoint;
     public readonly int MonsterDrop;
-    public readonly string Asset ID;
+    public readonly string AssetID;
    
     public const int __ID__ = 702549235;
     public override int GetTypeId() => __ID__;
@@ -52,7 +52,7 @@ public sealed partial class MonsterParam : Luban.BeanBase
         + "MonsterHealth:" + MonsterHealth + ","
         + "MonsterPoint:" + MonsterPoint + ","
         + "MonsterDrop:" + MonsterDrop + ","
-        + "Asset ID:" + Asset ID + ","
+        + "AssetID:" + AssetID + ","
         + "}";
     }
 }
