@@ -238,8 +238,8 @@ GameObject:
   - component: {fileID: 1788883246000220471}
   - component: {fileID: 3801573113235742863}
   - component: {fileID: -5849076788379216381}
+  - component: {fileID: 842230344189383694}
   - component: {fileID: -8660489223716263080}
-  - component: {fileID: -4508336463568215546}
   m_Layer: 0
   m_Name: MushroomAngryPA
   m_TagString: Untagged
@@ -256,8 +256,8 @@ RectTransform:
   m_GameObject: {fileID: 4245915190017150719}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1578851261135212671}
   - {fileID: 7325292885556588501}
@@ -310,9 +310,9 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
-  m_Height: 1
+  m_Height: 1.2844547
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.5441274, z: 0}
 --- !u!136 &3801573113235742863
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -332,10 +332,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 1
+  m_Radius: 0.5006194
+  m_Height: 1.2918166
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: -0.00061941147, y: 0.54836124, z: 0}
 --- !u!114 &-5849076788379216381
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -350,6 +350,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   withCollision: {fileID: 1788883246000220471}
   withoutCollision: {fileID: 3801573113235742863}
+--- !u!114 &842230344189383694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4245915190017150719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 462dbed3533a1924d8ee90b569c18f44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementType: 1
+  speed: 10
+  length: 0
+  radius: 0
 --- !u!114 &-8660489223716263080
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -363,27 +379,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monsterID: horizontal1
-  hp: 10
+  hp: 5
   point: 10
   gold: 10
   maxHP: 10
   collisionType: 0
---- !u!114 &-4508336463568215546
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4245915190017150719}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 462dbed3533a1924d8ee90b569c18f44, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movementType: 1
-  speed: 20
-  length: 30
-  radius: 30
+  healthBarPrefab: {fileID: 0}
 --- !u!1 &5632524212304190485
 GameObject:
   m_ObjectHideFlags: 0
