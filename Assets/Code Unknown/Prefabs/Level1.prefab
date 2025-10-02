@@ -203,7 +203,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9134074221992162214}
-  - component: {fileID: 6619871874022447049}
+  - component: {fileID: 1718240909589263617}
   m_Layer: 0
   m_Name: MonsterSlot
   m_TagString: Untagged
@@ -226,7 +226,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3512853049571956975}
   m_LocalEulerAnglesHint: {x: -90, y: 180, z: 0}
---- !u!114 &6619871874022447049
+--- !u!114 &1718240909589263617
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -235,10 +235,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 370105985898683180}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a319a8f88fef974396394b06ccc1407, type: 3}
+  m_Script: {fileID: 11500000, guid: 2b9b3c77e6137184ba7508c70fa3422b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  monsterObj: {fileID: 7427070853888570003, guid: dcc982307a817354fafb192abcd9b917, type: 3}
+  database: {fileID: 11400000, guid: a7903abbadb31a94e9d0d30a10e4418f, type: 2}
+  collisionBehavior: 2
+  spawnerMovementType: 1
+  spawnerSpeed: 1
+  spawnerLengthOrRadius: 0
+  monsterMovementType: 3
+  monsterSpeed: 1
+  monsterLengthOrRadius: 2
+  hasSpawnedMonster: 1
+  spawnedInstance: {fileID: 0}
+  spawnOnStart: 1
 --- !u!1 &401134342223473812
 GameObject:
   m_ObjectHideFlags: 0

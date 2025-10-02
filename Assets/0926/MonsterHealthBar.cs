@@ -4,22 +4,22 @@ using UnityEngine.UI;
 public class MonsterHealthBar : MonoBehaviour
 {
     [Header("UI References")]
-    public Image redBar;   // 红色血条（立即下降）
-    public Image yellowBar; // 黄色血条（延迟下降）
+    public Image redBar;    // Red health bar (immediate decrease)
+    public Image yellowBar; // Yellow health bar (delayed decrease)
 
     [Header("Settings")]
-    public float yellowBarSpeed = 0.5f; // 黄条下降速度（越大越快）
+    public float yellowBarSpeed = 0.5f; // Yellow bar decrease speed (higher = faster)
 
     private MonsterController monster;
-    private float targetFill = 1f; // 红条目标比例
-    private float yellowFill = 1f; // 黄条当前比例
+    private float targetFill = 1f; // Target ratio for red bar
+    private float yellowFill = 1f; // Current ratio for yellow bar
 
     void Start()
     {
         monster = GetComponentInParent<MonsterController>();
         if (monster == null)
         {
-            Debug.LogWarning("MonsterHealthBar: 没找到 MonsterController！");
+            Debug.LogWarning("MonsterHealthBar: MonsterController not found!");
         }
     }
 
@@ -27,14 +27,14 @@ public class MonsterHealthBar : MonoBehaviour
     {
         if (monster == null) return;
 
-        // 计算血量比例
+        // Calculate HP ratio
         float hpRatio = Mathf.Clamp01((float)monster.hp / monster.GetMaxHP());
 
-        // 红条立即更新
+        // Red bar updates instantly
         targetFill = hpRatio;
         redBar.fillAmount = targetFill;
 
-        // 黄条缓慢追随
+        // Yellow bar gradually follows
         if (yellowBar.fillAmount > targetFill)
         {
             yellowBar.fillAmount = Mathf.MoveTowards(

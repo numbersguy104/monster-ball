@@ -41,6 +41,16 @@ public class Ball : MonoBehaviour
             monster.TakeDamage(baseDamage, accelFactor);
         }
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        MonsterController monster = other.GetComponent<MonsterController>();
+        if (monster != null)
+        {
+            
+            float accelFactor = rb.linearVelocity.magnitude;
+            monster.TakeDamage(baseDamage, accelFactor);
+        }
+    }
 
     //Set the ball to active and put it into the game board
     public void Activate()

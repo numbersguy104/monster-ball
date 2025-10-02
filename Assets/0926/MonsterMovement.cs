@@ -44,7 +44,8 @@ public class MonsterMovement : MonoBehaviour
             case MovementType.Vertical:
                 if (length <= 0) return;
                 float y = Mathf.PingPong(deltaTime * speed + length, length * 2) - length;
-                transform.position = spawnCenter + new Vector3(0, y, 0);
+                Vector3 vOffset = new Vector3(0, y, 0);
+                transform.position = spawnCenter + orbitRotation * vOffset;
                 break;
 
             case MovementType.Circular:
