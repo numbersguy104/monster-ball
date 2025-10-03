@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -13,8 +14,13 @@ public class GameStatsManager : MonoBehaviour
     public float dps = 0f;         // Damage per second (calculated at runtime)
 
     [Header("Level Up Settings")]
-    public long scoreThreshold = 10000; // Example: level up when reaching 10,000 points
-    public UnityEvent OnLevelUp;        // Level-up event interface (can be bound externally)
+
+    //Queue of point thresholds for the player to reach
+    [Tooltip("Amonunts of points that will increase various stats and allow an upgrade when reached")]
+    [SerializeField] List<long> scoreThresholds = null;
+
+    public long scoreThreshold; //Store the current threshold
+    public UnityEvent OnLevelUp; // Level-up event interface (can be bound externally)
 
     private float damageTimer = 0f;
     private long damageThisSecond = 0;
@@ -28,6 +34,23 @@ public class GameStatsManager : MonoBehaviour
         }
         Instance = this;
         DontDestroyOnLoad(gameObject); // Persist globally
+    }
+
+    void Start()
+    {
+        //Initialize the score thresholds to a default if not set in the inspector
+        if (scoreThresholds == null || scoreThresholds.Count == 0)
+        {
+            print("Warning: Point threshold queue (scoreThresholds) was not initialized! Initializing with a single multiplier of 10000. Source: GameStatsManager.cs on object " + gameObject.ToString());
+            scoreThresholds = new List<long>();
+            scoreThresholds.Add(10000L);
+        }
+
+        PointsTracker pt = FindAnyObjectByType<PointsTracker>();
+        OnLevelUp.AddListener(pt.LevelUp);
+        OnLevelUp.AddListener(LevelUp);
+
+        LevelUp();
     }
 
     void Update()
@@ -45,8 +68,20 @@ public class GameStatsManager : MonoBehaviour
         if (score >= scoreThreshold)
         {
             OnLevelUp?.Invoke();
-            // Optional: adjust the next level-up threshold, e.g., double it
-            scoreThreshold *= 2;
+        }
+    }
+
+    void LevelUp()
+    {
+        //Move on to the next threshold
+        if (scoreThresholds.Count > 0)
+        {
+            scoreThreshold = scoreThresholds[0];
+            scoreThresholds.RemoveAt(0);
+        }
+        else
+        {
+            scoreThreshold = long.MaxValue;
         }
     }
 

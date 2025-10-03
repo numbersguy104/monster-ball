@@ -10,7 +10,6 @@ public class PointsTracker : MonoBehaviour
 
     //Define point values for everything in the game
     //These are currently meant to be edited from the object the script is attached to in the Unity editor
-    //(MechanicsTest/Points/Canvas)
     //All default values are 0, as a fallback
 
     //Note: All point amounts are stored as longs, in case they go above 2 billion
@@ -31,6 +30,13 @@ public class PointsTracker : MonoBehaviour
     [SerializeField] long portal = 0L;
     [Tooltip("Points awarded for hitting a boss-damaging terrain")]
     [SerializeField] long bossDamager = 0L;
+
+    //Queue of global multipliers for terrain points
+    //Each level up (points threshold) will advance the queue
+    [Tooltip("Multipliers to terrain points; starts with the first value and advances the queue whenever a score threshold is reached")]
+    [SerializeField] List<float> terrainPointMults = null;
+    //The current mulitplier value, starting with the first value in the queue
+    float terrainPointsMult;
 
     public enum PointSources
     {
@@ -54,6 +60,16 @@ public class PointsTracker : MonoBehaviour
         pointsDictionary.Add(PointSources.SmokeClearer, smokeClearer);
         pointsDictionary.Add(PointSources.Portal, portal);
         pointsDictionary.Add(PointSources.BossDamager, bossDamager);
+
+        //Default value for terrainPointMults if not initialized in inspector
+        if (terrainPointMults == null || terrainPointMults.Count == 0)
+        {
+            print("Warning: Terrain points multiplier queue (terrainPointMults) was not initialized! Initializing with a single multiplier of 1.0. Source: PointsTracker.cs on object " + gameObject.ToString());
+            terrainPointMults = new List<float>();
+            terrainPointMults.Add(1.0f);
+        }
+
+        LevelUp();
     }
 
     //Add a fixed number of points
@@ -67,7 +83,10 @@ public class PointsTracker : MonoBehaviour
     //Add base points associated with a given type of terrain
     public void AddTerrainPoints(PointSources source)
     {
-        AddPoints(pointsDictionary[source]);
+        long points = pointsDictionary[source];
+        points = (long)(points * terrainPointsMult);
+
+        AddPoints(points);
     }
 
     //Add points for a spinner specifically
@@ -75,11 +94,22 @@ public class PointsTracker : MonoBehaviour
     public void AddSpinnerPoints(int spins)
     {
         long points = (long)(pointsDictionary[PointSources.Spinner] * Mathf.Pow(spinnerMult, spins));
+        points = (long)(points * terrainPointsMult);
         AddPoints(points);
     }
 
     public long GetPoints()
     {
         return GameStatsManager.Instance.score;
+    }
+
+    //Advance the queue for multipliers (should be called after reaching a points threshold)
+    public void LevelUp()
+    {
+        if (terrainPointMults.Count > 0)
+        {
+            terrainPointsMult = terrainPointMults[0];
+            terrainPointMults.RemoveAt(0);
+        }
     }
 }
