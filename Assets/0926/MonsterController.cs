@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-// 单个怪物运行时脚本（血量、掉落、碰撞设置、移动行为挂载点）
+// Runtime script for a single monster (HP, loot, collision settings, movement behavior anchor)
 public class MonsterController : MonoBehaviour
 {
     [Header("Data")]
@@ -15,8 +15,8 @@ public class MonsterController : MonoBehaviour
     private MonsterMovement movement;
 
     [Header("UI")]
-    public GameObject healthBarPrefab;      // 拖血条 prefab
-    private MonsterHealthBar healthBarUI;   // 引用血条脚本
+    public GameObject healthBarPrefab;      // Drag in health bar prefab
+    private MonsterHealthBar healthBarUI;   // Reference to health bar script
 
     void Awake()
     {
@@ -26,7 +26,7 @@ public class MonsterController : MonoBehaviour
 
     public int GetMaxHP()
     {
-        // 如果需要更灵活，可以在 MonsterParam 里加一个 maxHp 字段
+        // If more flexibility is needed, add a maxHp field in MonsterParam
         //return hp <= 0 ? 1 : hp;
         return maxHP > 0 ? maxHP : 1;
     }
@@ -42,7 +42,7 @@ public class MonsterController : MonoBehaviour
         gold = param.gold;
         collisionType = param.collisionType;
 
-        // Set collide
+        // Set collision
         if (collisionSelector != null)
             collisionSelector.SetCollisionType(collisionType);
     }
@@ -62,7 +62,7 @@ public class MonsterController : MonoBehaviour
 
 
     /// <summary>
-    /// 由 Spawner 调用，显式指定锚点（避免和 prefab 自身位置冲突）
+    /// Called by Spawner to explicitly set the anchor (to avoid conflicting with prefab’s own position)
     /// </summary>
     public void SetSpawnCenter(Vector3 pos)
     {
@@ -73,22 +73,22 @@ public class MonsterController : MonoBehaviour
     // Placeholder: on defeat, notify spawner system (future)
     void Start()
     {
-        // 生成血条
+        // Generate health bar
         if (healthBarPrefab != null)
         {
-            // 这里假设有一个全局 WorldSpace Canvas
+            // Assume there is a global WorldSpace Canvas
             Canvas worldCanvas = FindFirstObjectByType<Canvas>();
             GameObject barObj = Instantiate(healthBarPrefab, worldCanvas.transform);
 
-            // 设置血条跟随
+            // Set health bar to follow
             BillboardFollow follow = barObj.GetComponent<BillboardFollow>();
             if (follow != null)
             {
-                follow.target = this.transform;   // 让血条跟随怪物
+                follow.target = this.transform;   // Make the health bar follow the monster
                 follow.offset = new Vector3(0, 2, 0);
             }
 
-            // 设置血条数值控制
+            // Set health bar value control
             healthBarUI = barObj.GetComponent<MonsterHealthBar>();
             if (healthBarUI != null)
             {
@@ -97,24 +97,24 @@ public class MonsterController : MonoBehaviour
             }
         }
     }
+
     public void TakeDamage(int baseDamage, float acceleration)
     {
-        // 计算伤害
-        int finalDamage = 1;
-            //Mathf.RoundToInt(baseDamage * acceleration);
 
-        // 扣血
+        int finalDamage = Mathf.Max(baseDamage, Mathf.RoundToInt(baseDamage * acceleration));
+
+
         hp -= finalDamage;
 
-        // 更新全局统计
+        // Global stats update
         GameStatsManager.Instance.AddDamage(finalDamage);
-        GameStatsManager.Instance.AddScore(point / 10); // 可选：受伤时给少量分数，击杀时再加大分
+        GameStatsManager.Instance.AddScore(point / 10);
 
         if (healthBarUI != null)
         {
             healthBarUI.redBar.fillAmount = Mathf.Clamp01((float)hp / maxHP);
         }
-        // 判断死亡
+
         if (hp <= 0)
         {
             Die();
@@ -127,9 +127,9 @@ public class MonsterController : MonoBehaviour
         GameStatsManager.Instance.AddGold(gold);
         GameStatsManager.Instance.AddScore(point);
         GameStatsManager.Instance.AddKill();
-        //test
+        // Test
         GameStatsManager.Instance.AddScore(100);
-        //todo: die effect
+        // TODO: death effect
         Destroy(gameObject);
     }
 }

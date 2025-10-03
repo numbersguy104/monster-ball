@@ -470,6 +470,7 @@ MonoBehaviour:
   smokeClearer: 0
   portal: 750
   bossDamager: 1000
+  terrainPointMults: []
 --- !u!114 &402577204
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2286,6 +2287,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1429849173}
+    - target: {fileID: 1718240909589263617, guid: 5ff363c6951392b4d9356da565929aaf, type: 3}
+      propertyPath: spawnerLengthOrRadius
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2084978218820480865, guid: 5ff363c6951392b4d9356da565929aaf, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -2352,7 +2357,7 @@ PrefabInstance:
       objectReference: {fileID: 1643095958}
     - target: {fileID: 4636013082549165334, guid: 5ff363c6951392b4d9356da565929aaf, type: 3}
       propertyPath: m_VersionIndex
-      value: 1408
+      value: 1423
       objectReference: {fileID: 0}
     - target: {fileID: 4651257854605298451, guid: 5ff363c6951392b4d9356da565929aaf, type: 3}
       propertyPath: m_Mesh
@@ -2364,7 +2369,7 @@ PrefabInstance:
       objectReference: {fileID: 1429849173}
     - target: {fileID: 4664560486030340625, guid: 5ff363c6951392b4d9356da565929aaf, type: 3}
       propertyPath: m_VersionIndex
-      value: 756
+      value: 771
       objectReference: {fileID: 0}
     - target: {fileID: 4737512173491592709, guid: 5ff363c6951392b4d9356da565929aaf, type: 3}
       propertyPath: m_Mesh
@@ -2380,7 +2385,23 @@ PrefabInstance:
       objectReference: {fileID: 705950675}
     - target: {fileID: 5131561739447069910, guid: 5ff363c6951392b4d9356da565929aaf, type: 3}
       propertyPath: m_VersionIndex
-      value: 1572
+      value: 1587
+      objectReference: {fileID: 0}
+    - target: {fileID: 5178052513748757161, guid: 5ff363c6951392b4d9356da565929aaf, type: 3}
+      propertyPath: scoreThresholds.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5178052513748757161, guid: 5ff363c6951392b4d9356da565929aaf, type: 3}
+      propertyPath: 'scoreThresholds.Array.data[0]'
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5178052513748757161, guid: 5ff363c6951392b4d9356da565929aaf, type: 3}
+      propertyPath: 'scoreThresholds.Array.data[1]'
+      value: 2000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5178052513748757161, guid: 5ff363c6951392b4d9356da565929aaf, type: 3}
+      propertyPath: 'scoreThresholds.Array.data[2]'
+      value: 4000
       objectReference: {fileID: 0}
     - target: {fileID: 7322793095411470857, guid: 5ff363c6951392b4d9356da565929aaf, type: 3}
       propertyPath: m_LocalScale.z
@@ -2404,7 +2425,7 @@ PrefabInstance:
       objectReference: {fileID: 1480878273}
     - target: {fileID: 7429843772369767232, guid: 5ff363c6951392b4d9356da565929aaf, type: 3}
       propertyPath: m_VersionIndex
-      value: 6568
+      value: 6583
       objectReference: {fileID: 0}
     - target: {fileID: 8059854217021478888, guid: 5ff363c6951392b4d9356da565929aaf, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2428,7 +2449,7 @@ PrefabInstance:
       objectReference: {fileID: 1579901291}
     - target: {fileID: 8369446822270089539, guid: 5ff363c6951392b4d9356da565929aaf, type: 3}
       propertyPath: m_VersionIndex
-      value: 1596
+      value: 1611
       objectReference: {fileID: 0}
     - target: {fileID: 9130194475999040583, guid: 5ff363c6951392b4d9356da565929aaf, type: 3}
       propertyPath: m_Mesh

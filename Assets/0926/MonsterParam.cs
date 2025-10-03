@@ -1,12 +1,13 @@
 using UnityEngine;
-//单个怪物数据（ScriptableObject 元素数据结构）
+
+// Single monster data (ScriptableObject element data structure)
 public enum MonsterCollisionType { WithCollision, WithoutCollision }
 
 [CreateAssetMenu(fileName = "MonsterParam", menuName = "Monsters/MonsterParam", order = 0)]
 public class MonsterParam : ScriptableObject
 {
-    public string monsterID; // 唯一 ID
-    public GameObject prefab; // 对应预制体（包含 MonsterController）
+    public string monsterID;       // Unique ID
+    public GameObject prefab;      // Corresponding prefab (includes MonsterController)
     public MonsterCollisionType collisionType;
 
     public MovementType movementType;

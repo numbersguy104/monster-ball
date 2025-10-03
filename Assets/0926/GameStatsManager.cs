@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -6,15 +7,20 @@ public class GameStatsManager : MonoBehaviour
     public static GameStatsManager Instance { get; private set; }
 
     [Header("Player Stats")]
-    public long score = 0;         // 总分
-    public long gold = 0;          // 总金币（可减少）
-    public int killCount = 0;      // 击杀怪物数
-    public long totalDamage = 0;   // 总伤害
-    public float dps = 0f;         // 每秒伤害（运行时计算）
+    public long score = 0;         // Total score
+    public long gold = 0;          // Total gold (can decrease)
+    public int killCount = 0;      // Number of monsters killed
+    public long totalDamage = 0;   // Total damage dealt
+    public float dps = 0f;         // Damage per second (calculated at runtime)
 
     [Header("Level Up Settings")]
-    public long scoreThreshold = 10000; // 示例：达到 1w 分数触发升级
-    public UnityEvent OnLevelUp;        // 升级事件接口（留给外部绑定）
+
+    //Queue of point thresholds for the player to reach
+    [Tooltip("Amonunts of points that will increase various stats and allow an upgrade when reached")]
+    [SerializeField] List<long> scoreThresholds = null;
+
+    public long scoreThreshold; //Store the current threshold
+    public UnityEvent OnLevelUp; // Level-up event interface (can be bound externally)
 
     private float damageTimer = 0f;
     private long damageThisSecond = 0;
@@ -27,12 +33,29 @@ public class GameStatsManager : MonoBehaviour
             return;
         }
         Instance = this;
-        DontDestroyOnLoad(gameObject); // 全局持久化
+        DontDestroyOnLoad(gameObject); // Persist globally
+    }
+
+    void Start()
+    {
+        //Initialize the score thresholds to a default if not set in the inspector
+        if (scoreThresholds == null || scoreThresholds.Count == 0)
+        {
+            print("Warning: Point threshold queue (scoreThresholds) was not initialized! Initializing with a single multiplier of 10000. Source: GameStatsManager.cs on object " + gameObject.ToString());
+            scoreThresholds = new List<long>();
+            scoreThresholds.Add(10000L);
+        }
+
+        PointsTracker pt = FindAnyObjectByType<PointsTracker>();
+        OnLevelUp.AddListener(pt.LevelUp);
+        OnLevelUp.AddListener(LevelUp);
+
+        LevelUp();
     }
 
     void Update()
     {
-        // 计算 DPS
+        // Calculate DPS
         damageTimer += Time.deltaTime;
         if (damageTimer >= 1f)
         {
@@ -41,16 +64,28 @@ public class GameStatsManager : MonoBehaviour
             damageThisSecond = 0;
         }
 
-        // 检查升级条件
+        // Check level-up condition
         if (score >= scoreThreshold)
         {
             OnLevelUp?.Invoke();
-            // 可选：调整下一次升级阈值，比如翻倍
-            scoreThreshold *= 2;
         }
     }
 
-    // ====== API 接口 ======
+    void LevelUp()
+    {
+        //Move on to the next threshold
+        if (scoreThresholds.Count > 0)
+        {
+            scoreThreshold = scoreThresholds[0];
+            scoreThresholds.RemoveAt(0);
+        }
+        else
+        {
+            scoreThreshold = long.MaxValue;
+        }
+    }
+
+    // ====== API Methods ======
 
     public void AddScore(long amount)
     {
@@ -70,7 +105,7 @@ public class GameStatsManager : MonoBehaviour
             gold -= amount;
             return true;
         }
-        return false; // 钱不够
+        return false; // Not enough gold
     }
 
     public void AddKill()
