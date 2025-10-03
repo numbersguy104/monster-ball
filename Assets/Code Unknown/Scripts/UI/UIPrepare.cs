@@ -6,6 +6,7 @@ public class UIPrepare : MonoBehaviour
     public GameObject pinballMachine;
 
     private GameObject _UIMainObj;
+    private CameraControl _cameraControl;
 
     public void OnBeginBtnClick()
     {
@@ -22,5 +23,13 @@ public class UIPrepare : MonoBehaviour
         {
             var machine = Instantiate(pinballMachine);
         }
+
+        // CameraControl.BlendTo(true);
+        if (_cameraControl == null)
+        {
+            _cameraControl = GameObject.Find("Main Camera").GetComponent<CameraControl>();
+        }
+        
+        _cameraControl.BlendTo(true);
     }
 }
