@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,7 +15,7 @@ public class MonsterHealthBar : MonoBehaviour
     private MonsterController monster;
     private float targetFill = 1f; // Target ratio for red bar
     private float yellowFill = 1f; // Current ratio for yellow bar
-    private Ball _ball;
+    private Ball[] _balls;
     
     void Start()
     {
@@ -25,26 +26,33 @@ public class MonsterHealthBar : MonoBehaviour
         }
         
         Ball[] balls = FindObjectsOfType<Ball>();
-        foreach (var ball in balls)
-        {
-            if (ball.active)
-            {
-                _ball = ball;
-                break;
-            }
-        }
+        _balls = balls;
     }
 
     void Update()
     {
         if (monster == null) return;
 
-        if (_ball == null)
+        if (_balls == null)
         {
             return;
         }
 
-        healthbar.SetActive(Vector3.Distance(_ball.gameObject.transform.position, gameObject.transform.position) < 1f);
+        float minDis = float.MaxValue;
+        
+        foreach (var ball in _balls.Where(b => b != null))
+        {
+            if (ball == null)
+            {
+                continue;
+            }
+            var dis = Vector3.Distance(ball.gameObject.transform.position, gameObject.transform.position);
+            if (dis < minDis)
+            {
+                minDis = dis;
+            }
+        }
+        healthbar.SetActive(minDis < 1f);
         
         // Calculate HP ratio
         float hpRatio = Mathf.Clamp01((float)monster.hp / monster.GetMaxHP());
