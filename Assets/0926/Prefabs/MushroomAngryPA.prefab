@@ -412,11 +412,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4708bb340623ce342b97f6917b356415, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  monsterID: horizontal1
-  hp: 5
-  point: 10
+  monsterID: Mushroom
+  hp: 30
+  point: 300
   gold: 10
-  maxHP: 10
+  maxHP: 30
   collisionType: 0
   healthBarPrefab: {fileID: 0}
 --- !u!114 &-3875256231063409359
