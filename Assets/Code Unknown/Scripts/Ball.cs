@@ -8,7 +8,7 @@ public class Ball : MonoBehaviour
     public int baseDamage = 1; // Basicdamage, adjust in inspector
 
     //True if the ball is in play, false if it's in the queue of future balls
-    bool active = false;
+    public bool active = false;
 
     void Start() {
         rb = GetComponent<Rigidbody>();

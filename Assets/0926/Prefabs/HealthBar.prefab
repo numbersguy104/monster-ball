@@ -275,6 +275,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   redBar: {fileID: 7296605247886699716}
   yellowBar: {fileID: 3224725364034018500}
+  healthbar: {fileID: 8503825472209400368}
   yellowBarSpeed: 0.5
 --- !u!114 &-8126174649608326479
 MonoBehaviour:

@@ -269,6 +269,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   redBar: {fileID: 4125121093347834752}
   yellowBar: {fileID: 8123762230816590720}
+  healthbar: {fileID: 3061964104237049204}
   yellowBarSpeed: 0.05
 --- !u!1 &1006438018938304421
 GameObject:
@@ -1089,6 +1090,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 615025cb00a4abb42ac2632676ae1409, type: 3}
+--- !u!1 &3061964104237049204 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8503825472209400368, guid: 615025cb00a4abb42ac2632676ae1409, type: 3}
+  m_PrefabInstance: {fileID: 6664729413151512388}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &4125121093347834752 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7296605247886699716, guid: 615025cb00a4abb42ac2632676ae1409, type: 3}
