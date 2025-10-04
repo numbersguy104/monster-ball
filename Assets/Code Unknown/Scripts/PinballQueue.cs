@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class PinballQueue : MonoBehaviour
@@ -32,6 +33,10 @@ public class PinballQueue : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.B))
         {
             AddBall();
+            if (FindObjectsByType<Ball>(FindObjectsSortMode.None).Length == 1)
+            {
+                NextBall();
+            }
         }
     }
 
