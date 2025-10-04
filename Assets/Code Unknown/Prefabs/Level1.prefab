@@ -841,6 +841,7 @@ MonoBehaviour:
   reactivationRange: 0.1
   maxCooldown: 1
   graphic: {fileID: 6707306669083807574}
+  graphicScale: 1.5
 --- !u!1 &1015117744096684101
 GameObject:
   m_ObjectHideFlags: 0
@@ -2464,7 +2465,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1438
+  m_VersionIndex: 1579
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -4693,7 +4694,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 6598
+  m_VersionIndex: 6739
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -5736,7 +5737,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 786
+  m_VersionIndex: 927
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -8480,7 +8481,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1602
+  m_VersionIndex: 1743
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -8899,7 +8900,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1626
+  m_VersionIndex: 1767
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -9393,7 +9394,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4384162772750659717, guid: c35db0c7a4116e24f8ac6309bca2ea27, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.11
+      value: -0.88
       objectReference: {fileID: 0}
     - target: {fileID: 4384162772750659717, guid: c35db0c7a4116e24f8ac6309bca2ea27, type: 3}
       propertyPath: m_LocalPosition.y
@@ -9401,7 +9402,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4384162772750659717, guid: c35db0c7a4116e24f8ac6309bca2ea27, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 25.6
+      value: 21.55
       objectReference: {fileID: 0}
     - target: {fileID: 4384162772750659717, guid: c35db0c7a4116e24f8ac6309bca2ea27, type: 3}
       propertyPath: m_LocalRotation.w
