@@ -21,6 +21,12 @@ public class BallLauncher : MonoBehaviour
     [Tooltip("Cooldown between uses of the launcher")]
     [SerializeField] float maxCooldown = 1.0f;
 
+    [Tooltip("The visual object that displays the launcher's charge")]
+    [SerializeField] GameObject graphic;
+
+    [Tooltip("Relative size of the graphic")]
+    [SerializeField] float graphicScale = 1.5f;
+
     float cooldown = 0.0f;
 
     //The current ball in play (including a ball still in the launcher). Null if there is none.
@@ -75,6 +81,16 @@ public class BallLauncher : MonoBehaviour
                     usable = false;
                 }
             }
+        }
+
+        //Update the launcher graphic if one exists
+        if (graphic != null)
+        {
+            Vector3 scale = graphic.transform.localScale;
+            scale.y = Mathf.Min(chargeTime, maxCharge) / maxCharge * graphicScale;
+            graphic.transform.localScale = scale;
+
+            graphic.transform.localPosition = new Vector3(0, 0, -scale.y / graphicScale);
         }
     }
 

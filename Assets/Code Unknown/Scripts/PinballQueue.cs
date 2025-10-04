@@ -9,30 +9,46 @@ public class PinballQueue : MonoBehaviour
     [Tooltip("Number of balls the player should start the game with")]
     [SerializeField] int startingBalls = 3;
 
-    [Tooltip("World coordinates for balls in the queue (specifically where the bottom-most ball should be)")]
+    [Tooltip("World coordinates for where to spawn the bottom-most ball")]
     [SerializeField] Vector3 spawnPosition = Vector3.zero;
 
     Queue<Ball> ballQueue = new Queue<Ball>();
 
     void Start()
     {
-        Vector3 nextSpawn = spawnPosition;
+        
         for (int i = 0; i < startingBalls; i++)
         {
-            //Hack to spawn the balls in a nice stack
-            //Instantiate the balls under the launcher, which should have the correct scale
-            GameObject ballObject = Instantiate(ballPrefab, FindAnyObjectByType<BallLauncher>().transform);
-
-            Ball ball = ballObject.GetComponent<Ball>();
-            ballQueue.Enqueue(ball);
-
-            ballObject.transform.position = nextSpawn;
-
-            //Translate the next ball's spawn position in the correct direction by the correct amount
-            nextSpawn += ballObject.transform.forward * ballObject.transform.lossyScale.x;
+            AddBall();
         }
 
         NextBall();
+    }
+
+    //TEMPORARY DEV TOOL:
+    //Add a keybind to manually add a new ball
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            AddBall();
+        }
+    }
+
+    public void AddBall()
+    {
+        //Hack: Use the ball launcher to get the board rotation and scale correct
+        Transform launcherTransform = FindAnyObjectByType<BallLauncher>().transform;
+
+        //Calculate the new ball's spawn position based on the number of current balls
+        Vector3 offsetPerBall = (launcherTransform.forward * launcherTransform.lossyScale.x);
+        Vector3 totalOffset = offsetPerBall * ballQueue.Count;
+        Vector3 position = spawnPosition + totalOffset;
+
+        //Instantiate the ball and add it to the queue
+        GameObject ballObject = Instantiate(ballPrefab, position, Quaternion.identity, launcherTransform);
+        Ball ball = ballObject.GetComponent<Ball>();
+        ballQueue.Enqueue(ball);
     }
     
     //Pop a ball from the queue and bring it into play
