@@ -842,6 +842,8 @@ MonoBehaviour:
   maxCooldown: 1
   graphic: {fileID: 6707306669083807574}
   graphicScale: 1.5
+  chargeAudioClip: {fileID: 8300000, guid: 4eaef0842fb7bd64db757397aec3243b, type: 3}
+  launchAudioClip: {fileID: 8300000, guid: 9e1a6ccb0abb9764287538b78c207348, type: 3}
 --- !u!1 &1015117744096684101
 GameObject:
   m_ObjectHideFlags: 0

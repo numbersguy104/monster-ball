@@ -27,8 +27,13 @@ public class BallLauncher : MonoBehaviour
     [Tooltip("Relative size of the graphic")]
     [SerializeField] float graphicScale = 1.5f;
 
-    float cooldown = 0.0f;
+    [Header("Audio Settings")]
+    [SerializeField] AudioClip chargeAudioClip;     // charge loop
+    [SerializeField] AudioClip launchAudioClip;
+    AudioSource audioSource;
 
+    float cooldown = 0.0f;
+   
     //The current ball in play (including a ball still in the launcher). Null if there is none.
     Ball currentBall = null;
 
@@ -43,6 +48,12 @@ public class BallLauncher : MonoBehaviour
     void Start()
     {
         chargeAction = InputSystem.actions.FindAction("Charge");
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+            audioSource = gameObject.AddComponent<AudioSource>();
+
+        audioSource.playOnAwake = false;
+        audioSource.loop = false;
     }
 
     void Update()
@@ -65,12 +76,25 @@ public class BallLauncher : MonoBehaviour
             if (usable && currentBall != null)
             {
                 bool chargeHeld = chargeAction.IsPressed();
+
                 if (chargeHeld)
                 {
+                    //start charge play once
+                    if (chargeTime <= 0.0f && chargeAudioClip != null)
+                    {
+                        audioSource.PlayOneShot(chargeAudioClip);
+                    }
+
                     chargeTime = chargeTime + Time.deltaTime;
                 }
                 else if (chargeTime > Mathf.Epsilon)
                 {
+                    // end loop stop audio
+                    if (launchAudioClip != null)
+                    {
+                        audioSource.PlayOneShot(launchAudioClip);
+                    }
+
                     //Force on the ball scales with charge time, up to the maximum
                     float power = Mathf.Min(chargeTime, maxCharge) / maxCharge * maxPower;
 

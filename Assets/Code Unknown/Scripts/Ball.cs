@@ -49,6 +49,8 @@ public class Ball : MonoBehaviour
             
             float accelFactor = rb.linearVelocity.magnitude;
             monster.TakeDamage(baseDamage, accelFactor);
+            //sound
+            SoundManager.Instance.PlaySFX(SoundManager.Instance.monsterCollide1);
         }
     }
 
