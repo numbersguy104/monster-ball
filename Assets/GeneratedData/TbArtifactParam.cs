@@ -15,13 +15,13 @@ namespace cfg
 {
 public partial class TbArtifactParam
 {
-    private readonly System.Collections.Generic.Dictionary<string, ArtifactParam> _dataMap;
+    private readonly System.Collections.Generic.Dictionary<int, ArtifactParam> _dataMap;
     private readonly System.Collections.Generic.List<ArtifactParam> _dataList;
     
     public TbArtifactParam(JSONNode _buf)
     {
         int count = _buf.Count;
-        _dataMap = new System.Collections.Generic.Dictionary<string, ArtifactParam>(count);
+        _dataMap = new System.Collections.Generic.Dictionary<int, ArtifactParam>(count);
         _dataList = new System.Collections.Generic.List<ArtifactParam>(count);
         
         foreach(JSONNode _ele in _buf.Children)
@@ -29,16 +29,16 @@ public partial class TbArtifactParam
             ArtifactParam _v;
             { if(!_ele.IsObject) { throw new SerializationException(); }  _v = global::cfg.ArtifactParam.DeserializeArtifactParam(_ele);  }
             _dataList.Add(_v);
-            _dataMap.Add(_v.ID, _v);
+            _dataMap.Add(_v.Id, _v);
         }
     }
 
-    public System.Collections.Generic.Dictionary<string, ArtifactParam> DataMap => _dataMap;
+    public System.Collections.Generic.Dictionary<int, ArtifactParam> DataMap => _dataMap;
     public System.Collections.Generic.List<ArtifactParam> DataList => _dataList;
 
-    public ArtifactParam GetOrDefault(string key) => _dataMap.TryGetValue(key, out var v) ? v : default;
-    public ArtifactParam Get(string key) => _dataMap[key];
-    public ArtifactParam this[string key] => _dataMap[key];
+    public ArtifactParam GetOrDefault(int key) => _dataMap.TryGetValue(key, out var v) ? v : default;
+    public ArtifactParam Get(int key) => _dataMap[key];
+    public ArtifactParam this[int key] => _dataMap[key];
 
     public void ResolveRef(Tables tables)
     {

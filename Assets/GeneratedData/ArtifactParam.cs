@@ -17,6 +17,7 @@ public sealed partial class ArtifactParam : Luban.BeanBase
 {
     public ArtifactParam(JSONNode _buf) 
     {
+        { if(!_buf["id"].IsNumber) { throw new SerializationException(); }  Id = _buf["id"]; }
         { if(!_buf["ID"].IsString) { throw new SerializationException(); }  ID = _buf["ID"]; }
         { if(!_buf["ArtifactName"].IsString) { throw new SerializationException(); }  ArtifactName = _buf["ArtifactName"]; }
         { if(!_buf["ArtifactPrice"].IsNumber) { throw new SerializationException(); }  ArtifactPrice = _buf["ArtifactPrice"]; }
@@ -36,6 +37,7 @@ public sealed partial class ArtifactParam : Luban.BeanBase
         return new ArtifactParam(_buf);
     }
 
+    public readonly int Id;
     public readonly string ID;
     public readonly string ArtifactName;
     public readonly int ArtifactPrice;
@@ -59,6 +61,7 @@ public sealed partial class ArtifactParam : Luban.BeanBase
     public override string ToString()
     {
         return "{ "
+        + "id:" + Id + ","
         + "ID:" + ID + ","
         + "ArtifactName:" + ArtifactName + ","
         + "ArtifactPrice:" + ArtifactPrice + ","

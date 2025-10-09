@@ -1,15 +1,37 @@
+using System;
+using System.Collections.Generic;
+using TMPro;
+using UI;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIPrepare : MonoBehaviour
 {
     public GameObject UIMain;
     public GameObject pinballMachine;
+    public GameObject pinballDisplayItemObj;
+    public Transform pinballDisplayRoot;
+    public GameObject pinballPrepareItemObj;
+    public Transform pinballPrepareRoot;
+    public TextMeshProUGUI ballName;
+    public TextMeshProUGUI ballDesc;
+    public Sprite notReady;
+    public Sprite ready;
+    public Image readyIcon;
 
     private GameObject _UIMainObj;
     private CameraControl _cameraControl;
+    private int _curID = 0;
+    private GameObject _curGameObj;
+    private List<int> _artifectList = new List<int>();
 
     public void OnBeginBtnClick()
     {
+        if (_artifectList.Count <= 0)
+        {
+            return;
+        }
+        
         if (_UIMainObj == null)
         {
             Canvas canvas = FindObjectOfType<Canvas>();
@@ -31,5 +53,80 @@ public class UIPrepare : MonoBehaviour
         }
         
         _cameraControl.BlendTo(true);
+    }
+
+    private void OnEnable()
+    {
+        SpawnDisplayItems();
+        RefreshStatus();
+    }
+
+    void RefreshStatus()
+    {
+        readyIcon.sprite = _artifectList.Count > 0 ? ready : notReady;
+        int count = pinballDisplayRoot.childCount;
+        for (int i = 0; i < count; i++)
+        {
+            var ball = pinballDisplayRoot.GetChild(i).gameObject;
+            if (ball.activeSelf)
+            {
+                var ballDisplay = ball.GetComponent<CommonIconDisplay>();
+                ballDisplay.OnClick();
+                break;
+            }
+
+            if (i == count - 1)
+            {
+                ballName.text = String.Empty;
+                ballDesc.text = String.Empty;
+            }
+        }
+    }
+    
+    private void SpawnDisplayItems()
+    {
+        int count = pinballDisplayRoot.childCount;
+        for (int i = count - 1; i >= 0; i--)
+        {
+            Destroy(pinballDisplayRoot.GetChild(i));
+        }
+
+        var balls = LubanTablesMgr.Instance.tables.TbArtifactParam;
+        for (int i = 0; i < balls.DataList.Count; i++)
+        {
+            var ball = Instantiate(pinballDisplayItemObj, pinballDisplayRoot);
+            var ballDisplay = ball.GetComponent<CommonIconDisplay>();
+            string desc = string.Format(balls.DataList[i].ArtifactDes, balls.DataList[i].ArtifactStat1);
+            ballDisplay.SetData(balls.DataList[i].ID, desc, balls.DataList[i].Id, ShowDesc);
+            if (i == 0)
+            {
+                ballDisplay.OnClick();
+            }
+        }
+    }
+
+    public void OnAddBtnClick()
+    {
+        AddItemToPrepare(_curID, _curGameObj);
+        RefreshStatus();
+    }
+    
+    private void AddItemToPrepare(int id, GameObject obj)
+    {
+        var balls = LubanTablesMgr.Instance.tables.TbArtifactParam;
+        var ballCfg = balls[id];
+        var ball = Instantiate(pinballPrepareItemObj, pinballPrepareRoot);
+        var iconPrepare = ball.GetComponent<CommonIconPrepare>();
+        iconPrepare.SetData(obj);
+        obj.SetActive(false);
+        _artifectList.Add(id);
+    }
+
+    private void ShowDesc(string name, string desc, int id, GameObject curGameObject)
+    {
+        ballName.text = name;
+        ballDesc.text = desc;
+        _curID = id;
+        _curGameObj = curGameObject;
     }
 }
