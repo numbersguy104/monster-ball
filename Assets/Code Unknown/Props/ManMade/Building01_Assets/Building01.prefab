@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 5781736065811878902}
   - component: {fileID: 9168832296081240659}
   - component: {fileID: 4311510487157275870}
-  - component: {fileID: 6211218852052308380}
   m_Layer: 0
   m_Name: Building01
   m_TagString: Untagged
@@ -27,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8243216774389418129}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.11421713, y: 0.69643474, z: -0.11465956, w: 0.6991325}
+  m_LocalRotation: {x: -0.114213645, y: 0.69643235, z: -0.11465704, w: 0.69913596}
   m_LocalPosition: {x: 4.126, y: 0.184, z: 1.166}
   m_LocalScale: {x: 0.08517867, y: 0.08517867, z: -0.09007645}
   m_ConstrainProportionsScale: 0
@@ -87,24 +86,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &6211218852052308380
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8243216774389418129}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 13.882506, y: 9.979144, z: 7.419789}
-  m_Center: {x: 0.91215837, y: 4.692618, z: 0.047367644}
