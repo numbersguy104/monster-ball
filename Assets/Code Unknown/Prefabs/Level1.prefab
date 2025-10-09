@@ -1562,6 +1562,7 @@ Transform:
   - {fileID: 1173833410751104109}
   - {fileID: 3512853049571956975}
   - {fileID: 1864963603882447327}
+  - {fileID: 275054969214024231}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2302033179685032982
@@ -1867,6 +1868,65 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &2512657597067220660
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 275054969214024231}
+  - component: {fileID: 5659051313828214268}
+  m_Layer: 0
+  m_Name: SoundManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &275054969214024231
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2512657597067220660}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.34599972, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2465929467873630328}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5659051313828214268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2512657597067220660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eba220eebe26b1c4d9edc63ac36bca32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flipper: {fileID: 8300000, guid: b5f3b20afa8b6ac4c95da178683b5b59, type: 3}
+  launcher: {fileID: 8300000, guid: 9e1a6ccb0abb9764287538b78c207348, type: 3}
+  genericCollide: {fileID: 8300000, guid: e28a7a2361ffed5478da62bbcbd5ab04, type: 3}
+  bumper1: {fileID: 8300000, guid: 4314881350028e8429957fa4fb04b56a, type: 3}
+  bumper2: {fileID: 8300000, guid: 4314881350028e8429957fa4fb04b56a, type: 3}
+  rolling: {fileID: 0}
+  monsterCollide1: {fileID: 0}
+  monsterCollide2: {fileID: 0}
+  pointAccumulate: {fileID: 8300000, guid: 658bdcb5c7b882346b07a3df4c03e73c, type: 3}
+  GoldAccumulate: {fileID: 8300000, guid: 6d913b2d0f1578d47bc3a4fcd6cb4846, type: 3}
+  uiClick: {fileID: 8300000, guid: 7965edf76952e23488393278863b5fe8, type: 3}
+  ballRefill: {fileID: 0}
+  upgradeSelect: {fileID: 0}
+  gameStart: {fileID: 0}
+  backgroundMusic: {fileID: 0}
 --- !u!1 &2807779046052210092
 GameObject:
   m_ObjectHideFlags: 0
