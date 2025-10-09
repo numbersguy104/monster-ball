@@ -2742,6 +2742,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3111888079687628358}
   - component: {fileID: 4456821746478294510}
+  - component: {fileID: 707787405033634934}
   m_Layer: 5
   m_Name: UIGameMain
   m_TagString: Untagged
@@ -2778,6 +2779,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7095896495804024942}
   m_CullTransparentMesh: 1
+--- !u!114 &707787405033634934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7095896495804024942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5af749eff8d210e439234e98f83e436a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UIShopPanel: {fileID: 7095896495804024942, guid: cef6c4f9a8c00354898a343d4e880a8e, type: 3}
+  reqPointsText: {fileID: 1561677266168856249}
 --- !u!1 &7141390521183445959
 GameObject:
   m_ObjectHideFlags: 0

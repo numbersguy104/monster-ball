@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Sounds/inGameSound.meta
 guid: 4c4a971c580d67d40831babe987f757a
+========
+guid: 57a10a37794e92c43831439564e20627
+>>>>>>>> 8fa3597fb097eac0dacdd3fdf69612d8775efff6:Assets/Sounds/AlienPlanet.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
