@@ -6939,6 +6939,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -18.627
       objectReference: {fileID: 0}
+    - target: {fileID: 6211218852052308380, guid: 272de87b86f0167479a3edde2f4cabee, type: 3}
+      propertyPath: m_Size.z
+      value: 6.376527
+      objectReference: {fileID: 0}
+    - target: {fileID: 6211218852052308380, guid: 272de87b86f0167479a3edde2f4cabee, type: 3}
+      propertyPath: m_Center.x
+      value: 0.9121586
+      objectReference: {fileID: 0}
+    - target: {fileID: 6211218852052308380, guid: 272de87b86f0167479a3edde2f4cabee, type: 3}
+      propertyPath: m_Center.y
+      value: 4.6926208
+      objectReference: {fileID: 0}
+    - target: {fileID: 6211218852052308380, guid: 272de87b86f0167479a3edde2f4cabee, type: 3}
+      propertyPath: m_Center.z
+      value: 0.56900615
+      objectReference: {fileID: 0}
     - target: {fileID: 8243216774389418129, guid: 272de87b86f0167479a3edde2f4cabee, type: 3}
       propertyPath: m_Name
       value: Building01
