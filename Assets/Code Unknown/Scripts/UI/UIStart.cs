@@ -15,6 +15,7 @@ namespace UI
             {
                 Canvas canvas = FindObjectOfType<Canvas>();
                 _UIPrepareObj = Instantiate(UIPrepare, canvas.transform, false);
+                
             }
             _UIPrepareObj.SetActive(true);
             gameObject.SetActive(false);

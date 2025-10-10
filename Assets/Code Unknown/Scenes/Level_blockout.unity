@@ -937,6 +937,38 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 410236648}
+    - target: {fileID: 5659051313828214268, guid: 5ff363c6951392b4d9356da565929aaf, type: 3}
+      propertyPath: flipper
+      value: 
+      objectReference: {fileID: 8300000, guid: 4c50e6b8e1d9f8e45aa4e9955a888971, type: 3}
+    - target: {fileID: 5659051313828214268, guid: 5ff363c6951392b4d9356da565929aaf, type: 3}
+      propertyPath: rolling
+      value: 
+      objectReference: {fileID: 8300000, guid: 8ea865e4692e0e544a106d74d821d509, type: 3}
+    - target: {fileID: 5659051313828214268, guid: 5ff363c6951392b4d9356da565929aaf, type: 3}
+      propertyPath: gameStart
+      value: 
+      objectReference: {fileID: 8300000, guid: 7507f8b0ff329e94d98da06c38cd06cd, type: 3}
+    - target: {fileID: 5659051313828214268, guid: 5ff363c6951392b4d9356da565929aaf, type: 3}
+      propertyPath: ballRefill
+      value: 
+      objectReference: {fileID: 8300000, guid: 8ea865e4692e0e544a106d74d821d509, type: 3}
+    - target: {fileID: 5659051313828214268, guid: 5ff363c6951392b4d9356da565929aaf, type: 3}
+      propertyPath: upgradeSelect
+      value: 
+      objectReference: {fileID: 8300000, guid: 7965edf76952e23488393278863b5fe8, type: 3}
+    - target: {fileID: 5659051313828214268, guid: 5ff363c6951392b4d9356da565929aaf, type: 3}
+      propertyPath: backgroundMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: 1f5f7dedce7336a41b9b10ce87693da9, type: 3}
+    - target: {fileID: 5659051313828214268, guid: 5ff363c6951392b4d9356da565929aaf, type: 3}
+      propertyPath: monsterCollide1
+      value: 
+      objectReference: {fileID: 8300000, guid: 393a875b03b87364088854d61f6b5089, type: 3}
+    - target: {fileID: 5659051313828214268, guid: 5ff363c6951392b4d9356da565929aaf, type: 3}
+      propertyPath: monsterCollide2
+      value: 
+      objectReference: {fileID: 8300000, guid: 393a875b03b87364088854d61f6b5089, type: 3}
     - target: {fileID: 7429843772369767232, guid: 5ff363c6951392b4d9356da565929aaf, type: 3}
       propertyPath: m_Mesh
       value: 

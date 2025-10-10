@@ -51,6 +51,7 @@ public class GameStatsManager : MonoBehaviour
         OnLevelUp.AddListener(LevelUp);
 
         LevelUp();
+        SoundManager.Instance.PlayBGM();
     }
 
     void Update()
@@ -97,7 +98,7 @@ public class GameStatsManager : MonoBehaviour
     public void AddGold(long amount)
     {
         gold += amount;
-        SoundManager.Instance.PlaySFX(SoundManager.Instance.GoldAccumulate);
+        SoundManager.Instance.PlaySFX(SoundManager.Instance.goldAccumulate);
     }
 
     public bool SpendGold(long amount)
