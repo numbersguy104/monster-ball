@@ -71,7 +71,7 @@ public class UIPrepare : MonoBehaviour
             if (ball.activeSelf)
             {
                 var ballDisplay = ball.GetComponent<CommonIconDisplay>();
-                ballDisplay.OnClick();
+                // ballDisplay.OnClick();
                 break;
             }
 
@@ -97,11 +97,11 @@ public class UIPrepare : MonoBehaviour
             var ball = Instantiate(pinballDisplayItemObj, pinballDisplayRoot);
             var ballDisplay = ball.GetComponent<CommonIconDisplay>();
             string desc = string.Format(balls.DataList[i].ArtifactDes, balls.DataList[i].ArtifactStat1);
-            ballDisplay.SetData(balls.DataList[i].ID, desc, balls.DataList[i].Id, ShowDesc);
-            if (i == 0)
-            {
-                ballDisplay.OnClick();
-            }
+            ballDisplay.SetData(balls.DataList[i].ID, desc, balls.DataList[i].Id, ClickAdd, ShowDesc);
+            // if (i == 0)
+            // {
+            //     ballDisplay.OnClick();
+            // }
         }
     }
 
@@ -113,20 +113,35 @@ public class UIPrepare : MonoBehaviour
     
     private void AddItemToPrepare(int id, GameObject obj)
     {
+        if (id < 0 || _artifectList.Contains(id))
+        {
+            return;
+        }
         var balls = LubanTablesMgr.Instance.tables.TbArtifactParam;
         var ballCfg = balls[id];
         var ball = Instantiate(pinballPrepareItemObj, pinballPrepareRoot);
         var iconPrepare = ball.GetComponent<CommonIconPrepare>();
-        iconPrepare.SetData(obj);
-        obj.SetActive(false);
+        iconPrepare.SetData(obj, id, ClickBack);
+        // obj.SetActive(false);
         _artifectList.Add(id);
     }
 
-    private void ShowDesc(string name, string desc, int id, GameObject curGameObject)
+    private void ShowDesc(string name, string desc)
     {
         ballName.text = name;
         ballDesc.text = desc;
+    }
+
+    private void ClickAdd(int id)
+    {
         _curID = id;
-        _curGameObj = curGameObject;
+        AddItemToPrepare(_curID, _curGameObj);
+        RefreshStatus();
+    }
+
+    private void ClickBack(int id)
+    {
+        _artifectList.RemoveAll(i => i == id);
+        RefreshStatus();
     }
 }
