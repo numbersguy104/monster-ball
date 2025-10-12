@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 6b6dfd77776c54a4781ec8cab4d87860
-timeCreated: 1486747800
+guid: 51d587eafcd13384bafd060c5bc7cb82
+timeCreated: 1486827101
 licenseType: Store
 NativeFormatImporter:
   userData: 
@@ -11,5 +11,5 @@ AssetOrigin:
   productId: 82913
   packageName: Sci-Fi Styled Modular Pack
   packageVersion: 1.1
-  assetPath: Assets/Sci-Fi Styled Modular Pack/Materials/white emision.mat
+  assetPath: Assets/Sci-Fi Styled Modular Pack/Materials/projector_warning.mat
   uploadId: 276156

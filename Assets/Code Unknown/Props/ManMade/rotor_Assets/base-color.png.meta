@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: ff91cef54bb04124b899f12176bee5d1
-timeCreated: 1487057245
+guid: dfcd4dcb2145c6d4f9da3e7654d22d9e
+timeCreated: 1486719712
 licenseType: Store
 TextureImporter:
   fileIDToRecycleName: {}
@@ -8,7 +8,7 @@ TextureImporter:
   mipmaps:
     mipMapMode: 0
     enableMipMap: 1
-    linearTexture: 1
+    linearTexture: 0
     correctGamma: 0
     fadeOut: 0
     borderMipMap: 0
@@ -16,7 +16,7 @@ TextureImporter:
     mipMapFadeDistanceEnd: 3
   bumpmap:
     convertToNormalMap: 0
-    externalNormalMap: 1
+    externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
   isReadable: 0
@@ -29,10 +29,10 @@ TextureImporter:
   textureFormat: -1
   maxTextureSize: 2048
   textureSettings:
-    filterMode: -1
-    aniso: -1
+    filterMode: 0
+    aniso: 0
     mipBias: -1
-    wrapMode: -1
+    wrapMode: 1
   nPOTScale: 1
   lightmap: 0
   rGBM: 0
@@ -46,7 +46,7 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
   alphaIsTransparency: 0
-  textureType: 1
+  textureType: 0
   buildTargetSettings: []
   spriteSheet:
     sprites: []
@@ -60,5 +60,5 @@ AssetOrigin:
   productId: 82913
   packageName: Sci-Fi Styled Modular Pack
   packageVersion: 1.1
-  assetPath: Assets/Sci-Fi Styled Modular Pack/Textures/base-color-normal.png
+  assetPath: Assets/Sci-Fi Styled Modular Pack/Textures/base-color.png
   uploadId: 276156
