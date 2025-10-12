@@ -10,7 +10,9 @@
     "BallSkillID": "",
     "BallPrice": 100,
     "BallShopChance": 80,
-    "AssetID": "Ball"
+    "AssetID": "Ball",
+    "BallDesc": "Normal pinball",
+    "BallIcon": ""
   },
   {
     "ID": "Fireball",
@@ -23,7 +25,9 @@
     "BallSkillID": "FireTrail",
     "BallPrice": 250,
     "BallShopChance": 60,
-    "AssetID": "Fireball"
+    "AssetID": "Fireball",
+    "BallDesc": "A pinball with fire",
+    "BallIcon": "Fireball"
   },
   {
     "ID": "Splitball",
@@ -36,7 +40,9 @@
     "BallSkillID": "Split",
     "BallPrice": 400,
     "BallShopChance": 40,
-    "AssetID": "Splitball"
+    "AssetID": "Splitball",
+    "BallDesc": "A pinball can split",
+    "BallIcon": "Splitball"
   },
   {
     "ID": "Spikeball",
@@ -49,7 +55,9 @@
     "BallSkillID": "Spikeblast",
     "BallPrice": 500,
     "BallShopChance": 35,
-    "AssetID": "Spikeball"
+    "AssetID": "Spikeball",
+    "BallDesc": "A pinball with spike?",
+    "BallIcon": "Spikeball"
   },
   {
     "ID": "Radiantball",
@@ -62,6 +70,8 @@
     "BallSkillID": "Radiantspark",
     "BallPrice": 300,
     "BallShopChance": 60,
-    "AssetID": "Radiantball"
+    "AssetID": "Radiantball",
+    "BallDesc": "A pinball with a special skill",
+    "BallIcon": "Radiantball"
   }
 ]
