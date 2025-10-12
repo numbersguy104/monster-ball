@@ -27,6 +27,7 @@ public sealed partial class BallParam : Luban.BeanBase
         { if(!_buf["BallSkillID"].IsString) { throw new SerializationException(); }  BallSkillID = _buf["BallSkillID"]; }
         { if(!_buf["BallPrice"].IsNumber) { throw new SerializationException(); }  BallPrice = _buf["BallPrice"]; }
         { if(!_buf["BallShopChance"].IsNumber) { throw new SerializationException(); }  BallShopChance = _buf["BallShopChance"]; }
+        { if(!_buf["AssetID"].IsString) { throw new SerializationException(); }  AssetID = _buf["AssetID"]; }
     }
 
     public static BallParam DeserializeBallParam(JSONNode _buf)
@@ -44,6 +45,7 @@ public sealed partial class BallParam : Luban.BeanBase
     public readonly string BallSkillID;
     public readonly int BallPrice;
     public readonly int BallShopChance;
+    public readonly string AssetID;
    
     public const int __ID__ = -1544017490;
     public override int GetTypeId() => __ID__;
@@ -65,6 +67,7 @@ public sealed partial class BallParam : Luban.BeanBase
         + "BallSkillID:" + BallSkillID + ","
         + "BallPrice:" + BallPrice + ","
         + "BallShopChance:" + BallShopChance + ","
+        + "AssetID:" + AssetID + ","
         + "}";
     }
 }

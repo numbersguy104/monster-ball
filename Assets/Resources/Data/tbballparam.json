@@ -9,7 +9,8 @@
     "BallSkillReq": 0,
     "BallSkillID": "",
     "BallPrice": 100,
-    "BallShopChance": 80
+    "BallShopChance": 80,
+    "AssetID": "Ball"
   },
   {
     "ID": "Fireball",
@@ -21,7 +22,8 @@
     "BallSkillReq": 500,
     "BallSkillID": "FireTrail",
     "BallPrice": 250,
-    "BallShopChance": 60
+    "BallShopChance": 60,
+    "AssetID": "Fireball"
   },
   {
     "ID": "Splitball",
@@ -33,7 +35,8 @@
     "BallSkillReq": 1000,
     "BallSkillID": "Split",
     "BallPrice": 400,
-    "BallShopChance": 40
+    "BallShopChance": 40,
+    "AssetID": "Splitball"
   },
   {
     "ID": "Spikeball",
@@ -45,7 +48,8 @@
     "BallSkillReq": 700,
     "BallSkillID": "Spikeblast",
     "BallPrice": 500,
-    "BallShopChance": 35
+    "BallShopChance": 35,
+    "AssetID": "Spikeball"
   },
   {
     "ID": "Radiantball",
@@ -56,7 +60,8 @@
     "BallSize": 2,
     "BallSkillReq": 0,
     "BallSkillID": "Radiantspark",
-    "BallPrice": 0,
-    "BallShopChance": 0
+    "BallPrice": 300,
+    "BallShopChance": 60,
+    "AssetID": "Radiantball"
   }
 ]

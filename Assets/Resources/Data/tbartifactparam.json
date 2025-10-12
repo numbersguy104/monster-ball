@@ -12,6 +12,66 @@
     "ArtifactStat2": 0,
     "ArtifactType3": "",
     "ArtifactStat3": 0,
-    "AritfactIcon": ""
+    "AritfactIcon": "Pheonixfeather"
+  },
+  {
+    "id": 1,
+    "ID": "Invester",
+    "ArtifactName": "Invester",
+    "ArtifactPrice": 50000,
+    "BallRelation": "",
+    "ArtifactDes": "Increase player's starting gold by {0}.",
+    "ArtifactType1": "Gold",
+    "ArtifactStat1": 200,
+    "ArtifactType2": "",
+    "ArtifactStat2": 0,
+    "ArtifactType3": "",
+    "ArtifactStat3": 0,
+    "AritfactIcon": "Invester"
+  },
+  {
+    "id": 2,
+    "ID": "Headhunter",
+    "ArtifactName": "Headhunter",
+    "ArtifactPrice": 75000,
+    "BallRelation": "",
+    "ArtifactDes": "Increase damage dealt towards monster by {0}%, but receive {1}% less point from all sources.",
+    "ArtifactType1": "Monsterdamage",
+    "ArtifactStat1": 50,
+    "ArtifactType2": "ReceivedPoint",
+    "ArtifactStat2": 30,
+    "ArtifactType3": "",
+    "ArtifactStat3": 0,
+    "AritfactIcon": "Headhunter"
+  },
+  {
+    "id": 3,
+    "ID": "Stargate",
+    "ArtifactName": "Stargate",
+    "ArtifactPrice": 40000,
+    "BallRelation": "",
+    "ArtifactDes": "Increase points granted by using the teleporter by {0}%.",
+    "ArtifactType1": "ReceivedPoint",
+    "ArtifactStat1": 100,
+    "ArtifactType2": "",
+    "ArtifactStat2": 0,
+    "ArtifactType3": "",
+    "ArtifactStat3": 0,
+    "AritfactIcon": "Stargate"
+  },
+  {
+    "id": 4,
+    "ID": "Splitfire",
+    "ArtifactName": "Splitfire",
+    "ArtifactPrice": 100000,
+    "BallRelation": "Splitball",
+    "ArtifactDes": "Reduce points required to trigger splitball's skill by {0}%.",
+    "ArtifactType1": "Skillrequirement",
+    "ArtifactStat1": 30,
+    "ArtifactType2": "",
+    "ArtifactStat2": 0,
+    "ArtifactType3": "",
+    "ArtifactStat3": 0,
+    "AritfactIcon": "Splitfire"
   }
 ]
