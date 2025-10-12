@@ -42,7 +42,7 @@ public class Flipper : MonoBehaviour
         if (flipPressed)
         {
             flipperProgress = Mathf.Min(flipperProgress + Time.deltaTime, flipTime);
-            SoundManager.Instance.PlaySFX(SoundManager.Instance.flipper);
+            SoundManager.Instance.PlaySFX(SoundManager.Instance.flipper, SoundManager.Instance.flipperVolume);
         }
         else
         {
