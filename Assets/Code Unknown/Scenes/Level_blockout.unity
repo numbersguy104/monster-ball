@@ -1627,6 +1627,38 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5178052513748757161, guid: 5ff363c6951392b4d9356da565929aaf, type: 3}
+      propertyPath: startingThreshold
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5178052513748757161, guid: 5ff363c6951392b4d9356da565929aaf, type: 3}
+      propertyPath: thresholdMultipliers.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5178052513748757161, guid: 5ff363c6951392b4d9356da565929aaf, type: 3}
+      propertyPath: thresholdIncreaseLevels.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5178052513748757161, guid: 5ff363c6951392b4d9356da565929aaf, type: 3}
+      propertyPath: 'thresholdMultipliers.Array.data[0]'
+      value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5178052513748757161, guid: 5ff363c6951392b4d9356da565929aaf, type: 3}
+      propertyPath: 'thresholdMultipliers.Array.data[1]'
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5178052513748757161, guid: 5ff363c6951392b4d9356da565929aaf, type: 3}
+      propertyPath: 'thresholdMultipliers.Array.data[2]'
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5178052513748757161, guid: 5ff363c6951392b4d9356da565929aaf, type: 3}
+      propertyPath: 'thresholdIncreaseLevels.Array.data[0]'
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5178052513748757161, guid: 5ff363c6951392b4d9356da565929aaf, type: 3}
+      propertyPath: 'thresholdIncreaseLevels.Array.data[1]'
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5925232030766424755, guid: 5ff363c6951392b4d9356da565929aaf, type: 3}
       propertyPath: m_Mesh
       value: 

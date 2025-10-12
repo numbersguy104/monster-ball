@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -13,13 +14,29 @@ public class GameStatsManager : MonoBehaviour
     public long totalDamage = 0;   // Total damage dealt
     public float dps = 0f;         // Damage per second (calculated at runtime)
 
-    [Header("Level Up Settings")]
+    /*
+     * Level Up Example:
+     *  Starting Threshold = 10000
+     *  Threshold Multipliers = {1.1, 1.25, 1.5}
+     *  Threshold Increase Levels = {5, 10}
+     * These values will cause the following behavior:
+     *  The first level-up (level 1) will happen at 10000 points.
+     *  The next four level-ups (levels 2-5) will multiply that by 1.1 each time:
+     *  11000, 12100, 13310, 14641.
+     *  After that, the next five level-ups (levels 6-10) will multiply by 1.25:
+     *  18301, 22876, 28595, 35743, 44678.
+     *  After level 10, the threshold will multiply by 1.5 per level for the rest of the game:
+     *  67017, 100525, 150787... (continuing forever)
+     */
 
-    //Queue of point thresholds for the player to reach
-    [Tooltip("Amonunts of points that will increase various stats and allow an upgrade when reached")]
-    [SerializeField] List<long> scoreThresholds = null;
+    [Header("LEVEL UP SETTINGS\nThe level mechanic uses two queues\nto track the amount of points\nneeded to level up for each level.\n\nThreshold Increase Levels is a list of level numbers,\nand Threshold Multipliers is a list of multipliers,\nthe first of which is initially\nset as the \"current multiplier.\"\n\nWhenever the score threshold is reached,\nit is multiplied by the current multiplier.\n\nThe current multiplier increases to its next value\nwhenever the current level reaches one of\nthe values in Threshold Increase Levels.\n\nSee the comments in GameStatsManager.cs\nfor an example.")]
+    [SerializeField] long startingThreshold = 10000;
+    [SerializeField] List<int> thresholdIncreaseLevels = null;
+    [SerializeField] List<float> thresholdMultipliers = null;
 
-    public long scoreThreshold; //Store the current threshold
+    long levelUpThreshold; //Store the amount of points required to level up
+    int level = 0;
+    
     public UnityEvent OnLevelUp; // Level-up event interface (can be bound externally)
 
     private float damageTimer = 0f;
@@ -38,19 +55,25 @@ public class GameStatsManager : MonoBehaviour
 
     void Start()
     {
-        //Initialize the score thresholds to a default if not set in the inspector
-        if (scoreThresholds == null || scoreThresholds.Count == 0)
+        levelUpThreshold = startingThreshold;
+
+        //Initialize the level-up thresholds to defaults if not set in the inspector
+        if (thresholdIncreaseLevels == null || thresholdIncreaseLevels.Count == 0)
         {
-            print("Warning: Point threshold queue (scoreThresholds) was not initialized! Initializing with a single multiplier of 10000. Source: GameStatsManager.cs on object " + gameObject.ToString());
-            scoreThresholds = new List<long>();
-            scoreThresholds.Add(10000L);
+            print("Warning: thresholdIncreaseLevels was not initialized! Initializing with no levels. Source: GameStatsManager.cs on object " + gameObject.ToString());
+            thresholdIncreaseLevels = new List<int>();
+        }
+        if (thresholdMultipliers == null || thresholdMultipliers.Count == 0)
+        {
+            print("Warning: thresholdMultipliers was not initialized! Initializing with a single multiplier of x2 per level. Source: GameStatsManager.cs on object " + gameObject.ToString());
+            thresholdMultipliers = new List<float>();
+            thresholdMultipliers.Add(2.0f);
         }
 
         PointsTracker pt = FindAnyObjectByType<PointsTracker>();
         OnLevelUp.AddListener(pt.LevelUp);
         OnLevelUp.AddListener(LevelUp);
 
-        LevelUp();
         SoundManager.Instance.PlayBGM();
     }
 
@@ -66,7 +89,7 @@ public class GameStatsManager : MonoBehaviour
         }
 
         // Check level-up condition
-        if (score >= scoreThreshold)
+        if (score >= levelUpThreshold)
         {
             OnLevelUp?.Invoke();
         }
@@ -74,16 +97,19 @@ public class GameStatsManager : MonoBehaviour
 
     void LevelUp()
     {
-        //Move on to the next threshold
-        if (scoreThresholds.Count > 0)
+        level++;
+
+        //Check if we're at a level where the threshold multiplier changes
+        if (thresholdIncreaseLevels.Count > 0 && thresholdIncreaseLevels[0] == level)
         {
-            scoreThreshold = scoreThresholds[0];
-            scoreThresholds.RemoveAt(0);
+            thresholdIncreaseLevels.RemoveAt(0);
+            thresholdMultipliers.RemoveAt(0);
         }
-        else
-        {
-            scoreThreshold = long.MaxValue;
-        }
+
+        //Increase the score threshold
+        levelUpThreshold = (long)(levelUpThreshold * thresholdMultipliers[0]);
+
+        print("DEBUG: Level " + level + " reached. Threshold is " + levelUpThreshold);
     }
 
     // ====== API Methods ======
