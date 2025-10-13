@@ -68,7 +68,7 @@ public class PointsTracker : MonoBehaviour
         //Default value for terrainPointMults if not initialized in inspector
         if (terrainPointMults == null || terrainPointMults.Count == 0)
         {
-            print("Warning: Terrain points multiplier queue (terrainPointMults) was not initialized! Initializing with a single multiplier of 1.0. Source: PointsTracker.cs on object " + gameObject.ToString());
+            Debug.LogWarning("Terrain points multiplier queue (terrainPointMults) was not initialized! Initializing with a single multiplier of 1.0. Source: PointsTracker.cs on object " + gameObject.ToString());
             terrainPointMults = new List<float>();
             terrainPointMults.Add(1.0f);
         }

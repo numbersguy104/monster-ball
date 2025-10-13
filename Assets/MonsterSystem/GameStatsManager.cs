@@ -60,12 +60,12 @@ public class GameStatsManager : MonoBehaviour
         //Initialize the level-up thresholds to defaults if not set in the inspector
         if (thresholdIncreaseLevels == null || thresholdIncreaseLevels.Count == 0)
         {
-            print("Warning: thresholdIncreaseLevels was not initialized! Initializing with no levels. Source: GameStatsManager.cs on object " + gameObject.ToString());
+            Debug.LogWarning("thresholdIncreaseLevels was not initialized! Initializing with no levels. Source: GameStatsManager.cs on object " + gameObject.ToString());
             thresholdIncreaseLevels = new List<int>();
         }
         if (thresholdMultipliers == null || thresholdMultipliers.Count == 0)
         {
-            print("Warning: thresholdMultipliers was not initialized! Initializing with a single multiplier of x2 per level. Source: GameStatsManager.cs on object " + gameObject.ToString());
+            Debug.LogWarning("thresholdMultipliers was not initialized! Initializing with a single multiplier of x2 per level. Source: GameStatsManager.cs on object " + gameObject.ToString());
             thresholdMultipliers = new List<float>();
             thresholdMultipliers.Add(2.0f);
         }

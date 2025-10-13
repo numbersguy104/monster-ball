@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using UnityEngine;
-
 public enum SpawnerCollisionBehavior { WithCollision, WithoutCollision, Mixed }
 
 [ExecuteAlways]
@@ -47,6 +46,8 @@ public class MonsterSpawner : MonoBehaviour
     void Update()
     {
         if (!Application.isPlaying) return;
+
+        if (spawnedInstance == null) hasSpawnedMonster = false;
 
         UpdateSpawnerMovement();
     }
