@@ -34,7 +34,7 @@ public class GameStatsManager : MonoBehaviour
     [SerializeField] List<int> thresholdIncreaseLevels = null;
     [SerializeField] List<float> thresholdMultipliers = null;
 
-    long levelUpThreshold; //Store the amount of points required to level up
+    public long levelUpThreshold; //Store the amount of points required to level up
     int level = 0;
     
     public UnityEvent OnLevelUp; // Level-up event interface (can be bound externally)
@@ -70,8 +70,6 @@ public class GameStatsManager : MonoBehaviour
             thresholdMultipliers.Add(2.0f);
         }
 
-        PointsTracker pt = FindAnyObjectByType<PointsTracker>();
-        OnLevelUp.AddListener(pt.LevelUp);
         OnLevelUp.AddListener(LevelUp);
 
         SoundManager.Instance.PlayBGM();
@@ -117,7 +115,6 @@ public class GameStatsManager : MonoBehaviour
     public void AddScore(long amount)
     {
         score += amount;
-        Debug.Log("Score: " + score);
         SoundManager.Instance.PlaySFX(SoundManager.Instance.pointAccumulate);
     }
 

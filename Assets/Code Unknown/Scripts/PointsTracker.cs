@@ -33,7 +33,7 @@ public class PointsTracker : MonoBehaviour
 
     //Queue of global multipliers for terrain points
     //Each level up (points threshold) will advance the queue
-    [Tooltip("Multipliers to terrain points; starts with the first value and advances the queue whenever a score threshold is reached")]
+    [Tooltip("Multipliers to terrain points; starts with the first value and advances to the next on each level up")]
     [SerializeField] List<float> terrainPointMults = null;
     //The current mulitplier value, starting with the first value in the queue
     float terrainPointsMult;
@@ -53,6 +53,10 @@ public class PointsTracker : MonoBehaviour
 
     void Start()
     {
+        //Use the GameStatsManager hook for tracking level ups
+        GameStatsManager gm = FindAnyObjectByType<GameStatsManager>();
+        gm.OnLevelUp.AddListener(LevelUp);
+
         pointsDictionary.Add(PointSources.Bumper, bumper);
         pointsDictionary.Add(PointSources.Spinner, spinnerBase);
         pointsDictionary.Add(PointSources.SwitchOne, oneSwitch);
@@ -104,7 +108,7 @@ public class PointsTracker : MonoBehaviour
     }
 
     //Advance the queue for multipliers (should be called after reaching a points threshold)
-    public void LevelUp()
+    void LevelUp()
     {
         if (terrainPointMults.Count > 0)
         {
