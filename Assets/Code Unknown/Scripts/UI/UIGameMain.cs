@@ -24,9 +24,6 @@ namespace UI
         {
             gm = GameStatsManager.Instance;
             //Use the GameStatsManager hook for tracking level ups
-            //Need to change the order of LevelUp()
-            gm.OnLevelUp.RemoveAllListeners();
-            gm.OnLevelUp.AddListener(gm.LevelUp);
             gm.OnLevelUp.AddListener(LevelUp);
 
             /*
@@ -36,9 +33,9 @@ namespace UI
             {
                 _thresholdPoint.Add(item.MilestoneReq);
             }
+
+            reqPointsText.text = _thresholdPoint[_level].ToString();
             */
-            reqPointsText.text = gm.levelUpThreshold.ToString();
-            
         }
 
         private void LevelUp()

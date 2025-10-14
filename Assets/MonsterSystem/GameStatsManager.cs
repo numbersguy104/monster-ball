@@ -51,14 +51,11 @@ public class GameStatsManager : MonoBehaviour
         }
         Instance = this;
         DontDestroyOnLoad(gameObject); // Persist globally
-        
-        var milestones = LubanTablesMgr.Instance.tables.TbMilestoneParam;
-        
-        levelUpThreshold = milestones.DataList[level].MilestoneReq <= 0 ? startingThreshold : milestones.DataList[level].MilestoneReq;
     }
 
     void Start()
     {
+        levelUpThreshold = startingThreshold;
 
         //Initialize the level-up thresholds to defaults if not set in the inspector
         if (thresholdIncreaseLevels == null || thresholdIncreaseLevels.Count == 0)
@@ -96,7 +93,7 @@ public class GameStatsManager : MonoBehaviour
         }
     }
 
-    public void LevelUp()
+    void LevelUp()
     {
         level++;
 
@@ -108,11 +105,8 @@ public class GameStatsManager : MonoBehaviour
         }
 
         //Increase the score threshold
-        // levelUpThreshold = (long)(levelUpThreshold * thresholdMultipliers[0]);
+        levelUpThreshold = (long)(levelUpThreshold * thresholdMultipliers[0]);
 
-        var milestones = LubanTablesMgr.Instance.tables.TbMilestoneParam;
-        levelUpThreshold = level < milestones.DataList.Count ? milestones.DataList[level].MilestoneReq : milestones.DataList[milestones.DataList.Count - 1].MilestoneReq;
-        
         print("DEBUG: Level " + level + " reached. Threshold is " + levelUpThreshold);
     }
 
