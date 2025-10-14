@@ -82,7 +82,7 @@ public class BallLauncher : MonoBehaviour
                     //start charge play once
                     if (chargeTime <= 0.0f && chargeAudioClip != null)
                     {
-                        audioSource.PlayOneShot(chargeAudioClip);
+                        SoundManager.Instance.PlaySFX(SoundManager.Instance.launcherLoop, SoundManager.Instance.launcherLoopVolume);
                     }
 
                     chargeTime = chargeTime + Time.deltaTime;
@@ -92,7 +92,7 @@ public class BallLauncher : MonoBehaviour
                     // end loop stop audio
                     if (launchAudioClip != null)
                     {
-                        audioSource.PlayOneShot(launchAudioClip);
+                         SoundManager.Instance.PlaySFX(SoundManager.Instance.launcher, SoundManager.Instance.launcherVolume);
                     }
 
                     //Force on the ball scales with charge time, up to the maximum

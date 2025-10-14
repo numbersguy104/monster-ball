@@ -7,6 +7,12 @@ public class Ball : MonoBehaviour
     [Header("Ball Damage Settings")]
     public int baseDamage = 1; // Basicdamage, adjust in inspector
 
+    [Header("Rolling Sound Settings")]
+    public float minSpeedForRolling = 0.5f; // lower than this speed wont play
+    public float maxRollingVolume = 1f;     // rolling max vol
+    public float volumeFadeSpeed = 5f;      // sound trasmitting speed
+    private AudioSource rollingSource;
+
     //True if the ball is in play, false if it's in the queue of future balls
     public bool active = false;
 
@@ -27,6 +33,26 @@ public class Ball : MonoBehaviour
                     transform.position.z - 0.1f
                 );
             }
+        }
+        if (!active)
+        {
+            if (rollingSource != null)
+                SoundManager.Instance.StopLoopingSFX(ref rollingSource);
+            return;
+        }
+        float speed = rb.linearVelocity.magnitude;
+
+        if (speed >= minSpeedForRolling)
+        {
+            SoundManager.Instance.PlayLoopingSFX(
+                SoundManager.Instance.rolling,
+                ref rollingSource,
+                SoundManager.Instance.rollingVolume
+            );
+        }
+        else
+        {
+            SoundManager.Instance.StopLoopingSFX(ref rollingSource);
         }
     }
 

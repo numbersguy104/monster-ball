@@ -121,13 +121,13 @@ public class GameStatsManager : MonoBehaviour
     public void AddScore(long amount)
     {
         score += amount;
-        SoundManager.Instance.PlaySFX(SoundManager.Instance.pointAccumulate);
+        SoundManager.Instance.PlaySFX(SoundManager.Instance.pointAccumulate,SoundManager.Instance.pointAccumulateVolume);
     }
 
     public void AddGold(long amount)
     {
         gold += amount;
-        SoundManager.Instance.PlaySFX(SoundManager.Instance.goldAccumulate);
+        SoundManager.Instance.PlaySFX(SoundManager.Instance.goldAccumulate,SoundManager.Instance.goldAccumulateVolume);
     }
 
     public bool SpendGold(long amount)

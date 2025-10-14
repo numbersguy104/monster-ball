@@ -11,6 +11,9 @@ public class SoundManager : MonoBehaviour
     public AudioClip launcher;
     [Range(0f, 1f)] public float launcherVolume = 1f;
 
+    public AudioClip launcherLoop;
+    [Range(0f, 1f)] public float launcherLoopVolume = 1f;
+
     public AudioClip genericCollide;
     [Range(0f, 1f)] public float genericCollideVolume = 1f;
 
@@ -84,6 +87,7 @@ public class SoundManager : MonoBehaviour
         if (backgroundMusic != null)
         {
             bgmSource.clip = backgroundMusic;
+            bgmSource.volume = bgmVolume;
             bgmSource.Play();
         }
     }
@@ -92,8 +96,40 @@ public class SoundManager : MonoBehaviour
     {
         bgmSource.Stop();
     }
+    //this is for looping and stop
+    public void PlayLoopingSFX(AudioClip clip, ref AudioSource source, float volume = 1f)
+    {
+        if (clip == null) return;
+
+        if (source == null)
+        {
+            source = gameObject.AddComponent<AudioSource>();
+            source.loop = true;
+        }
+
+        if (!source.isPlaying)
+        {
+            source.clip = clip;
+            source.volume = volume;
+            source.Play();
+        }
+        else
+        {
+            source.volume = volume; 
+        }
+    }
+
+    // stop loop
+    public void StopLoopingSFX(ref AudioSource source)
+    {
+        if (source != null && source.isPlaying)
+        {
+            source.Stop();
+        }
+    }
     public void PlayFlipper() => PlaySFX(flipper, flipperVolume);
     public void PlayLauncher() => PlaySFX(launcher, launcherVolume);
+    public void PlayLauncherLoop() => PlaySFX(launcherLoop, launcherLoopVolume);
     public void PlayGenericCollide() => PlaySFX(genericCollide, genericCollideVolume);
     public void PlayBumper1() => PlaySFX(bumper1, bumper1Volume);
     public void PlayBumper2() => PlaySFX(bumper2, bumper2Volume);
