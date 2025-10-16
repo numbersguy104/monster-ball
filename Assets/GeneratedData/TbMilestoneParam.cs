@@ -29,7 +29,7 @@ public partial class TbMilestoneParam
             MilestoneParam _v;
             { if(!_ele.IsObject) { throw new SerializationException(); }  _v = global::cfg.MilestoneParam.DeserializeMilestoneParam(_ele);  }
             _dataList.Add(_v);
-            _dataMap.Add(_v.MilestoneReq, _v);
+            _dataMap.Add(_v.Id, _v);
         }
     }
 

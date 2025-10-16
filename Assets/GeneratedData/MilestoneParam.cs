@@ -17,7 +17,10 @@ public sealed partial class MilestoneParam : Luban.BeanBase
 {
     public MilestoneParam(JSONNode _buf) 
     {
+        { if(!_buf["id"].IsNumber) { throw new SerializationException(); }  Id = _buf["id"]; }
         { if(!_buf["MilestoneReq"].IsNumber) { throw new SerializationException(); }  MilestoneReq = _buf["MilestoneReq"]; }
+        { if(!_buf["MilstoneLevel"].IsNumber) { throw new SerializationException(); }  MilstoneLevel = _buf["MilstoneLevel"]; }
+        { if(!_buf["MilestoneMulti"].IsNumber) { throw new SerializationException(); }  MilestoneMulti = _buf["MilestoneMulti"]; }
         { if(!_buf["MonHPInc"].IsNumber) { throw new SerializationException(); }  MonHPInc = _buf["MonHPInc"]; }
         { if(!_buf["MonPointInc"].IsNumber) { throw new SerializationException(); }  MonPointInc = _buf["MonPointInc"]; }
         { if(!_buf["TerPointInc"].IsNumber) { throw new SerializationException(); }  TerPointInc = _buf["TerPointInc"]; }
@@ -29,7 +32,10 @@ public sealed partial class MilestoneParam : Luban.BeanBase
         return new MilestoneParam(_buf);
     }
 
+    public readonly int Id;
     public readonly int MilestoneReq;
+    public readonly int MilstoneLevel;
+    public readonly float MilestoneMulti;
     public readonly float MonHPInc;
     public readonly float MonPointInc;
     public readonly float TerPointInc;
@@ -45,7 +51,10 @@ public sealed partial class MilestoneParam : Luban.BeanBase
     public override string ToString()
     {
         return "{ "
+        + "id:" + Id + ","
         + "MilestoneReq:" + MilestoneReq + ","
+        + "MilstoneLevel:" + MilstoneLevel + ","
+        + "MilestoneMulti:" + MilestoneMulti + ","
         + "MonHPInc:" + MonHPInc + ","
         + "MonPointInc:" + MonPointInc + ","
         + "TerPointInc:" + TerPointInc + ","

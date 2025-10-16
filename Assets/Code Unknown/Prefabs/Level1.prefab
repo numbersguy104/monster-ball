@@ -2645,6 +2645,8 @@ MonoBehaviour:
   flipperVolume: 1
   launcher: {fileID: 8300000, guid: 9e1a6ccb0abb9764287538b78c207348, type: 3}
   launcherVolume: 1
+  launcherLoop: {fileID: 0}
+  launcherLoopVolume: 1
   genericCollide: {fileID: 8300000, guid: e28a7a2361ffed5478da62bbcbd5ab04, type: 3}
   genericCollideVolume: 1
   bumper1: {fileID: 8300000, guid: 4314881350028e8429957fa4fb04b56a, type: 3}
@@ -2858,7 +2860,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ballPrefab: {fileID: 2386257326719710950, guid: acb7156a4df82454fbf98fbbdad97b1f, type: 3}
-  startingBalls: 3
+  startingBalls: 1
   spawnPosition: {x: 6.25, y: -0.3420203, z: -0.93969256}
 --- !u!114 &5178052513748757161
 MonoBehaviour:
@@ -6942,7 +6944,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59c106fd4de939f4181e5f677428a275, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  monsterCounts: 
+  monsterCounts: 030000000400000005000000
 --- !u!1 &7388409347574697936
 GameObject:
   m_ObjectHideFlags: 0
@@ -7710,8 +7712,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 8.739347, z: 9.488712}
+  m_Center: {x: 0, y: -3.8699393, z: -4.244523}
 --- !u!114 &8095772409500780211
 MonoBehaviour:
   m_ObjectHideFlags: 0

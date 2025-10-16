@@ -14,7 +14,13 @@ public class PinballQueue : MonoBehaviour
     [SerializeField] Vector3 spawnPosition = Vector3.zero;
 
     Queue<Ball> ballQueue = new Queue<Ball>();
-
+    public static PinballQueue Instance { get; private set; }
+    
+    private void Awake()
+    {
+        Instance = this;
+    }
+    
     void Start()
     {
         
@@ -40,7 +46,7 @@ public class PinballQueue : MonoBehaviour
         }
     }
 
-    public void AddBall()
+    public void AddBall(string ballName = null)
     {
         //Hack: Use the ball launcher to get the board rotation and scale correct
         Transform launcherTransform = FindAnyObjectByType<BallLauncher>().transform;
@@ -51,7 +57,25 @@ public class PinballQueue : MonoBehaviour
         Vector3 position = spawnPosition + totalOffset;
 
         //Instantiate the ball and add it to the queue
-        GameObject ballObject = Instantiate(ballPrefab, position, Quaternion.identity, launcherTransform);
+        GameObject ballObject;
+        if (string.IsNullOrEmpty(ballName))
+        {
+            ballObject = Instantiate(
+                ballPrefab, 
+                position, 
+                Quaternion.identity, 
+                launcherTransform
+                );
+        }
+        else
+        {
+            ballObject = Instantiate(
+                BattleCommonUtils.GetPinballPrefab(ballName), 
+                position, 
+                Quaternion.identity, 
+                launcherTransform
+                );
+        }
         Ball ball = ballObject.GetComponent<Ball>();
         ballQueue.Enqueue(ball);
     }

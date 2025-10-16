@@ -1,16 +1,72 @@
 [
   {
+    "id": 0,
     "MilestoneReq": 10000,
+    "MilstoneLevel": 1,
+    "MilestoneMulti": 1.5,
     "MonHPInc": 1,
     "MonPointInc": 1,
     "TerPointInc": 1,
     "MonsterCount": 3
   },
   {
-    "MilestoneReq": 25000,
+    "id": 1,
+    "MilestoneReq": 0,
+    "MilstoneLevel": 5,
+    "MilestoneMulti": 1.75,
     "MonHPInc": 1.25,
     "MonPointInc": 1.25,
     "TerPointInc": 1.25,
     "MonsterCount": 4
+  },
+  {
+    "id": 2,
+    "MilestoneReq": 0,
+    "MilstoneLevel": 10,
+    "MilestoneMulti": 2,
+    "MonHPInc": 0,
+    "MonPointInc": 0,
+    "TerPointInc": 0,
+    "MonsterCount": 0
+  },
+  {
+    "id": 3,
+    "MilestoneReq": 0,
+    "MilstoneLevel": 15,
+    "MilestoneMulti": 2.25,
+    "MonHPInc": 0,
+    "MonPointInc": 0,
+    "TerPointInc": 0,
+    "MonsterCount": 0
+  },
+  {
+    "id": 4,
+    "MilestoneReq": 0,
+    "MilstoneLevel": 17,
+    "MilestoneMulti": 2.35,
+    "MonHPInc": 0,
+    "MonPointInc": 0,
+    "TerPointInc": 0,
+    "MonsterCount": 0
+  },
+  {
+    "id": 5,
+    "MilestoneReq": 0,
+    "MilstoneLevel": 20,
+    "MilestoneMulti": 2.75,
+    "MonHPInc": 0,
+    "MonPointInc": 0,
+    "TerPointInc": 0,
+    "MonsterCount": 0
+  },
+  {
+    "id": 6,
+    "MilestoneReq": 0,
+    "MilstoneLevel": 25,
+    "MilestoneMulti": 3,
+    "MonHPInc": 0,
+    "MonPointInc": 0,
+    "TerPointInc": 0,
+    "MonsterCount": 0
   }
 ]

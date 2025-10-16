@@ -38,7 +38,7 @@ namespace UI
         {
             if (so != null)
             {
-                so.Refresh();
+                so.Refresh(RefreshStatus);
             }
         }
 

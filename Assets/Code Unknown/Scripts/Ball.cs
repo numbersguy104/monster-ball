@@ -87,7 +87,7 @@ public class Ball : MonoBehaviour
         BallLauncher launcher = FindAnyObjectByType<BallLauncher>();
         transform.position = launcher.transform.position;
         launcher.NewBall(this);
-
+        
         var light = GameObject.Find("Spot Light");
 
         light.transform.position = new Vector3(

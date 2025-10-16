@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using cfg;
 using TMPro;
 using UI;
 using UnityEngine;
@@ -32,6 +33,11 @@ public class UIPrepare : MonoBehaviour
             return;
         }
         
+        if (pinballMachine != null)
+        {
+            var machine = Instantiate(pinballMachine);
+        }
+        
         if (_UIMainObj == null)
         {
             Canvas canvas = FindObjectOfType<Canvas>();
@@ -40,12 +46,6 @@ public class UIPrepare : MonoBehaviour
         _UIMainObj.SetActive(true);
         gameObject.SetActive(false);
 
-
-        if (pinballMachine != null)
-        {
-            var machine = Instantiate(pinballMachine);
-        }
-
         // CameraControl.BlendTo(true);
         if (_cameraControl == null)
         {
@@ -53,6 +53,16 @@ public class UIPrepare : MonoBehaviour
         }
         
         _cameraControl.BlendTo(true);
+
+        List<ArtifactParam> afList = new List<ArtifactParam>();
+        var ap = LubanTablesMgr.Instance.tables.TbArtifactParam;
+        foreach (var i in _artifectList)
+        {
+            var artifact = ap[i];
+            afList.Add(artifact);
+        }
+
+        GameStatsManager.Instance.AddArtifacts(afList);
     }
 
     private void OnEnable()

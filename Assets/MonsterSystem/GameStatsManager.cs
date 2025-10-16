@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using cfg;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -13,6 +14,7 @@ public class GameStatsManager : MonoBehaviour
     public int killCount = 0;      // Number of monsters killed
     public long totalDamage = 0;   // Total damage dealt
     public float dps = 0f;         // Damage per second (calculated at runtime)
+    public List<ArtifactParam> artifacts = new List<ArtifactParam>();
 
     /*
      * Level Up Example:
@@ -55,7 +57,8 @@ public class GameStatsManager : MonoBehaviour
 
     void Start()
     {
-        levelUpThreshold = startingThreshold;
+        TbMilestoneParam tbMilestoneParam = LubanTablesMgr.Instance.tables.TbMilestoneParam;
+        levelUpThreshold = tbMilestoneParam.DataList[0].MilestoneReq;
 
         //Initialize the level-up thresholds to defaults if not set in the inspector
         if (thresholdIncreaseLevels == null || thresholdIncreaseLevels.Count == 0)
@@ -69,7 +72,7 @@ public class GameStatsManager : MonoBehaviour
             thresholdMultipliers = new List<float>();
             thresholdMultipliers.Add(2.0f);
         }
-
+        
         OnLevelUp.AddListener(LevelUp);
 
         SoundManager.Instance.PlayBGM();
@@ -105,7 +108,23 @@ public class GameStatsManager : MonoBehaviour
         }
 
         //Increase the score threshold
-        levelUpThreshold = (long)(levelUpThreshold * thresholdMultipliers[0]);
+        // levelUpThreshold = (long)(levelUpThreshold * thresholdMultipliers[0]);
+        //caculate point requirement
+        TbMilestoneParam tbMilestoneParam = LubanTablesMgr.Instance.tables.TbMilestoneParam;
+        float multi = 1f;
+        for (int i = 0; i < tbMilestoneParam.DataList.Count; i++)
+        {
+            if (level + 1 > tbMilestoneParam.DataList[i].MilstoneLevel)
+            {
+                multi = tbMilestoneParam.DataList[i].MilestoneMulti;
+            }
+            else
+            {
+                break;
+            }
+        }
+
+        levelUpThreshold = (long)(multi * levelUpThreshold);
 
         print("DEBUG: Level " + level + " reached. Threshold is " + levelUpThreshold);
     }
@@ -143,5 +162,11 @@ public class GameStatsManager : MonoBehaviour
     {
         totalDamage += amount;
         damageThisSecond += amount;
+    }
+
+    public void AddArtifacts(List<ArtifactParam> af)
+    {
+        artifacts.Clear();
+        artifacts.AddRange(af);
     }
 }

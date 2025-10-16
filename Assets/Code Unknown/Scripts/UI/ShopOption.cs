@@ -15,8 +15,12 @@ namespace UI
         public TextMeshProUGUI BallPrice;
         public Image BallIcon;
         public TextMeshProUGUI BallDesc;
+        public Button purchase;
         
         private List<int> ballWeights = new List<int>();
+        private int _price;
+        private string _ballName;
+        private Action _refresh;
         
         private void Awake()
         {
@@ -28,23 +32,28 @@ namespace UI
             }
         }
 
-        public void Refresh()
+        public void Refresh(Action refresh = null)
         {
             var index = GetRandomIndex(ballWeights);
             var ball = LubanTablesMgr.Instance.tables.TbBallParam.DataList[index];
-            string name = ball.ID;
-            int price = ball.BallPrice;
-            BallName.text = name;
-            BallPrice.text = price.ToString();
+            _ballName = ball.ID;
+            _price = ball.BallPrice;
+            BallName.text = _ballName;
+            BallPrice.text = _price.ToString();
 
             string balldesc = ball.BallDesc;
             BallDesc.text = balldesc;
 
             string iconName = ball.BallIcon;
             UICommonUtils.LoadBallIcon(BallIcon, iconName);
+
+            if (refresh != null)
+            {
+                _refresh = refresh;
+            }
         }
-        
-        public static int GetRandomIndex(List<int> weights)
+
+        private static int GetRandomIndex(List<int> weights)
         {
             int total = weights.Sum();
             int rand = new Random().Next(0, total);
@@ -56,6 +65,18 @@ namespace UI
                     return i;
             }
             return weights.Count - 1;
+        }
+
+        public void OnClickPurchase()
+        {
+            if (GameStatsManager.Instance.gold < _price)
+            {
+                return;
+            }
+
+            GameStatsManager.Instance.SpendGold(_price);
+            PinballQueue.Instance.AddBall(_ballName);
+            Refresh();
         }
     }
 }
