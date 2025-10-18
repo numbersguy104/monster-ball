@@ -1,3 +1,10 @@
+/*
+ * DEPRECATED
+ * Use BasicBall or another class inherited from AbstractBall instead.
+ */
+
+/*
+
 using System;
 using UnityEngine;
 
@@ -146,3 +153,5 @@ public class Ball : MonoBehaviour
         return rb.linearVelocity;
     }
 }
+
+*/

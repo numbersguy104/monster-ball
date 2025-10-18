@@ -30,7 +30,7 @@ public class Teleporter : MonoBehaviour
     {
         if (!onCooldown)
         {
-            Ball ball = other.gameObject.GetComponent<Ball>();
+            AbstractBall ball = other.gameObject.GetComponent<AbstractBall>();
             if (ball != null)
             {
                 pairedTeleporter.GetComponent<Teleporter>().Disable();
@@ -43,7 +43,7 @@ public class Teleporter : MonoBehaviour
 
     void OnTriggerExit(Collider other)
     {
-        Ball ball = other.gameObject.GetComponent<Ball>();
+        AbstractBall ball = other.gameObject.GetComponent<AbstractBall>();
         if (ball != null)
         {
             onCooldown = false;

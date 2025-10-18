@@ -35,7 +35,7 @@ public class BallLauncher : MonoBehaviour
     float cooldown = 0.0f;
    
     //The current ball in play (including a ball still in the launcher). Null if there is none.
-    Ball currentBall = null;
+    AbstractBall currentBall = null;
 
     //Whether the launcher can be used to launch the CurrentBall's game object.
     bool usable = true;
@@ -118,7 +118,7 @@ public class BallLauncher : MonoBehaviour
         }
     }
 
-    public void NewBall(Ball ball)
+    public void NewBall(AbstractBall ball)
     {
         currentBall = ball;
         usable = true;

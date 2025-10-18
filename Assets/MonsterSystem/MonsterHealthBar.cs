@@ -15,7 +15,7 @@ public class MonsterHealthBar : MonoBehaviour
     private MonsterController monster;
     private float targetFill = 1f; // Target ratio for red bar
     private float yellowFill = 1f; // Current ratio for yellow bar
-    private Ball[] _balls;
+    private AbstractBall[] _balls;
     
     void Start()
     {
@@ -24,8 +24,8 @@ public class MonsterHealthBar : MonoBehaviour
         {
             Debug.LogWarning("MonsterHealthBar: MonsterController not found!");
         }
-        
-        Ball[] balls = FindObjectsOfType<Ball>();
+
+        AbstractBall[] balls = FindObjectsOfType<AbstractBall>();
         _balls = balls;
     }
 

@@ -67,7 +67,7 @@ public class GroupSwitch : MonoBehaviour
     {
         if (lit == false)
         {
-            Ball ball = other.gameObject.GetComponent<Ball>();
+            AbstractBall ball = other.gameObject.GetComponent<AbstractBall>();
             if (ball != null)
             {
                 pt.AddTerrainPoints(PointsTracker.PointSources.SwitchOne);
@@ -78,7 +78,7 @@ public class GroupSwitch : MonoBehaviour
 
     void OnTriggerExit(Collider other)
     {
-        Ball ball = other.gameObject.GetComponent<Ball>();
+        AbstractBall ball = other.gameObject.GetComponent<AbstractBall>();
         if (ball != null)
         {
             //If any switch in the group is off, do nothing

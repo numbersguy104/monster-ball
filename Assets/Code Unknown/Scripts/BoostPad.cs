@@ -8,7 +8,7 @@ public class BoostPad : MonoBehaviour
 
     void OnTriggerStay(Collider other)
     {
-        Ball ball = other.gameObject.GetComponent<Ball>();
+        AbstractBall ball = other.gameObject.GetComponent<AbstractBall>();
         if (ball != null)
         {
             //Don't slow down the ball if it's going faster

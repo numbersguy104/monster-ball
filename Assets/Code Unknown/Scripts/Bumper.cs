@@ -17,7 +17,7 @@ public class Bumper: MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
         GameObject other = collision.gameObject;
-        Ball ball = other.GetComponent<Ball>();
+        AbstractBall ball = other.GetComponent<AbstractBall>();
         if (ball != null)
         {
             //Get the direction of the collision

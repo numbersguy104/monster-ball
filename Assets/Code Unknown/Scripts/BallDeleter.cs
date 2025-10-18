@@ -11,7 +11,7 @@ public class BallDeleter : MonoBehaviour
 
     void OnTriggerExit(Collider other)
     {
-        Ball ball = other.gameObject.GetComponent<Ball>();
+        AbstractBall ball = other.gameObject.GetComponent<AbstractBall>();
         if (ball != null)
         {
             Destroy(ball.gameObject);

@@ -13,7 +13,7 @@ public class PinballQueue : MonoBehaviour
     [Tooltip("World coordinates for where to spawn the bottom-most ball")]
     [SerializeField] Vector3 spawnPosition = Vector3.zero;
 
-    Queue<Ball> ballQueue = new Queue<Ball>();
+    Queue<AbstractBall> ballQueue = new Queue<AbstractBall>();
     public static PinballQueue Instance { get; private set; }
     
     private void Awake()
@@ -39,7 +39,7 @@ public class PinballQueue : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.B))
         {
             AddBall();
-            if (FindObjectsByType<Ball>(FindObjectsSortMode.None).Length == 1)
+            if (FindObjectsByType<AbstractBall>(FindObjectsSortMode.None).Length == 1)
             {
                 NextBall();
             }
@@ -76,7 +76,7 @@ public class PinballQueue : MonoBehaviour
                 launcherTransform
                 );
         }
-        Ball ball = ballObject.GetComponent<Ball>();
+        AbstractBall ball = ballObject.GetComponent<AbstractBall>();
         ballQueue.Enqueue(ball);
     }
     
@@ -85,7 +85,7 @@ public class PinballQueue : MonoBehaviour
     {
         if (ballQueue.Count > 0)
         {
-            Ball newBall = ballQueue.Dequeue();
+            AbstractBall newBall = ballQueue.Dequeue();
             newBall.Activate();
         }
         else

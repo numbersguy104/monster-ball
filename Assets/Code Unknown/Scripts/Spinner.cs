@@ -67,7 +67,7 @@ public class Spinner : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Ball ball = other.gameObject.GetComponent<Ball>();
+        AbstractBall ball = other.gameObject.GetComponent<AbstractBall>();
         if (ball != null)
         {
             Vector3 ballVelocity = ball.GetVelocity();
