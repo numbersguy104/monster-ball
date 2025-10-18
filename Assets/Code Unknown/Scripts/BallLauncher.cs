@@ -123,4 +123,15 @@ public class BallLauncher : MonoBehaviour
         currentBall = ball;
         usable = true;
     }
+    // VFx charging and launching 
+    void StartCharging()
+    {
+        VFXManager.Instance.PlayVFX(VFXManager.Instance.vfx_Implosion_01, transform.position, Quaternion.identity);
+    }
+
+    void LaunchBall()
+    {
+        VFXManager.Instance.PlayVFX(VFXManager.Instance.Electro_hit, transform.position, Quaternion.identity);
+    }
+
 }
