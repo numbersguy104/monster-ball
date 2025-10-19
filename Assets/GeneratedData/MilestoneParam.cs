@@ -18,13 +18,14 @@ public sealed partial class MilestoneParam : Luban.BeanBase
     public MilestoneParam(JSONNode _buf) 
     {
         { if(!_buf["id"].IsNumber) { throw new SerializationException(); }  Id = _buf["id"]; }
-        { if(!_buf["MilestoneReq"].IsNumber) { throw new SerializationException(); }  MilestoneReq = _buf["MilestoneReq"]; }
         { if(!_buf["MilstoneLevel"].IsNumber) { throw new SerializationException(); }  MilstoneLevel = _buf["MilstoneLevel"]; }
+        { if(!_buf["MilestoneReq"].IsNumber) { throw new SerializationException(); }  MilestoneReq = _buf["MilestoneReq"]; }
+        { if(!_buf["MonsterKillReq"].IsNumber) { throw new SerializationException(); }  MonsterKillReq = _buf["MonsterKillReq"]; }
         { if(!_buf["MilestoneMulti"].IsNumber) { throw new SerializationException(); }  MilestoneMulti = _buf["MilestoneMulti"]; }
         { if(!_buf["MonHPInc"].IsNumber) { throw new SerializationException(); }  MonHPInc = _buf["MonHPInc"]; }
         { if(!_buf["MonPointInc"].IsNumber) { throw new SerializationException(); }  MonPointInc = _buf["MonPointInc"]; }
         { if(!_buf["TerPointInc"].IsNumber) { throw new SerializationException(); }  TerPointInc = _buf["TerPointInc"]; }
-        { if(!_buf["MonsterCount"].IsNumber) { throw new SerializationException(); }  MonsterCount = _buf["MonsterCount"]; }
+        { if(!_buf["MonsterSpawnSCount"].IsNumber) { throw new SerializationException(); }  MonsterSpawnSCount = _buf["MonsterSpawnSCount"]; }
     }
 
     public static MilestoneParam DeserializeMilestoneParam(JSONNode _buf)
@@ -33,13 +34,14 @@ public sealed partial class MilestoneParam : Luban.BeanBase
     }
 
     public readonly int Id;
-    public readonly int MilestoneReq;
     public readonly int MilstoneLevel;
+    public readonly int MilestoneReq;
+    public readonly int MonsterKillReq;
     public readonly float MilestoneMulti;
     public readonly float MonHPInc;
     public readonly float MonPointInc;
     public readonly float TerPointInc;
-    public readonly float MonsterCount;
+    public readonly float MonsterSpawnSCount;
    
     public const int __ID__ = 589185309;
     public override int GetTypeId() => __ID__;
@@ -52,13 +54,14 @@ public sealed partial class MilestoneParam : Luban.BeanBase
     {
         return "{ "
         + "id:" + Id + ","
-        + "MilestoneReq:" + MilestoneReq + ","
         + "MilstoneLevel:" + MilstoneLevel + ","
+        + "MilestoneReq:" + MilestoneReq + ","
+        + "MonsterKillReq:" + MonsterKillReq + ","
         + "MilestoneMulti:" + MilestoneMulti + ","
         + "MonHPInc:" + MonHPInc + ","
         + "MonPointInc:" + MonPointInc + ","
         + "TerPointInc:" + TerPointInc + ","
-        + "MonsterCount:" + MonsterCount + ","
+        + "MonsterSpawnSCount:" + MonsterSpawnSCount + ","
         + "}";
     }
 }
