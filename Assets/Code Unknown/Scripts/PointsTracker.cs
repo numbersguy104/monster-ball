@@ -81,7 +81,10 @@ public class PointsTracker : MonoBehaviour
     {
         //score += amount;
         GameStatsManager.Instance.AddScore(amount);
-        GetComponent<TextMeshProUGUI>().text = GameStatsManager.Instance.score.ToString();
+        GetComponent<TextMeshProUGUI>().text = GameStatsManager.Instance.score.ToString() + 
+                                               "\n" + 
+                                               ((float)GameStatsManager.Instance.score * 100 / (float)GameStatsManager.Instance.levelUpThreshold).ToString("F1") + 
+                                               "%";
     }
 
     //Add base points associated with a given type of terrain

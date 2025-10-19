@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using UI;
+using UnityEngine;
 
 // Runtime script for a single monster (HP, loot, collision settings, movement behavior anchor)
 public class MonsterController : MonoBehaviour
@@ -125,6 +126,8 @@ public class MonsterController : MonoBehaviour
     {
         // TODO: add death VFX/logic, notify spawn manager that this spawn point is free
         GameStatsManager.Instance.AddGold(gold);
+        var mainUI = FindAnyObjectByType<UIGameMain>();
+        mainUI.Refresh();
         GameStatsManager.Instance.AddScore(point);
         GameStatsManager.Instance.AddKill();
         // Test

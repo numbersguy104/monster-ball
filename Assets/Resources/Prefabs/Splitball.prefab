@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 4035109334116148654}
   - component: {fileID: 3969556818170124048}
   - component: {fileID: 5845497746302978519}
-  - component: {fileID: 4312675923283387234}
+  - component: {fileID: 5041146181020676692}
   m_Layer: 0
   m_Name: Splitball
   m_TagString: Untagged
@@ -171,7 +171,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!114 &4312675923283387234
+--- !u!114 &5041146181020676692
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -180,13 +180,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1246918758467806929}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4fa04748101d0b04bae1c48ccbf22610, type: 3}
+  m_Script: {fileID: 11500000, guid: 8468f3af782455b44826e1e8cd8e3bb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseDamage: 1
-  minSpeedForRolling: 0.5
-  maxRollingVolume: 1
-  volumeFadeSpeed: 5
   active: 0
 --- !u!1 &6645664141258863785
 GameObject:

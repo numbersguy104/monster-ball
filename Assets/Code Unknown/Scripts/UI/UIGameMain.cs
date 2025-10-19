@@ -14,6 +14,10 @@ namespace UI
     {
         public GameObject UIShopPanel;
         public TextMeshProUGUI reqPointsText;
+        public TextMeshProUGUI gold;
+        public TextMeshProUGUI killsReq;
+        public TextMeshProUGUI killsLvl;
+        public TextMeshProUGUI killsAll;
         public Image[] Artifects;
         
         //private List<int> _thresholdPoint = new List<int>();
@@ -29,6 +33,7 @@ namespace UI
             gm.OnLevelUp.AddListener(LevelUp);
             long threshold = gm.levelUpThreshold;
             reqPointsText.text = threshold.ToString();
+            killsReq.text = gm.killReq.ToString();
             /*
             _thresholdPoint.Clear();
             var milestones = LubanTablesMgr.Instance.tables.TbMilestoneParam;
@@ -62,6 +67,9 @@ namespace UI
         {
             long threshold = gm.levelUpThreshold;
             reqPointsText.text = threshold.ToString();
+            killsReq.text = gm.killReq.ToString();
+            killsLvl.text = gm.lvlKills.ToString();
+            killsAll.text = gm.killCount.ToString();
 
             OpenShopPanel();
         }
@@ -90,6 +98,13 @@ namespace UI
                 _UIShopPanel.SetActive(true);
             }
             Time.timeScale = 0f;
+        }
+
+        public void Refresh()
+        {
+            gold.text = GameStatsManager.Instance.gold.ToString();
+            killsLvl.text = gm.lvlKills.ToString();
+            killsAll.text = gm.killCount.ToString();
         }
     }
 }

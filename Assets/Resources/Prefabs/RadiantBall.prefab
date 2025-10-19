@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 4903893168801840659}
   - component: {fileID: 1586482923249143642}
   - component: {fileID: 645812241100496883}
-  - component: {fileID: 5403922978739052715}
+  - component: {fileID: 7128685263453545059}
   m_Layer: 0
   m_Name: RadiantBall
   m_TagString: Untagged
@@ -171,7 +171,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!114 &5403922978739052715
+--- !u!114 &7128685263453545059
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -180,13 +180,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 402653652035122985}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4fa04748101d0b04bae1c48ccbf22610, type: 3}
+  m_Script: {fileID: 11500000, guid: 8468f3af782455b44826e1e8cd8e3bb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseDamage: 1
-  minSpeedForRolling: 0.5
-  maxRollingVolume: 1
-  volumeFadeSpeed: 5
   active: 0
 --- !u!1 &6077659103910092628
 GameObject:

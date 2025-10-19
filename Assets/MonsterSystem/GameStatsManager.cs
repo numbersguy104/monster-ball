@@ -37,6 +37,8 @@ public class GameStatsManager : MonoBehaviour
     [SerializeField] List<float> thresholdMultipliers = null;
 
     public long levelUpThreshold; //Store the amount of points required to level up
+    public int killReq;
+    public int lvlKills;
     int level = 0;
     
     public UnityEvent OnLevelUp; // Level-up event interface (can be bound externally)
@@ -59,6 +61,8 @@ public class GameStatsManager : MonoBehaviour
     {
         TbMilestoneParam tbMilestoneParam = LubanTablesMgr.Instance.tables.TbMilestoneParam;
         levelUpThreshold = tbMilestoneParam.DataList[0].MilestoneReq;
+        killReq = tbMilestoneParam.DataList[0].MonsterKillReq;
+        
 
         //Initialize the level-up thresholds to defaults if not set in the inspector
         if (thresholdIncreaseLevels == null || thresholdIncreaseLevels.Count == 0)
@@ -90,7 +94,7 @@ public class GameStatsManager : MonoBehaviour
         }
 
         // Check level-up condition
-        if (score >= levelUpThreshold)
+        if (score >= levelUpThreshold && lvlKills >= killReq)
         {
             OnLevelUp?.Invoke();
         }
@@ -127,6 +131,9 @@ public class GameStatsManager : MonoBehaviour
         levelUpThreshold = (long)(multi * levelUpThreshold);
 
         print("DEBUG: Level " + level + " reached. Threshold is " + levelUpThreshold);
+        
+        killReq = tbMilestoneParam.DataList[level].MonsterKillReq;
+        lvlKills = 0;
     }
 
     // ====== API Methods ======
@@ -156,6 +163,7 @@ public class GameStatsManager : MonoBehaviour
     public void AddKill()
     {
         killCount++;
+        lvlKills++;
     }
 
     public void AddDamage(long amount)
