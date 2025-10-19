@@ -386,6 +386,11 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!4 &398533200 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2465929467873630328, guid: 5ff363c6951392b4d9356da565929aaf, type: 3}
+  m_PrefabInstance: {fileID: 2650122027123882046}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &402577201
 GameObject:
   m_ObjectHideFlags: 0
@@ -1211,6 +1216,60 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!1 &1481263492
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1481263493}
+  - component: {fileID: 1481263494}
+  m_Layer: 0
+  m_Name: VFXManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1481263493
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1481263492}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.2797736, y: -4.8669624, z: 5.55833}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 398533200}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1481263494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1481263492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a16fe58f25b0434daff504f52ff6dca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vfx_Implosion_01: {fileID: 6441873369525384307, guid: 5b5ef60cca93b444fbc8e6c7d7c50108, type: 3}
+  Electro_hit: {fileID: 2965222256817593503, guid: 1bf57c4b63cf64f4c89422ac0d474668, type: 3}
+  vfx_Impact_01: {fileID: 3077343761403282166, guid: a24f2fabb6e277b40a5d8524cfd46e2a, type: 3}
+  vfx_Shockwave_01: {fileID: 9080140021571130472, guid: 36b66fc1d9f09e44a9eb86f1796c8055, type: 3}
+  CFXR2_Sparks_Rain: {fileID: 763799897560185588, guid: 798157bad7358b04499c9d71cd3c0d9b, type: 3}
+  CFXR2_Firewall_A: {fileID: 8172849020266659018, guid: 2af5562ce69fc2d448481a1587a352a5, type: 3}
+  HitMonsterEffects: []
+  Star_hit: {fileID: 4535006216103734310, guid: 677d5bcef8cd75344a747d51cdd1103f, type: 3}
+  CFXR3_Hit_Ice_B_Air: {fileID: 5112403345868107898, guid: 6f34ef0d986e9db4199cf75805f79753, type: 3}
+  Sparks_flashing_white: {fileID: 6007584933065334475, guid: 1e62b32898437cf43a226b5913d33fe5, type: 3}
 --- !u!43 &2125642789
 Mesh:
   m_ObjectHideFlags: 0
@@ -1468,6 +1527,46 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1428988680}
+    - target: {fileID: 5659051313828214268, guid: 5ff363c6951392b4d9356da565929aaf, type: 3}
+      propertyPath: flipper
+      value: 
+      objectReference: {fileID: 8300000, guid: 4c50e6b8e1d9f8e45aa4e9955a888971, type: 3}
+    - target: {fileID: 5659051313828214268, guid: 5ff363c6951392b4d9356da565929aaf, type: 3}
+      propertyPath: rolling
+      value: 
+      objectReference: {fileID: 8300000, guid: d88bf8c96d071b645adb04b363a84257, type: 3}
+    - target: {fileID: 5659051313828214268, guid: 5ff363c6951392b4d9356da565929aaf, type: 3}
+      propertyPath: launcher
+      value: 
+      objectReference: {fileID: 8300000, guid: 1e2103cd99b853340a2470420de96a93, type: 3}
+    - target: {fileID: 5659051313828214268, guid: 5ff363c6951392b4d9356da565929aaf, type: 3}
+      propertyPath: gameStart
+      value: 
+      objectReference: {fileID: 8300000, guid: 71c399677c9b1124898da8f35af8ba09, type: 3}
+    - target: {fileID: 5659051313828214268, guid: 5ff363c6951392b4d9356da565929aaf, type: 3}
+      propertyPath: ballRefill
+      value: 
+      objectReference: {fileID: 8300000, guid: c6bef3fa7f73cc3429dc53dda988dce0, type: 3}
+    - target: {fileID: 5659051313828214268, guid: 5ff363c6951392b4d9356da565929aaf, type: 3}
+      propertyPath: launcherLoop
+      value: 
+      objectReference: {fileID: 8300000, guid: 4eaef0842fb7bd64db757397aec3243b, type: 3}
+    - target: {fileID: 5659051313828214268, guid: 5ff363c6951392b4d9356da565929aaf, type: 3}
+      propertyPath: upgradeSelect
+      value: 
+      objectReference: {fileID: 8300000, guid: 7965edf76952e23488393278863b5fe8, type: 3}
+    - target: {fileID: 5659051313828214268, guid: 5ff363c6951392b4d9356da565929aaf, type: 3}
+      propertyPath: backgroundMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: 7507f8b0ff329e94d98da06c38cd06cd, type: 3}
+    - target: {fileID: 5659051313828214268, guid: 5ff363c6951392b4d9356da565929aaf, type: 3}
+      propertyPath: monsterCollide1
+      value: 
+      objectReference: {fileID: 8300000, guid: 128cbda9d2a1274488cab882b6eeaebe, type: 3}
+    - target: {fileID: 5659051313828214268, guid: 5ff363c6951392b4d9356da565929aaf, type: 3}
+      propertyPath: monsterCollide2
+      value: 
+      objectReference: {fileID: 8300000, guid: a24444cb781771b4999595ae68784caa, type: 3}
     - target: {fileID: 5925232030766424755, guid: 5ff363c6951392b4d9356da565929aaf, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -1494,7 +1593,10 @@ PrefabInstance:
       objectReference: {fileID: 1428988680}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 2465929467873630328, guid: 5ff363c6951392b4d9356da565929aaf, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1481263493}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ff363c6951392b4d9356da565929aaf, type: 3}
 --- !u!1660057539 &9223372036854775807
