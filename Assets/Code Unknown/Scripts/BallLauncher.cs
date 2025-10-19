@@ -28,8 +28,8 @@ public class BallLauncher : MonoBehaviour
     [SerializeField] float graphicScale = 1.5f;
 
     [Header("Audio Settings")]
-    [SerializeField] AudioClip chargeAudioClip;     // charge loop
-    [SerializeField] AudioClip launchAudioClip;
+    [SerializeField] AudioSource chargeSource;   
+    [SerializeField] AudioSource launchSource;
     AudioSource audioSource;
 
     GameObject chargeVfxInstance;
@@ -82,10 +82,10 @@ public class BallLauncher : MonoBehaviour
                 if (chargeHeld)
                 {
                     //start charge play once
-                    if (chargeTime <= 0.0f && chargeAudioClip != null)
+                    if (chargeTime <= 0.0f && chargeSource != null && !chargeSource.isPlaying)
                     {
-                        SoundManager.Instance.PlaySFX(SoundManager.Instance.launcherLoop, SoundManager.Instance.launcherLoopVolume);
-                        StartCharging();
+                        chargeSource.volume = SoundManager.Instance.launcherLoopVolume;
+                        chargeSource.Play();
                     }
 
                     chargeTime = chargeTime + Time.deltaTime;
@@ -93,9 +93,10 @@ public class BallLauncher : MonoBehaviour
                 else if (chargeTime > Mathf.Epsilon)
                 {
                     // end loop stop audio
-                    if (launchAudioClip != null)
+                    if (chargeSource != null )
                     {
-                         SoundManager.Instance.PlaySFX(SoundManager.Instance.launcher, SoundManager.Instance.launcherVolume);
+                        launchSource.volume = SoundManager.Instance.launcherVolume;
+                        launchSource.Play();
                     }
 
                     //Force on the ball scales with charge time, up to the maximum
@@ -117,7 +118,6 @@ public class BallLauncher : MonoBehaviour
             Vector3 scale = graphic.transform.localScale;
             scale.y = Mathf.Min(chargeTime, maxCharge) / maxCharge * graphicScale;
             graphic.transform.localScale = scale;
-
             graphic.transform.localPosition = new Vector3(0, 0, -scale.y / graphicScale);
         }
     }

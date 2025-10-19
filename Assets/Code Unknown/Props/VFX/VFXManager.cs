@@ -11,7 +11,7 @@ public class VFXManager : MonoBehaviour
     public GameObject vfx_Shockwave_01;
     public GameObject CFXR2_Sparks_Rain;
     public GameObject CFXR2_Firewall_A;
-    public GameObject[] HitMonsterEffects;     // 随机播放红色撞击 or Ground Hit
+    public GameObject[] HitMonsterEffects;     
     public GameObject Star_hit;
     public GameObject CFXR3_Hit_Ice_B_Air;
     public GameObject Sparks_flashing_white;
@@ -26,7 +26,7 @@ public class VFXManager : MonoBehaviour
     {
         if (prefab == null) return;
         GameObject fx = Instantiate(prefab, pos, rot);
-        Destroy(fx, 5f); // 自动销毁
+        Destroy(fx, 5f); 
     }
 
     public void PlayRandom(GameObject[] prefabs, Vector3 pos, Quaternion rot)

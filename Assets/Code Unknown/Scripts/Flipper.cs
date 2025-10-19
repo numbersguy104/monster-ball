@@ -22,6 +22,7 @@ public class Flipper : MonoBehaviour
     InputAction flipAction;
     Rigidbody rb;
 
+    bool wasPressedLastFrame = false;
 
     void Start()
     {
@@ -39,10 +40,13 @@ public class Flipper : MonoBehaviour
     void Update()
     {
         bool flipPressed = flipAction.IsPressed();
+        if (flipPressed && !wasPressedLastFrame)
+        {
+            SoundManager.Instance.PlayFlipper();
+        }
         if (flipPressed)
         {
             flipperProgress = Mathf.Min(flipperProgress + Time.deltaTime, flipTime);
-            SoundManager.Instance.PlaySFX(SoundManager.Instance.flipper, SoundManager.Instance.flipperVolume);
         }
         else
         {
@@ -57,5 +61,6 @@ public class Flipper : MonoBehaviour
 
         Quaternion rotation = startingRotation * Quaternion.Euler(0.0f, degrees, 0.0f);
         rb.MoveRotation(rotation);
+        wasPressedLastFrame = flipPressed;
     }
 }

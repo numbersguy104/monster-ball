@@ -4,59 +4,68 @@ public class SoundManager : MonoBehaviour
 {
     public static SoundManager Instance;
 
-    [Header("SFX Clips")]
-    public AudioClip flipper;
+    [Header("SFX Sources")]
+    public AudioSource flipperSource;
     [Range(0f, 1f)] public float flipperVolume = 1f;
 
-    public AudioClip launcher;
+    public AudioSource launcherSource;
     [Range(0f, 1f)] public float launcherVolume = 1f;
 
-    public AudioClip launcherLoop;
+    public AudioSource launcherLoopSource;
     [Range(0f, 1f)] public float launcherLoopVolume = 1f;
 
-    public AudioClip genericCollide;
+    public AudioSource genericCollideSource;
     [Range(0f, 1f)] public float genericCollideVolume = 1f;
 
-    public AudioClip bumper1;
+    public AudioSource bumper1Source;
     [Range(0f, 1f)] public float bumper1Volume = 1f;
 
-    public AudioClip bumper2;
+    public AudioSource bumper2Source;
     [Range(0f, 1f)] public float bumper2Volume = 1f;
 
-    public AudioClip rolling;
+    public AudioSource rollingSource;
     [Range(0f, 1f)] public float rollingVolume = 1f;
 
-    public AudioClip monsterCollide1;
+    public AudioSource monsterCollide1Source;
     [Range(0f, 1f)] public float monsterCollide1Volume = 1f;
 
-    public AudioClip monsterCollide2;
+    public AudioSource monsterCollide2Source;
     [Range(0f, 1f)] public float monsterCollide2Volume = 1f;
 
-    public AudioClip pointAccumulate;
+    public AudioSource pointAccumulateSource;
     [Range(0f, 1f)] public float pointAccumulateVolume = 1f;
 
-    public AudioClip goldAccumulate;
+    public AudioSource goldAccumulateSource;
     [Range(0f, 1f)] public float goldAccumulateVolume = 1f;
 
-    public AudioClip uiClick;
+    public AudioSource uiClickSource;
     [Range(0f, 1f)] public float uiClickVolume = 1f;
 
-    public AudioClip ballRefill;
+    public AudioSource ballRefillSource;
     [Range(0f, 1f)] public float ballRefillVolume = 1f;
 
-    public AudioClip upgradeSelect;
+    public AudioSource upgradeSelectSource;
     [Range(0f, 1f)] public float upgradeSelectVolume = 1f;
 
-    public AudioClip gameStart;
+    public AudioSource gameStartSource;
     [Range(0f, 1f)] public float gameStartVolume = 1f;
 
-    [Header("BGM")]
-    public AudioClip backgroundMusic;
+    public AudioSource spinnerSource;
+    [Range(0f, 1f)] public float spinnerVolume = 1f;
+
+    public AudioSource bossDamagerSource;
+    [Range(0f, 1f)] public float bossDamagerVolume = 1f;
+
+    public AudioSource teleporterSource;
+    [Range(0f, 1f)] public float teleporterVolume = 1f;
+
+    [Header("BGM Source")]
+    public AudioSource bgmSource;
+    [Range(0f, 1f)] public float BGMVolume = 1f;
+
+    [Header("Master Volume")]
+    [Range(0f, 1f)] public float sfxVolume = 1f;
     [Range(0f, 1f)] public float bgmVolume = 0.5f;
-
-
-    private AudioSource sfxSource;
-    private AudioSource bgmSource;
 
     void Awake()
     {
@@ -64,11 +73,6 @@ public class SoundManager : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
-
-            sfxSource = gameObject.AddComponent<AudioSource>();
-            bgmSource = gameObject.AddComponent<AudioSource>();
-
-            bgmSource.loop = true;
         }
         else
         {
@@ -76,70 +80,71 @@ public class SoundManager : MonoBehaviour
         }
     }
 
-    public void PlaySFX(AudioClip clip, float volume = 1f)
+    void Start()
     {
-        if (clip != null)
-            sfxSource.PlayOneShot(clip, volume);
+        UpdateAllVolumes();
     }
+
+
+    public void PlaySFX(AudioSource source, float volume)
+    {
+        if (source == null || source.clip == null) return;
+        source.volume = volume * sfxVolume;
+        source.PlayOneShot(source.clip, source.volume);
+    }
+
+
+    public void PlayLoopingSFX(AudioSource source, float volume)
+    {
+        if (source == null || source.clip == null) return;
+        source.volume = volume * sfxVolume;
+        source.loop = true;
+        if (!source.isPlaying) source.Play();
+    }
+
+    public void StopLoopingSFX(AudioSource source)
+    {
+        if (source != null && source.isPlaying) source.Stop();
+    }
+
 
     public void PlayBGM()
     {
-        if (backgroundMusic != null)
-        {
-            bgmSource.clip = backgroundMusic;
-            bgmSource.volume = bgmVolume;
-            bgmSource.Play();
-        }
+        if (bgmSource == null || bgmSource.clip == null) return;
+        bgmSource.volume = bgmVolume;
+        bgmSource.loop = true;
+        if (!bgmSource.isPlaying) bgmSource.Play();
     }
 
     public void StopBGM()
     {
-        bgmSource.Stop();
+        if (bgmSource != null) bgmSource.Stop();
     }
-    //this is for looping and stop
-    public void PlayLoopingSFX(AudioClip clip, ref AudioSource source, float volume = 1f)
+
+    public void UpdateAllVolumes()
     {
-        if (clip == null) return;
+  
+        if (bgmSource != null) bgmSource.volume = bgmVolume;
 
-        if (source == null)
-        {
-            source = gameObject.AddComponent<AudioSource>();
-            source.loop = true;
-        }
-
-        if (!source.isPlaying)
-        {
-            source.clip = clip;
-            source.volume = volume;
-            source.Play();
-        }
-        else
-        {
-            source.volume = volume; 
-        }
     }
 
-    // stop loop
-    public void StopLoopingSFX(ref AudioSource source)
-    {
-        if (source != null && source.isPlaying)
-        {
-            source.Stop();
-        }
-    }
-    public void PlayFlipper() => PlaySFX(flipper, flipperVolume);
-    public void PlayLauncher() => PlaySFX(launcher, launcherVolume);
-    public void PlayLauncherLoop() => PlaySFX(launcherLoop, launcherLoopVolume);
-    public void PlayGenericCollide() => PlaySFX(genericCollide, genericCollideVolume);
-    public void PlayBumper1() => PlaySFX(bumper1, bumper1Volume);
-    public void PlayBumper2() => PlaySFX(bumper2, bumper2Volume);
-    public void PlayRolling() => PlaySFX(rolling, rollingVolume);
-    public void PlayMonsterCollide1() => PlaySFX(monsterCollide1, monsterCollide1Volume);
-    public void PlayMonsterCollide2() => PlaySFX(monsterCollide2, monsterCollide2Volume);
-    public void PlayPointAccumulate() => PlaySFX(pointAccumulate, pointAccumulateVolume);
-    public void PlayGoldAccumulate() => PlaySFX(goldAccumulate, goldAccumulateVolume);
-    public void PlayUIClick() => PlaySFX(uiClick, uiClickVolume);
-    public void PlayBallRefill() => PlaySFX(ballRefill, ballRefillVolume);
-    public void PlayUpgradeSelect() => PlaySFX(upgradeSelect, upgradeSelectVolume);
-    public void PlayGameStart() => PlaySFX(gameStart, gameStartVolume);
+    public void PlayFlipper() => PlaySFX(flipperSource, flipperVolume);
+    public void PlayLauncher() => PlaySFX(launcherSource, launcherVolume);
+    public void PlayLauncherLoop() => PlayLoopingSFX(launcherLoopSource, launcherLoopVolume);
+    public void StopLauncherLoop() => StopLoopingSFX(launcherLoopSource);
+    public void PlayGenericCollide() => PlaySFX(genericCollideSource, genericCollideVolume);
+    public void PlayBumper1() => PlaySFX(bumper1Source, bumper1Volume);
+    public void PlayBumper2() => PlaySFX(bumper2Source, bumper2Volume);
+    public void PlayRolling() => PlaySFX(rollingSource, rollingVolume);
+    public void PlayMonsterCollide1() => PlaySFX(monsterCollide1Source, monsterCollide1Volume);
+    public void PlayMonsterCollide2() => PlaySFX(monsterCollide2Source, monsterCollide2Volume);
+    public void PlayPointAccumulate() => PlaySFX(pointAccumulateSource, pointAccumulateVolume);
+    public void PlayGoldAccumulate() => PlaySFX(goldAccumulateSource, goldAccumulateVolume);
+    public void PlayUIClick() => PlaySFX(uiClickSource, uiClickVolume);
+    public void PlayBallRefill() => PlaySFX(ballRefillSource, ballRefillVolume);
+    public void PlayUpgradeSelect() => PlaySFX(upgradeSelectSource, upgradeSelectVolume);
+    public void PlayGameStart() => PlaySFX(gameStartSource, gameStartVolume);
+    public void PlaySpinner() => PlaySFX(spinnerSource, spinnerVolume);
+    public void PlayBossDamager() => PlaySFX(bossDamagerSource, bossDamagerVolume);
+    public void PlayTeleporter() => PlaySFX(teleporterSource, teleporterVolume);
 }
