@@ -130,14 +130,14 @@ public class BallLauncher : MonoBehaviour
     // VFx charging and launching 
     void StartCharging()
     {
-
-        VFXManager.Instance.PlayVFX(VFXManager.Instance.vfx_Implosion_01, transform.position, Quaternion.identity);
+        //Commented out until vfx_Implosion_01 is set (this was causing errors) ~Joseph
+        //VFXManager.Instance.PlayVFX(VFXManager.Instance.vfx_Implosion_01, transform.position, Quaternion.identity);
     }
 
     void LaunchBall()
     {
-        VFXManager.Instance.PlayVFX(VFXManager.Instance.Electro_hit, transform.position, Quaternion.identity);
-
+        //Commented out until Electro_hit is set (this was causing errors) ~Joseph
+        //VFXManager.Instance.PlayVFX(VFXManager.Instance.Electro_hit, transform.position, Quaternion.identity);
     }
 
 }
