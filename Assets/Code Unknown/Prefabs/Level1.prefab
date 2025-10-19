@@ -741,7 +741,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1866
+  m_VersionIndex: 1869
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -1488,7 +1488,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1372
+  m_VersionIndex: 1375
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -2018,7 +2018,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1866
+  m_VersionIndex: 1869
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -2211,6 +2211,7 @@ Transform:
   - {fileID: 994567491891451887}
   - {fileID: 2926535331336226209}
   - {fileID: 7531451989618174647}
+  - {fileID: 3004390414841147785}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2302033179685032982
@@ -2641,38 +2642,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eba220eebe26b1c4d9edc63ac36bca32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flipper: {fileID: 8300000, guid: b5f3b20afa8b6ac4c95da178683b5b59, type: 3}
-  flipperVolume: 1
-  launcher: {fileID: 8300000, guid: 9e1a6ccb0abb9764287538b78c207348, type: 3}
-  launcherVolume: 1
-  launcherLoop: {fileID: 0}
-  launcherLoopVolume: 1
+  flipper: {fileID: 8300000, guid: ab71af7a005e54443af7cf34de7a0060, type: 3}
+  flipperVolume: 0.046
+  launcher: {fileID: 8300000, guid: 1e2103cd99b853340a2470420de96a93, type: 3}
+  launcherVolume: 0.26
+  launcherLoop: {fileID: 8300000, guid: 2b6de085db68cec46be2573093143c92, type: 3}
+  launcherLoopVolume: 0.221
   genericCollide: {fileID: 8300000, guid: e28a7a2361ffed5478da62bbcbd5ab04, type: 3}
-  genericCollideVolume: 1
-  bumper1: {fileID: 8300000, guid: 4314881350028e8429957fa4fb04b56a, type: 3}
-  bumper1Volume: 1
-  bumper2: {fileID: 8300000, guid: 4314881350028e8429957fa4fb04b56a, type: 3}
-  bumper2Volume: 1
-  rolling: {fileID: 0}
-  rollingVolume: 1
-  monsterCollide1: {fileID: 0}
-  monsterCollide1Volume: 1
-  monsterCollide2: {fileID: 0}
-  monsterCollide2Volume: 1
-  pointAccumulate: {fileID: 8300000, guid: 658bdcb5c7b882346b07a3df4c03e73c, type: 3}
-  pointAccumulateVolume: 1
-  goldAccumulate: {fileID: 0}
-  goldAccumulateVolume: 1
-  uiClick: {fileID: 8300000, guid: 7965edf76952e23488393278863b5fe8, type: 3}
-  uiClickVolume: 1
-  ballRefill: {fileID: 0}
-  ballRefillVolume: 1
-  upgradeSelect: {fileID: 0}
-  upgradeSelectVolume: 1
-  gameStart: {fileID: 0}
-  gameStartVolume: 1
-  backgroundMusic: {fileID: 0}
-  bgmVolume: 0.5
+  genericCollideVolume: 0.259
+  bumper1: {fileID: 8300000, guid: 934c28c71189dfb41829834f6e17ff5a, type: 3}
+  bumper1Volume: 0.843
+  bumper2: {fileID: 8300000, guid: 3fbabfb345ad15f4492a6b70c8f7d815, type: 3}
+  bumper2Volume: 0.828
+  rolling: {fileID: 8300000, guid: d88bf8c96d071b645adb04b363a84257, type: 3}
+  rollingVolume: 0.279
+  monsterCollide1: {fileID: 8300000, guid: d873eb1625f2a1f4aa0ebba942fb4a76, type: 3}
+  monsterCollide1Volume: 0.895
+  monsterCollide2: {fileID: 8300000, guid: a24444cb781771b4999595ae68784caa, type: 3}
+  monsterCollide2Volume: 0.884
+  pointAccumulate: {fileID: 8300000, guid: dfa313d42f647434989ca3942dadf483, type: 3}
+  pointAccumulateVolume: 0.083
+  goldAccumulate: {fileID: 8300000, guid: 8fcf5a2eff064aa4da714d1762874c18, type: 3}
+  goldAccumulateVolume: 0.395
+  uiClick: {fileID: 8300000, guid: 21ec64545f478694092f82925cb47350, type: 3}
+  uiClickVolume: 0.381
+  ballRefill: {fileID: 8300000, guid: 8166cd890ff1ebe49ad604e4037f2600, type: 3}
+  ballRefillVolume: 0.392
+  upgradeSelect: {fileID: 8300000, guid: 7965edf76952e23488393278863b5fe8, type: 3}
+  upgradeSelectVolume: 0.384
+  gameStart: {fileID: 8300000, guid: 71c399677c9b1124898da8f35af8ba09, type: 3}
+  gameStartVolume: 0.32
+  backgroundMusic: {fileID: 8300000, guid: f5e30cc839c1e214192acbea5814c15d, type: 3}
+  bgmVolume: 0.116
 --- !u!1 &2963675040338990752
 GameObject:
   m_ObjectHideFlags: 0
@@ -2886,6 +2887,60 @@ MonoBehaviour:
   OnLevelUp:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &3167181143856919756
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3004390414841147785}
+  - component: {fileID: 1764674660633967574}
+  m_Layer: 0
+  m_Name: VFXManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3004390414841147785
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3167181143856919756}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.2797736, y: -4.8669624, z: 5.55833}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2465929467873630328}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1764674660633967574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3167181143856919756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a16fe58f25b0434daff504f52ff6dca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vfx_Implosion_01: {fileID: 6441873369525384307, guid: 5b5ef60cca93b444fbc8e6c7d7c50108, type: 3}
+  Electro_hit: {fileID: 2965222256817593503, guid: 1bf57c4b63cf64f4c89422ac0d474668, type: 3}
+  vfx_Impact_01: {fileID: 3077343761403282166, guid: a24f2fabb6e277b40a5d8524cfd46e2a, type: 3}
+  vfx_Shockwave_01: {fileID: 9080140021571130472, guid: 36b66fc1d9f09e44a9eb86f1796c8055, type: 3}
+  CFXR2_Sparks_Rain: {fileID: 763799897560185588, guid: 798157bad7358b04499c9d71cd3c0d9b, type: 3}
+  CFXR2_Firewall_A: {fileID: 8172849020266659018, guid: 2af5562ce69fc2d448481a1587a352a5, type: 3}
+  HitMonsterEffects: []
+  Star_hit: {fileID: 4535006216103734310, guid: 677d5bcef8cd75344a747d51cdd1103f, type: 3}
+  CFXR3_Hit_Ice_B_Air: {fileID: 5112403345868107898, guid: 6f34ef0d986e9db4199cf75805f79753, type: 3}
+  Sparks_flashing_white: {fileID: 6007584933065334475, guid: 1e62b32898437cf43a226b5913d33fe5, type: 3}
 --- !u!1 &3385289245705716229
 GameObject:
   m_ObjectHideFlags: 0
@@ -4980,7 +5035,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 7597
+  m_VersionIndex: 7600
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []

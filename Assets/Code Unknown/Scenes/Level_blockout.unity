@@ -1528,17 +1528,33 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1428988680}
     - target: {fileID: 5659051313828214268, guid: 5ff363c6951392b4d9356da565929aaf, type: 3}
+      propertyPath: bumper1
+      value: 
+      objectReference: {fileID: 8300000, guid: 934c28c71189dfb41829834f6e17ff5a, type: 3}
+    - target: {fileID: 5659051313828214268, guid: 5ff363c6951392b4d9356da565929aaf, type: 3}
+      propertyPath: bumper2
+      value: 
+      objectReference: {fileID: 8300000, guid: 3fbabfb345ad15f4492a6b70c8f7d815, type: 3}
+    - target: {fileID: 5659051313828214268, guid: 5ff363c6951392b4d9356da565929aaf, type: 3}
       propertyPath: flipper
       value: 
-      objectReference: {fileID: 8300000, guid: 4c50e6b8e1d9f8e45aa4e9955a888971, type: 3}
+      objectReference: {fileID: 8300000, guid: ab71af7a005e54443af7cf34de7a0060, type: 3}
     - target: {fileID: 5659051313828214268, guid: 5ff363c6951392b4d9356da565929aaf, type: 3}
       propertyPath: rolling
       value: 
       objectReference: {fileID: 8300000, guid: d88bf8c96d071b645adb04b363a84257, type: 3}
     - target: {fileID: 5659051313828214268, guid: 5ff363c6951392b4d9356da565929aaf, type: 3}
+      propertyPath: uiClick
+      value: 
+      objectReference: {fileID: 8300000, guid: 21ec64545f478694092f82925cb47350, type: 3}
+    - target: {fileID: 5659051313828214268, guid: 5ff363c6951392b4d9356da565929aaf, type: 3}
       propertyPath: launcher
       value: 
       objectReference: {fileID: 8300000, guid: 1e2103cd99b853340a2470420de96a93, type: 3}
+    - target: {fileID: 5659051313828214268, guid: 5ff363c6951392b4d9356da565929aaf, type: 3}
+      propertyPath: bgmVolume
+      value: 0.116
+      objectReference: {fileID: 0}
     - target: {fileID: 5659051313828214268, guid: 5ff363c6951392b4d9356da565929aaf, type: 3}
       propertyPath: gameStart
       value: 
@@ -1546,27 +1562,95 @@ PrefabInstance:
     - target: {fileID: 5659051313828214268, guid: 5ff363c6951392b4d9356da565929aaf, type: 3}
       propertyPath: ballRefill
       value: 
-      objectReference: {fileID: 8300000, guid: c6bef3fa7f73cc3429dc53dda988dce0, type: 3}
+      objectReference: {fileID: 8300000, guid: 8166cd890ff1ebe49ad604e4037f2600, type: 3}
     - target: {fileID: 5659051313828214268, guid: 5ff363c6951392b4d9356da565929aaf, type: 3}
       propertyPath: launcherLoop
       value: 
-      objectReference: {fileID: 8300000, guid: 4eaef0842fb7bd64db757397aec3243b, type: 3}
+      objectReference: {fileID: 8300000, guid: 2b6de085db68cec46be2573093143c92, type: 3}
+    - target: {fileID: 5659051313828214268, guid: 5ff363c6951392b4d9356da565929aaf, type: 3}
+      propertyPath: bumper1Volume
+      value: 0.843
+      objectReference: {fileID: 0}
+    - target: {fileID: 5659051313828214268, guid: 5ff363c6951392b4d9356da565929aaf, type: 3}
+      propertyPath: bumper2Volume
+      value: 0.828
+      objectReference: {fileID: 0}
+    - target: {fileID: 5659051313828214268, guid: 5ff363c6951392b4d9356da565929aaf, type: 3}
+      propertyPath: flipperVolume
+      value: 0.046
+      objectReference: {fileID: 0}
+    - target: {fileID: 5659051313828214268, guid: 5ff363c6951392b4d9356da565929aaf, type: 3}
+      propertyPath: rollingVolume
+      value: 0.279
+      objectReference: {fileID: 0}
+    - target: {fileID: 5659051313828214268, guid: 5ff363c6951392b4d9356da565929aaf, type: 3}
+      propertyPath: uiClickVolume
+      value: 0.381
+      objectReference: {fileID: 0}
     - target: {fileID: 5659051313828214268, guid: 5ff363c6951392b4d9356da565929aaf, type: 3}
       propertyPath: upgradeSelect
       value: 
       objectReference: {fileID: 8300000, guid: 7965edf76952e23488393278863b5fe8, type: 3}
     - target: {fileID: 5659051313828214268, guid: 5ff363c6951392b4d9356da565929aaf, type: 3}
+      propertyPath: goldAccumulate
+      value: 
+      objectReference: {fileID: 8300000, guid: 8fcf5a2eff064aa4da714d1762874c18, type: 3}
+    - target: {fileID: 5659051313828214268, guid: 5ff363c6951392b4d9356da565929aaf, type: 3}
+      propertyPath: launcherVolume
+      value: 0.26
+      objectReference: {fileID: 0}
+    - target: {fileID: 5659051313828214268, guid: 5ff363c6951392b4d9356da565929aaf, type: 3}
       propertyPath: backgroundMusic
       value: 
-      objectReference: {fileID: 8300000, guid: 7507f8b0ff329e94d98da06c38cd06cd, type: 3}
+      objectReference: {fileID: 8300000, guid: f5e30cc839c1e214192acbea5814c15d, type: 3}
+    - target: {fileID: 5659051313828214268, guid: 5ff363c6951392b4d9356da565929aaf, type: 3}
+      propertyPath: gameStartVolume
+      value: 0.32
+      objectReference: {fileID: 0}
     - target: {fileID: 5659051313828214268, guid: 5ff363c6951392b4d9356da565929aaf, type: 3}
       propertyPath: monsterCollide1
       value: 
-      objectReference: {fileID: 8300000, guid: 128cbda9d2a1274488cab882b6eeaebe, type: 3}
+      objectReference: {fileID: 8300000, guid: d873eb1625f2a1f4aa0ebba942fb4a76, type: 3}
     - target: {fileID: 5659051313828214268, guid: 5ff363c6951392b4d9356da565929aaf, type: 3}
       propertyPath: monsterCollide2
       value: 
       objectReference: {fileID: 8300000, guid: a24444cb781771b4999595ae68784caa, type: 3}
+    - target: {fileID: 5659051313828214268, guid: 5ff363c6951392b4d9356da565929aaf, type: 3}
+      propertyPath: pointAccumulate
+      value: 
+      objectReference: {fileID: 8300000, guid: dfa313d42f647434989ca3942dadf483, type: 3}
+    - target: {fileID: 5659051313828214268, guid: 5ff363c6951392b4d9356da565929aaf, type: 3}
+      propertyPath: ballRefillVolume
+      value: 0.392
+      objectReference: {fileID: 0}
+    - target: {fileID: 5659051313828214268, guid: 5ff363c6951392b4d9356da565929aaf, type: 3}
+      propertyPath: launcherLoopVolume
+      value: 0.221
+      objectReference: {fileID: 0}
+    - target: {fileID: 5659051313828214268, guid: 5ff363c6951392b4d9356da565929aaf, type: 3}
+      propertyPath: upgradeSelectVolume
+      value: 0.384
+      objectReference: {fileID: 0}
+    - target: {fileID: 5659051313828214268, guid: 5ff363c6951392b4d9356da565929aaf, type: 3}
+      propertyPath: genericCollideVolume
+      value: 0.259
+      objectReference: {fileID: 0}
+    - target: {fileID: 5659051313828214268, guid: 5ff363c6951392b4d9356da565929aaf, type: 3}
+      propertyPath: goldAccumulateVolume
+      value: 0.395
+      objectReference: {fileID: 0}
+    - target: {fileID: 5659051313828214268, guid: 5ff363c6951392b4d9356da565929aaf, type: 3}
+      propertyPath: monsterCollide1Volume
+      value: 0.895
+      objectReference: {fileID: 0}
+    - target: {fileID: 5659051313828214268, guid: 5ff363c6951392b4d9356da565929aaf, type: 3}
+      propertyPath: monsterCollide2Volume
+      value: 0.884
+      objectReference: {fileID: 0}
+    - target: {fileID: 5659051313828214268, guid: 5ff363c6951392b4d9356da565929aaf, type: 3}
+      propertyPath: pointAccumulateVolume
+      value: 0.083
+      objectReference: {fileID: 0}
     - target: {fileID: 5925232030766424755, guid: 5ff363c6951392b4d9356da565929aaf, type: 3}
       propertyPath: m_Mesh
       value: 
