@@ -32,6 +32,8 @@ public class BallLauncher : MonoBehaviour
     [SerializeField] AudioClip launchAudioClip;
     AudioSource audioSource;
 
+    GameObject chargeVfxInstance;
+
     float cooldown = 0.0f;
    
     //The current ball in play (including a ball still in the launcher). Null if there is none.
@@ -83,6 +85,7 @@ public class BallLauncher : MonoBehaviour
                     if (chargeTime <= 0.0f && chargeAudioClip != null)
                     {
                         SoundManager.Instance.PlaySFX(SoundManager.Instance.launcherLoop, SoundManager.Instance.launcherLoopVolume);
+                        StartCharging();
                     }
 
                     chargeTime = chargeTime + Time.deltaTime;
@@ -103,6 +106,7 @@ public class BallLauncher : MonoBehaviour
                     chargeTime = 0;
                     cooldown = maxCooldown;
                     usable = false;
+                    LaunchBall();
                 }
             }
         }
@@ -126,12 +130,14 @@ public class BallLauncher : MonoBehaviour
     // VFx charging and launching 
     void StartCharging()
     {
+
         VFXManager.Instance.PlayVFX(VFXManager.Instance.vfx_Implosion_01, transform.position, Quaternion.identity);
     }
 
     void LaunchBall()
     {
         VFXManager.Instance.PlayVFX(VFXManager.Instance.Electro_hit, transform.position, Quaternion.identity);
+
     }
 
 }
