@@ -935,12 +935,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxPower: 50
   maxCharge: 3
-  reactivationRange: 0.1
+  launchRange: 0.5
   maxCooldown: 1
   graphic: {fileID: 6707306669083807574}
   graphicScale: 1.5
-  chargeAudioClip: {fileID: 8300000, guid: 4eaef0842fb7bd64db757397aec3243b, type: 3}
-  launchAudioClip: {fileID: 8300000, guid: 9e1a6ccb0abb9764287538b78c207348, type: 3}
+  chargeSource: {fileID: 0}
+  launchSource: {fileID: 0}
 --- !u!1 &1015117744096684101
 GameObject:
   m_ObjectHideFlags: 0
@@ -2183,7 +2183,6 @@ Transform:
   m_Children:
   - {fileID: 1173833410751104109}
   - {fileID: 3512853049571956975}
-  - {fileID: 1864963603882447327}
   - {fileID: 275054969214024231}
   - {fileID: 7086627063358932449}
   - {fileID: 6983214597226012572}
@@ -2642,37 +2641,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eba220eebe26b1c4d9edc63ac36bca32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flipper: {fileID: 8300000, guid: ab71af7a005e54443af7cf34de7a0060, type: 3}
+  flipperSource: {fileID: 0}
   flipperVolume: 0.046
-  launcher: {fileID: 8300000, guid: 1e2103cd99b853340a2470420de96a93, type: 3}
+  launcherSource: {fileID: 0}
   launcherVolume: 0.26
-  launcherLoop: {fileID: 8300000, guid: 2b6de085db68cec46be2573093143c92, type: 3}
+  launcherLoopSource: {fileID: 0}
   launcherLoopVolume: 0.221
-  genericCollide: {fileID: 8300000, guid: e28a7a2361ffed5478da62bbcbd5ab04, type: 3}
+  genericCollideSource: {fileID: 0}
   genericCollideVolume: 0.259
-  bumper1: {fileID: 8300000, guid: 934c28c71189dfb41829834f6e17ff5a, type: 3}
+  bumper1Source: {fileID: 0}
   bumper1Volume: 0.843
-  bumper2: {fileID: 8300000, guid: 3fbabfb345ad15f4492a6b70c8f7d815, type: 3}
+  bumper2Source: {fileID: 0}
   bumper2Volume: 0.828
-  rolling: {fileID: 8300000, guid: d88bf8c96d071b645adb04b363a84257, type: 3}
+  rollingSource: {fileID: 0}
   rollingVolume: 0.279
-  monsterCollide1: {fileID: 8300000, guid: d873eb1625f2a1f4aa0ebba942fb4a76, type: 3}
+  monsterCollide1Source: {fileID: 0}
   monsterCollide1Volume: 0.895
-  monsterCollide2: {fileID: 8300000, guid: a24444cb781771b4999595ae68784caa, type: 3}
+  monsterCollide2Source: {fileID: 0}
   monsterCollide2Volume: 0.884
-  pointAccumulate: {fileID: 8300000, guid: dfa313d42f647434989ca3942dadf483, type: 3}
+  pointAccumulateSource: {fileID: 0}
   pointAccumulateVolume: 0.083
-  goldAccumulate: {fileID: 8300000, guid: 8fcf5a2eff064aa4da714d1762874c18, type: 3}
+  goldAccumulateSource: {fileID: 0}
   goldAccumulateVolume: 0.395
-  uiClick: {fileID: 8300000, guid: 21ec64545f478694092f82925cb47350, type: 3}
+  uiClickSource: {fileID: 0}
   uiClickVolume: 0.381
-  ballRefill: {fileID: 8300000, guid: 8166cd890ff1ebe49ad604e4037f2600, type: 3}
+  ballRefillSource: {fileID: 0}
   ballRefillVolume: 0.392
-  upgradeSelect: {fileID: 8300000, guid: 7965edf76952e23488393278863b5fe8, type: 3}
+  upgradeSelectSource: {fileID: 0}
   upgradeSelectVolume: 0.384
-  gameStart: {fileID: 8300000, guid: 71c399677c9b1124898da8f35af8ba09, type: 3}
+  gameStartSource: {fileID: 0}
   gameStartVolume: 0.32
-  backgroundMusic: {fileID: 8300000, guid: f5e30cc839c1e214192acbea5814c15d, type: 3}
+  spinnerSource: {fileID: 0}
+  spinnerVolume: 1
+  bossDamagerSource: {fileID: 0}
+  bossDamagerVolume: 1
+  teleporterSource: {fileID: 0}
+  teleporterVolume: 1
+  bgmSource: {fileID: 0}
+  BGMVolume: 1
+  sfxVolume: 1
   bgmVolume: 0.116
 --- !u!1 &2963675040338990752
 GameObject:
@@ -2884,6 +2891,8 @@ MonoBehaviour:
   thresholdIncreaseLevels: 
   thresholdMultipliers: []
   levelUpThreshold: 0
+  killReq: 0
+  lvlKills: 0
   OnLevelUp:
     m_PersistentCalls:
       m_Calls: []
@@ -6017,127 +6026,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &5777441940533486071
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4282974937227210075}
-  - component: {fileID: 6882620446028305994}
-  - component: {fileID: 4857596559272273302}
-  m_Layer: 0
-  m_Name: Spot Light
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4282974937227210075
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5777441940533486071}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0.5735764, y: 0, z: 0, w: 0.8191521}
-  m_LocalPosition: {x: 0, y: 0.346, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1864963603882447327}
-  m_LocalEulerAnglesHint: {x: 70, y: 0, z: 0}
---- !u!108 &6882620446028305994
-Light:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5777441940533486071}
-  m_Enabled: 1
-  serializedVersion: 11
-  m_Type: 0
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.25
-  m_Range: 12
-  m_SpotAngle: 175
-  m_InnerSpotAngle: 135
-  m_CookieSize: 10
-  m_Shadows:
-    m_Type: 1
-    m_Resolution: -1
-    m_CustomResolution: -1
-    m_Strength: 1
-    m_Bias: 0.05
-    m_NormalBias: 0.4
-    m_NearPlane: 0.2
-    m_CullingMatrixOverride:
-      e00: 1
-      e01: 0
-      e02: 0
-      e03: 0
-      e10: 0
-      e11: 1
-      e12: 0
-      e13: 0
-      e20: 0
-      e21: 0
-      e22: 1
-      e23: 0
-      e30: 0
-      e31: 0
-      e32: 0
-      e33: 1
-    m_UseCullingMatrixOverride: 0
-  m_Cookie: {fileID: 0}
-  m_DrawHalo: 0
-  m_Flare: {fileID: 0}
-  m_RenderMode: 0
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingLayerMask: 1
-  m_Lightmapping: 4
-  m_LightShadowCasterMode: 0
-  m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
-  m_ColorTemperature: 6570
-  m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
-  m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
-  m_ForceVisible: 0
-  m_ShadowRadius: 0
-  m_ShadowAngle: 0
-  m_LightUnit: 1
-  m_LuxAtDistance: 1
-  m_EnableSpotReflector: 1
---- !u!114 &4857596559272273302
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5777441940533486071}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Version: 3
-  m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
-  m_LightLayerMask: 1
-  m_RenderingLayers: 1
-  m_CustomShadowLayers: 0
-  m_ShadowLayerMask: 1
-  m_ShadowRenderingLayers: 1
-  m_LightCookieSize: {x: 1, y: 1}
-  m_LightCookieOffset: {x: 0, y: 0}
-  m_SoftShadowQuality: 0
 --- !u!1 &5845236090888019188
 GameObject:
   m_ObjectHideFlags: 0
@@ -6384,38 +6272,6 @@ MonoBehaviour:
   hasSpawnedMonster: 0
   spawnedInstance: {fileID: 4245915190017150719, guid: 5a6c21644ac370b48aefbbc777ea320c, type: 3}
   spawnOnStart: 0
---- !u!1 &6249271990027692215
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1864963603882447327}
-  m_Layer: 0
-  m_Name: Lights
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1864963603882447327
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6249271990027692215}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 4282974937227210075}
-  m_Father: {fileID: 2465929467873630328}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6707306669083807574
 GameObject:
   m_ObjectHideFlags: 0

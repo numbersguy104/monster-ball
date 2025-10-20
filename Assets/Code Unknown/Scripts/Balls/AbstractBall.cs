@@ -177,7 +177,6 @@ public abstract class AbstractBall : MonoBehaviour
     {
         BallLauncher launcher = FindAnyObjectByType<BallLauncher>();
         transform.position = launcher.transform.position;
-        launcher.NewBall(this);
 
         var light = GameObject.Find("Spot Light");
 
@@ -212,15 +211,23 @@ public abstract class AbstractBall : MonoBehaviour
     {
         BallSound();
 
-        //TODO: Replace this with something that works for multiple balls at once
-        var light = GameObject.Find("Spot Light");
+        Transform light = null;
+        foreach (Transform t in transform)
+        {
+            if (t.GetComponent<Light>() != null)
+            {
+                light = t;
+                break;
+            }
+        }
         if (light != null)
         {
-            light.transform.position = new Vector3(
+            light.position = new Vector3(
                 transform.position.x,
                 transform.position.y + 0.31f,
                 transform.position.z - 0.1f
             );
+            light.rotation = Quaternion.Euler(90.0f, 0.0f, 0.0f);
         }
     }
 

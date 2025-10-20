@@ -1,7 +1,9 @@
 using NUnit.Framework;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.ProBuilder.MeshOperations;
 
 public class BallLauncher : MonoBehaviour
 {
@@ -16,7 +18,7 @@ public class BallLauncher : MonoBehaviour
     [SerializeField] float maxCharge = 1.0f;
 
     [Tooltip("How close the ball needs to be to the launcher to be launched")]
-    [SerializeField] float reactivationRange = 0.1f;
+    [SerializeField] float launchRange = 0.2f;
 
     [Tooltip("Cooldown between uses of the launcher")]
     [SerializeField] float maxCooldown = 1.0f;
@@ -35,12 +37,6 @@ public class BallLauncher : MonoBehaviour
     GameObject chargeVfxInstance;
 
     float cooldown = 0.0f;
-   
-    //The current ball in play (including a ball still in the launcher). Null if there is none.
-    AbstractBall currentBall = null;
-
-    //Whether the launcher can be used to launch the CurrentBall's game object.
-    bool usable = true;
 
     //How long the button to "pull back" the launcher has been held, in seconds
     float chargeTime = 0.0f;
@@ -60,55 +56,86 @@ public class BallLauncher : MonoBehaviour
 
     void Update()
     {
+        //If on cooldown, do nothing else, just tick down the cooldown timer
         if (cooldown > 0.0f)
         {
             cooldown = Mathf.Max(cooldown - Time.deltaTime, 0.0f);
         }
         else
         {
-            if (!usable && currentBall != null && cooldown == 0.0f)
+            bool chargeHeld = chargeAction.IsPressed();
+
+            if (chargeHeld)
             {
-                float distance = Vector3.Distance(transform.position, currentBall.transform.position);
-                if (distance <= reactivationRange)
+                //start charge play once
+                if (chargeTime <= 0.0f && chargeSource != null && !chargeSource.isPlaying)
                 {
-                    usable = true;
+                    chargeSource.volume = SoundManager.Instance.launcherLoopVolume;
+                    chargeSource.Play();
                 }
+
+                chargeTime = chargeTime + Time.deltaTime;
             }
-
-            if (usable && currentBall != null)
+            else if (chargeTime > Mathf.Epsilon)
             {
-                bool chargeHeld = chargeAction.IsPressed();
-
-                if (chargeHeld)
+                // end loop stop audio
+                if (chargeSource != null)
                 {
-                    //start charge play once
-                    if (chargeTime <= 0.0f && chargeSource != null && !chargeSource.isPlaying)
-                    {
-                        chargeSource.volume = SoundManager.Instance.launcherLoopVolume;
-                        chargeSource.Play();
-                    }
-
-                    chargeTime = chargeTime + Time.deltaTime;
+                    launchSource.volume = SoundManager.Instance.launcherVolume;
+                    launchSource.Play();
                 }
-                else if (chargeTime > Mathf.Epsilon)
+
+                //Force on the ball scales with charge time, up to the maximum
+                float power = Mathf.Min(chargeTime, maxCharge) / maxCharge * maxPower;
+
+                //Determine which balls should be launched by this use of the launcher
+                List<AbstractBall> launchBalls = new List<AbstractBall>();
+
+                //Get the closest ball to the launcher, within launchRange
+                AbstractBall firstBall = null;
+                float shortestDistance = launchRange;
+                foreach (AbstractBall ball in FindObjectsByType<AbstractBall>(FindObjectsSortMode.None))
                 {
-                    // end loop stop audio
-                    if (chargeSource != null )
+                    float distance = Vector3.Distance(transform.position, ball.transform.position);
+                    if (distance < shortestDistance)
                     {
-                        launchSource.volume = SoundManager.Instance.launcherVolume;
-                        launchSource.Play();
+                        firstBall = ball;
+                        shortestDistance = distance;
                     }
-
-                    //Force on the ball scales with charge time, up to the maximum
-                    float power = Mathf.Min(chargeTime, maxCharge) / maxCharge * maxPower;
-
-                    currentBall.SetVelocity(0, 0, power);
-
-                    chargeTime = 0;
-                    cooldown = maxCooldown;
-                    usable = false;
-                    LaunchBall();
                 }
+
+                //Recursively store the balls close to and behind the first one
+                //This handles multiple balls stacked in the launcher
+                if (firstBall != null)
+                {
+                    AbstractBall currentBall = firstBall;
+                    do
+                    {
+                        launchBalls.Add(currentBall);
+
+                        Transform currentTransform = currentBall.transform;
+                        Collider[] nearbyColliders = Physics.OverlapSphere(currentTransform.position, currentTransform.lossyScale.x * 1.1f);
+                        currentBall = null;
+                        foreach (Collider col in nearbyColliders)
+                        {
+                            if (col.transform.position.z < currentTransform.position.z)
+                            {
+                                AbstractBall ball = col.GetComponent<AbstractBall>();
+                                currentBall = ball;
+                            }
+                        }
+                    } while (currentBall != null);
+
+                    //Launch the balls!
+                    foreach (AbstractBall ball in launchBalls)
+                    {
+                        ball.SetVelocity(0, 0, power);
+                    }
+                }
+
+                chargeTime = 0;
+                cooldown = maxCooldown;
+                LaunchBall();
             }
         }
 
@@ -122,11 +149,6 @@ public class BallLauncher : MonoBehaviour
         }
     }
 
-    public void NewBall(AbstractBall ball)
-    {
-        currentBall = ball;
-        usable = true;
-    }
     // VFx charging and launching 
     void StartCharging()
     {
