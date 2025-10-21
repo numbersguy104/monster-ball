@@ -35,14 +35,16 @@ public class BallLauncher : MonoBehaviour
     AudioSource audioSource;
 
     GameObject chargeVfxInstance;
-
+    GameObject activeChargeVFX;
     float cooldown = 0.0f;
 
     //How long the button to "pull back" the launcher has been held, in seconds
     float chargeTime = 0.0f;
-
+    //charge one time
+    private bool isCharging = false;
     InputAction chargeAction;
 
+    
     void Start()
     {
         chargeAction = InputSystem.actions.FindAction("Charge");
@@ -67,24 +69,32 @@ public class BallLauncher : MonoBehaviour
 
             if (chargeHeld)
             {
-                //start charge play once
-                if (chargeTime <= 0.0f && chargeSource != null && !chargeSource.isPlaying)
+                if (!isCharging)
                 {
-                    chargeSource.volume = SoundManager.Instance.launcherLoopVolume;
-                    chargeSource.Play();
+                    //start charge play once
+                    isCharging = true;
+                    if (chargeTime <= 0.0f && chargeSource != null && !chargeSource.isPlaying)
+                    {
+                        chargeSource.volume = SoundManager.Instance.launcherLoopVolume;
+                        chargeSource.Play();
+                    }
+                    StartCharging();
                 }
-
                 chargeTime = chargeTime + Time.deltaTime;
+
+                
             }
-            else if (chargeTime > Mathf.Epsilon)
+            else if (isCharging && chargeTime > Mathf.Epsilon)
             {
+                if (chargeSource != null && chargeSource.isPlaying)
+                    chargeSource.Stop();
                 // end loop stop audio
                 if (chargeSource != null)
                 {
                     launchSource.volume = SoundManager.Instance.launcherVolume;
                     launchSource.Play();
                 }
-
+                LaunchBall();
                 //Force on the ball scales with charge time, up to the maximum
                 float power = Mathf.Min(chargeTime, maxCharge) / maxCharge * maxPower;
 
@@ -135,7 +145,7 @@ public class BallLauncher : MonoBehaviour
 
                 chargeTime = 0;
                 cooldown = maxCooldown;
-                LaunchBall();
+                isCharging = false;
             }
         }
 
@@ -152,14 +162,31 @@ public class BallLauncher : MonoBehaviour
     // VFx charging and launching 
     void StartCharging()
     {
-        //Commented out until vfx_Implosion_01 is set (this was causing errors) ~Joseph
-        //VFXManager.Instance.PlayVFX(VFXManager.Instance.vfx_Implosion_01, transform.position, Quaternion.identity);
+        if (activeChargeVFX == null)
+        {
+            // sustain until launch
+            activeChargeVFX = VFXManager.Instance.PlayAndPauseAtEnd(
+                VFXManager.Instance.vfx_Implosion_01,
+                transform.position,
+                Quaternion.identity);
+        }
     }
 
     void LaunchBall()
     {
-        //Commented out until Electro_hit is set (this was causing errors) ~Joseph
-        //VFXManager.Instance.PlayVFX(VFXManager.Instance.Electro_hit, transform.position, Quaternion.identity);
-    }
+        // launch vFX
+        VFXManager.Instance.PlayVFX(
+            VFXManager.Instance.Electro_hit,
+            transform.position,
+            Quaternion.identity,
+            0.5f
+        );
 
+        // stop
+        if (activeChargeVFX != null)
+        {
+            Destroy(activeChargeVFX);
+            activeChargeVFX = null;
+        }
+    }
 }
