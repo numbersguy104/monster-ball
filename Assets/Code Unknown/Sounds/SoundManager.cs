@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class SoundManager : MonoBehaviour
@@ -63,6 +64,9 @@ public class SoundManager : MonoBehaviour
     public AudioSource bgmSource;
     [Range(0f, 1f)] public float BGMVolume = 1f;
 
+    [Tooltip("All available background musics for random stage switching")]
+    public List<AudioClip> bgmClips = new List<AudioClip>(); //add in Inspector
+    private int currentBGMIndex = -1;
     [Header("Master Volume")]
     [Range(0f, 1f)] public float sfxVolume = 1f;
     [Range(0f, 1f)] public float bgmVolume = 0.5f;
@@ -110,17 +114,51 @@ public class SoundManager : MonoBehaviour
 
     public void PlayBGM()
     {
-        if (bgmSource == null || bgmSource.clip == null) return;
+        if (bgmSource == null) return;
+
+        // 如果没有clip但列表中有内容，从中选一个随机播放
+        if (bgmSource.clip == null && bgmClips.Count > 0)
+        {
+            currentBGMIndex = Random.Range(0, bgmClips.Count);
+            bgmSource.clip = bgmClips[currentBGMIndex];
+        }
+
         bgmSource.volume = bgmVolume;
         bgmSource.loop = true;
-        if (!bgmSource.isPlaying) bgmSource.Play();
+        if (!bgmSource.isPlaying && bgmSource.clip != null)
+            bgmSource.Play();
     }
 
     public void StopBGM()
     {
         if (bgmSource != null) bgmSource.Stop();
     }
+    public void PlayNextRandomBGM()
+    {
+        if (bgmClips.Count == 0 || bgmSource == null) return;
 
+        int newIndex;
+        if (bgmClips.Count == 1)
+        {
+            newIndex = 0;
+        }
+        else
+        {
+            // makesure different than current one
+            do
+            {
+                newIndex = Random.Range(0, bgmClips.Count);
+            } while (newIndex == currentBGMIndex);
+        }
+
+        currentBGMIndex = newIndex;
+        bgmSource.clip = bgmClips[newIndex];
+        bgmSource.volume = bgmVolume;
+        bgmSource.loop = true;
+        bgmSource.Play();
+
+        Debug.Log($"[SoundManager] Switched to new BGM: {bgmSource.clip.name}");
+    }
     public void UpdateAllVolumes()
     {
   

@@ -117,6 +117,7 @@ public class GameStatsManager : MonoBehaviour
     {
         level++;
 
+        SoundManager.Instance.PlayNextRandomBGM();
         //Check if we're at a level where the threshold multiplier changes
         if (thresholdIncreaseLevels.Count > 0 && thresholdIncreaseLevels[0] == level)
         {
