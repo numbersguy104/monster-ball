@@ -80,7 +80,7 @@ public class PointsTracker : MonoBehaviour
     void AddPoints(long amount)
     {
         //score += amount;
-        GameStatsManager.Instance.AddScore(amount);
+        GameStatsManager.Instance.AddScore(amount, ScoreSource.Terrain);
         GetComponent<TextMeshProUGUI>().text = GameStatsManager.Instance.score.ToString() + 
                                                "\n" + 
                                                ((float)GameStatsManager.Instance.score * 100 / (float)GameStatsManager.Instance.levelUpThreshold).ToString("F1") + 

@@ -1,5 +1,6 @@
 using NUnit.Framework;
 using System.Collections.Generic;
+using cfg;
 using UnityEngine;
 
 public class MonsterSpawnManager : MonoBehaviour
@@ -20,9 +21,15 @@ public class MonsterSpawnManager : MonoBehaviour
         //Instantiate monster amounts to a default if not set in inspector
         if (monsterCounts == null || monsterCounts.Count == 0)
         {
-            Debug.LogWarning("Monster Counts field was not initialized! Initializing with a single monster cap of 3. Source: MonsterSpawnManager.cs on object " + gameObject.ToString());
-            monsterCounts = new List<int>();
-            monsterCounts.Add(3);
+            // Debug.LogWarning("Monster Counts field was not initialized! Initializing with a single monster cap of 3. Source: MonsterSpawnManager.cs on object " + gameObject.ToString());
+            // monsterCounts = new List<int>();
+            // monsterCounts.Add(3);
+
+            TbMilestoneParam milestoneParam = LubanTablesMgr.Instance.tables.TbMilestoneParam;
+            foreach (var milestone in milestoneParam.DataList)
+            {
+                monsterCounts.Add(milestone.MonsterSpawnSCount);
+            }
         }
 
         LevelUp();

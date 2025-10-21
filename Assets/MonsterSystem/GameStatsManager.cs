@@ -14,6 +14,8 @@ public class GameStatsManager : MonoBehaviour
     public int killCount = 0;      // Number of monsters killed
     public long totalDamage = 0;   // Total damage dealt
     public float dps = 0f;         // Damage per second (calculated at runtime)
+    public float terMulti = 1f;    // All terrain's point multiplier value at this milestone
+    public float monsMulti = 1f;   // All monster's point multiplier value at this milestone
     public List<ArtifactParam> artifacts = new List<ArtifactParam>();
 
     /*
@@ -45,6 +47,8 @@ public class GameStatsManager : MonoBehaviour
 
     private float damageTimer = 0f;
     private long damageThisSecond = 0;
+    private List<float> terMultiList = new List<float>();
+    private List<float> monsMultiList = new List<float>();
 
     void Awake()
     {
@@ -59,10 +63,19 @@ public class GameStatsManager : MonoBehaviour
 
     void Start()
     {
+        // Read milestone Configs
         TbMilestoneParam tbMilestoneParam = LubanTablesMgr.Instance.tables.TbMilestoneParam;
         levelUpThreshold = tbMilestoneParam.DataList[0].MilestoneReq;
         killReq = tbMilestoneParam.DataList[0].MonsterKillReq;
-        
+        // multi
+        foreach (var milestone in tbMilestoneParam.DataList)
+        {
+            terMultiList.Add(milestone.TerPointInc);
+            monsMultiList.Add(milestone.MonPointInc);
+        }
+
+        terMulti = terMultiList[level];
+        monsMulti = monsMultiList[level];
 
         //Initialize the level-up thresholds to defaults if not set in the inspector
         if (thresholdIncreaseLevels == null || thresholdIncreaseLevels.Count == 0)
@@ -134,13 +147,26 @@ public class GameStatsManager : MonoBehaviour
         
         killReq = tbMilestoneParam.DataList[level].MonsterKillReq;
         lvlKills = 0;
+        
+        // multi update
+        terMulti = terMultiList[level];
+        monsMulti = monsMultiList[level];
     }
 
     // ====== API Methods ======
 
-    public void AddScore(long amount)
+    public void AddScore(long amount, ScoreSource source)
     {
-        score += amount;
+        switch (source)
+        {
+            case ScoreSource.Monster:
+                score += amount * (long)monsMulti;
+                break;
+            case ScoreSource.Terrain:
+                score += amount * (long)terMulti;
+                break;
+        }
+        
         SoundManager.Instance.PlaySFX(SoundManager.Instance.pointAccumulateSource,SoundManager.Instance.pointAccumulateVolume);
     }
 
@@ -177,4 +203,10 @@ public class GameStatsManager : MonoBehaviour
         artifacts.Clear();
         artifacts.AddRange(af);
     }
+}
+
+public enum ScoreSource
+{
+    Monster,
+    Terrain
 }

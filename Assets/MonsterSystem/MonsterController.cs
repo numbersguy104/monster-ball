@@ -109,7 +109,7 @@ public class MonsterController : MonoBehaviour
 
         // Global stats update
         GameStatsManager.Instance.AddDamage(finalDamage);
-        GameStatsManager.Instance.AddScore(point / 10);
+        GameStatsManager.Instance.AddScore(point / 10, ScoreSource.Monster);
 
         if (healthBarUI != null)
         {
@@ -128,10 +128,10 @@ public class MonsterController : MonoBehaviour
         GameStatsManager.Instance.AddGold(gold);
         var mainUI = FindAnyObjectByType<UIGameMain>();
         mainUI.Refresh();
-        GameStatsManager.Instance.AddScore(point);
+        GameStatsManager.Instance.AddScore(point, ScoreSource.Monster);
         GameStatsManager.Instance.AddKill();
         // Test
-        GameStatsManager.Instance.AddScore(100);
+        GameStatsManager.Instance.AddScore(100, ScoreSource.Monster);
         // TODO: death effect
         Destroy(gameObject);
     }

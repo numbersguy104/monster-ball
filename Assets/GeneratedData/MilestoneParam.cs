@@ -41,7 +41,7 @@ public sealed partial class MilestoneParam : Luban.BeanBase
     public readonly float MonHPInc;
     public readonly float MonPointInc;
     public readonly float TerPointInc;
-    public readonly float MonsterSpawnSCount;
+    public readonly int MonsterSpawnSCount;
    
     public const int __ID__ = 589185309;
     public override int GetTypeId() => __ID__;
