@@ -20,7 +20,6 @@ public sealed partial class ArtifactParam : Luban.BeanBase
         { if(!_buf["id"].IsNumber) { throw new SerializationException(); }  Id = _buf["id"]; }
         { if(!_buf["ID"].IsString) { throw new SerializationException(); }  ID = _buf["ID"]; }
         { if(!_buf["ArtifactName"].IsString) { throw new SerializationException(); }  ArtifactName = _buf["ArtifactName"]; }
-        { if(!_buf["ArtifactPrice"].IsNumber) { throw new SerializationException(); }  ArtifactPrice = _buf["ArtifactPrice"]; }
         { if(!_buf["BallRelation"].IsString) { throw new SerializationException(); }  BallRelation = _buf["BallRelation"]; }
         { if(!_buf["ArtifactDes"].IsString) { throw new SerializationException(); }  ArtifactDes = _buf["ArtifactDes"]; }
         { if(!_buf["ArtifactType1"].IsString) { throw new SerializationException(); }  ArtifactType1 = _buf["ArtifactType1"]; }
@@ -40,7 +39,6 @@ public sealed partial class ArtifactParam : Luban.BeanBase
     public readonly int Id;
     public readonly string ID;
     public readonly string ArtifactName;
-    public readonly int ArtifactPrice;
     public readonly string BallRelation;
     public readonly string ArtifactDes;
     public readonly string ArtifactType1;
@@ -64,7 +62,6 @@ public sealed partial class ArtifactParam : Luban.BeanBase
         + "id:" + Id + ","
         + "ID:" + ID + ","
         + "ArtifactName:" + ArtifactName + ","
-        + "ArtifactPrice:" + ArtifactPrice + ","
         + "BallRelation:" + BallRelation + ","
         + "ArtifactDes:" + ArtifactDes + ","
         + "ArtifactType1:" + ArtifactType1 + ","
