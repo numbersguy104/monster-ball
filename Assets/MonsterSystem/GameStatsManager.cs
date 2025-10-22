@@ -47,8 +47,6 @@ public class GameStatsManager : MonoBehaviour
 
     private float damageTimer = 0f;
     private long damageThisSecond = 0;
-    private List<float> terMultiList = new List<float>();
-    private List<float> monsMultiList = new List<float>();
 
     void Awake()
     {
@@ -68,14 +66,8 @@ public class GameStatsManager : MonoBehaviour
         levelUpThreshold = tbMilestoneParam.DataList[0].MilestoneReq;
         killReq = tbMilestoneParam.DataList[0].MonsterKillReq;
         // multi
-        foreach (var milestone in tbMilestoneParam.DataList)
-        {
-            terMultiList.Add(milestone.TerPointInc);
-            monsMultiList.Add(milestone.MonPointInc);
-        }
-
-        terMulti = terMultiList[level];
-        monsMulti = monsMultiList[level];
+        terMulti = tbMilestoneParam.DataList[0].TerPointInc;
+        monsMulti = tbMilestoneParam.DataList[0].MonPointInc;
 
         //Initialize the level-up thresholds to defaults if not set in the inspector
         if (thresholdIncreaseLevels == null || thresholdIncreaseLevels.Count == 0)
@@ -135,6 +127,9 @@ public class GameStatsManager : MonoBehaviour
             if (level + 1 > tbMilestoneParam.DataList[i].MilstoneLevel)
             {
                 multi = tbMilestoneParam.DataList[i].MilestoneMulti;
+                // multi update
+                terMulti = tbMilestoneParam.DataList[i].TerPointInc;
+                monsMulti = tbMilestoneParam.DataList[i].MonPointInc;
             }
             else
             {
@@ -149,9 +144,6 @@ public class GameStatsManager : MonoBehaviour
         killReq = tbMilestoneParam.DataList[level].MonsterKillReq;
         lvlKills = 0;
         
-        // multi update
-        terMulti = terMultiList[level];
-        monsMulti = monsMultiList[level];
     }
 
     // ====== API Methods ======
