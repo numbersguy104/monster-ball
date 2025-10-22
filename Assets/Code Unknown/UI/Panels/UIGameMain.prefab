@@ -3065,7 +3065,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5af749eff8d210e439234e98f83e436a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UIShopPanel: {fileID: 7095896495804024942, guid: cef6c4f9a8c00354898a343d4e880a8e, type: 3}
+  UIShopPanel: {fileID: 7095896495804024942, guid: c98cdbaa80639ee4db60e55b9ed4e999, type: 3}
   reqPointsText: {fileID: 1561677266168856249}
   gold: {fileID: 5606243732833890936}
   killsReq: {fileID: 4467750334219913646}
