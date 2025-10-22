@@ -233,10 +233,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monsterID: Cactus
-  hp: 30
+  hp: 250
   point: 300
   gold: 10
-  maxHP: 30
+  maxHP: 250
   collisionType: 1
   healthBarPrefab: {fileID: 0}
 --- !u!114 &-1529730941871598869
