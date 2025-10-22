@@ -105,7 +105,7 @@ public class MonsterController : MonoBehaviour
 
         // Global stats update
         GameStatsManager.Instance.AddDamage(damage);
-        GameStatsManager.Instance.AddScore(point / 10, ScoreSource.Monster);
+        //GameStatsManager.Instance.AddScore(point / 10, ScoreSource.Monster);
 
         if (healthBarUI != null)
         {
