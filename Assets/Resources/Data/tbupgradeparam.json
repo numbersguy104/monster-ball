@@ -1,50 +1,42 @@
 [
   {
     "UpdrageLevel": 1,
-    "UpgradeAtk": 1,
-    "UpgradeSpd": 1,
-    "UpgradeSize": 1,
-    "UpgradeCChance": 1,
-    "UpgradeCDmg": 1
+    "UpgradeAtk": 1.15,
+    "UpgradeSpd": 1.15,
+    "UpgradeSize": 1.15,
+    "UpgradeCChance": 1.15,
+    "UpgradeCDmg": 1.15
   },
   {
     "UpdrageLevel": 2,
-    "UpgradeAtk": 1.5,
-    "UpgradeSpd": 1.5,
-    "UpgradeSize": 1.5,
-    "UpgradeCChance": 1.5,
-    "UpgradeCDmg": 1.5
+    "UpgradeAtk": 1.3,
+    "UpgradeSpd": 1.3,
+    "UpgradeSize": 1.3,
+    "UpgradeCChance": 1.3,
+    "UpgradeCDmg": 1.3
   },
   {
     "UpdrageLevel": 3,
-    "UpgradeAtk": 0,
-    "UpgradeSpd": 0,
-    "UpgradeSize": 0,
-    "UpgradeCChance": 0,
-    "UpgradeCDmg": 0
+    "UpgradeAtk": 1.45,
+    "UpgradeSpd": 1.45,
+    "UpgradeSize": 1.45,
+    "UpgradeCChance": 1.45,
+    "UpgradeCDmg": 1.45
   },
   {
     "UpdrageLevel": 4,
-    "UpgradeAtk": 0,
-    "UpgradeSpd": 0,
-    "UpgradeSize": 0,
-    "UpgradeCChance": 0,
-    "UpgradeCDmg": 0
+    "UpgradeAtk": 1.65,
+    "UpgradeSpd": 1.65,
+    "UpgradeSize": 1.65,
+    "UpgradeCChance": 1.65,
+    "UpgradeCDmg": 1.65
   },
   {
     "UpdrageLevel": 5,
-    "UpgradeAtk": 0,
-    "UpgradeSpd": 0,
-    "UpgradeSize": 0,
-    "UpgradeCChance": 0,
-    "UpgradeCDmg": 0
-  },
-  {
-    "UpdrageLevel": 6,
-    "UpgradeAtk": 0,
-    "UpgradeSpd": 0,
-    "UpgradeSize": 0,
-    "UpgradeCChance": 0,
-    "UpgradeCDmg": 0
+    "UpgradeAtk": 1.8,
+    "UpgradeSpd": 1.8,
+    "UpgradeSize": 1.8,
+    "UpgradeCChance": 1.8,
+    "UpgradeCDmg": 1.8
   }
 ]
