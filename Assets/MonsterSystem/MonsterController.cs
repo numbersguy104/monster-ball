@@ -99,16 +99,12 @@ public class MonsterController : MonoBehaviour
         }
     }
 
-    public void TakeDamage(int baseDamage, float acceleration)
+    public void TakeDamage(int damage)
     {
-
-        int finalDamage = Mathf.Max(baseDamage, Mathf.RoundToInt(baseDamage * acceleration));
-
-
-        hp -= finalDamage;
+        hp -= damage;
 
         // Global stats update
-        GameStatsManager.Instance.AddDamage(finalDamage);
+        GameStatsManager.Instance.AddDamage(damage);
         GameStatsManager.Instance.AddScore(point / 10, ScoreSource.Monster);
 
         if (healthBarUI != null)

@@ -45,7 +45,7 @@ public abstract class AbstractBall : MonoBehaviour
                 damage *= GetCritDamage();
             }
 
-            monster.TakeDamage((int)GetDamage(), GetVelocity().magnitude);
+            monster.TakeDamage((int)GetDamage());
         }
     }
 
