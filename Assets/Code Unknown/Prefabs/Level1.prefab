@@ -1128,7 +1128,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1917
+  m_VersionIndex: 1914
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -1875,7 +1875,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1423
+  m_VersionIndex: 1420
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -2663,7 +2663,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1917
+  m_VersionIndex: 1914
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -3565,35 +3565,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flipperSource: {fileID: 2456185902216772805}
-  flipperVolume: 0.597
+  flipperVolume: 0.046
   launcherSource: {fileID: 1612377496848010562}
-  launcherVolume: 0.521
+  launcherVolume: 1
   launcherLoopSource: {fileID: 2840515027597854840}
-  launcherLoopVolume: 0.701
+  launcherLoopVolume: 1
   genericCollideSource: {fileID: 3711825910398252909}
-  genericCollideVolume: 0.768
+  genericCollideVolume: 0.259
   bumper1Source: {fileID: 3962802421279283061}
   bumper1Volume: 0.843
   bumper2Source: {fileID: 6897337965311137346}
   bumper2Volume: 0.828
   rollingSource: {fileID: 3430942337101054736}
-  rollingVolume: 0.531
+  rollingVolume: 0.279
   monsterCollide1Source: {fileID: 5657158499132013621}
   monsterCollide1Volume: 0.895
   monsterCollide2Source: {fileID: 7713201592728230271}
   monsterCollide2Volume: 0.884
   pointAccumulateSource: {fileID: 955687185001244188}
-  pointAccumulateVolume: 0.526
+  pointAccumulateVolume: 0.083
   goldAccumulateSource: {fileID: 4822316638899661188}
-  goldAccumulateVolume: 0.664
+  goldAccumulateVolume: 0.395
   uiClickSource: {fileID: 2298155180106894982}
   uiClickVolume: 0.381
   ballRefillSource: {fileID: 8980172450618157379}
   ballRefillVolume: 0.392
   upgradeSelectSource: {fileID: 8527191905739718615}
-  upgradeSelectVolume: 0.673
+  upgradeSelectVolume: 0.384
   gameStartSource: {fileID: 6711870612608499086}
-  gameStartVolume: 0.749
+  gameStartVolume: 0.32
   spinnerSource: {fileID: 5146665959445882346}
   spinnerVolume: 1
   bossDamagerSource: {fileID: 7872312187653480557}
@@ -3608,12 +3608,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 129edccba31df2c4a8efcbad7a272537, type: 3}
   - {fileID: 8300000, guid: 3e0635b30eb41db46861869457eb1fdb, type: 3}
   - {fileID: 8300000, guid: 311d224e73717564db514fd5a4621ebb, type: 3}
-  - {fileID: 8300000, guid: f5e30cc839c1e214192acbea5814c15d, type: 3}
-  - {fileID: 8300000, guid: a88cb0aa0540201469e1285cec536bd0, type: 3}
-  - {fileID: 8300000, guid: 903634ffd1217b44684e881078cf1cbf, type: 3}
-  - {fileID: 8300000, guid: bbde0c04938aaa9468cf175247398a52, type: 3}
   sfxVolume: 1
-  bgmVolume: 0.047
+  bgmVolume: 0.116
 --- !u!1 &2616979456352673159
 GameObject:
   m_ObjectHideFlags: 0
@@ -6678,7 +6674,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 7648
+  m_VersionIndex: 7645
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
