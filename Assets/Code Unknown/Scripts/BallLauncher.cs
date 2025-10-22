@@ -165,7 +165,7 @@ public class BallLauncher : MonoBehaviour
         if (activeChargeVFX == null)
         {
             // sustain until launch
-            activeChargeVFX = VFXManager.Instance.PlayAndPauseAtEnd(
+            activeChargeVFX = VFXManager.Instance.PlayVFX(
                 VFXManager.Instance.vfx_Implosion_01,
                 transform.position,
                 Quaternion.identity);
