@@ -4016,7 +4016,7 @@ PrefabInstance:
       objectReference: {fileID: 50740067}
     - target: {fileID: 5659051313828214268, guid: 5ff363c6951392b4d9356da565929aaf, type: 3}
       propertyPath: bgmVolume
-      value: 0.117
+      value: 0.116
       objectReference: {fileID: 0}
     - target: {fileID: 5659051313828214268, guid: 5ff363c6951392b4d9356da565929aaf, type: 3}
       propertyPath: gameStart
@@ -4052,7 +4052,7 @@ PrefabInstance:
       objectReference: {fileID: 1590292595}
     - target: {fileID: 5659051313828214268, guid: 5ff363c6951392b4d9356da565929aaf, type: 3}
       propertyPath: flipperVolume
-      value: 1
+      value: 0.046
       objectReference: {fileID: 0}
     - target: {fileID: 5659051313828214268, guid: 5ff363c6951392b4d9356da565929aaf, type: 3}
       propertyPath: rollingSource
