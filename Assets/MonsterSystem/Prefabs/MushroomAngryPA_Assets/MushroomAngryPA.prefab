@@ -413,10 +413,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monsterID: Mushroom
-  hp: 300
+  hp: 80
   point: 300
-  gold: 10
-  maxHP: 300
+  gold: 50
+  maxHP: 80
   collisionType: 0
   healthBarPrefab: {fileID: 0}
 --- !u!114 &-3875256231063409359

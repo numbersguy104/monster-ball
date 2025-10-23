@@ -478,7 +478,7 @@ Transform:
   m_GameObject: {fileID: 370105985898683180}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.70710677, z: 0.7071068, w: 0}
-  m_LocalPosition: {x: 0, y: 0.19000006, z: -11.36}
+  m_LocalPosition: {x: -2.68, y: 0.19, z: 17.41}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -497,13 +497,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   database: {fileID: 11400000, guid: a7903abbadb31a94e9d0d30a10e4418f, type: 2}
-  collisionBehavior: 2
+  collisionBehavior: 0
   spawnerMovementType: 1
   spawnerSpeed: 1
   spawnerLengthOrRadius: 1
   monsterMovementType: 3
   monsterSpeed: 1
-  monsterLengthOrRadius: 2
+  monsterLengthOrRadius: 0.5
   hasSpawnedMonster: 0
   spawnedInstance: {fileID: 0}
   spawnOnStart: 0
@@ -1128,7 +1128,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1914
+  m_VersionIndex: 1923
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -1875,7 +1875,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1420
+  m_VersionIndex: 1429
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -2663,7 +2663,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1914
+  m_VersionIndex: 1923
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -3565,27 +3565,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flipperSource: {fileID: 2456185902216772805}
-  flipperVolume: 0.046
+  flipperVolume: 0.798
   launcherSource: {fileID: 1612377496848010562}
-  launcherVolume: 1
+  launcherVolume: 0.675
   launcherLoopSource: {fileID: 2840515027597854840}
-  launcherLoopVolume: 1
+  launcherLoopVolume: 0.706
   genericCollideSource: {fileID: 3711825910398252909}
-  genericCollideVolume: 0.259
+  genericCollideVolume: 0.631
   bumper1Source: {fileID: 3962802421279283061}
-  bumper1Volume: 0.843
+  bumper1Volume: 0.723
   bumper2Source: {fileID: 6897337965311137346}
-  bumper2Volume: 0.828
+  bumper2Volume: 0.702
   rollingSource: {fileID: 3430942337101054736}
-  rollingVolume: 0.279
+  rollingVolume: 0.672
   monsterCollide1Source: {fileID: 5657158499132013621}
-  monsterCollide1Volume: 0.895
+  monsterCollide1Volume: 0.794
   monsterCollide2Source: {fileID: 7713201592728230271}
-  monsterCollide2Volume: 0.884
+  monsterCollide2Volume: 0.651
   pointAccumulateSource: {fileID: 955687185001244188}
-  pointAccumulateVolume: 0.083
+  pointAccumulateVolume: 0.44
   goldAccumulateSource: {fileID: 4822316638899661188}
-  goldAccumulateVolume: 0.395
+  goldAccumulateVolume: 0.764
   uiClickSource: {fileID: 2298155180106894982}
   uiClickVolume: 0.381
   ballRefillSource: {fileID: 8980172450618157379}
@@ -3601,7 +3601,7 @@ MonoBehaviour:
   teleporterSource: {fileID: 8846372876781434754}
   teleporterVolume: 1
   bgmSource: {fileID: 9181102069070774290}
-  BGMVolume: 1
+  BGMVolume: 0.677
   bgmClips:
   - {fileID: 8300000, guid: 906f441c489cc994089d6a3a28c8a69b, type: 3}
   - {fileID: 8300000, guid: cb1f7aeee5f5d2b4f8148d6375a05ac6, type: 3}
@@ -6675,7 +6675,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 7645
+  m_VersionIndex: 7654
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -7010,7 +7010,7 @@ Transform:
   m_GameObject: {fileID: 4279157541602020140}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.70710677, z: 0.7071068, w: 0}
-  m_LocalPosition: {x: 8.53, y: 0.19000006, z: 3.45}
+  m_LocalPosition: {x: 12.88, y: 0.19, z: 0.76}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -7029,13 +7029,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   database: {fileID: 11400000, guid: a7903abbadb31a94e9d0d30a10e4418f, type: 2}
-  collisionBehavior: 2
+  collisionBehavior: 0
   spawnerMovementType: 0
   spawnerSpeed: 1
   spawnerLengthOrRadius: 3
-  monsterMovementType: 2
+  monsterMovementType: 1
   monsterSpeed: 1
-  monsterLengthOrRadius: 1.5
+  monsterLengthOrRadius: 0.5
   hasSpawnedMonster: 0
   spawnedInstance: {fileID: 4245915190017150719, guid: 5a6c21644ac370b48aefbbc777ea320c, type: 3}
   spawnOnStart: 0
@@ -8286,7 +8286,7 @@ MonoBehaviour:
   spawnerLengthOrRadius: 3
   monsterMovementType: 1
   monsterSpeed: 1
-  monsterLengthOrRadius: 1.5
+  monsterLengthOrRadius: 1
   hasSpawnedMonster: 0
   spawnedInstance: {fileID: 4245915190017150719, guid: 5a6c21644ac370b48aefbbc777ea320c, type: 3}
   spawnOnStart: 0
@@ -8567,6 +8567,61 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &6970375549910384804
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 707461838052342873}
+  - component: {fileID: 2358424849566565748}
+  m_Layer: 0
+  m_Name: MonsterSlot (10)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &707461838052342873
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6970375549910384804}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.70710677, z: 0.7071068, w: 0}
+  m_LocalPosition: {x: -6.9, y: 0.19, z: 9.22}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 9162767685125620393}
+  m_LocalEulerAnglesHint: {x: -90, y: 180, z: 0}
+--- !u!114 &2358424849566565748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6970375549910384804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b9b3c77e6137184ba7508c70fa3422b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  database: {fileID: 11400000, guid: a7903abbadb31a94e9d0d30a10e4418f, type: 2}
+  collisionBehavior: 2
+  spawnerMovementType: 0
+  spawnerSpeed: 1
+  spawnerLengthOrRadius: 3
+  monsterMovementType: 1
+  monsterSpeed: 1
+  monsterLengthOrRadius: 1
+  hasSpawnedMonster: 0
+  spawnedInstance: {fileID: 4245915190017150719, guid: 5a6c21644ac370b48aefbbc777ea320c, type: 3}
+  spawnOnStart: 0
 --- !u!1 &6998490870947272192
 GameObject:
   m_ObjectHideFlags: 0
@@ -8982,6 +9037,7 @@ Transform:
   - {fileID: 9112126934031419757}
   - {fileID: 735932460294952151}
   - {fileID: 6311971594818201557}
+  - {fileID: 707461838052342873}
   - {fileID: 7160334201171447593}
   - {fileID: 4509819380657201572}
   - {fileID: 6627392480728891516}

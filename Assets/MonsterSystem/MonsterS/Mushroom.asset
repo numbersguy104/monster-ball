@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0bc71e33ddd455b4c92af1f54afbebd0, type: 3}
-  m_Name: Horizontal1
+  m_Name: Mushroom
   m_EditorClassIdentifier: 
-  monsterID: horizontal
+  monsterID: Mushroom
   prefab: {fileID: 4245915190017150719, guid: 5a6c21644ac370b48aefbbc777ea320c, type: 3}
   collisionType: 0
   movementType: 2
-  speed: 5
+  speed: 1
   length: 5
   radius: 5
-  hp: 10
-  point: 50
+  hp: 110
+  point: 500
   gold: 50
