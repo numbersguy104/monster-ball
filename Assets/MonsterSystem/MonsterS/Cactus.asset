@@ -19,6 +19,6 @@ MonoBehaviour:
   speed: 1
   length: 5
   radius: 5
-  hp: 65
+  hp: 25
   point: 300
   gold: 50

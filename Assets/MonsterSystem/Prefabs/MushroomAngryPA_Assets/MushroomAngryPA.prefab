@@ -413,10 +413,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monsterID: Mushroom
-  hp: 80
+  hp: 30
   point: 300
   gold: 50
-  maxHP: 80
+  maxHP: 30
   collisionType: 0
   healthBarPrefab: {fileID: 0}
 --- !u!114 &-3875256231063409359
@@ -994,11 +994,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3917597430783924683, guid: 615025cb00a4abb42ac2632676ae1409, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.0058917
+      value: -0.7
       objectReference: {fileID: 0}
     - target: {fileID: 3917597430783924683, guid: 615025cb00a4abb42ac2632676ae1409, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.3514
+      value: -0.3
       objectReference: {fileID: 0}
     - target: {fileID: 3917597430783924683, guid: 615025cb00a4abb42ac2632676ae1409, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1063,6 +1063,10 @@ PrefabInstance:
     - target: {fileID: 8503825472209400368, guid: 615025cb00a4abb42ac2632676ae1409, type: 3}
       propertyPath: m_Name
       value: HealthBar
+      objectReference: {fileID: 0}
+    - target: {fileID: 8503825472209400368, guid: 615025cb00a4abb42ac2632676ae1409, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

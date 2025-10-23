@@ -209,10 +209,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monsterID: Cactus
-  hp: 65
+  hp: 25
   point: 300
   gold: 50
-  maxHP: 65
+  maxHP: 25
   collisionType: 1
   healthBarPrefab: {fileID: 0}
 --- !u!114 &-1529730941871598869
@@ -983,11 +983,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3917597430783924683, guid: 615025cb00a4abb42ac2632676ae1409, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.015
+      value: 0.025
       objectReference: {fileID: 0}
     - target: {fileID: 3917597430783924683, guid: 615025cb00a4abb42ac2632676ae1409, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.002
+      value: 0.004
       objectReference: {fileID: 0}
     - target: {fileID: 3917597430783924683, guid: 615025cb00a4abb42ac2632676ae1409, type: 3}
       propertyPath: m_LocalPosition.x
@@ -995,11 +995,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3917597430783924683, guid: 615025cb00a4abb42ac2632676ae1409, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.0058917
+      value: -0.37
       objectReference: {fileID: 0}
     - target: {fileID: 3917597430783924683, guid: 615025cb00a4abb42ac2632676ae1409, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.3514
+      value: -0.34
       objectReference: {fileID: 0}
     - target: {fileID: 3917597430783924683, guid: 615025cb00a4abb42ac2632676ae1409, type: 3}
       propertyPath: m_LocalRotation.w

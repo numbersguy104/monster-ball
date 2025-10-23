@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0bc71e33ddd455b4c92af1f54afbebd0, type: 3}
-  m_Name: Mushroom
+  m_Name: Mimic
   m_EditorClassIdentifier: 
-  monsterID: Mushroom
-  prefab: {fileID: 4245915190017150719, guid: 5a6c21644ac370b48aefbbc777ea320c, type: 3}
+  monsterID: Mimic
+  prefab: {fileID: 0}
   collisionType: 0
-  movementType: 2
-  speed: 1
+  movementType: 0
+  speed: 0
   length: 5
   radius: 5
-  hp: 30
-  point: 500
-  gold: 50
+  hp: 45
+  point: 150
+  gold: 300
