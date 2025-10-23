@@ -13,6 +13,9 @@ public class PinballQueue : MonoBehaviour
     [Tooltip("World coordinates for where to spawn the bottom-most ball")]
     [SerializeField] Vector3 spawnPosition = Vector3.zero;
 
+    [Tooltip("Finish Panel when Game Over")] 
+    [SerializeField] GameObject UIFinish;
+
     Queue<AbstractBall> ballQueue = new Queue<AbstractBall>();
     public static PinballQueue Instance { get; private set; }
     
@@ -91,6 +94,8 @@ public class PinballQueue : MonoBehaviour
         else
         {
             print("Game Over");
+            GameObject canvas = GameObject.FindWithTag("canvas");
+            var _UIFinishObj = Instantiate(UIFinish, canvas.transform, false);
         }
     }
 }

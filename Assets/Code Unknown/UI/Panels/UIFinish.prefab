@@ -1004,7 +1004,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 704451928138803664}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6599831550348984776}
+        m_TargetAssemblyTypeName: UI.UIFinish, Assembly-CSharp
+        m_MethodName: OnClickBackToTitle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5925306239214716475
 GameObject:
   m_ObjectHideFlags: 0
@@ -1434,7 +1446,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6118666069415903544}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6599831550348984776}
+        m_TargetAssemblyTypeName: UI.UIFinish, Assembly-CSharp
+        m_MethodName: OnReplayButtonClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6751821904100031423
 GameObject:
   m_ObjectHideFlags: 0
@@ -1581,6 +1605,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3111888079687628358}
   - component: {fileID: 4456821746478294510}
+  - component: {fileID: 6599831550348984776}
   m_Layer: 5
   m_Name: UIFinish
   m_TagString: Untagged
@@ -1620,6 +1645,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7095896495804024942}
   m_CullTransparentMesh: 1
+--- !u!114 &6599831550348984776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7095896495804024942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6750c06ecf3e2341ac83023dd866c62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  terrainPointsText: {fileID: 3104109495844398465}
+  monsterSlainText: {fileID: 841489614505267003}
+  goldEarnedText: {fileID: 671615370934188247}
+  ballUsedText: {fileID: 7698112131837672424}
+  totalPointsText: {fileID: 7969243749343708587}
+  damageDealtText: {fileID: 7970641896442108740}
+  level1: {fileID: 2139279211395548540, guid: 5ff363c6951392b4d9356da565929aaf, type: 3}
+  UIMain: {fileID: 7095896495804024942, guid: 684935564f674634395a19596de67d46, type: 3}
 --- !u!1 &7122272609609711649
 GameObject:
   m_ObjectHideFlags: 0
