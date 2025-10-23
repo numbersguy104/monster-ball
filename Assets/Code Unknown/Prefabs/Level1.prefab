@@ -1323,7 +1323,6 @@ MonoBehaviour:
   maxPower: 50
   maxCharge: 3
   launchRange: 0.5
-  maxCooldown: 1
   graphic: {fileID: 6707306669083807574}
   graphicScale: 1.5
   chargeSource: {fileID: 2840515027597854840}
@@ -4184,9 +4183,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ballPrefab: {fileID: 2386257326719710950, guid: acb7156a4df82454fbf98fbbdad97b1f, type: 3}
-  startingBalls: 1
+  startingBalls: 3
   spawnPosition: {x: 6.25, y: -0.3420203, z: -0.93969256}
-  UIFinish: {fileID: 7095896495804024942, guid: 55dc332d77ac0bf4c98ac0dfc4aca7ad, type: 3}
 --- !u!114 &5178052513748757161
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10227,6 +10225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fafa9461b6b492a42843806661d16685, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  UIFinish: {fileID: 7095896495804024942, guid: 55dc332d77ac0bf4c98ac0dfc4aca7ad, type: 3}
 --- !u!1 &8716687096721151319
 GameObject:
   m_ObjectHideFlags: 0

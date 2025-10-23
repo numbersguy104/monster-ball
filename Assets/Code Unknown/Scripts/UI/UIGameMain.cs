@@ -1,6 +1,3 @@
-//Commented out some stuff to move functionality to levelup hook (in GameStatsManager.cs)
-//~Joseph
-
 using System;
 using System.Collections.Generic;
 using TMPro;
@@ -12,6 +9,9 @@ namespace UI
 {
     public class UIGameMain : MonoBehaviour
     {
+        [Tooltip("Finish Panel when Game Over")]
+        [SerializeField] GameObject UIFinish;
+
         public GameObject UIShopPanel;
         public TextMeshProUGUI reqPointsText;
         public TextMeshProUGUI gold;
@@ -74,6 +74,8 @@ namespace UI
             OpenShopPanel();
         }
 
+        //Old code for levelup
+        //Functionality has been moved to LevelUp() using the GameStatsManager hook
         /*
         private void Update()
         {
@@ -98,6 +100,12 @@ namespace UI
                 _UIShopPanel.SetActive(true);
             }
             Time.timeScale = 0f;
+        }
+
+        public void OpenGameOverPanel()
+        {
+            GameObject canvas = GameObject.FindWithTag("canvas");
+            var _UIFinishObj = Instantiate(UIFinish, canvas.transform, false);
         }
 
         public void Refresh()

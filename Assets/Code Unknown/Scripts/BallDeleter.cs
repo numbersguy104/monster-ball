@@ -1,3 +1,5 @@
+using System.Linq;
+using UI;
 using UnityEngine;
 
 public class BallDeleter : MonoBehaviour
@@ -9,13 +11,20 @@ public class BallDeleter : MonoBehaviour
         queue = FindAnyObjectByType<PinballQueue>();
     }
 
-    void OnTriggerExit(Collider other)
+    void OnTriggerEnter(Collider other)
     {
         AbstractBall ball = other.gameObject.GetComponent<AbstractBall>();
         if (ball != null)
         {
             Destroy(ball.gameObject);
-            queue.NextBall();
+
+            int ballsRemaining = FindObjectsByType<AbstractBall>(FindObjectsSortMode.None).Count();
+
+            //For some reason Unity still considers the ball that was just destroyed? (at least I think so)
+            if (ballsRemaining <= 1)
+            {
+                FindAnyObjectByType<UIGameMain>().OpenGameOverPanel();
+            }
         }
     }
 }

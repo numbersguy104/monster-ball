@@ -20,9 +20,6 @@ public class BallLauncher : MonoBehaviour
     [Tooltip("How close the ball needs to be to the launcher to be launched")]
     [SerializeField] float launchRange = 0.2f;
 
-    [Tooltip("Cooldown between uses of the launcher")]
-    [SerializeField] float maxCooldown = 1.0f;
-
     [Tooltip("The visual object that displays the launcher's charge")]
     [SerializeField] GameObject graphic;
 
@@ -36,15 +33,71 @@ public class BallLauncher : MonoBehaviour
 
     GameObject chargeVfxInstance;
     GameObject activeChargeVFX;
-    float cooldown = 0.0f;
 
     //How long the button to "pull back" the launcher has been held, in seconds
     float chargeTime = 0.0f;
+
     //charge one time
     private bool isCharging = false;
     InputAction chargeAction;
 
-    
+    //Return whether there is at least one pinball near the launcher
+    //Use this to check if the launcher should be usable
+    private bool CheckBall()
+    {
+        foreach (AbstractBall ball in FindObjectsByType<AbstractBall>(FindObjectsSortMode.None))
+        {
+            float distance = Vector3.Distance(transform.position, ball.transform.position);
+            if (distance < launchRange)
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    //Return whether there is at least one pinball ABOVE the launcher
+    //Use this to check if a new ball should be spawned from the ball queue
+    private bool CheckBallAbove()
+    {
+        foreach (AbstractBall ball in FindObjectsByType<AbstractBall>(FindObjectsSortMode.None))
+        {
+            //Process to get the ball's distance from the launcher's column
+            //(In other words, distance ignoring the launcher's "transform.forward")
+            //To do this, get the distance on the other two axes, then combine them
+            Vector3 displacement = ball.transform.position - transform.position;
+            float distanceX = Vector3.Dot(displacement, transform.right);
+            float distanceY = Vector3.Dot(displacement, transform.up);
+            float columnDistance = Mathf.Sqrt(distanceX * distanceX + distanceY * distanceY);
+
+            if (columnDistance < launchRange)
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    //Return all balls near the launcher
+    //Use this to get which balls should be launched
+    private List<AbstractBall> DetectBalls()
+    {
+        List<AbstractBall> result = new List<AbstractBall>();
+
+        foreach (AbstractBall ball in FindObjectsByType<AbstractBall>(FindObjectsSortMode.None))
+        {
+            float distance = Vector3.Distance(transform.position, ball.transform.position);
+            if (distance < launchRange)
+            {
+                result.Add(ball);
+            }
+        }
+
+        return result;
+    }
+
     void Start()
     {
         chargeAction = InputSystem.actions.FindAction("Charge");
@@ -58,33 +111,46 @@ public class BallLauncher : MonoBehaviour
 
     void Update()
     {
-        //If on cooldown, do nothing else, just tick down the cooldown timer
-        if (cooldown > 0.0f)
-        {
-            cooldown = Mathf.Max(cooldown - Time.deltaTime, 0.0f);
-        }
-        else
-        {
-            bool chargeHeld = chargeAction.IsPressed();
+        //Did the player just activate the launcher?
+        bool chargeUsed = chargeAction.WasPerformedThisFrame();
 
+        //Is the player charging the launcher?
+        bool chargeHeld = chargeAction.IsPressed();
+
+        if (chargeUsed)
+        {
+            bool shouldStartCharging = false;
+            if (CheckBall())
+            {
+                shouldStartCharging = true;
+            }
+            else if (PinballQueue.Instance.ballQueue.Count > 0 && !CheckBallAbove())
+            {
+                PinballQueue.Instance.NextBall();
+                shouldStartCharging = true;
+            }
+
+            if (shouldStartCharging)
+            {
+                isCharging = true;
+                StartChargingVFX();
+
+                //SFX
+                if (chargeSource != null && !chargeSource.isPlaying)
+                {
+                    chargeSource.volume = SoundManager.Instance.launcherLoopVolume;
+                    chargeSource.Play();
+                }
+            }
+        }
+
+        if (isCharging)
+        {
             if (chargeHeld)
             {
-                if (!isCharging)
-                {
-                    //start charge play once
-                    isCharging = true;
-                    if (chargeTime <= 0.0f && chargeSource != null && !chargeSource.isPlaying)
-                    {
-                        chargeSource.volume = SoundManager.Instance.launcherLoopVolume;
-                        chargeSource.Play();
-                    }
-                    StartCharging();
-                }
-                chargeTime = chargeTime + Time.deltaTime;
-
-                
+                chargeTime += Time.deltaTime;
             }
-            else if (isCharging && chargeTime > Mathf.Epsilon)
+            else if (chargeTime > Mathf.Epsilon)
             {
                 if (chargeSource != null && chargeSource.isPlaying)
                     chargeSource.Stop();
@@ -95,48 +161,16 @@ public class BallLauncher : MonoBehaviour
                     launchSource.Play();
                 }
                 LaunchBall();
+
                 //Force on the ball scales with charge time, up to the maximum
                 float power = Mathf.Min(chargeTime, maxCharge) / maxCharge * maxPower;
 
                 //Determine which balls should be launched by this use of the launcher
-                List<AbstractBall> launchBalls = new List<AbstractBall>();
+                List<AbstractBall> launchBalls = DetectBalls();
 
-                //Get the closest ball to the launcher, within launchRange
-                AbstractBall firstBall = null;
-                float shortestDistance = launchRange;
-                foreach (AbstractBall ball in FindObjectsByType<AbstractBall>(FindObjectsSortMode.None))
+                //Launch the balls!
+                if (launchBalls != null && launchBalls.Count > 0)
                 {
-                    float distance = Vector3.Distance(transform.position, ball.transform.position);
-                    if (distance < shortestDistance)
-                    {
-                        firstBall = ball;
-                        shortestDistance = distance;
-                    }
-                }
-
-                //Recursively store the balls close to and behind the first one
-                //This handles multiple balls stacked in the launcher
-                if (firstBall != null)
-                {
-                    AbstractBall currentBall = firstBall;
-                    do
-                    {
-                        launchBalls.Add(currentBall);
-
-                        Transform currentTransform = currentBall.transform;
-                        Collider[] nearbyColliders = Physics.OverlapSphere(currentTransform.position, currentTransform.lossyScale.x * 1.1f);
-                        currentBall = null;
-                        foreach (Collider col in nearbyColliders)
-                        {
-                            if (col.transform.position.z < currentTransform.position.z)
-                            {
-                                AbstractBall ball = col.GetComponent<AbstractBall>();
-                                currentBall = ball;
-                            }
-                        }
-                    } while (currentBall != null);
-
-                    //Launch the balls!
                     foreach (AbstractBall ball in launchBalls)
                     {
                         ball.SetVelocity(0, 0, power);
@@ -144,7 +178,6 @@ public class BallLauncher : MonoBehaviour
                 }
 
                 chargeTime = 0;
-                cooldown = maxCooldown;
                 isCharging = false;
             }
         }
@@ -160,7 +193,7 @@ public class BallLauncher : MonoBehaviour
     }
 
     // VFx charging and launching 
-    void StartCharging()
+    void StartChargingVFX()
     {
         if (activeChargeVFX == null)
         {
