@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Mimic
   m_EditorClassIdentifier: 
   monsterID: Mimic
-  prefab: {fileID: 0}
+  prefab: {fileID: 2219292830553907877, guid: 6a4317fc729846d79f69cda980e03f9d, type: 3}
   collisionType: 0
   movementType: 0
   speed: 0

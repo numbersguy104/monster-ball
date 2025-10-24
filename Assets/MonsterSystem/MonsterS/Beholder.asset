@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monsterID: Beholder
   prefab: {fileID: 4530003306004163418, guid: a281aaaef0214dbbb7a0c5e5d4d370d1, type: 3}
-  collisionType: 0
+  collisionType: 1
   movementType: 1
   speed: 1
   length: 5
