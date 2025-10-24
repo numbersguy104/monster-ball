@@ -38,6 +38,9 @@ public class PointsTracker : MonoBehaviour
     //The current mulitplier value, starting with the first value in the queue
     float terrainPointsMult;
 
+    //Track the number of points gotten from terrains specifically
+    private long terrainPoints = 0;
+
     public enum PointSources
     {
         Bumper,
@@ -50,6 +53,8 @@ public class PointsTracker : MonoBehaviour
     }
 
     Dictionary<PointSources, long> pointsDictionary = new Dictionary<PointSources, long>();
+
+    BallCounter bc;
 
     void Start()
     {
@@ -74,12 +79,13 @@ public class PointsTracker : MonoBehaviour
         }
 
         LevelUp();
+
+        bc = FindAnyObjectByType<BallCounter>();
     }
 
     //Add a fixed number of points
     void AddPoints(long amount)
     {
-        //score += amount;
         GameStatsManager.Instance.AddScore(amount, ScoreSource.Terrain);
         GetComponent<TextMeshProUGUI>().text = GameStatsManager.Instance.score.ToString() + 
                                                "\n" + 
@@ -92,7 +98,9 @@ public class PointsTracker : MonoBehaviour
     {
         long points = pointsDictionary[source];
         points = (long)(points * terrainPointsMult);
+        points *= bc.countActive;
 
+        terrainPoints += points;
         AddPoints(points);
     }
 
@@ -102,12 +110,15 @@ public class PointsTracker : MonoBehaviour
     {
         long points = (long)(pointsDictionary[PointSources.Spinner] * Mathf.Pow(spinnerMult, spins));
         points = (long)(points * terrainPointsMult);
+        points *= bc.countActive;
+
+        terrainPoints += points;
         AddPoints(points);
     }
 
-    public long GetPoints()
+    public long GetTerrainPoints()
     {
-        return GameStatsManager.Instance.score;
+        return terrainPoints;
     }
 
     //Advance the queue for multipliers (should be called after reaching a points threshold)

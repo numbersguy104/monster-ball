@@ -21,20 +21,17 @@ public class PinballQueue : MonoBehaviour
         Instance = this;
     }
     
-    void Start()
+    private void Start()
     {
-        
         for (int i = 0; i < startingBalls; i++)
         {
             AddBall();
         }
-
-        NextBall();
     }
 
     //TEMPORARY DEV TOOL:
     //Add a keybind to manually add a new ball
-    void Update()
+    private void Update()
     {
         if (Input.GetKeyDown(KeyCode.B))
         {
