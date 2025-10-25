@@ -101,7 +101,7 @@ public class MonsterController : MonoBehaviour
     {
         hp -= damage;
 
-        DamageTextSpawner.Instance.Spawn(    transform.position + Vector3.up * 2f,damage,crit);
+      //  DamageTextSpawner.Instance.Spawn(    transform.position + Vector3.up * 2f,damage,crit);
 
 
         if (healthBarUI != null)
