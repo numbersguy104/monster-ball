@@ -3,6 +3,10 @@ using UnityEngine;
 
 public class SplitBall : AbstractAbilityBall
 {
+    //Number of balls this ball splits into
+    public const int SPLIT_COUNT = 3;
+
+    //Whether this ball already split or not
     private bool split = false;
 
     //Create a random velocity vector from <-1, -1, -1> to <1, 1, 1>
@@ -15,11 +19,15 @@ public class SplitBall : AbstractAbilityBall
     {
         if (!split)
         {
-            SplitBall newBall = Instantiate(this, transform.position, transform.rotation, transform.parent);
-
-            PostSplit();
-            newBall.PostSplit();
+            //Create splitCount - 1 balls
+            //The last ball is the one executing the split; it stays in the game
+            for (int i = 1; i < SPLIT_COUNT; i++) {
+                SplitBall newBall = Instantiate(this, transform.position, transform.rotation, transform.parent);
+                newBall.PostSplit();
+            }
         }
+
+        PostSplit();
     }
 
     public void PostSplit()
