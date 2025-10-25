@@ -18,8 +18,8 @@ public class MonsterController : MonoBehaviour
     public GameObject healthBarPrefab;
     private MonsterHealthBar healthBarUI;
 
-    [Header("Damage Popup")]
-    public GameObject damagePopupPrefab; // 拖入DamagePopup prefab
+    /*[Header("Damage Popup")]
+    public GameObject damagePopupPrefab; // drDamagePopup prefab*/
     private Canvas damageCanvas;
     private Camera mainCam;
 
@@ -70,7 +70,7 @@ public class MonsterController : MonoBehaviour
 
     void Start()
     {
-        // 初始化血条
+        // init healthbar
         if (healthBarPrefab != null)
         {
             Canvas worldCanvas = FindFirstObjectByType<Canvas>();
