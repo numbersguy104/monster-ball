@@ -222,13 +222,19 @@ public abstract class AbstractBall : MonoBehaviour
         BallLauncher launcher = FindAnyObjectByType<BallLauncher>();
         transform.position = launcher.transform.position;
 
+        
         var light = GameObject.Find("Spot Light");
 
+        if (light == null)
+        {
+            return;
+        }
         light.transform.position = new Vector3(
             transform.position.x,
             transform.position.y + 0.31f,
             transform.position.z - 0.1f
         );
+        
     }
 
     protected virtual void BallInit(string id)
