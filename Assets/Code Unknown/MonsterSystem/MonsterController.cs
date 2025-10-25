@@ -92,18 +92,17 @@ public class MonsterController : MonoBehaviour
         }
 
         mainCam = Camera.main;
-        damageCanvas = GameObject.Find("DamageCanvas").GetComponent<Canvas>();
+        var dc = GameObject.Find("Canvas");
+        if (dc != null)
+            damageCanvas = dc.GetComponent<Canvas>();
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(int damage,bool crit = false)
     {
         hp -= damage;
 
-        // ✅ 显示伤害跳字
-        ShowDamagePopup(damage);
+        DamageTextSpawner.Instance.Spawn(    transform.position + Vector3.up * 2f,damage,crit);
 
-        // stats update
-        GameStatsManager.Instance.AddDamage(damage);
 
         if (healthBarUI != null)
             healthBarUI.redBar.fillAmount = Mathf.Clamp01((float)hp / maxHP);
@@ -112,23 +111,7 @@ public class MonsterController : MonoBehaviour
             Die();
     }
 
-    void ShowDamagePopup(int damage)
-    {
-        // 防止未绑Prefab报错
-        if (damagePopupPrefab == null || damageCanvas == null) return;
 
-        // 生成UI对象到DamageCanvas下
-        GameObject popupObj = Instantiate(damagePopupPrefab, damageCanvas.transform);
-
-        // 获取脚本
-        DamagePopup popup = popupObj.GetComponent<DamagePopup>();
-
-        // 头顶位置偏移
-        Vector3 headPos = transform.position + Vector3.up * 2f;
-
-        // 调用setup
-        popup.Setup(damage, headPos, false);
-    }
 
     public void Die()
     {
