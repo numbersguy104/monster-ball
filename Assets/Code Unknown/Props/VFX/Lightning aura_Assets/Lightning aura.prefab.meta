@@ -1,8 +1,7 @@
 fileFormatVersion: 2
-guid: 60b5f02ed06fd6c44a405760cd19e59a
-NativeFormatImporter:
+guid: 4d9a3b35b3bc07649b697df7fb497b6d
+PrefabImporter:
   externalObjects: {}
-  mainObjectFileID: 2100000
   userData: 
   assetBundleName: 
   assetBundleVariant: 
@@ -11,5 +10,5 @@ AssetOrigin:
   productId: 247933
   packageName: Magic Effects FREE
   packageVersion: 1.6
-  assetPath: Assets/Code Unknown/Props/VFX/Plexus_Assets/Gradient2.mat
+  assetPath: Assets/Code Unknown/Props/VFX/Lightning aura.prefab
   uploadId: 762116
