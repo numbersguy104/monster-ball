@@ -1,8 +1,7 @@
 fileFormatVersion: 2
-guid: 60b5f02ed06fd6c44a405760cd19e59a
-NativeFormatImporter:
+guid: b1ae5055f08b8284d9e996465d1d37e3
+PrefabImporter:
   externalObjects: {}
-  mainObjectFileID: 2100000
   userData: 
   assetBundleName: 
   assetBundleVariant: 
@@ -11,5 +10,6 @@ AssetOrigin:
   productId: 247933
   packageName: Magic Effects FREE
   packageVersion: 1.6
-  assetPath: Assets/Code Unknown/Props/VFX/Plexus_Assets/Gradient2.mat
+  assetPath: Assets/Hovl Studio/Magic effects pack/Prefabs/AoE effects/Crystals crossfade
+    2.prefab
   uploadId: 762116
