@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3955efe50970d694dae5ee3bd9b5a87e
+guid: 35f9f314354d86648b42c99b7e2fa13b
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -111,6 +111,6 @@ AssetOrigin:
   serializedVersion: 1
   productId: 297168
   packageName: Rolling Balls Sci-fi Pack Free
-  packageVersion: 
-  assetPath: Assets/Code Unknown/Props/Balls/Iceball_Assets/RollingBalls_Sci-fi_3.fbx
-  uploadId: 0
+  packageVersion: 1.0
+  assetPath: Assets/Rolling_Balls-Sci-fi_Pack/Rolling_Balls-Sci-fi_Pack_SRP_Build/Model/RollingBalls_Sci-fi_2.fbx
+  uploadId: 695281

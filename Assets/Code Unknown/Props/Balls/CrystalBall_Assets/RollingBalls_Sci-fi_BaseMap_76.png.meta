@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 80bf550d87c72514f8aaa4bd487119e5
+guid: 6306b0f82f9d99045bdbb2618e9e760e
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -129,6 +129,6 @@ AssetOrigin:
   serializedVersion: 1
   productId: 297168
   packageName: Rolling Balls Sci-fi Pack Free
-  packageVersion: 
-  assetPath: Assets/Code Unknown/Props/Balls/Iceball_Assets/RollingBalls_Sci-fi_BaseMap_104.png
-  uploadId: 0
+  packageVersion: 1.0
+  assetPath: Assets/Rolling_Balls-Sci-fi_Pack/Rolling_Balls-Sci-fi_Pack_SRP_Build/Textures/RollingBalls_Sci-fi_BaseMap_76.png
+  uploadId: 695281

@@ -36,7 +36,7 @@
     "BallCritDmg": 1.25,
     "BallSpd": 3,
     "BallSize": 0.75,
-    "BallSkillReq": 10000,
+    "BallSkillReq": 7000,
     "BallSkillID": "Split",
     "BallPrice": 400,
     "BallShopChance": 40,
@@ -98,10 +98,25 @@
     "BallSize": 1.15,
     "BallSkillReq": 900,
     "BallSkillID": "LightningAura",
-    "BallPrice": 800,
+    "BallPrice": 600,
     "BallShopChance": 30,
     "AssetID": "Lightningball",
     "BallDesc": "Infuse itself with lightning power for a duration, summons lightnings to strike down on nearby enemies, dealing ball's attack damage to them.",
     "BallIcon": "Lightningball"
+  },
+  {
+    "ID": "CrystalBall",
+    "BallAttack": 25,
+    "BallCritChance": 0.5,
+    "BallCritDmg": 1.75,
+    "BallSpd": 1,
+    "BallSize": 1.25,
+    "BallSkillReq": 500,
+    "BallSkillID": "CrystalCrash",
+    "BallPrice": 650,
+    "BallShopChance": 30,
+    "AssetID": "CrystalBall",
+    "BallDesc": "Summons a crystal burst at the ball's current location, dealing ball's attack damage to enemies within.",
+    "BallIcon": ""
   }
 ]
