@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 
@@ -113,6 +114,12 @@ namespace UI
             gold.text = GameStatsManager.Instance.gold.ToString();
             killsLvl.text = gm.lvlKills.ToString();
             killsAll.text = gm.killCount.ToString();
+        }
+        
+        public void OnClickBackToTitle()
+        {
+            Scene currentScene = SceneManager.GetActiveScene();
+            SceneManager.LoadScene(currentScene.name);
         }
     }
 }

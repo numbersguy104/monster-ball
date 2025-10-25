@@ -103,6 +103,14 @@ public class GameStatsManager : MonoBehaviour
         {
             OnLevelUp?.Invoke();
         }
+
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            AddGold(300);
+            AddScore(1000, ScoreSource.Terrain);
+            AddKill();
+            AddKill();
+        }
     }
 
     void LevelUp()

@@ -74,9 +74,13 @@ namespace UI
                 return;
             }
 
-            GameStatsManager.Instance.SpendGold(_price);
-            PinballQueue.Instance.AddBall(_ballName);
+            if (GameStatsManager.Instance.SpendGold(_price))
+            {
+                PinballQueue.Instance.AddBall(_ballName);
+            };
+            
             Refresh();
+            _refresh?.Invoke();
         }
     }
 }
