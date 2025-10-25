@@ -1,7 +1,14 @@
+using cfg;
 using UnityEngine;
 
 public abstract class AbstractBall : MonoBehaviour
 {
+    //Ball ID; should match the ID column in the BallParam table
+    protected string ballID;
+
+    //Store the data tables
+    protected Tables data;
+
     //Base stats; should be set for each ball by calling SetStats() within Start()
     protected float baseDamage; //Base damage when hitting a monster
     protected float baseSpeed; //Inverse of dynamic friction for this ball
@@ -21,17 +28,17 @@ public abstract class AbstractBall : MonoBehaviour
     protected const float MAX_VOLUME = 1f; //Volume of the rolling sound
     protected const float VOLUME_FADE = 5f; // sound trasmitting speed
 
-    public bool active;
     protected Rigidbody rb;
     protected Collider col;
     
-    protected void SetStats(float damage, float speed, float size, float critDamage, float critChance)
+    protected void SetStats(string id)
     {
-        baseDamage = damage;
-        baseSpeed = speed;
-        baseSize = size;
-        baseCritDamage = critDamage;
-        baseCritChance = critChance;
+        BallParam stats = data.TbBallParam.Get(id);
+        baseDamage = stats.BallAttack;
+        baseSpeed = stats.BallSpd;
+        baseSize = stats.BallSize;
+        baseCritDamage = stats.BallCritDmg;
+        baseCritChance = stats.BallCritChance;
     }
 
     protected void DamageMonster(MonsterController monster)
@@ -93,36 +100,69 @@ public abstract class AbstractBall : MonoBehaviour
         return rb.linearVelocity;
     }
 
+    //Get the stat multiplier for a given amount of a certain upgrade
+    //Example: How much should 3 damage upgrades multiply the ball's base damage?
+    //upgradeName should be an upgrade type from the UpgradeParam data table
+    private float GetUpgradeMult(string upgradeName, int upgradeCount)
+    {
+        //If no upgrades, don't change the stat (multiply by 1)
+        if (upgradeCount == 0)
+        {
+            return 1.0f;
+        }
+
+        //Otherwise check the table
+        UpgradeParam upgradeData = data.TbUpgradeParam.Get(upgradeCount);
+
+        //No way to convert a string to a parameter here...
+        //Must check each case individually
+        switch (upgradeName)
+        {
+            case "UpgradeAtk":
+                return upgradeData.UpgradeAtk;
+            case "UpgradeSpd":
+                return upgradeData.UpgradeSpd;
+            case "UpgradeSize":
+                return upgradeData.UpgradeSize;
+            case "UpgradeCDmg":
+                return upgradeData.UpgradeCDmg;
+            case "UpgradeCChance":
+                return upgradeData.UpgradeCChance;
+            default:
+                Debug.LogWarning("Warning: GetUpgradeMult was called with an invalid upgrade name!");
+                return 1.0f;
+        }
+    }
+
     //Get the ball's stats after modifiers...
-    //(TODO: Hook this up to the sheets)
     //Damage
     public virtual float GetDamage()
     {
-        return baseDamage * (upgradesDamage + 1);
+        return baseDamage * GetUpgradeMult("UpgradeAtk", upgradesDamage);
     }
 
     //Speed
     public virtual float GetSpeed()
     {
-        return baseSpeed * (upgradesSpeed + 1);
+        return baseSpeed * GetUpgradeMult("UpgradeSpd", upgradesSpeed);
     }
 
     //Size
     public virtual float GetSize()
     {
-        return baseSize * (upgradesSize + 1);
+        return baseSize * GetUpgradeMult("UpgradeSize", upgradesSize);
     }
 
     //Crit damage
     public virtual float GetCritDamage()
     {
-        return baseCritDamage * (upgradesCritDamage + 1);
+        return baseCritDamage * GetUpgradeMult("UpgradeCDmg", upgradesCritDamage);
     }
 
     //Crit chance
     public virtual float GetCritChance()
     {
-        return baseCritChance * (upgradesCritChance + 1);
+        return baseCritChance * GetUpgradeMult("UpgradeCChance", upgradesCritChance);
     }
 
     //Upgrade one of the ball's stats...
@@ -187,10 +227,17 @@ public abstract class AbstractBall : MonoBehaviour
         );
     }
 
-    protected void BallInit()
+    protected virtual void BallInit(string id)
     {
+        ballID = id;
+
+        data = LubanTablesMgr.Instance.tables;
+
         rb = GetComponent<Rigidbody>();
         col = GetComponent<Collider>();
+
+        SetStats(id);
+
         UpdateFriction();
         UpdateSize();
     }
@@ -200,13 +247,13 @@ public abstract class AbstractBall : MonoBehaviour
         //TODO
     }
 
-    //SetStats should be BEFORE BallInit!
-    protected virtual void Start()
-    {
-        SetStats(8.0f, 5.0f, 2.0f, 0.05f, 1.25f);
-        BallInit();
-    }
+    //When implementing Awake be sure to call BallInit(string)
+    //where the string is the ball's ID in the BallParam table!
+    //This sets up all of the ball's stats.
+    protected abstract void Awake();
 
+    //If overriding Update, make sure to call "base.Update()" somewhere!
+    //This contains update logic shared by all pinballs.
     protected virtual void Update()
     {
         BallSound();

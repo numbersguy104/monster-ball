@@ -17,6 +17,10 @@ public class Spinner : MonoBehaviour
     //Starting rotation (used when resetting the spinner)
     Quaternion startRotation = Quaternion.identity;
 
+    //The last ball to interact with this spinner
+    //Used to award points to that specific ball (for ability progress)
+    AbstractBall lastBall = null;
+
     PointsTracker pt;
 
     void Start()
@@ -59,7 +63,7 @@ public class Spinner : MonoBehaviour
                 if (threshold > 0 && Mathf.Abs(oldRotations) >= threshold)
                 {
                     //...award points, scaling based on how many rotations it has left
-                    pt.AddSpinnerPoints((int)threshold - 1);
+                    pt.AddSpinnerPoints((int)threshold - 1, lastBall);
                 }
             }
         }
@@ -70,6 +74,8 @@ public class Spinner : MonoBehaviour
         AbstractBall ball = other.gameObject.GetComponent<AbstractBall>();
         if (ball != null)
         {
+            lastBall = ball;
+
             Vector3 ballVelocity = ball.GetVelocity();
             float velocityComponent = Vector3.Dot(ballVelocity, transform.forward);
             storedRotations += Mathf.Floor(velocityComponent);
