@@ -419,6 +419,7 @@ MonoBehaviour:
   maxHP: 30
   collisionType: 0
   healthBarPrefab: {fileID: 0}
+  damagePopupPrefab: {fileID: 0}
 --- !u!114 &-3875256231063409359
 MonoBehaviour:
   m_ObjectHideFlags: 0

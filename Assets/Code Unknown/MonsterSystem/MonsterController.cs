@@ -1,7 +1,6 @@
 ﻿using UI;
 using UnityEngine;
 
-// Runtime script for a single monster (HP, loot, collision settings, movement behavior anchor)
 public class MonsterController : MonoBehaviour
 {
     [Header("Data")]
@@ -16,8 +15,13 @@ public class MonsterController : MonoBehaviour
     private MonsterMovement movement;
 
     [Header("UI")]
-    public GameObject healthBarPrefab;      // Drag in health bar prefab
-    private MonsterHealthBar healthBarUI;   // Reference to health bar script
+    public GameObject healthBarPrefab;
+    private MonsterHealthBar healthBarUI;
+
+    [Header("Damage Popup")]
+    public GameObject damagePopupPrefab; // 拖入DamagePopup prefab
+    private Canvas damageCanvas;
+    private Camera mainCam;
 
     void Awake()
     {
@@ -27,11 +31,8 @@ public class MonsterController : MonoBehaviour
 
     public int GetMaxHP()
     {
-        // If more flexibility is needed, add a maxHp field in MonsterParam
-        //return hp <= 0 ? 1 : hp;
         return maxHP > 0 ? maxHP : 1;
     }
-
 
     public void InitializeFromParam(MonsterParam param)
     {
@@ -43,10 +44,10 @@ public class MonsterController : MonoBehaviour
         gold = param.gold;
         collisionType = param.collisionType;
 
-        // Set collision
         if (collisionSelector != null)
             collisionSelector.SetCollisionType(collisionType);
     }
+
     public void SetMovement(MovementType type, float speed, float lengthOrRadius, Vector3 spawnCenter, Quaternion orbitRotation)
     {
         if (movement == null) return;
@@ -61,35 +62,27 @@ public class MonsterController : MonoBehaviour
         movement.SetSpawnCenter(spawnCenter, orbitRotation);
     }
 
-
-    /// <summary>
-    /// Called by Spawner to explicitly set the anchor (to avoid conflicting with prefab’s own position)
-    /// </summary>
     public void SetSpawnCenter(Vector3 pos)
     {
         if (movement != null)
             movement.SetSpawnCenter(pos);
     }
 
-    // Placeholder: on defeat, notify spawner system (future)
     void Start()
     {
-        // Generate health bar
+        // 初始化血条
         if (healthBarPrefab != null)
         {
-            // Assume there is a global WorldSpace Canvas
             Canvas worldCanvas = FindFirstObjectByType<Canvas>();
             GameObject barObj = Instantiate(healthBarPrefab, worldCanvas.transform);
 
-            // Set health bar to follow
             BillboardFollow follow = barObj.GetComponent<BillboardFollow>();
             if (follow != null)
             {
-                follow.target = this.transform;   // Make the health bar follow the monster
+                follow.target = this.transform;
                 follow.offset = new Vector3(0, 2, 0);
             }
 
-            // Set health bar value control
             healthBarUI = barObj.GetComponent<MonsterHealthBar>();
             if (healthBarUI != null)
             {
@@ -97,38 +90,55 @@ public class MonsterController : MonoBehaviour
                 healthBarUI.yellowBar.fillAmount = 1f;
             }
         }
+
+        mainCam = Camera.main;
+        damageCanvas = GameObject.Find("DamageCanvas").GetComponent<Canvas>();
     }
 
     public void TakeDamage(int damage)
     {
         hp -= damage;
 
-        // Global stats update
+        // ✅ 显示伤害跳字
+        ShowDamagePopup(damage);
+
+        // stats update
         GameStatsManager.Instance.AddDamage(damage);
-        //GameStatsManager.Instance.AddScore(point / 10, ScoreSource.Monster);
 
         if (healthBarUI != null)
-        {
             healthBarUI.redBar.fillAmount = Mathf.Clamp01((float)hp / maxHP);
-        }
 
         if (hp <= 0)
-        {
             Die();
-        }
+    }
+
+    void ShowDamagePopup(int damage)
+    {
+        // 防止未绑Prefab报错
+        if (damagePopupPrefab == null || damageCanvas == null) return;
+
+        // 生成UI对象到DamageCanvas下
+        GameObject popupObj = Instantiate(damagePopupPrefab, damageCanvas.transform);
+
+        // 获取脚本
+        DamagePopup popup = popupObj.GetComponent<DamagePopup>();
+
+        // 头顶位置偏移
+        Vector3 headPos = transform.position + Vector3.up * 2f;
+
+        // 调用setup
+        popup.Setup(damage, headPos, false);
     }
 
     public void Die()
     {
-        // TODO: add death VFX/logic, notify spawn manager that this spawn point is free
         GameStatsManager.Instance.AddGold(gold);
         var mainUI = FindAnyObjectByType<UIGameMain>();
         mainUI.Refresh();
         GameStatsManager.Instance.AddScore(point, ScoreSource.Monster);
         GameStatsManager.Instance.AddKill();
-        // Test
         GameStatsManager.Instance.AddScore(100, ScoreSource.Monster);
-        // TODO: death effect
+
         Destroy(gameObject);
     }
 }
