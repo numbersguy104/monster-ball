@@ -15,7 +15,7 @@ public class BossDamager : MonoBehaviour
         AbstractBall ball = other.GetComponent<AbstractBall>();
         if (ball != null)
         {
-            pt.AddTerrainPoints(PointsTracker.PointSources.BossDamager);
+            pt.AddTerrainPoints(PointsTracker.PointSources.BossDamager, ball);
 
             //placeholder
             print("Boss Damaged!");

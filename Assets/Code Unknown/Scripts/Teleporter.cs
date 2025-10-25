@@ -36,7 +36,7 @@ public class Teleporter : MonoBehaviour
                 pairedTeleporter.GetComponent<Teleporter>().Disable();
                 ball.transform.position += teleportOffset;
 
-                pt.AddTerrainPoints(PointsTracker.PointSources.Portal);
+                pt.AddTerrainPoints(PointsTracker.PointSources.Portal, ball);
             }
         }
     }

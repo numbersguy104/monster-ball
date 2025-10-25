@@ -17,7 +17,7 @@ public sealed partial class UpgradeParam : Luban.BeanBase
 {
     public UpgradeParam(JSONNode _buf) 
     {
-        { if(!_buf["UpdrageLevel"].IsNumber) { throw new SerializationException(); }  UpdrageLevel = _buf["UpdrageLevel"]; }
+        { if(!_buf["UpgradeLevel"].IsNumber) { throw new SerializationException(); }  UpgradeLevel = _buf["UpgradeLevel"]; }
         { if(!_buf["UpgradeAtk"].IsNumber) { throw new SerializationException(); }  UpgradeAtk = _buf["UpgradeAtk"]; }
         { if(!_buf["UpgradeSpd"].IsNumber) { throw new SerializationException(); }  UpgradeSpd = _buf["UpgradeSpd"]; }
         { if(!_buf["UpgradeSize"].IsNumber) { throw new SerializationException(); }  UpgradeSize = _buf["UpgradeSize"]; }
@@ -30,7 +30,7 @@ public sealed partial class UpgradeParam : Luban.BeanBase
         return new UpgradeParam(_buf);
     }
 
-    public readonly int UpdrageLevel;
+    public readonly int UpgradeLevel;
     public readonly float UpgradeAtk;
     public readonly float UpgradeSpd;
     public readonly float UpgradeSize;
@@ -47,7 +47,7 @@ public sealed partial class UpgradeParam : Luban.BeanBase
     public override string ToString()
     {
         return "{ "
-        + "UpdrageLevel:" + UpdrageLevel + ","
+        + "UpgradeLevel:" + UpgradeLevel + ","
         + "UpgradeAtk:" + UpgradeAtk + ","
         + "UpgradeSpd:" + UpgradeSpd + ","
         + "UpgradeSize:" + UpgradeSize + ","

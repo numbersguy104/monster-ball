@@ -70,7 +70,7 @@ public class GroupSwitch : MonoBehaviour
             AbstractBall ball = other.gameObject.GetComponent<AbstractBall>();
             if (ball != null)
             {
-                pt.AddTerrainPoints(PointsTracker.PointSources.SwitchOne);
+                pt.AddTerrainPoints(PointsTracker.PointSources.SwitchOne, ball);
                 SetState(true);
             }
         }
@@ -93,7 +93,7 @@ public class GroupSwitch : MonoBehaviour
             //Otherwise, award extra points and reset all switches in the group
             foreach (GroupSwitch s in switches)
             {
-                pt.AddTerrainPoints(PointsTracker.PointSources.SwitchGroup);
+                pt.AddTerrainPoints(PointsTracker.PointSources.SwitchGroup, ball);
                 s.SetState(false);
             }
         }

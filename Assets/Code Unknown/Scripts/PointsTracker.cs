@@ -94,7 +94,7 @@ public class PointsTracker : MonoBehaviour
     }
 
     //Add base points associated with a given type of terrain
-    public void AddTerrainPoints(PointSources source)
+    public void AddTerrainPoints(PointSources source, AbstractBall ball = null)
     {
         long points = pointsDictionary[source];
         points = (long)(points * terrainPointsMult);
@@ -102,11 +102,16 @@ public class PointsTracker : MonoBehaviour
 
         terrainPoints += points;
         AddPoints(points);
+
+        if (ball != null && ball is AbstractAbilityBall)
+        {
+            ((AbstractAbilityBall)ball).AddSkillPoints(points);
+        }
     }
 
     //Add points for a spinner specifically
     //Spinners use a unique points formula based on their number of rotations
-    public void AddSpinnerPoints(int spins)
+    public void AddSpinnerPoints(int spins, AbstractBall ball = null)
     {
         long points = (long)(pointsDictionary[PointSources.Spinner] * Mathf.Pow(spinnerMult, spins));
         points = (long)(points * terrainPointsMult);
@@ -114,6 +119,11 @@ public class PointsTracker : MonoBehaviour
 
         terrainPoints += points;
         AddPoints(points);
+
+        if (ball != null && ball is AbstractAbilityBall)
+        {
+            ((AbstractAbilityBall)ball).AddSkillPoints(points);
+        }
     }
 
     public long GetTerrainPoints()

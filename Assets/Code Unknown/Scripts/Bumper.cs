@@ -29,7 +29,7 @@ public class Bumper: MonoBehaviour
             ball.SetVelocity(newVelocity);
 
             //Add points
-            pt.AddTerrainPoints(PointsTracker.PointSources.Bumper);
+            pt.AddTerrainPoints(PointsTracker.PointSources.Bumper, ball);
         }
     }
 }

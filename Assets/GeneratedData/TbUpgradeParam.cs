@@ -29,7 +29,7 @@ public partial class TbUpgradeParam
             UpgradeParam _v;
             { if(!_ele.IsObject) { throw new SerializationException(); }  _v = global::cfg.UpgradeParam.DeserializeUpgradeParam(_ele);  }
             _dataList.Add(_v);
-            _dataMap.Add(_v.UpdrageLevel, _v);
+            _dataMap.Add(_v.UpgradeLevel, _v);
         }
     }
 
