@@ -26,7 +26,7 @@
     "BallPrice": 250,
     "BallShopChance": 60,
     "AssetID": "Fireball",
-    "BallDesc": "Drops a fire trail that deals damage to enemies within overtime.",
+    "BallDesc": "Drops a fire trail that deals ball's attack damage to enemies within overtime.",
     "BallIcon": "Fireball"
   },
   {
@@ -41,7 +41,7 @@
     "BallPrice": 400,
     "BallShopChance": 40,
     "AssetID": "Splitball",
-    "BallDesc": "Split into 2 smaller balls when triggered. Balls created by this effect do not split again.",
+    "BallDesc": "Split into multiple smaller balls when triggered. Balls created by this effect do not split again.",
     "BallIcon": "Splitball"
   },
   {
@@ -101,7 +101,7 @@
     "BallPrice": 800,
     "BallShopChance": 30,
     "AssetID": "Lightningball",
-    "BallDesc": "Infuse itself with lightning power for a duration, summons lightnings to strike down nearby enemies, dealing ball's attack damage to them.",
+    "BallDesc": "Infuse itself with lightning power for a duration, summons lightnings to strike down on nearby enemies, dealing ball's attack damage to them.",
     "BallIcon": "Lightningball"
   }
 ]
