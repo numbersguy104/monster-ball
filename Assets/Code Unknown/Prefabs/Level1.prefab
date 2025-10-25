@@ -1840,7 +1840,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1941
+  m_VersionIndex: 2016
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -2828,7 +2828,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1447
+  m_VersionIndex: 1522
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -3740,7 +3740,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1941
+  m_VersionIndex: 2016
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -4145,6 +4145,7 @@ Transform:
   - {fileID: 6983214597226012572}
   - {fileID: 3004390414841147785}
   - {fileID: 8326138517942320493}
+  - {fileID: 2678291478714796815}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2218404786346760474
@@ -4829,6 +4830,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 129edccba31df2c4a8efcbad7a272537, type: 3}
   - {fileID: 8300000, guid: 3e0635b30eb41db46861869457eb1fdb, type: 3}
   - {fileID: 8300000, guid: 311d224e73717564db514fd5a4621ebb, type: 3}
+  - {fileID: 8300000, guid: f5e30cc839c1e214192acbea5814c15d, type: 3}
+  - {fileID: 8300000, guid: a88cb0aa0540201469e1285cec536bd0, type: 3}
+  - {fileID: 8300000, guid: 903634ffd1217b44684e881078cf1cbf, type: 3}
+  - {fileID: 8300000, guid: bbde0c04938aaa9468cf175247398a52, type: 3}
   sfxVolume: 1
   bgmVolume: 0.116
 --- !u!1 &2542774200518403086
@@ -5578,6 +5583,53 @@ MonoBehaviour:
   OnLevelUp:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &3012132678049943181
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2678291478714796815}
+  - component: {fileID: 2429939455795537043}
+  m_Layer: 0
+  m_Name: DamageManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2678291478714796815
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3012132678049943181}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.0426808, y: -127.3429, z: 96.858185}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2465929467873630328}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2429939455795537043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3012132678049943181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b69d26d8ed522fc458bf06f714ce2fdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Root: {fileID: 0}
+  damageTextPrefab: {fileID: 1013711913100973285, guid: 43a7171264fa9e74085139e877cbf91d, type: 3}
+  mainCamera: {fileID: 0}
 --- !u!1 &3031928654595217189
 GameObject:
   m_ObjectHideFlags: 0
@@ -8750,7 +8802,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 7672
+  m_VersionIndex: 7747
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -10116,8 +10168,8 @@ Transform:
   m_GameObject: {fileID: 5157290194866108608}
   serializedVersion: 2
   m_LocalRotation: {x: -0.16607651, y: -0, z: -0, w: 0.9861129}
-  m_LocalPosition: {x: -4.357, y: 0.322, z: 1.413}
-  m_LocalScale: {x: -0.28159043, y: 0.7582949, z: 0.28159043}
+  m_LocalPosition: {x: -4.357, y: 0.261, z: 1.435}
+  m_LocalScale: {x: -0.28159043, y: 1.6293981, z: 0.28159043}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2198479823518559406}
@@ -10400,7 +10452,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 3341
+  m_VersionIndex: 3416
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
