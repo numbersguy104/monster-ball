@@ -18,7 +18,8 @@ public class DamageTextSpawner : MonoBehaviour
         Vector3 screenPos = mainCamera.WorldToScreenPoint(worldPos);
 
         GameObject obj = Instantiate(damageTextPrefab, Root);
-        obj.transform.position = screenPos;
+        RectTransform rt = obj.GetComponent<RectTransform>();
+        rt.anchoredPosition = screenPos;
 
         obj.GetComponent<DamageTextController>().Init(damage, crit,worldPos);
     }

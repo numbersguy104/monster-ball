@@ -44,18 +44,19 @@ public abstract class AbstractBall : MonoBehaviour
     protected void DamageMonster(MonsterController monster)
     {
         if (monster == null) return;
-        bool crit = Random.value < GetCritChance();
+        bool crit = false;
         if (monster != null) {
             float damage = GetDamage();
 
             float rand = Random.value;
             if (rand < GetCritChance())
             {
+                crit = true;
                 damage *= GetCritDamage();
                 
             }
             monster.TakeDamage((int)damage,crit);
-            
+            crit = false;
 
         }
     }
