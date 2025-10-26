@@ -24,7 +24,7 @@
     "BallSkillReq": 3500,
     "BallSkillID": "FireTrail",
     "BallPrice": 250,
-    "BallShopChance": 60,
+    "BallShopChance": 40,
     "AssetID": "Fireball",
     "BallDesc": "Drops a fire trail that deals ball's attack damage to enemies within overtime.",
     "BallIcon": "Fireball"
@@ -39,7 +39,7 @@
     "BallSkillReq": 7000,
     "BallSkillID": "Split",
     "BallPrice": 400,
-    "BallShopChance": 40,
+    "BallShopChance": 20,
     "AssetID": "Splitball",
     "BallDesc": "Split into multiple smaller balls when triggered. Balls created by this effect do not split again.",
     "BallIcon": "Splitball"
@@ -69,8 +69,8 @@
     "BallSkillReq": 0,
     "BallSkillID": "",
     "BallPrice": 300,
-    "BallShopChance": 60,
-    "AssetID": "Radiantball",
+    "BallShopChance": 40,
+    "AssetID": "Stentball",
     "BallDesc": "A very round and shiny ball. Reminds you a certain someone that does not respond to messages often.",
     "BallIcon": "Stenball"
   },
@@ -84,7 +84,7 @@
     "BallSkillReq": 3000,
     "BallSkillID": "IceZone",
     "BallPrice": 200,
-    "BallShopChance": 70,
+    "BallShopChance": 40,
     "AssetID": "Iceball",
     "BallDesc": "Drop an icy zone that stops enemies from moving within.",
     "BallIcon": "Iceball"
