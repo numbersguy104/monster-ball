@@ -1052,7 +1052,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.35, y: 0.35, z: 0.35}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 7542937212466122577}
@@ -1131,6 +1131,7 @@ MonoBehaviour:
   maxHP: 85
   collisionType: 0
   healthBarPrefab: {fileID: 0}
+  damagePopupPrefab: {fileID: 0}
 --- !u!114 &679197833126216361
 MonoBehaviour:
   m_ObjectHideFlags: 0
