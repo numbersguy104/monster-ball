@@ -22,6 +22,7 @@ public class MonsterController : MonoBehaviour
     public GameObject damagePopupPrefab; // drDamagePopup prefab*/
     private Canvas damageCanvas;
     private Camera mainCam;
+    private bool movementIsPaused = false;
 
     void Awake()
     {
@@ -109,6 +110,20 @@ public class MonsterController : MonoBehaviour
 
         if (hp <= 0)
             Die();
+    }
+
+    public void PauseMovement()
+    {
+        if (movementIsPaused) return;
+        movementIsPaused = true;
+        movement.enabled = false;
+    }
+
+    public void ResumeMovement()
+    {
+        if (!movementIsPaused) return;
+        movementIsPaused = false;
+        movement.enabled = true;
     }
 
 
