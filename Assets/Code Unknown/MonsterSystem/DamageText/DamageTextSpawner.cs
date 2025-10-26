@@ -1,10 +1,9 @@
-using UI;
 using UnityEngine;
 
 public class DamageTextSpawner : MonoBehaviour
 {
     public static DamageTextSpawner Instance;
-    public Canvas canvas;
+
     public RectTransform Root;
     public GameObject damageTextPrefab;
     public Camera mainCamera;
@@ -16,10 +15,8 @@ public class DamageTextSpawner : MonoBehaviour
 
         if (mainCamera == null)
             mainCamera = Camera.main;
-
     }
 
-    
     public void Spawn(Vector3 worldPos, int damage, bool crit)
     {
         Vector3 screenPos = mainCamera.WorldToScreenPoint(worldPos);

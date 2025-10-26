@@ -131,13 +131,12 @@ public class MonsterController : MonoBehaviour
     public void Die()
     {
         GameStatsManager.Instance.AddGold(gold);
-        
+        var mainUI = FindAnyObjectByType<UIGameMain>();
+        mainUI.Refresh();
         GameStatsManager.Instance.AddScore(point, ScoreSource.Monster);
         GameStatsManager.Instance.AddKill();
         GameStatsManager.Instance.AddScore(100, ScoreSource.Monster);
 
         Destroy(gameObject);
-        var mainUI = FindAnyObjectByType<UIGameMain>();
-        mainUI.Refresh();
     }
 }
