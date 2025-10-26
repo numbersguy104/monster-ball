@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 3928866239047721103}
   - component: {fileID: 3804842613912533410}
   m_Layer: 6
-  m_Name: Iceball_temp
+  m_Name: Iceball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
