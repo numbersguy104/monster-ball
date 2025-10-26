@@ -30,6 +30,13 @@ public class Bumper: MonoBehaviour
 
             //Add points
             pt.AddTerrainPoints(PointsTracker.PointSources.Bumper, ball);
+
+            //Play collision VFX
+            VFXManager.Instance.PlayVFX(
+                VFXManager.Instance.CFXR3_Hit_Ice_B_Air,
+                transform.position,
+                Quaternion.identity
+            );
         }
     }
 }

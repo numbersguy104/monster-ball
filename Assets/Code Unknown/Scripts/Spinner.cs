@@ -1,3 +1,4 @@
+using System.Drawing;
 using UnityEngine;
 
 public class Spinner : MonoBehaviour
@@ -20,6 +21,8 @@ public class Spinner : MonoBehaviour
     //The last ball to interact with this spinner
     //Used to award points to that specific ball (for ability progress)
     AbstractBall lastBall = null;
+
+    private float vfxTimer = 0.0f;
 
     PointsTracker pt;
 
@@ -49,6 +52,7 @@ public class Spinner : MonoBehaviour
                 //Reset if the rotation count is low, to avoid floating point error buildup
                 storedRotations = 0.0f;
                 graphic.rotation = startRotation;
+                vfxTimer = 0.0f;
             }
             else
             {
@@ -64,6 +68,20 @@ public class Spinner : MonoBehaviour
                 {
                     //...award points, scaling based on how many rotations it has left
                     pt.AddSpinnerPoints((int)threshold - 1, lastBall);
+                }
+
+                if (Mathf.Abs(storedRotations) > 0.25f && vfxTimer == 0.0f)
+                {
+                    VFXManager.Instance.PlayVFX(
+                        VFXManager.Instance.Sparks_flashing_white,
+                        transform.position,
+                        Quaternion.identity
+                    );
+
+                    vfxTimer = 0.1f;
+                } else
+                {
+                    vfxTimer -= Time.deltaTime;
                 }
             }
         }

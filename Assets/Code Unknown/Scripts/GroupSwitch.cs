@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Drawing;
 using UnityEngine;
 
 public class GroupSwitch : MonoBehaviour
@@ -72,6 +73,13 @@ public class GroupSwitch : MonoBehaviour
             {
                 pt.AddTerrainPoints(PointsTracker.PointSources.SwitchOne, ball);
                 SetState(true);
+
+                VFXManager.Instance.PlayVFX(
+                    VFXManager.Instance.vfx_Shockwave_01,
+                    transform.position,
+                    Quaternion.identity,
+                    1.9f
+                );
             }
         }
     }

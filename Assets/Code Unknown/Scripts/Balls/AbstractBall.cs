@@ -1,4 +1,5 @@
 using cfg;
+using System.Drawing;
 using UnityEngine;
 
 public abstract class AbstractBall : MonoBehaviour
@@ -30,6 +31,8 @@ public abstract class AbstractBall : MonoBehaviour
 
     protected Rigidbody rb;
     protected Collider col;
+
+    private float vfxTimer = 0.0f;
     
     protected void SetStats(string id)
     {
@@ -294,14 +297,43 @@ public abstract class AbstractBall : MonoBehaviour
             );
             light.rotation = Quaternion.Euler(90.0f, 0.0f, 0.0f);
         }
+
+        if (GetVelocity().magnitude > 4.0f)
+        {
+            if (vfxTimer <= 0.0f)
+            {
+                VFXManager.Instance.PlayVFX(
+                VFXManager.Instance.CFXR2_Sparks_Rain,
+                transform.position,
+                Quaternion.identity,
+                0.5f);
+
+                vfxTimer = 0.02f;
+            }
+            else
+            {
+                vfxTimer -= Time.deltaTime;
+            }
+        }
     }
 
     protected virtual void OnCollisionEnter(Collision col)
     {
+        VFXManager.Instance.PlayVFX(
+            VFXManager.Instance.vfx_Impact_01,
+            col.contacts[0].point,
+            Quaternion.identity
+        );
+
         MonsterController mc = col.gameObject.GetComponent<MonsterController>();
         if (mc != null)
         {
             DamageMonster(mc);
+            VFXManager.Instance.PlayRandom(
+                VFXManager.Instance.HitMonsterEffects,
+                col.contacts[0].point,
+                Quaternion.identity
+            );
         }
     }
 
