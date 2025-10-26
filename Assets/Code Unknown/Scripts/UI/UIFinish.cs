@@ -50,9 +50,17 @@ namespace UI
 
         public void ShowTexts()
         {
+            var terrainPoint = FindFirstObjectByType<PointsTracker>().GetTerrainPoints();
+            string terrainPointStr = "Terrain Points" + new string('.', 25 - 14 - terrainPoint.ToString().Length) + terrainPoint.ToString();
+            ShowTextAnim(terrainPointsText, terrainPointStr, 3f);
+            
             var monsterSlain = GameStatsManager.Instance.killCount;
             string monsterSlainStr = "Monster Slain" + new string('.', 25 - 13 - monsterSlain.ToString().Length) + monsterSlain.ToString();
             ShowTextAnim(monsterSlainText, monsterSlainStr, 3f);
+            
+            var ballUsed = FindFirstObjectByType<BallCounter>().countTotal;
+            string ballUsedtStr = "Ball Used" + new string('.', 25 - 9 - ballUsed.ToString().Length) + ballUsed.ToString();
+            ShowTextAnim(ballUsedText, ballUsedtStr, 3f);
             
             var totalPoint = GameStatsManager.Instance.score;
             string totalPointStr = "Total Points" + new string('.', 25 - 12 - totalPoint.ToString().Length) + totalPoint.ToString();

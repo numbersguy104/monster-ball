@@ -25,6 +25,7 @@ public class UIPrepare : MonoBehaviour
     private int _curID = 0;
     private GameObject _curGameObj;
     private List<int> _artifectList = new List<int>();
+    private List<CommonIconDisplay> _displayItems = new List<CommonIconDisplay>();
 
     public void OnBeginBtnClick()
     {
@@ -101,6 +102,7 @@ public class UIPrepare : MonoBehaviour
             Destroy(pinballDisplayRoot.GetChild(i));
         }
 
+        _displayItems.Clear();
         var balls = LubanTablesMgr.Instance.tables.TbArtifactParam;
         for (int i = 0; i < balls.DataList.Count; i++)
         {
@@ -112,6 +114,7 @@ public class UIPrepare : MonoBehaviour
             // {
             //     ballDisplay.OnClick();
             // }
+            _displayItems.Add(ballDisplay);
         }
     }
 
@@ -152,6 +155,7 @@ public class UIPrepare : MonoBehaviour
     private void ClickBack(int id)
     {
         _artifectList.RemoveAll(i => i == id);
+        UICommonUtils.UnGreyImage(_displayItems[id].Icon);
         RefreshStatus();
     }
 }

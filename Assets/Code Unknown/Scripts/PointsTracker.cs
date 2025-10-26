@@ -39,7 +39,7 @@ public class PointsTracker : MonoBehaviour
     float terrainPointsMult;
 
     //Track the number of points gotten from terrains specifically
-    private long terrainPoints = 0;
+    public long terrainPoints = 0;
 
     public enum PointSources
     {

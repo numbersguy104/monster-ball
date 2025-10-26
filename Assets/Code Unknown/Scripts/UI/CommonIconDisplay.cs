@@ -32,6 +32,7 @@ namespace UI
         public void OnClick()
         {
             _ClickShow?.Invoke(_id);
+            UICommonUtils.GreyImage(Icon);
         }
         
         public void OnPointerEnter(PointerEventData eventData)

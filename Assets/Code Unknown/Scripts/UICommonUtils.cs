@@ -30,5 +30,14 @@ public class UICommonUtils
         string path = Application.dataPath + "/Code Unknown/Props/Balls/Icons/" + name + ".png";
         img.sprite = CreateSpriteFromPath(path);
     }
+
+    public static void GreyImage(Image img)
+    {
+        img.color = new Color(img.color.r, img.color.g, img.color.b, 0.2f);
+    }
     
+    public static void UnGreyImage(Image img)
+    {
+        img.color = new Color(img.color.r, img.color.g, img.color.b, 1.0f);
+    }
 }
