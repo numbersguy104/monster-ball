@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 3928866239047721103}
   - component: {fileID: 3022715039733296204}
   m_Layer: 6
-  m_Name: Ball
+  m_Name: Pinball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
