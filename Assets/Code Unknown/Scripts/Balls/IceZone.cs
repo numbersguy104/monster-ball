@@ -37,6 +37,7 @@ public class IceZone : MonoBehaviour
         if (mc != null)
         {
             overlapMonsters.Add(mc);
+            mc.OnMonsterDestroy += UnregisterMonster;
             if (!touchingMonsters.ContainsKey(mc))
             {
                 mc.PauseMovement();
@@ -51,15 +52,8 @@ public class IceZone : MonoBehaviour
         if (mc != null)
         {
             overlapMonsters.Remove(mc);
-            if (touchingMonsters.TryGetValue(mc, out int count))
-            {
-                touchingMonsters[mc] = count - 1;
-                if (count - 1 <= 0)
-                {
-                    mc.ResumeMovement();
-                    touchingMonsters.Remove(mc);
-                }
-            }
+            mc.OnMonsterDestroy -= UnregisterMonster;
+            UnregisterMonster(mc);
         }
     }
 
@@ -67,16 +61,21 @@ public class IceZone : MonoBehaviour
     {
         foreach (var mc in overlapMonsters)
         {
-            if (touchingMonsters.TryGetValue(mc, out int count))
-            {
-                touchingMonsters[mc] = count - 1;
-                if (count - 1 <= 0)
-                {
-                    mc.ResumeMovement();
-                    touchingMonsters.Remove(mc);
-                }
-            }
+            UnregisterMonster(mc);
         }
         overlapMonsters.Clear();
+    }
+
+    private void UnregisterMonster(MonsterController mc)
+    {
+        if (touchingMonsters.TryGetValue(mc, out int count))
+        {
+            touchingMonsters[mc] = count - 1;
+            if (count - 1 <= 0)
+            {
+                mc.ResumeMovement();
+                touchingMonsters.Remove(mc);
+            }
+        }
     }
 }
