@@ -11,6 +11,10 @@ public class DamageTextSpawner : MonoBehaviour
     void Awake()
     {
         Instance = this;
+        
+
+        if (mainCamera == null)
+            mainCamera = Camera.main;
     }
 
     public void Spawn(Vector3 worldPos, int damage, bool crit)
