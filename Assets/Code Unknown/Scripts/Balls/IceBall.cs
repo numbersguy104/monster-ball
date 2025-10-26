@@ -25,6 +25,7 @@ public class IceBall : AbstractAbilityBall
         trail.transform.up = GetVelocity();
         float size = transform.lossyScale.x * zoneScale;
         trail.transform.localScale = new Vector3(size, size, size);
+        trail.transform.localRotation = Quaternion.identity;
         trail.GetComponent<IceZone>().SetDuration(zoneDuration);
     }
 
