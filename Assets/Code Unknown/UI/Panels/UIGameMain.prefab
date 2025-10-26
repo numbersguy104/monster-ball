@@ -500,8 +500,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 212, y: -183}
-  m_SizeDelta: {x: 450, y: 200}
+  m_AnchoredPosition: {x: 312, y: -183}
+  m_SizeDelta: {x: 650, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3250341552112028386
 CanvasRenderer:
@@ -533,9 +533,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Playtest tool:
 
-    Press B to get
+    Press T if pinballs
 
-    another ball'
+    are stuck somewhere'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 937fa77cbc49c3f478f9b40238343316, type: 2}
   m_sharedMaterial: {fileID: 5221812718875079178, guid: 937fa77cbc49c3f478f9b40238343316, type: 2}

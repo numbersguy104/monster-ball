@@ -84,13 +84,20 @@ public abstract class AbstractBall : MonoBehaviour
         {
             vel.z = z.Value;
         }
-        rb.linearVelocity = vel;
+        SetVelocity(vel);
     }
 
     //Add a velocity vector to the ball's existing velocity
     public void AddVelocity(Vector3 v)
     {
         rb.linearVelocity += v;
+    }
+
+    //Add velocity components to the ball's existing velocity
+    public void AddVelocity(float x, float y, float z)
+    {
+        Vector3 v = new Vector3(x, y, z);
+        AddVelocity(v);
     }
 
     //Set the ball's speed (magnitude of its velocity) by scaling its velocity to match

@@ -19,8 +19,8 @@ public class MonsterController : MonoBehaviour
     public GameObject healthBarPrefab;
     private MonsterHealthBar healthBarUI;
 
-    /*[Header("Damage Popup")]
-    public GameObject damagePopupPrefab; // drDamagePopup prefab*/
+    [Header("Damage Popup")]
+    public GameObject damagePopupPrefab; // drDamagePopup prefab
     private Canvas damageCanvas;
     private Camera mainCam;
     private bool movementIsPaused = false;
@@ -140,11 +140,12 @@ public class MonsterController : MonoBehaviour
     public void Die()
     {
         GameStatsManager.Instance.AddGold(gold);
-        var mainUI = FindAnyObjectByType<UIGameMain>();
-        mainUI?.Refresh();
         GameStatsManager.Instance.AddScore(point, ScoreSource.Monster);
         GameStatsManager.Instance.AddKill();
         GameStatsManager.Instance.AddScore(100, ScoreSource.Monster);
+
+        var mainUI = FindAnyObjectByType<UIGameMain>();
+        mainUI?.Refresh();
 
         Destroy(gameObject);
     }

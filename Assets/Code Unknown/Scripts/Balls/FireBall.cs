@@ -8,17 +8,17 @@ public class FireBall : AbstractAbilityBall
 
     //Ability variables
     //How long the ball will leave the fire trail for on activation, in seconds
-    private const float LEAVE_DURATION = 10.0f;
+    [SerializeField] private float LEAVE_DURATION = 10.0f;
 
     //How long the fire trail itself will last after placement, in seconds
-    private const float TRAIL_DURATION = 5.0f;
+    [SerializeField] private float TRAIL_DURATION = 5.0f;
 
     //How often the fire trail will damage enemies, in seconds
     //(example: a value of 0.5 is once every 0.5 seconds, or equivalently twice per second)
-    private const float DAMAGE_FREQUENCY = 0.25f;
+    [SerializeField] private float DAMAGE_FREQUENCY = 0.25f;
 
     //Scale of the fire trail, relative to the ball
-    private const float TRAIL_SIZE = 1.0f;
+    [SerializeField] private float TRAIL_SIZE = 1.0f;
 
 
     //How long the ball's ability is currently active for, in seconds

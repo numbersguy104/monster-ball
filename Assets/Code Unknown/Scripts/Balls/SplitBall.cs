@@ -4,7 +4,7 @@ using UnityEngine;
 public class SplitBall : AbstractAbilityBall
 {
     //Number of balls this ball splits into
-    public const int SPLIT_COUNT = 3;
+    [SerializeField] private int SPLIT_COUNT = 3;
 
     //Whether this ball already split or not
     private bool split = false;

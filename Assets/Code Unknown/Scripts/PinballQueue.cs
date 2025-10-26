@@ -29,20 +29,6 @@ public class PinballQueue : MonoBehaviour
         }
     }
 
-    //TEMPORARY DEV TOOL:
-    //Add a keybind to manually add a new ball
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.B))
-        {
-            AddBall();
-            if (FindObjectsByType<AbstractBall>(FindObjectsSortMode.None).Length == 1)
-            {
-                NextBall();
-            }
-        }
-    }
-
     public void AddBall(string ballName = null)
     {
         //Hack: Use the ball launcher to get the board rotation and scale correct
