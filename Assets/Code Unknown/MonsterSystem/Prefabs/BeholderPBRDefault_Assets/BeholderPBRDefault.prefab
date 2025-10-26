@@ -1717,13 +1717,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monsterID: Beholder
-  hp: 40
+  hp: 70
   point: 500
   gold: 90
-  maxHP: 40
+  maxHP: 70
   collisionType: 1
   healthBarPrefab: {fileID: 0}
-  damagePopupPrefab: {fileID: 0}
 --- !u!114 &-3756748860466993631
 MonoBehaviour:
   m_ObjectHideFlags: 0

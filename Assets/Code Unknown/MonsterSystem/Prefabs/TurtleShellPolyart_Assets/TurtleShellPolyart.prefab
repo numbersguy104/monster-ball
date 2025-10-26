@@ -1125,13 +1125,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monsterID: Shelly
-  hp: 60
+  hp: 85
   point: 1500
   gold: 150
-  maxHP: 60
+  maxHP: 85
   collisionType: 0
   healthBarPrefab: {fileID: 0}
-  damagePopupPrefab: {fileID: 0}
 --- !u!114 &679197833126216361
 MonoBehaviour:
   m_ObjectHideFlags: 0

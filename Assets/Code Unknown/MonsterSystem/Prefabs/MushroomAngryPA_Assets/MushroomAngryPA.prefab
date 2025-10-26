@@ -413,13 +413,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monsterID: Mushroom
-  hp: 30
+  hp: 40
   point: 300
   gold: 50
-  maxHP: 30
+  maxHP: 40
   collisionType: 0
   healthBarPrefab: {fileID: 0}
-  damagePopupPrefab: {fileID: 0}
 --- !u!114 &-3875256231063409359
 MonoBehaviour:
   m_ObjectHideFlags: 0

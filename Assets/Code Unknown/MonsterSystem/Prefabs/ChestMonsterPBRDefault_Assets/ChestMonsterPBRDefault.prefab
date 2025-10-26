@@ -339,13 +339,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monsterID: Mimic
-  hp: 45
+  hp: 80
   point: 150
   gold: 300
-  maxHP: 45
+  maxHP: 80
   collisionType: 0
   healthBarPrefab: {fileID: 0}
-  damagePopupPrefab: {fileID: 0}
 --- !u!114 &9158442331959748865
 MonoBehaviour:
   m_ObjectHideFlags: 0
