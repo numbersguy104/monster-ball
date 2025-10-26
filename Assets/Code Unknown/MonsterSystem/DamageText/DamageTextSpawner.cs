@@ -15,6 +15,12 @@ public class DamageTextSpawner : MonoBehaviour
 
         if (mainCamera == null)
             mainCamera = Camera.main;
+        if (Root == null)
+        {
+            GameObject rootObj = GameObject.Find("Root");
+            if (rootObj != null)
+                Root = rootObj.GetComponent<RectTransform>();
+        }
     }
 
     public void Spawn(Vector3 worldPos, int damage, bool crit)
