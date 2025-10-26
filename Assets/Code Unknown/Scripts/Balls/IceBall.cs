@@ -5,9 +5,9 @@ public class IceBall : AbstractAbilityBall
     [SerializeField] IceZone iceZonePrefab;
     [Header("Lightning Ball Settings")]
     [Tooltip("Ice zone duration")]
-    private float zoneDuration = 5.0f;
+    [SerializeField] private float zoneDuration = 5.0f;
     [Tooltip("Ice zone size ralated to ball")]
-    private float zoneScale = 1.0f;
+    [SerializeField] private float zoneScale = 1.0f;
 
     protected override void Skill()
     {
