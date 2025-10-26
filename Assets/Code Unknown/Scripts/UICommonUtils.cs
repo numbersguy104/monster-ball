@@ -17,8 +17,9 @@ public class UICommonUtils
     
     public static void LoadArtifectIcon(Image img, string name)
     {
-        string path = Application.dataPath + "/Code Unknown/Props/Icons/" + name + ".png";
-        img.sprite = CreateSpriteFromPath(path);
+        Sprite sprite = Resources.Load<Sprite>($"Prefabs/Icons/{name}");
+        if (sprite != null)
+            img.sprite = sprite;
     }
 
     public static void LoadBallIcon(Image img, string name)
@@ -27,8 +28,8 @@ public class UICommonUtils
         {
             return;
         }
-        string path = Application.dataPath + "/Code Unknown/Props/Balls/Icons/" + name + ".png";
-        img.sprite = CreateSpriteFromPath(path);
+        Sprite sprite = Resources.Load<Sprite>($"Prefabs/Balls/Icons/{name}");
+        img.sprite = sprite;
     }
 
     public static void GreyImage(Image img)

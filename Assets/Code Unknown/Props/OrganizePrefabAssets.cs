@@ -1,3 +1,4 @@
+#if UNITY_EDITOR
 using UnityEditor;
 using UnityEngine;
 using System.IO;
@@ -51,3 +52,4 @@ public class OrganizePrefabAssets
         Debug.Log($"Moved assets for '{selectedPrefab.name}' to {newFolderPath}");
     }
 }
+#endif

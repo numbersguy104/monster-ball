@@ -21,8 +21,18 @@ public class LubanTablesMgr
 
     private LubanTablesMgr()
     {
-        string gameConfDir = Application.dataPath + "/Resources/Data";
-        var t = new cfg.Tables(file => JSON.Parse(File.ReadAllText($"{gameConfDir}/{file}.json")));
+        // string gameConfDir = Application.dataPath + "/Resources/Data";
+        // var t = new cfg.Tables(file => JSON.Parse(File.ReadAllText($"{gameConfDir}/{file}.json")));
+        var t = new cfg.Tables(loader: file =>
+        {
+            var textAsset = Resources.Load<TextAsset>($"Data/{file}");
+            if (textAsset == null)
+            {
+                Debug.LogError($"Load table failed: {file}");
+                return null;
+            }
+            return JSON.Parse(textAsset.text);
+        });
         tables = t;
     }
 }
