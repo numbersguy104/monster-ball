@@ -15,7 +15,7 @@ public class LightningBall : AbstractAbilityBall
     [Tooltip("Scale of the summon, relative to the ball")]
     [SerializeField] private float summonScale = 1.0f;
     [Tooltip("Time in seconds between strikes when ability is active")]
-    [SerializeField] private const float attackInterval = 1f;
+    [SerializeField] private float attackInterval = 1f;
 
     //How long the ball's ability is currently active for, in seconds
     private float durationTimer = 0.0f;
