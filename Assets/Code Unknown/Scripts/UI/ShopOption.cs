@@ -16,6 +16,7 @@ namespace UI
         public Image BallIcon;
         public TextMeshProUGUI BallDesc;
         public Button purchase;
+        public Image mask;
         
         private List<int> ballWeights = new List<int>();
         private int _price;
@@ -30,6 +31,7 @@ namespace UI
             {
                 ballWeights.Add(ball.BallShopChance);
             }
+            mask.gameObject.SetActive(false);
         }
 
         public void Refresh(Action refresh = null)
@@ -79,7 +81,8 @@ namespace UI
                 PinballQueue.Instance.AddBall(_ballName);
             };
             
-            Refresh();
+            // Refresh();
+            mask.gameObject.SetActive(true);
             _refresh?.Invoke();
         }
     }
