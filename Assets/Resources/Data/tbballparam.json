@@ -10,9 +10,9 @@
     "BallSkillID": "",
     "BallPrice": 100,
     "BallShopChance": 80,
-    "AssetID": "Ball",
+    "AssetID": "Pinball",
     "BallDesc": "Good old basic. Does not have any effect, but it's reliable in every aspect.",
-    "BallIcon": ""
+    "BallIcon": "Pinball"
   },
   {
     "ID": "Fireball",
@@ -117,6 +117,6 @@
     "BallShopChance": 30,
     "AssetID": "CrystalBall",
     "BallDesc": "Summons a crystal burst at the ball's current location, dealing ball's attack damage to enemies within.",
-    "BallIcon": ""
+    "BallIcon": "CrystalBall"
   }
 ]
