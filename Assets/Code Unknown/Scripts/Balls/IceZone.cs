@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IceTrail : MonoBehaviour
+public class IceZone : MonoBehaviour
 {
     private static Dictionary<MonsterController, int> touchingMonsters = new Dictionary<MonsterController, int>();
     private float timer = Mathf.Infinity;
