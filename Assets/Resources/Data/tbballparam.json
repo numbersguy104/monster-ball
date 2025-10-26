@@ -20,7 +20,7 @@
     "BallCritChance": 0.25,
     "BallCritDmg": 1.25,
     "BallSpd": 2,
-    "BallSize": 1.05,
+    "BallSize": 0.8,
     "BallSkillReq": 500,
     "BallSkillID": "FireTrail",
     "BallPrice": 250,
