@@ -35,7 +35,7 @@
     "BallCritChance": 0.25,
     "BallCritDmg": 1.25,
     "BallSpd": 3,
-    "BallSize": 0.75,
+    "BallSize": 1.1,
     "BallSkillReq": 7000,
     "BallSkillID": "Split",
     "BallPrice": 400,
