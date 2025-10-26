@@ -8,7 +8,7 @@
     "MonHPInc": 1,
     "MonPointInc": 1,
     "TerPointInc": 1,
-    "MonsterSpawnSCount": 3
+    "MonsterSpawnSCount": 5
   },
   {
     "id": 1,
@@ -19,7 +19,7 @@
     "MonHPInc": 1,
     "MonPointInc": 1,
     "TerPointInc": 1,
-    "MonsterSpawnSCount": 3
+    "MonsterSpawnSCount": 5
   },
   {
     "id": 2,
@@ -30,7 +30,7 @@
     "MonHPInc": 1.25,
     "MonPointInc": 1,
     "TerPointInc": 1,
-    "MonsterSpawnSCount": 4
+    "MonsterSpawnSCount": 5
   },
   {
     "id": 3,
@@ -41,7 +41,7 @@
     "MonHPInc": 1.5,
     "MonPointInc": 1.25,
     "TerPointInc": 1.5,
-    "MonsterSpawnSCount": 4
+    "MonsterSpawnSCount": 5
   },
   {
     "id": 4,
@@ -52,7 +52,7 @@
     "MonHPInc": 1.5,
     "MonPointInc": 1.25,
     "TerPointInc": 1.5,
-    "MonsterSpawnSCount": 4
+    "MonsterSpawnSCount": 6
   },
   {
     "id": 5,
@@ -63,7 +63,7 @@
     "MonHPInc": 1.5,
     "MonPointInc": 1.25,
     "TerPointInc": 1.5,
-    "MonsterSpawnSCount": 5
+    "MonsterSpawnSCount": 6
   },
   {
     "id": 6,
@@ -74,7 +74,7 @@
     "MonHPInc": 1.5,
     "MonPointInc": 1.25,
     "TerPointInc": 1.5,
-    "MonsterSpawnSCount": 5
+    "MonsterSpawnSCount": 6
   },
   {
     "id": 7,
@@ -85,7 +85,7 @@
     "MonHPInc": 1.5,
     "MonPointInc": 1.25,
     "TerPointInc": 1.5,
-    "MonsterSpawnSCount": 5
+    "MonsterSpawnSCount": 6
   },
   {
     "id": 8,
@@ -96,7 +96,7 @@
     "MonHPInc": 1.5,
     "MonPointInc": 1.25,
     "TerPointInc": 1.5,
-    "MonsterSpawnSCount": 5
+    "MonsterSpawnSCount": 6
   },
   {
     "id": 9,
@@ -107,7 +107,7 @@
     "MonHPInc": 1.3,
     "MonPointInc": 2,
     "TerPointInc": 2,
-    "MonsterSpawnSCount": 6
+    "MonsterSpawnSCount": 7
   },
   {
     "id": 10,
@@ -118,7 +118,7 @@
     "MonHPInc": 1.3,
     "MonPointInc": 2,
     "TerPointInc": 2,
-    "MonsterSpawnSCount": 6
+    "MonsterSpawnSCount": 7
   },
   {
     "id": 11,
@@ -129,7 +129,7 @@
     "MonHPInc": 1.3,
     "MonPointInc": 2,
     "TerPointInc": 2,
-    "MonsterSpawnSCount": 6
+    "MonsterSpawnSCount": 7
   },
   {
     "id": 12,
