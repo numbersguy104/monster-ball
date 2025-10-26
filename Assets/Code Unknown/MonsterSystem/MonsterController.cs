@@ -1,4 +1,5 @@
-﻿using UI;
+﻿using System;
+using UI;
 using UnityEngine;
 
 public class MonsterController : MonoBehaviour
@@ -23,6 +24,8 @@ public class MonsterController : MonoBehaviour
     private Canvas damageCanvas;
     private Camera mainCam;
     private bool movementIsPaused = false;
+
+    public event Action<MonsterController> OnMonsterDestroy;
 
     void Awake()
     {
@@ -98,6 +101,12 @@ public class MonsterController : MonoBehaviour
             damageCanvas = dc.GetComponent<Canvas>();
     }
 
+    private void OnDestroy()
+    {
+        OnMonsterDestroy?.Invoke(this);
+        OnMonsterDestroy = null;
+    }
+
     public void TakeDamage(int damage,bool crit = false)
     {
         hp -= damage;
@@ -132,7 +141,7 @@ public class MonsterController : MonoBehaviour
     {
         GameStatsManager.Instance.AddGold(gold);
         var mainUI = FindAnyObjectByType<UIGameMain>();
-        mainUI.Refresh();
+        mainUI?.Refresh();
         GameStatsManager.Instance.AddScore(point, ScoreSource.Monster);
         GameStatsManager.Instance.AddKill();
         GameStatsManager.Instance.AddScore(100, ScoreSource.Monster);

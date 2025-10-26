@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IceTrail : MonoBehaviour
+public class IceZone : MonoBehaviour
 {
     private static Dictionary<MonsterController, int> touchingMonsters = new Dictionary<MonsterController, int>();
     private float timer = Mathf.Infinity;
@@ -37,6 +37,7 @@ public class IceTrail : MonoBehaviour
         if (mc != null)
         {
             overlapMonsters.Add(mc);
+            mc.OnMonsterDestroy += UnregisterMonster;
             if (!touchingMonsters.ContainsKey(mc))
             {
                 mc.PauseMovement();
@@ -51,15 +52,8 @@ public class IceTrail : MonoBehaviour
         if (mc != null)
         {
             overlapMonsters.Remove(mc);
-            if (touchingMonsters.TryGetValue(mc, out int count))
-            {
-                touchingMonsters[mc] = count - 1;
-                if (count - 1 <= 0)
-                {
-                    mc.ResumeMovement();
-                    touchingMonsters.Remove(mc);
-                }
-            }
+            mc.OnMonsterDestroy -= UnregisterMonster;
+            UnregisterMonster(mc);
         }
     }
 
@@ -67,16 +61,21 @@ public class IceTrail : MonoBehaviour
     {
         foreach (var mc in overlapMonsters)
         {
-            if (touchingMonsters.TryGetValue(mc, out int count))
-            {
-                touchingMonsters[mc] = count - 1;
-                if (count - 1 <= 0)
-                {
-                    mc.ResumeMovement();
-                    touchingMonsters.Remove(mc);
-                }
-            }
+            UnregisterMonster(mc);
         }
         overlapMonsters.Clear();
+    }
+
+    private void UnregisterMonster(MonsterController mc)
+    {
+        if (touchingMonsters.TryGetValue(mc, out int count))
+        {
+            touchingMonsters[mc] = count - 1;
+            if (count - 1 <= 0)
+            {
+                mc.ResumeMovement();
+                touchingMonsters.Remove(mc);
+            }
+        }
     }
 }
