@@ -6507,7 +6507,7 @@ MonoBehaviour:
   vfx_Shockwave_01: {fileID: 9080140021571130472, guid: 36b66fc1d9f09e44a9eb86f1796c8055, type: 3}
   CFXR2_Sparks_Rain: {fileID: 763799897560185588, guid: 798157bad7358b04499c9d71cd3c0d9b, type: 3}
   CFXR2_Firewall_A: {fileID: 8172849020266659018, guid: 2af5562ce69fc2d448481a1587a352a5, type: 3}
-  HitMonsterEffects: []
+  CFXR2_Ground_Hit: {fileID: 0}
   Star_hit: {fileID: 4535006216103734310, guid: 677d5bcef8cd75344a747d51cdd1103f, type: 3}
   CFXR3_Hit_Ice_B_Air: {fileID: 5112403345868107898, guid: 6f34ef0d986e9db4199cf75805f79753, type: 3}
   Sparks_flashing_white: {fileID: 6007584933065334475, guid: 1e62b32898437cf43a226b5913d33fe5, type: 3}
@@ -6647,7 +6647,7 @@ MonoBehaviour:
   vfx_Shockwave_01: {fileID: 9080140021571130472, guid: 36b66fc1d9f09e44a9eb86f1796c8055, type: 3}
   CFXR2_Sparks_Rain: {fileID: 763799897560185588, guid: 798157bad7358b04499c9d71cd3c0d9b, type: 3}
   CFXR2_Firewall_A: {fileID: 8172849020266659018, guid: 2af5562ce69fc2d448481a1587a352a5, type: 3}
-  HitMonsterEffects: []
+  CFXR2_Ground_Hit: {fileID: 3432958286849152088, guid: 87ee7299dd44ed747af24dbb91bcd33b, type: 3}
   Star_hit: {fileID: 4535006216103734310, guid: 677d5bcef8cd75344a747d51cdd1103f, type: 3}
   CFXR3_Hit_Ice_B_Air: {fileID: 5112403345868107898, guid: 6f34ef0d986e9db4199cf75805f79753, type: 3}
   Sparks_flashing_white: {fileID: 6007584933065334475, guid: 1e62b32898437cf43a226b5913d33fe5, type: 3}

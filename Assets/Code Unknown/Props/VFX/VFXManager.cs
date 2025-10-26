@@ -11,7 +11,7 @@ public class VFXManager : MonoBehaviour
     public GameObject vfx_Shockwave_01;
     public GameObject CFXR2_Sparks_Rain;
     public GameObject CFXR2_Firewall_A;
-    public GameObject[] HitMonsterEffects;     
+    public GameObject CFXR2_Ground_Hit;     
     public GameObject Star_hit;
     public GameObject CFXR3_Hit_Ice_B_Air;
     public GameObject Sparks_flashing_white;
@@ -35,7 +35,6 @@ public class VFXManager : MonoBehaviour
     public GameObject PlayRandom(GameObject[] prefabs, Vector3 pos, Quaternion rot, float lifetime = 5f)
     {
         if (prefabs == null || prefabs.Length == 0) return null;
-
         int i = Random.Range(0, prefabs.Length);
         return PlayVFX(prefabs[i], pos, rot, lifetime);
     }

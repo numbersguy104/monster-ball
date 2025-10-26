@@ -329,8 +329,8 @@ public abstract class AbstractBall : MonoBehaviour
         if (mc != null)
         {
             DamageMonster(mc);
-            VFXManager.Instance.PlayRandom(
-                VFXManager.Instance.HitMonsterEffects,
+            VFXManager.Instance.PlayVFX(
+                VFXManager.Instance.CFXR2_Ground_Hit,
                 col.contacts[0].point,
                 Quaternion.identity
             );
@@ -343,6 +343,11 @@ public abstract class AbstractBall : MonoBehaviour
         if (mc != null)
         {
             DamageMonster(mc);
+            VFXManager.Instance.PlayVFX(
+                VFXManager.Instance.CFXR2_Ground_Hit,
+                other.transform.position,
+                Quaternion.identity
+            );
         }
     }
 }
