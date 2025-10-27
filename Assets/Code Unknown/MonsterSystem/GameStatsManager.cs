@@ -11,6 +11,7 @@ public class GameStatsManager : MonoBehaviour
     [Header("Player Stats")]
     public long score = 0;         // Total score
     public long gold = 0;          // Total gold (can decrease)
+    public long totalGoldGained = 0;
     public int killCount = 0;      // Number of monsters killed
     public long totalDamage = 0;   // Total damage dealt
     public float dps = 0f;         // Damage per second (calculated at runtime)
@@ -174,6 +175,7 @@ public class GameStatsManager : MonoBehaviour
     public void AddGold(long amount)
     {
         gold += amount;
+        totalGoldGained += amount;
         SoundManager.Instance.PlaySFX(SoundManager.Instance.goldAccumulateSource,SoundManager.Instance.goldAccumulateVolume);
     }
 
