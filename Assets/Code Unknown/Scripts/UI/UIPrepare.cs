@@ -154,6 +154,7 @@ public class UIPrepare : MonoBehaviour
         _curID = id;
         AddItemToPrepare(_curID, _curGameObj);
         RefreshStatus();
+        UICommonUtils.GreyImage(_displayItems[id].Icon);
     }
 
     private void ClickBack(int id)
