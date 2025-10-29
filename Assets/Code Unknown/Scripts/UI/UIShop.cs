@@ -46,6 +46,8 @@ namespace UI
         {
             Time.timeScale = 1f;
             gameObject.SetActive(false);
+            var mainUI = FindFirstObjectByType<UIGameMain>();
+            mainUI.Refresh();
         }
 
         public void OnBtnReroll()

@@ -87,10 +87,7 @@ public class PointsTracker : MonoBehaviour
     void AddPoints(long amount)
     {
         GameStatsManager.Instance.AddScore(amount, ScoreSource.Terrain);
-        GetComponent<TextMeshProUGUI>().text = GameStatsManager.Instance.score.ToString() + 
-                                               "\n" + 
-                                               ((float)GameStatsManager.Instance.score * 100 / (float)GameStatsManager.Instance.levelUpThreshold).ToString("F1") + 
-                                               "%";
+        RefreshPoint();
     }
 
     //Add base points associated with a given type of terrain
@@ -139,5 +136,13 @@ public class PointsTracker : MonoBehaviour
             terrainPointsMult = terrainPointMults[0];
             terrainPointMults.RemoveAt(0);
         }
+    }
+
+    public void RefreshPoint()
+    {
+        GetComponent<TextMeshProUGUI>().text = GameStatsManager.Instance.score.ToString() + 
+                                               "\n" + 
+                                               ((float)GameStatsManager.Instance.score * 100 / (float)GameStatsManager.Instance.levelUpThreshold).ToString("F1") + 
+                                               "%";
     }
 }

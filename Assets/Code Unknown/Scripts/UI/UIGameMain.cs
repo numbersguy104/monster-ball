@@ -111,6 +111,8 @@ namespace UI
 
         public void Refresh()
         {
+            var pointTracker = FindFirstObjectByType<PointsTracker>();
+            pointTracker.RefreshPoint();
             gold.text = GameStatsManager.Instance.gold.ToString();
             killsLvl.text = gm.lvlKills.ToString();
             killsAll.text = gm.killCount.ToString();

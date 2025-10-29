@@ -85,6 +85,12 @@ namespace UI
             mask.gameObject.SetActive(true);
             _refresh?.Invoke();
         }
+
+        private void OnEnable()
+        {
+            mask.gameObject.SetActive(false);
+            Refresh();
+        }
     }
 }
 

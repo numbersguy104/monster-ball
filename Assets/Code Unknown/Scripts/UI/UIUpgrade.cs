@@ -47,7 +47,7 @@ namespace UI
 
         public void OnClickSpeedUpgrade()
         {
-            if (!_canUpgrade)
+            if (!_canUpgrade || _speedMulti >= 0.5f)
             {
                 return;
             }
@@ -59,7 +59,7 @@ namespace UI
         
         public void OnClickAtkUpgrade()
         {
-            if (!_canUpgrade)
+            if (!_canUpgrade || _atkMulti >= 0.5f)
             {
                 return;
             }
@@ -71,7 +71,7 @@ namespace UI
         
         public void OnClickSizeUpgrade()
         {
-            if (!_canUpgrade)
+            if (!_canUpgrade || _sizeMulti >= 0.5f)
             {
                 return;
             }
@@ -83,7 +83,7 @@ namespace UI
         
         public void OnClickCritDMGUpgrade()
         {
-            if (!_canUpgrade)
+            if (!_canUpgrade || _critDMGMulti >= 0.5f)
             {
                 return;
             }
@@ -95,7 +95,7 @@ namespace UI
         
         public void OnClickCritChanceUpgrade()
         {
-            if (!_canUpgrade)
+            if (!_canUpgrade || _critChanceMulti >= 0.5f)
             {
                 return;
             }

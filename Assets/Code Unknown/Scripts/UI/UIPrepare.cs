@@ -147,6 +147,10 @@ public class UIPrepare : MonoBehaviour
 
     private void ClickAdd(int id)
     {
+        if (_artifectList.Count >= 3)
+        {
+            return;
+        }
         _curID = id;
         AddItemToPrepare(_curID, _curGameObj);
         RefreshStatus();
