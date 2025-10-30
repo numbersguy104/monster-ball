@@ -27,10 +27,12 @@ public class MonsterController : MonoBehaviour
 
     public event Action<MonsterController> OnMonsterDestroy;
 
+    private Animator animator;
     void Awake()
     {
         collisionSelector = GetComponent<CollisionSelector>();
         movement = GetComponent<MonsterMovement>();
+        animator = GetComponentInChildren<Animator>();
     }
 
     public int GetMaxHP()
@@ -146,7 +148,12 @@ public class MonsterController : MonoBehaviour
 
         var mainUI = FindAnyObjectByType<UIGameMain>();
         mainUI?.Refresh();
-
-        Destroy(gameObject);
+        if (movement != null)
+            movement.enabled = false;
+        if (animator != null)
+        {
+            animator.SetTrigger("Die");
+        }
+        Destroy(gameObject,1.0f);
     }
 }

@@ -6,6 +6,7 @@ MonoImporter:
   defaultReferences:
   - healthBarPrefab: {instanceID: 0}
   - damagePopupPrefab: {fileID: 1013711913100973285, guid: 43a7171264fa9e74085139e877cbf91d, type: 3}
+  - dissolveMaterial: {fileID: -876546973899608171, guid: aeae83a8afb73eb40adffb298b4db03d, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
