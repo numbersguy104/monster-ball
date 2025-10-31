@@ -42,9 +42,9 @@ Light:
   m_GameObject: {fileID: 2122478182625219548}
   m_Enabled: 1
   serializedVersion: 11
-  m_Type: 0
+  m_Type: 2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.25
+  m_Intensity: 1
   m_Range: 12
   m_SpotAngle: 175
   m_InnerSpotAngle: 135
@@ -275,6 +275,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firePrefab: {fileID: 7003836674423840199, guid: 33f451db54322794bbc1d232b68366e9, type: 3}
+  LEAVE_DURATION: 10
+  TRAIL_DURATION: 5
+  DAMAGE_FREQUENCY: 0.25
+  TRAIL_SIZE: 1
 --- !u!1 &6341151557966281770
 GameObject:
   m_ObjectHideFlags: 0

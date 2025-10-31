@@ -42,9 +42,9 @@ Light:
   m_GameObject: {fileID: 2122478182625219548}
   m_Enabled: 1
   serializedVersion: 11
-  m_Type: 0
+  m_Type: 2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.25
+  m_Intensity: 1
   m_Range: 12
   m_SpotAngle: 175
   m_InnerSpotAngle: 135
@@ -271,4 +271,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8468f3af782455b44826e1e8cd8e3bb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  active: 0

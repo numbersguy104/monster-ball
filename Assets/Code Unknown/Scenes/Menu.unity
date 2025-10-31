@@ -409,7 +409,7 @@ Light:
   serializedVersion: 11
   m_Type: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.005
+  m_Intensity: 0.1
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -582,7 +582,7 @@ MonoBehaviour:
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
-    ModeOverride: 1
+    ModeOverride: 0
     PhysicalProperties:
       GateFit: 2
       SensorSize: {x: 21.946, y: 16.002}
@@ -778,6 +778,22 @@ PrefabInstance:
     - target: {fileID: 124331762312394053, guid: cb8e73de9c689be42a8b01d8d6a83a67, type: 3}
       propertyPath: duration
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3095713747708959357, guid: cb8e73de9c689be42a8b01d8d6a83a67, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3095713747708959357, guid: cb8e73de9c689be42a8b01d8d6a83a67, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3095713747708959357, guid: cb8e73de9c689be42a8b01d8d6a83a67, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3095713747708959357, guid: cb8e73de9c689be42a8b01d8d6a83a67, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3111888079687628358, guid: cb8e73de9c689be42a8b01d8d6a83a67, type: 3}
       propertyPath: m_Pivot.x
