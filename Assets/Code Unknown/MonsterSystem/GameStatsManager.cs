@@ -224,58 +224,49 @@ public class GameStatsManager : MonoBehaviour
 
     void ApplyBallArtifact(ArtifactParam ap)
     {
-        if (ap.ArtifactName == "Pheonix's Feather")
+        switch (ap.ID)
         {
-            Fireball_TrailDurationMulti *= ap.ArtifactStat1;
-        }
-        else if (ap.ArtifactName == "Everlasting Coal")
-        {
-            Fireball_TrailSize *= ap.ArtifactStat1;
-        }
-        else if (ap.ArtifactName == "Extra Fuel")
-        {
-            Fireball_LeaveDuration *= ap.ArtifactStat1;
-        }
-        else if (ap.ArtifactName == "Hologram Projector")
-        {
-            Splitball_SplitCount *= ap.ArtifactStat1;
-            Splitball_BallAttack *= ap.ArtifactStat2;
-        }
-        else if (ap.ArtifactName == "Bountiful Supply")
-        {
-            Splitball_BallSize *= ap.ArtifactStat1;
-        }
-        else if (ap.ArtifactName == "Splitfire")
-        {
-            Splitball_SkillReq *= ap.ArtifactStat1;
-        }
-        else if (ap.ArtifactName == "Email Notification")
-        {
-            Stenball_Speed *= ap.ArtifactStat1;
-        }
-        else if (ap.ArtifactName == "Eye of Frost")
-        {
-            Iceball_ZoneSize *= ap.ArtifactStat1;
-        }
-        else if (ap.ArtifactName == "IceEdge")
-        {
-            Iceball_BallAttack *= ap.ArtifactStat1;
-            Iceball_BallSkillReq *= ap.ArtifactStat2;
-        }
-        else if (ap.ArtifactName == "Lightning Rod")
-        {
-            Lightningball_LightningSize *= ap.ArtifactStat1;
-            Lightningball_BallPrice *= ap.ArtifactStat2;
-        }
-        else if (ap.ArtifactName == "Storm Caller")
-        {
-            Lightningball_LightningFreq *= ap.ArtifactStat1;
-            Lightningball_BallAttack *= ap.ArtifactStat2;
-        }
-        else if (ap.ArtifactName == "Bottled Thunder")
-        {
-            Lightningball_BallSkillReq *= ap.ArtifactStat1;
-            Lightningball_BallSpd *= ap.ArtifactStat2;
+            case cfg.Artifacts.ID.FireTrailDuration:
+                Fireball_TrailDurationMulti *= ap.ArtifactStat1;
+                break;
+            case cfg.Artifacts.ID.FireTrailSize:
+                Fireball_TrailSize *= ap.ArtifactStat1;
+                break;
+            case cfg.Artifacts.ID.FireTrailUptime:
+                Fireball_LeaveDuration *= ap.ArtifactStat1;
+                break;
+            case cfg.Artifacts.ID.SplitCount:
+                Splitball_SplitCount *= ap.ArtifactStat1;
+                Splitball_BallAttack *= ap.ArtifactStat2;
+                break;
+            case cfg.Artifacts.ID.SplitSize:
+                Splitball_BallSize *= ap.ArtifactStat1;
+                break;
+            case cfg.Artifacts.ID.Splitfire:
+                Splitball_SkillReq *= ap.ArtifactStat1;
+                break;
+            case cfg.Artifacts.ID.StenSpeed:
+                Stenball_Speed *= ap.ArtifactStat1;
+                break;
+            case cfg.Artifacts.ID.IceSize:
+                Iceball_ZoneSize *= ap.ArtifactStat1;
+                break;
+            case cfg.Artifacts.ID.IceAtk:
+                Iceball_BallAttack *= ap.ArtifactStat1;
+                Iceball_BallSkillReq *= ap.ArtifactStat2;
+                break;
+            case cfg.Artifacts.ID.LightningSize:
+                Lightningball_LightningSize *= ap.ArtifactStat1;
+                Lightningball_BallPrice *= ap.ArtifactStat2;
+                break;
+            case cfg.Artifacts.ID.LightningFrequency:
+                Lightningball_LightningFreq *= ap.ArtifactStat1;
+                Lightningball_BallAttack *= ap.ArtifactStat2;
+                break;
+            case cfg.Artifacts.ID.LightingReq:
+                Lightningball_BallSkillReq *= ap.ArtifactStat1;
+                Lightningball_BallSpd *= ap.ArtifactStat2;
+                break;
         }
     }
 

@@ -109,7 +109,7 @@ public class UIPrepare : MonoBehaviour
             var ball = Instantiate(pinballDisplayItemObj, pinballDisplayRoot);
             var ballDisplay = ball.GetComponent<CommonIconDisplay>();
             string desc = string.Format(balls.DataList[i].ArtifactDes, balls.DataList[i].ArtifactStat1, balls.DataList[i].ArtifactStat2, balls.DataList[i].ArtifactStat3);
-            ballDisplay.SetData(balls.DataList[i].ID, desc, balls.DataList[i].Id, ClickAdd, ShowDesc, balls.DataList[i].AritfactIcon);
+            ballDisplay.SetData(balls.DataList[i].ArtifactName, desc, balls.DataList[i].Id, ClickAdd, ShowDesc, balls.DataList[i].AritfactIcon);
             // if (i == 0)
             // {
             //     ballDisplay.OnClick();

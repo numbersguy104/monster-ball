@@ -1,7 +1,7 @@
 [
   {
     "id": 0,
-    "ID": "FireTrailDuration",
+    "ID": 1,
     "ArtifactName": "Pheonix's Feather",
     "BallRelation": "Fireball",
     "ArtifactDes": "Increase the duration of the fire trail left by the fireball by 30%",
@@ -15,7 +15,7 @@
   },
   {
     "id": 1,
-    "ID": "FireTrailSize",
+    "ID": 2,
     "ArtifactName": "Everlasting Coal",
     "BallRelation": "Fireball",
     "ArtifactDes": "Increase the size of the fire trail left by the fireball by 30%",
@@ -29,7 +29,7 @@
   },
   {
     "id": 2,
-    "ID": "FireTrailUptime",
+    "ID": 3,
     "ArtifactName": "Extra Fuel",
     "BallRelation": "Fireball",
     "ArtifactDes": "Increase fireball's firetrail uptime by 30% when triggered.",
@@ -43,7 +43,7 @@
   },
   {
     "id": 3,
-    "ID": "SplitCount",
+    "ID": 4,
     "ArtifactName": "Hologram Projector",
     "BallRelation": "Splitball",
     "ArtifactDes": "Splitballs split 1 additional ball when triggered, but deals 30% less damage.",
@@ -57,7 +57,7 @@
   },
   {
     "id": 4,
-    "ID": "SplitSize",
+    "ID": 5,
     "ArtifactName": "Bountiful Supply",
     "BallRelation": "Splitball",
     "ArtifactDes": "Increase splitball's size by 30%.",
@@ -71,7 +71,7 @@
   },
   {
     "id": 5,
-    "ID": "Splitfire",
+    "ID": 6,
     "ArtifactName": "Splitfire",
     "BallRelation": "Splitball",
     "ArtifactDes": "Reduce points required to trigger splitball's skill by 30%.",
@@ -85,7 +85,7 @@
   },
   {
     "id": 6,
-    "ID": "StenSpeed",
+    "ID": 7,
     "ArtifactName": "Email Notification",
     "BallRelation": "Stenball",
     "ArtifactDes": "Reduce stenball's speed by 30%.",
@@ -99,7 +99,7 @@
   },
   {
     "id": 7,
-    "ID": "IceSize",
+    "ID": 8,
     "ArtifactName": "Eye of Frost",
     "BallRelation": "Iceball",
     "ArtifactDes": "Increase the size of the ice zone left by the iceball by 30%.",
@@ -113,7 +113,7 @@
   },
   {
     "id": 8,
-    "ID": "IceAtk",
+    "ID": 9,
     "ArtifactName": "IceEdge",
     "BallRelation": "Iceball",
     "ArtifactDes": "Increase iceball's attack by 30%, but increase skill requirment by 50%.",
@@ -127,7 +127,7 @@
   },
   {
     "id": 9,
-    "ID": "LightningSize",
+    "ID": 10,
     "ArtifactName": "Lightning Rod",
     "BallRelation": "Lightningball",
     "ArtifactDes": "Increase lightningball's zapping detection zone size by 30%, but make lightningball 40% more expensive to purchase.",
@@ -141,7 +141,7 @@
   },
   {
     "id": 10,
-    "ID": "LightningFrequency",
+    "ID": 11,
     "ArtifactName": "Storm Caller",
     "BallRelation": "Lightningball",
     "ArtifactDes": "Increase lightningball's zapping frequency by 40%, but reduce its attack by 50%.",
@@ -155,7 +155,7 @@
   },
   {
     "id": 11,
-    "ID": "LightingReq",
+    "ID": 12,
     "ArtifactName": "Bottled Thunder",
     "BallRelation": "Lightningball",
     "ArtifactDes": "Reduce lightningball's skill requirement by 30%, but reduce its speed by 30%.",
@@ -169,21 +169,7 @@
   },
   {
     "id": 12,
-    "ID": "",
-    "ArtifactName": "",
-    "BallRelation": "",
-    "ArtifactDes": "",
-    "ArtifactType1": "",
-    "ArtifactStat1": 0,
-    "ArtifactType2": "",
-    "ArtifactStat2": 0,
-    "ArtifactType3": "",
-    "ArtifactStat3": 0,
-    "AritfactIcon": ""
-  },
-  {
-    "id": 13,
-    "ID": "Invester",
+    "ID": 13,
     "ArtifactName": "Invester",
     "BallRelation": "",
     "ArtifactDes": "Increase player's starting gold by {0}.",
@@ -196,8 +182,8 @@
     "AritfactIcon": "Invester"
   },
   {
-    "id": 14,
-    "ID": "Headhunter",
+    "id": 13,
+    "ID": 14,
     "ArtifactName": "Headhunter",
     "BallRelation": "",
     "ArtifactDes": "Increase damage dealt towards monster by {0}%, but receive {1}% less point from all sources.",
@@ -210,8 +196,8 @@
     "AritfactIcon": "Headhunter"
   },
   {
-    "id": 15,
-    "ID": "Stargate",
+    "id": 14,
+    "ID": 15,
     "ArtifactName": "Stargate",
     "BallRelation": "",
     "ArtifactDes": "Increase points granted by using the teleporter by {0}%.",

@@ -18,7 +18,7 @@ public sealed partial class ArtifactParam : Luban.BeanBase
     public ArtifactParam(JSONNode _buf) 
     {
         { if(!_buf["id"].IsNumber) { throw new SerializationException(); }  Id = _buf["id"]; }
-        { if(!_buf["ID"].IsString) { throw new SerializationException(); }  ID = _buf["ID"]; }
+        { if(!_buf["ID"].IsNumber) { throw new SerializationException(); }  ID = (Artifacts.ID)_buf["ID"].AsInt; }
         { if(!_buf["ArtifactName"].IsString) { throw new SerializationException(); }  ArtifactName = _buf["ArtifactName"]; }
         { if(!_buf["BallRelation"].IsString) { throw new SerializationException(); }  BallRelation = _buf["BallRelation"]; }
         { if(!_buf["ArtifactDes"].IsString) { throw new SerializationException(); }  ArtifactDes = _buf["ArtifactDes"]; }
@@ -37,7 +37,7 @@ public sealed partial class ArtifactParam : Luban.BeanBase
     }
 
     public readonly int Id;
-    public readonly string ID;
+    public readonly Artifacts.ID ID;
     public readonly string ArtifactName;
     public readonly string BallRelation;
     public readonly string ArtifactDes;
