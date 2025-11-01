@@ -1,4 +1,3 @@
-using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,6 +11,9 @@ public class FireBall : AbstractAbilityBall
 
     //How long the fire trail itself will last after placement, in seconds
     [SerializeField] private float TRAIL_DURATION = 5.0f;
+
+
+    [SerializeField] private float TRAIL_DAMAGE_MULTIPLIER = 1.0f;
 
     //How often the fire trail will damage enemies, in seconds
     //(example: a value of 0.5 is once every 0.5 seconds, or equivalently twice per second)
@@ -99,7 +101,7 @@ public class FireBall : AbstractAbilityBall
 
                 foreach (MonsterController monster in trailMonsters)
                 {
-                    DamageMonster(monster);
+                    DamageMonster(monster, TRAIL_DAMAGE_MULTIPLIER);
                 }
             }
             else
@@ -108,4 +110,5 @@ public class FireBall : AbstractAbilityBall
             }
         }
     }
+
 }
