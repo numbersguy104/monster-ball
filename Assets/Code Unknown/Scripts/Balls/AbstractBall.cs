@@ -44,7 +44,7 @@ public abstract class AbstractBall : MonoBehaviour
         baseCritChance = stats.BallCritChance;
     }
 
-    protected void DamageMonster(MonsterController monster)
+    protected void DamageMonster(MonsterController monster, float finalDamageMultiplier = 1.0f)
     {
         if (monster == null) return;
         bool crit = false;
@@ -58,6 +58,7 @@ public abstract class AbstractBall : MonoBehaviour
                 damage *= GetCritDamage();
                 
             }
+            damage *= finalDamageMultiplier;
             monster.TakeDamage((int)damage,crit);
             crit = false;
 
