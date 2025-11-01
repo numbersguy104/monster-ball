@@ -1546,6 +1546,8 @@ SkinnedMeshRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1567,6 +1569,7 @@ SkinnedMeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
@@ -1643,7 +1646,7 @@ GameObject:
   - component: {fileID: -3756748860466993631}
   - component: {fileID: -4889707721522108865}
   - component: {fileID: 7317492674073723993}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BeholderPBRDefault
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1723,6 +1726,7 @@ MonoBehaviour:
   maxHP: 70
   collisionType: 1
   healthBarPrefab: {fileID: 0}
+  damagePopupPrefab: {fileID: 0}
 --- !u!114 &-3756748860466993631
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -192,6 +192,8 @@ SkinnedMeshRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -213,6 +215,7 @@ SkinnedMeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
@@ -265,7 +268,7 @@ GameObject:
   - component: {fileID: 9158442331959748865}
   - component: {fileID: 7049482413951633077}
   - component: {fileID: 3127681431892741875}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ChestMonsterPBRDefault
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -345,6 +348,7 @@ MonoBehaviour:
   maxHP: 80
   collisionType: 0
   healthBarPrefab: {fileID: 0}
+  damagePopupPrefab: {fileID: 0}
 --- !u!114 &9158442331959748865
 MonoBehaviour:
   m_ObjectHideFlags: 0
