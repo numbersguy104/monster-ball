@@ -3,7 +3,7 @@ using UnityEngine;
 public class IceBall : AbstractAbilityBall
 {
     [SerializeField] IceZone iceZonePrefab;
-    [Header("Lightning Ball Settings")]
+    [Header("Ball Settings")]
     [Tooltip("Ice zone duration")]
     [SerializeField] private float zoneDuration = 5.0f;
     [Tooltip("Ice zone size ralated to ball")]
