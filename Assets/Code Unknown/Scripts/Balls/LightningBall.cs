@@ -5,7 +5,6 @@ public class LightningBall : AbstractAbilityBall
     [Header("References")]
     [SerializeField] LightningStrike strikePrefab;
     [SerializeField] GameObject duringSkillIndicator;
-    [SerializeField] LayerMask enemyLayer;
 
     [Header("Ball Settings")]
     [Tooltip("Skill duration")]
@@ -17,13 +16,15 @@ public class LightningBall : AbstractAbilityBall
     [Tooltip("Time in seconds between strikes when ability is active")]
     [SerializeField] private float attackInterval = 1f;
 
+    // Layer mask for enemies
+    private LayerMask enemyLayer;
     //How long the ball's ability is currently active for, in seconds
     private float durationTimer = 0.0f;
     //Tracks time for the attackInterval
     private float attakIntervalTimer = 0.0f;
 
     //Cache for Physics.OverlapSphereNonAlloc
-    Collider[] hits;
+    Collider[] hits = new Collider[32];
 
     protected override void Skill()
     {
@@ -40,6 +41,7 @@ public class LightningBall : AbstractAbilityBall
         duringSkillIndicator.SetActive(false);
         skillRangeRadius *= GameStatsManager.Instance.Lightningball_LightningSize;
         attackInterval *= GameStatsManager.Instance.Lightningball_LightningFreq;
+        enemyLayer = LayerMask.GetMask("Monster");
     }
 
     protected override void Update()
@@ -72,7 +74,7 @@ public class LightningBall : AbstractAbilityBall
     {
         var result = false;
         //if enemy layer is specifically set, use OverlapSphereNonAlloc for better performance
-        var hits = Physics.OverlapSphere(transform.position, skillRangeRadius, enemyLayer);
+        Physics.OverlapSphereNonAlloc(transform.position, skillRangeRadius, hits, enemyLayer);
         foreach (var col in hits)
         {
             if(col != null && col.TryGetComponent(out MonsterController mc))
