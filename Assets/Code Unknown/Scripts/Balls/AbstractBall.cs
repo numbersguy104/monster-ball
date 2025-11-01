@@ -153,6 +153,19 @@ public abstract class AbstractBall : MonoBehaviour
     //Damage
     public virtual float GetDamage()
     {
+        var damage = baseDamage * GetUpgradeMult("UpgradeAtk", upgradesDamage);
+        if (ballID == "Splitball")
+        {
+            return damage * GameStatsManager.Instance.Splitball_BallAttack;
+        }
+        if (ballID == "Iceball")
+        {
+            return damage * GameStatsManager.Instance.Iceball_BallAttack;
+        }
+        if (ballID == "Lightningball")
+        {
+            return damage * GameStatsManager.Instance.Lightningball_BallAttack;
+        }
         return baseDamage * GetUpgradeMult("UpgradeAtk", upgradesDamage);
     }
 

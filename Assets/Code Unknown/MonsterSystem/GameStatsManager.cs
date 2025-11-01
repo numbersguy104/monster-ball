@@ -49,6 +49,54 @@ public class GameStatsManager : MonoBehaviour
     private float damageTimer = 0f;
     private long damageThisSecond = 0;
 
+    #region artifact
+
+    // Fireball
+    [HideInInspector]
+    public float Fireball_TrailDurationMulti = 1.0f;
+    [HideInInspector]
+    public float Fireball_TrailSize = 1.0f;
+    [HideInInspector]
+    public float Fireball_LeaveDuration = 1.0f;
+    
+    //Splitball
+    [HideInInspector]
+    public float Splitball_SplitCount = 1.0f;
+    [HideInInspector]
+    public float Splitball_BallAttack = 1.0f;
+    [HideInInspector]
+    public float Splitball_BallSize = 1.0f;
+    [HideInInspector]
+    public float Splitball_SkillReq = 1.0f;
+    
+    //Stenball
+    [HideInInspector]
+    public float Stenball_Speed = 1.0f;
+
+    //Iceball
+    [HideInInspector]
+    public float Iceball_ZoneSize = 1.0f;
+    [HideInInspector]
+    public float Iceball_BallAttack = 1.0f;
+    [HideInInspector]
+    public float Iceball_BallSkillReq = 1.0f;
+    
+    //Lightningball
+    [HideInInspector]
+    public float Lightningball_LightningSize = 1.0f;
+    [HideInInspector]
+    public float Lightningball_BallPrice = 1.0f;
+    [HideInInspector]
+    public float Lightningball_LightningFreq = 1.0f;
+    [HideInInspector]
+    public float Lightningball_BallAttack = 1.0f;
+    [HideInInspector]
+    public float Lightningball_BallSkillReq = 1.0f;
+    [HideInInspector]
+    public float Lightningball_BallSpd = 1.0f;
+
+    #endregion
+    
     void Awake()
     {
         if (Instance != null && Instance != this)
@@ -82,6 +130,8 @@ public class GameStatsManager : MonoBehaviour
             thresholdMultipliers = new List<float>();
             thresholdMultipliers.Add(2.0f);
         }
+
+        ApplyArtifacts();
         
         OnLevelUp.AddListener(LevelUp);
 
@@ -153,6 +203,80 @@ public class GameStatsManager : MonoBehaviour
         killReq = tbMilestoneParam.DataList[level].MonsterKillReq;
         lvlKills = 0;
         
+    }
+
+    void ApplyArtifacts()
+    {
+        if (artifacts == null || artifacts.Count <= 0)
+        {
+            return;
+        }
+
+        // var artifactsTable = LubanTablesMgr.Instance.tables.TbArtifactParam;
+        foreach (var artifact in artifacts)
+        {
+            if (!string.IsNullOrEmpty(artifact.BallRelation)) // ball
+            {
+                ApplyBallArtifact(artifact);
+            }
+        }
+    }
+
+    void ApplyBallArtifact(ArtifactParam ap)
+    {
+        if (ap.ArtifactName == "Pheonix's Feather")
+        {
+            Fireball_TrailDurationMulti *= ap.ArtifactStat1;
+        }
+        else if (ap.ArtifactName == "Everlasting Coal")
+        {
+            Fireball_TrailSize *= ap.ArtifactStat1;
+        }
+        else if (ap.ArtifactName == "Extra Fuel")
+        {
+            Fireball_LeaveDuration *= ap.ArtifactStat1;
+        }
+        else if (ap.ArtifactName == "Hologram Projector")
+        {
+            Splitball_SplitCount *= ap.ArtifactStat1;
+            Splitball_BallAttack *= ap.ArtifactStat2;
+        }
+        else if (ap.ArtifactName == "Bountiful Supply")
+        {
+            Splitball_BallSize *= ap.ArtifactStat1;
+        }
+        else if (ap.ArtifactName == "Splitfire")
+        {
+            Splitball_SkillReq *= ap.ArtifactStat1;
+        }
+        else if (ap.ArtifactName == "Email Notification")
+        {
+            Stenball_Speed *= ap.ArtifactStat1;
+        }
+        else if (ap.ArtifactName == "Eye of Frost")
+        {
+            Iceball_ZoneSize *= ap.ArtifactStat1;
+        }
+        else if (ap.ArtifactName == "IceEdge")
+        {
+            Iceball_BallAttack *= ap.ArtifactStat1;
+            Iceball_BallSkillReq *= ap.ArtifactStat2;
+        }
+        else if (ap.ArtifactName == "Lightning Rod")
+        {
+            Lightningball_LightningSize *= ap.ArtifactStat1;
+            Lightningball_BallPrice *= ap.ArtifactStat2;
+        }
+        else if (ap.ArtifactName == "Storm Caller")
+        {
+            Lightningball_LightningFreq *= ap.ArtifactStat1;
+            Lightningball_BallAttack *= ap.ArtifactStat2;
+        }
+        else if (ap.ArtifactName == "Bottled Thunder")
+        {
+            Lightningball_BallSkillReq *= ap.ArtifactStat1;
+            Lightningball_BallSpd *= ap.ArtifactStat2;
+        }
     }
 
     // ====== API Methods ======

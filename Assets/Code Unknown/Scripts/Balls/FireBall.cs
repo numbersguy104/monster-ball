@@ -46,6 +46,9 @@ public class FireBall : AbstractAbilityBall
     protected override void Awake()
     {
         BallInit("Fireball");
+        TRAIL_DURATION *= GameStatsManager.Instance.Fireball_TrailDurationMulti;
+        TRAIL_SIZE *= GameStatsManager.Instance.Fireball_TrailSize;
+        LEAVE_DURATION *= GameStatsManager.Instance.Fireball_LeaveDuration;
     }
 
     protected override void Update()

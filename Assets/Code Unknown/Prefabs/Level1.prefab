@@ -6250,7 +6250,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e05b10c164748d44dac291e67cc88439, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ballPrefab: {fileID: 2386257326719710950, guid: 73a01c686e26d2e4b98d7aad2e155602, type: 3}
+  ballPrefab: {fileID: 2386257326719710950, guid: 646d18e7fa88d304ab299e331f33461c, type: 3}
   startingBalls: 3
   spawnPosition: {x: 6.25, y: -0.3420203, z: -0.93969256}
 --- !u!114 &5178052513748757161
@@ -6282,6 +6282,23 @@ MonoBehaviour:
   OnLevelUp:
     m_PersistentCalls:
       m_Calls: []
+  Fireball_TrailDurationMulti: 1
+  Fireball_TrailSize: 1
+  Fireball_LeaveDuration: 1
+  Splitball_SplitCount: 1
+  Splitball_BallAttack: 1
+  Splitball_BallSize: 1
+  Splitball_SkillReq: 1
+  Stenball_Speed: 1
+  Iceball_ZoneSize: 1
+  Iceball_BallAttack: 1
+  Iceball_BallSkillReq: 1
+  Lightningball_LightningSize: 1
+  Lightningball_BallPrice: 1
+  Lightningball_LightningFreq: 1
+  Lightningball_BallAttack: 1
+  Lightningball_BallSkillReq: 1
+  Lightningball_BallSpd: 1
 --- !u!1 &3012132678049943181
 GameObject:
   m_ObjectHideFlags: 0

@@ -38,6 +38,8 @@ public class LightningBall : AbstractAbilityBall
     {
         BallInit("Lightningball");
         duringSkillIndicator.SetActive(false);
+        skillRangeRadius *= GameStatsManager.Instance.Lightningball_LightningSize;
+        attackInterval *= GameStatsManager.Instance.Lightningball_LightningFreq;
     }
 
     protected override void Update()

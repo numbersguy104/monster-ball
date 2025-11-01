@@ -30,6 +30,19 @@ public abstract class AbstractAbilityBall : AbstractBall
 
         skillReq = abilityData.BallSkillReq;
         skillID = abilityData.BallSkillID;
+
+        if (id == "Splitball")
+        {
+            skillReq *= (long)GameStatsManager.Instance.Splitball_SkillReq;
+        }
+        if (id == "Iceball")
+        {
+            skillReq *= (long)GameStatsManager.Instance.Iceball_BallSkillReq;
+        }
+        if (id == "Lightningball")
+        {
+            skillReq *= (long)GameStatsManager.Instance.Lightningball_BallSkillReq;
+        }
     }
 
     //If overriding Update, make sure to call "base.Update()" somewhere!

@@ -42,11 +42,11 @@ public sealed partial class ArtifactParam : Luban.BeanBase
     public readonly string BallRelation;
     public readonly string ArtifactDes;
     public readonly string ArtifactType1;
-    public readonly int ArtifactStat1;
+    public readonly float ArtifactStat1;
     public readonly string ArtifactType2;
-    public readonly int ArtifactStat2;
+    public readonly float ArtifactStat2;
     public readonly string ArtifactType3;
-    public readonly int ArtifactStat3;
+    public readonly float ArtifactStat3;
     public readonly string AritfactIcon;
    
     public const int __ID__ = 1430726075;

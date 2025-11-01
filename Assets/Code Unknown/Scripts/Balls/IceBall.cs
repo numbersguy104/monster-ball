@@ -17,6 +17,7 @@ public class IceBall : AbstractAbilityBall
     protected override void Awake()
     {
         BallInit("Iceball");
+        zoneScale *= GameStatsManager.Instance.Iceball_ZoneSize;
     }
 
     private void CreateTrail()

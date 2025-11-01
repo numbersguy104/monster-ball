@@ -41,5 +41,8 @@ public class SplitBall : AbstractAbilityBall
     protected override void Awake()
     {
         BallInit("Splitball");
+        SPLIT_COUNT = (int)(SPLIT_COUNT *GameStatsManager.Instance.Splitball_SplitCount);
+        
+        gameObject.transform.localScale = gameObject.transform.localScale * GameStatsManager.Instance.Splitball_BallSize;
     }
 }
