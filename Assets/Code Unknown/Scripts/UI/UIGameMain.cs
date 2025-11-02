@@ -19,13 +19,17 @@ namespace UI
         public TextMeshProUGUI killsReq;
         public TextMeshProUGUI killsLvl;
         public TextMeshProUGUI killsAll;
+        public TextMeshProUGUI activeBallCount;
+        public TextMeshProUGUI ballQueueCount;
         public Image[] Artifects;
+        public Image[] BallIcons;
         
         //private List<int> _thresholdPoint = new List<int>();
         //private int _level = 0;
         private GameObject _UIShopPanel;
-
         private GameStatsManager gm;
+        private BallCounter bc;
+        private PointsTracker pt;
         
         private void Start()
         {
@@ -62,6 +66,16 @@ namespace UI
                 }
                 
             }
+
+            bc = FindAnyObjectByType<BallCounter>();
+            pt = FindAnyObjectByType<PointsTracker>();
+        }
+
+        private void Update()
+        {
+            int count = bc.CountActive();
+            float mult = pt.GetMultiballMult();
+            activeBallCount.text = count.ToString() + " (x" + mult.ToString() + ")";
         }
 
         private void LevelUp()
@@ -122,6 +136,35 @@ namespace UI
         {
             Scene currentScene = SceneManager.GetActiveScene();
             SceneManager.LoadScene(currentScene.name);
+        }
+
+        public void UpdateBallQueue(Queue<AbstractBall> ballQueue)
+        {
+            AbstractBall[] balls = ballQueue.ToArray();
+            int count = balls.Length;
+            int i = 0;
+            foreach (Image ballImage in BallIcons)
+            {
+                if (i < count)
+                {
+                    AbstractBall ball = balls[i];
+                    UICommonUtils.LoadBallIcon(ballImage, ball.name);
+                    ballImage.enabled = true;
+                }
+                else
+                {
+                    ballImage.enabled = false;
+                }
+                i++;
+            }
+            if (count > 5)
+            {
+                ballQueueCount.enabled = true;
+                ballQueueCount.text = "(+" + (count-5).ToString() + ")";
+            } else
+            {
+                ballQueueCount.enabled = false;
+            }
         }
     }
 }

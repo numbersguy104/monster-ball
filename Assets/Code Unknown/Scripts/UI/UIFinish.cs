@@ -58,7 +58,7 @@ namespace UI
             string monsterSlainStr = "Monster Slain" + new string('.', 25 - 13 - monsterSlain.ToString().Length) + monsterSlain.ToString();
             ShowTextAnim(monsterSlainText, monsterSlainStr, 3f);
             
-            var ballUsed = FindFirstObjectByType<BallCounter>().countTotal;
+            var ballUsed = FindFirstObjectByType<BallCounter>().CountTotal();
             string ballUsedtStr = "Ball Used" + new string('.', 25 - 9 - ballUsed.ToString().Length) + ballUsed.ToString();
             ShowTextAnim(ballUsedText, ballUsedtStr, 3f);
             

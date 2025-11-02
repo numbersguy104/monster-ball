@@ -4,34 +4,45 @@ using UnityEngine;
 
 public class BallCounter : MonoBehaviour
 {
-    public int countActive = 0;
-    public int countTotal = 0;
+    public int CountActive()
+    {
+        return ballsActive.Count;
+    }
 
-    private List<AbstractBall> balls; //for playtest feature
+    public int CountTotal()
+    {
+        return ballsActive.Count;
+    }
+
+    private List<AbstractBall> ballsActive;
+    private List<AbstractBall> ballsTotal;
 
     private void Awake()
     {
-        balls = new List<AbstractBall>();
+        ballsActive = new List<AbstractBall>();
+        ballsTotal = new List<AbstractBall>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.GetComponent<AbstractBall>() != null)
+        AbstractBall ball = other.gameObject.GetComponent<AbstractBall>();
+        if (ball != null)
         {
-            countActive++;
-            countTotal++;
+            ballsActive.Add(ball);
 
-            balls.Add(other.gameObject.GetComponent<AbstractBall>());
+            if (!ballsTotal.Contains(ball))
+            {
+                ballsTotal.Add(other.gameObject.GetComponent<AbstractBall>());
+            }
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.GetComponent<AbstractBall>() != null)
+        AbstractBall ball = other.gameObject.GetComponent<AbstractBall>();
+        if (ball != null)
         {
-            countActive--;
-
-            balls.Remove(other.gameObject.GetComponent<AbstractBall>());
+            ballsActive.Remove(ball);
         }
     }
 
@@ -40,7 +51,7 @@ public class BallCounter : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.T))
         {
-            foreach (AbstractBall b in balls)
+            foreach (AbstractBall b in ballsActive)
             {
                 b.AddVelocity(Random.value, Random.value, Random.value);
             }

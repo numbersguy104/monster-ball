@@ -94,8 +94,7 @@ public class PointsTracker : MonoBehaviour
     public void AddTerrainPoints(PointSources source, AbstractBall ball = null)
     {
         long points = pointsDictionary[source] * (source == PointSources.Portal ? (long)GameStatsManager.Instance.artifactScoreTeleporterMulti : 1);
-        points = (long)(points * terrainPointsMult);
-        points *= bc.countActive;
+        points = (long)(points * terrainPointsMult * GetMultiballMult());
 
         terrainPoints += points;
         AddPoints(points);
@@ -111,8 +110,7 @@ public class PointsTracker : MonoBehaviour
     public void AddSpinnerPoints(int spins, AbstractBall ball = null)
     {
         long points = (long)(pointsDictionary[PointSources.Spinner] * Mathf.Pow(spinnerMult, spins));
-        points = (long)(points * terrainPointsMult);
-        points *= bc.countActive;
+        points = (long)(points * terrainPointsMult * GetMultiballMult());
 
         terrainPoints += points;
         AddPoints(points);
@@ -144,5 +142,14 @@ public class PointsTracker : MonoBehaviour
                                                "\n" + 
                                                ((float)GameStatsManager.Instance.score * 100 / (float)GameStatsManager.Instance.levelUpThreshold).ToString("F1") + 
                                                "%";
+    }
+
+    //Get the points multiplier for however many balls are in play
+    public float GetMultiballMult()
+    {
+        //+0.35 mult for each ball after the first
+        //Caps at 8 balls
+        int clampedBalls = Mathf.Clamp(bc.CountActive(), 1, 8);
+        return 1.0f + 0.35f * (clampedBalls - 1);
     }
 }

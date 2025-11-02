@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using UI;
 using UnityEngine;
 
 public class PinballQueue : MonoBehaviour
@@ -15,6 +16,8 @@ public class PinballQueue : MonoBehaviour
 
     public Queue<AbstractBall> ballQueue = new Queue<AbstractBall>();
     public static PinballQueue Instance { get; private set; }
+
+    private UIGameMain gameUI;
     
     private void Awake()
     {
@@ -23,6 +26,7 @@ public class PinballQueue : MonoBehaviour
     
     private void Start()
     {
+        gameUI = FindAnyObjectByType<UIGameMain>();
         for (int i = 0; i < startingBalls; i++)
         {
             AddBall();
@@ -61,6 +65,7 @@ public class PinballQueue : MonoBehaviour
         }
         AbstractBall ball = ballObject.GetComponent<AbstractBall>();
         ballQueue.Enqueue(ball);
+        gameUI.UpdateBallQueue(ballQueue);
     }
     
     //Pop a ball from the queue and bring it into play
@@ -70,6 +75,7 @@ public class PinballQueue : MonoBehaviour
         {
             AbstractBall newBall = ballQueue.Dequeue();
             newBall.Activate();
+            gameUI.UpdateBallQueue(ballQueue);
         }
     }
 }

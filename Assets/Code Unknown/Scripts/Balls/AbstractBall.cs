@@ -42,6 +42,8 @@ public abstract class AbstractBall : MonoBehaviour
         baseSize = stats.BallSize;
         baseCritDamage = stats.BallCritDmg;
         baseCritChance = stats.BallCritChance;
+
+        name = id;
     }
 
     protected void DamageMonster(MonsterController monster, float finalDamageMultiplier = 1.0f)
