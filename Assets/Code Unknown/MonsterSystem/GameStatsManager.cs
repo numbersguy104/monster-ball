@@ -95,6 +95,18 @@ public class GameStatsManager : MonoBehaviour
     [HideInInspector]
     public float Lightningball_BallSpd = 1.0f;
 
+    
+    //Invester
+    [HideInInspector] 
+    public float startingGold = 0;
+    //Headhunter
+    [HideInInspector] 
+    public float artifactDamageMulti = 1;
+    [HideInInspector] 
+    public float artifactScoreMulti = 1;
+    //Stargate
+    [HideInInspector] 
+    public float artifactScoreTeleporterMulti = 1;
     #endregion
     
     void Awake()
@@ -132,6 +144,7 @@ public class GameStatsManager : MonoBehaviour
         }
 
         ApplyArtifacts();
+        AddGold((long)startingGold);
         
         OnLevelUp.AddListener(LevelUp);
 
@@ -219,6 +232,10 @@ public class GameStatsManager : MonoBehaviour
             {
                 ApplyBallArtifact(artifact);
             }
+            else
+            {
+                ApplySpecialArtifact(artifact);
+            }
         }
     }
 
@@ -270,6 +287,23 @@ public class GameStatsManager : MonoBehaviour
         }
     }
 
+    void ApplySpecialArtifact(ArtifactParam ap)
+    {
+        switch (ap.ID)
+        {
+            case cfg.Artifacts.ID.Invester:
+                startingGold = ap.ArtifactStat1;
+                break;
+            case cfg.Artifacts.ID.Headhunter:
+                artifactDamageMulti = ap.ArtifactStat1;
+                artifactScoreMulti = ap.ArtifactStat2;
+                break;
+            case cfg.Artifacts.ID.Stargate:
+                artifactScoreTeleporterMulti = ap.ArtifactStat1;
+                break;
+        }
+    }
+
     // ====== API Methods ======
 
     public void AddScore(long amount, ScoreSource source)
@@ -277,10 +311,10 @@ public class GameStatsManager : MonoBehaviour
         switch (source)
         {
             case ScoreSource.Monster:
-                score += amount * (long)monsMulti;
+                score += amount * (long)monsMulti * (long)artifactScoreMulti;
                 break;
             case ScoreSource.Terrain:
-                score += amount * (long)terMulti;
+                score += amount * (long)terMulti * (long)artifactScoreMulti;
                 break;
         }
         

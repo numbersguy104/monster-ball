@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class LightningBall : AbstractAbilityBall
@@ -26,6 +27,8 @@ public class LightningBall : AbstractAbilityBall
     //Cache for Physics.OverlapSphereNonAlloc
     Collider[] hits = new Collider[32];
 
+    private Collider _collider;
+
     protected override void Skill()
     {
         durationTimer = skillDuration;
@@ -33,6 +36,18 @@ public class LightningBall : AbstractAbilityBall
         {
             duringSkillIndicator.SetActive(true);
         }
+    }
+
+    private void Start()
+    {
+        _collider = GetComponent<Collider>();
+        PhysicsMaterial mat = new PhysicsMaterial();
+        mat.dynamicFriction = _collider.material.dynamicFriction * GameStatsManager.Instance.Lightningball_BallSpd;
+        mat.staticFriction = _collider.material.staticFriction * GameStatsManager.Instance.Lightningball_BallSpd;
+        mat.bounciness = _collider.material.bounciness;
+        mat.frictionCombine = PhysicsMaterialCombine.Average;
+        mat.bounceCombine = PhysicsMaterialCombine.Average;
+        _collider.material = mat;
     }
 
     protected override void Awake()

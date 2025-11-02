@@ -58,7 +58,7 @@ public abstract class AbstractBall : MonoBehaviour
                 damage *= GetCritDamage();
                 
             }
-            damage *= finalDamageMultiplier;
+            damage *= finalDamageMultiplier * GameStatsManager.Instance.artifactDamageMulti;
             monster.TakeDamage((int)damage,crit);
             crit = false;
 
