@@ -982,7 +982,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 4743
+  m_VersionIndex: 4755
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -2189,7 +2189,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 2079
+  m_VersionIndex: 2091
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -2381,7 +2381,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80be2a1c36b8fb848b5640e504fb25a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxPower: 50
+  maxPower: 75
   maxCharge: 3
   launchRange: 0.5
   graphic: {fileID: 6707306669083807574}
@@ -3177,7 +3177,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1585
+  m_VersionIndex: 1597
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -4089,7 +4089,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 2079
+  m_VersionIndex: 2091
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -5222,7 +5222,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 4743
+  m_VersionIndex: 4755
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -6250,7 +6250,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e05b10c164748d44dac291e67cc88439, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ballPrefab: {fileID: 2386257326719710950, guid: 646d18e7fa88d304ab299e331f33461c, type: 3}
+  ballPrefab: {fileID: 2386257326719710950, guid: acb7156a4df82454fbf98fbbdad97b1f, type: 3}
   startingBalls: 3
   spawnPosition: {x: 6.25, y: -0.3420203, z: -0.93969256}
 --- !u!114 &5178052513748757161
@@ -7448,7 +7448,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 4743
+  m_VersionIndex: 4755
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -8265,7 +8265,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 4743
+  m_VersionIndex: 4755
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -10216,7 +10216,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 7810
+  m_VersionIndex: 7822
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -11697,7 +11697,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 4743
+  m_VersionIndex: 4755
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -12214,7 +12214,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 3479
+  m_VersionIndex: 3491
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -13306,7 +13306,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 4743
+  m_VersionIndex: 4755
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -14034,7 +14034,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 4743
+  m_VersionIndex: 4755
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -17879,7 +17879,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 4739
+  m_VersionIndex: 4751
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -18947,15 +18947,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4384162772750659717, guid: c35db0c7a4116e24f8ac6309bca2ea27, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.6
+      value: -2.86
       objectReference: {fileID: 0}
     - target: {fileID: 4384162772750659717, guid: c35db0c7a4116e24f8ac6309bca2ea27, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4384162772750659717, guid: c35db0c7a4116e24f8ac6309bca2ea27, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 24.78
+      value: 22.03
       objectReference: {fileID: 0}
     - target: {fileID: 4384162772750659717, guid: c35db0c7a4116e24f8ac6309bca2ea27, type: 3}
       propertyPath: m_LocalRotation.w
@@ -22143,15 +22143,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6596995800793921464, guid: 675f3142de2c20b45b3b14ab352e8fb0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.264
+      value: -4.494
       objectReference: {fileID: 0}
     - target: {fileID: 6596995800793921464, guid: 675f3142de2c20b45b3b14ab352e8fb0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 27.337
+      value: 27.44
       objectReference: {fileID: 0}
     - target: {fileID: 6596995800793921464, guid: 675f3142de2c20b45b3b14ab352e8fb0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -12.156
+      value: -11.873
       objectReference: {fileID: 0}
     - target: {fileID: 6596995800793921464, guid: 675f3142de2c20b45b3b14ab352e8fb0, type: 3}
       propertyPath: m_LocalRotation.w
@@ -24107,7 +24107,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6596995800793921464, guid: 675f3142de2c20b45b3b14ab352e8fb0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.6154612
+      value: -1.44
       objectReference: {fileID: 0}
     - target: {fileID: 6596995800793921464, guid: 675f3142de2c20b45b3b14ab352e8fb0, type: 3}
       propertyPath: m_LocalPosition.y
@@ -34410,7 +34410,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6596995800793921464, guid: 675f3142de2c20b45b3b14ab352e8fb0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.8195387
+      value: 1.64
       objectReference: {fileID: 0}
     - target: {fileID: 6596995800793921464, guid: 675f3142de2c20b45b3b14ab352e8fb0, type: 3}
       propertyPath: m_LocalPosition.y

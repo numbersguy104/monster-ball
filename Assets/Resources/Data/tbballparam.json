@@ -54,7 +54,7 @@
     "BallSkillReq": 4000,
     "BallSkillID": "SpikeBlast",
     "BallPrice": 500,
-    "BallShopChance": 0,
+    "BallShopChance": 40,
     "AssetID": "Spikeball",
     "BallDesc": "Unleashes a ring of spikes that go through terrains and damages all collided enemies.",
     "BallIcon": "Spikeball"
@@ -114,7 +114,7 @@
     "BallSkillReq": 5500,
     "BallSkillID": "CrystalCrash",
     "BallPrice": 650,
-    "BallShopChance": 0,
+    "BallShopChance": 20,
     "AssetID": "CrystalBall",
     "BallDesc": "Summons a crystal burst at the ball's current location, dealing ball's attack damage to enemies within.",
     "BallIcon": "CrystalBall"
