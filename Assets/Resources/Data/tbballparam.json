@@ -118,5 +118,20 @@
     "AssetID": "CrystalBall",
     "BallDesc": "Summons a crystal burst at the ball's current location, dealing ball's attack damage to enemies within.",
     "BallIcon": "CrystalBall"
+  },
+  {
+    "ID": "ImpactBall",
+    "BallAttack": 30,
+    "BallCritChance": 0.05,
+    "BallCritDmg": 1,
+    "BallSpd": 1.5,
+    "BallSize": 1.2,
+    "BallSkillReq": 0,
+    "BallSkillID": "",
+    "BallPrice": 100,
+    "BallShopChance": 20,
+    "AssetID": "ImpactBall",
+    "BallDesc": "Will not cause critical damage, strong but will crash within 20 bounces with the terrain. ",
+    "BallIcon": "ImpactBall"
   }
 ]
