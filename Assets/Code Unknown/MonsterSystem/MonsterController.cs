@@ -1,7 +1,6 @@
 ﻿using System;
 using UI;
 using UnityEngine;
-using DG.Tweening;
 
 public class MonsterController : MonoBehaviour
 {
@@ -25,8 +24,6 @@ public class MonsterController : MonoBehaviour
     private Canvas damageCanvas;
     private Camera mainCam;
     private bool movementIsPaused = false;
-    public SkinnedMeshRenderer meshRenderer;
-    private Material _material;
 
     public event Action<MonsterController> OnMonsterDestroy;
 
@@ -104,11 +101,6 @@ public class MonsterController : MonoBehaviour
         var dc = GameObject.Find("Canvas");
         if (dc != null)
             damageCanvas = dc.GetComponent<Canvas>();
-
-        if (meshRenderer != null)
-        {
-            _material = meshRenderer.material;
-        }
     }
 
     private void OnDestroy()
@@ -162,18 +154,6 @@ public class MonsterController : MonoBehaviour
         {
             animator.SetTrigger("Die");
         }
-
-        if (_material != null)
-        {
-            _material.SetFloat("_AlphaClipThreshold", -0.2f);
-            DOTween.To(
-                () => _material.GetFloat("_AlphaClipThreshold"),   // getter
-                x => _material.SetFloat("_AlphaClipThreshold", x), // setter
-                1f,                                       // target
-                3f                                        // duration
-            );
-        }
-        
-        Destroy(gameObject,3.0f);
+        Destroy(gameObject,1.0f);
     }
 }

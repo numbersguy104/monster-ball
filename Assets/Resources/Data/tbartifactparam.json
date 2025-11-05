@@ -11,7 +11,7 @@
     "ArtifactStat2": 0,
     "ArtifactType3": "",
     "ArtifactStat3": 0,
-    "AritfactIcon": "PheonixFeather"
+    "AritfactIcon": "Pheonixfeather"
   },
   {
     "id": 1,
@@ -25,7 +25,7 @@
     "ArtifactStat2": 0,
     "ArtifactType3": "",
     "ArtifactStat3": 0,
-    "AritfactIcon": "EverlastingCoal"
+    "AritfactIcon": "FireCoal"
   },
   {
     "id": 2,
@@ -39,7 +39,7 @@
     "ArtifactStat2": 0,
     "ArtifactType3": "",
     "ArtifactStat3": 0,
-    "AritfactIcon": "ExtraFuel"
+    "AritfactIcon": ""
   },
   {
     "id": 3,
@@ -53,7 +53,7 @@
     "ArtifactStat2": 0.7,
     "ArtifactType3": "",
     "ArtifactStat3": 0,
-    "AritfactIcon": "HologramProjector"
+    "AritfactIcon": ""
   },
   {
     "id": 4,
@@ -67,7 +67,7 @@
     "ArtifactStat2": 0,
     "ArtifactType3": "",
     "ArtifactStat3": 0,
-    "AritfactIcon": "BountifulSupply"
+    "AritfactIcon": ""
   },
   {
     "id": 5,
@@ -81,7 +81,7 @@
     "ArtifactStat2": 0,
     "ArtifactType3": "",
     "ArtifactStat3": 0,
-    "AritfactIcon": "SplitFire"
+    "AritfactIcon": "Splitfire"
   },
   {
     "id": 6,
@@ -95,7 +95,7 @@
     "ArtifactStat2": 0,
     "ArtifactType3": "",
     "ArtifactStat3": 0,
-    "AritfactIcon": "EmailNotification"
+    "AritfactIcon": ""
   },
   {
     "id": 7,
@@ -109,7 +109,7 @@
     "ArtifactStat2": 0,
     "ArtifactType3": "",
     "ArtifactStat3": 0,
-    "AritfactIcon": "EyeOfFrost"
+    "AritfactIcon": ""
   },
   {
     "id": 8,
@@ -123,7 +123,7 @@
     "ArtifactStat2": 1.5,
     "ArtifactType3": "",
     "ArtifactStat3": 0,
-    "AritfactIcon": "IceEdge"
+    "AritfactIcon": ""
   },
   {
     "id": 9,
@@ -137,7 +137,7 @@
     "ArtifactStat2": 1.4,
     "ArtifactType3": "",
     "ArtifactStat3": 0,
-    "AritfactIcon": "LightningRod"
+    "AritfactIcon": ""
   },
   {
     "id": 10,
@@ -151,7 +151,7 @@
     "ArtifactStat2": 0.5,
     "ArtifactType3": "",
     "ArtifactStat3": 0,
-    "AritfactIcon": "StormCaller"
+    "AritfactIcon": ""
   },
   {
     "id": 11,
@@ -165,7 +165,7 @@
     "ArtifactStat2": 0.7,
     "ArtifactType3": "",
     "ArtifactStat3": 0,
-    "AritfactIcon": "BottledThunder"
+    "AritfactIcon": ""
   },
   {
     "id": 12,

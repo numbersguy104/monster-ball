@@ -216,7 +216,6 @@ MonoBehaviour:
   collisionType: 1
   healthBarPrefab: {fileID: 0}
   damagePopupPrefab: {fileID: 0}
-  meshRenderer: {fileID: 5052110096836598034}
 --- !u!114 &-1529730941871598869
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -301,10 +300,12 @@ SkinnedMeshRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ca69b31a602255a4b8dda84a85b8db15, type: 2}
+  - {fileID: 2100000, guid: 2d8643687b664580b4248d279407fb7c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -322,6 +323,7 @@ SkinnedMeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
