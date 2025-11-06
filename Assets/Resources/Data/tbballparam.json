@@ -131,7 +131,7 @@
     "BallPrice": 100,
     "BallShopChance": 20,
     "AssetID": "ImpactBall",
-    "BallDesc": "Will not cause critical damage, strong but will crash within 20 bounces with the terrain. ",
+    "BallDesc": "A ball with powerful base attack but cannot deal crit damage. Will be destroyed upon colliding 20 times. ",
     "BallIcon": "ImpactBall"
   }
 ]
