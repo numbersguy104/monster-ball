@@ -5,6 +5,7 @@ using TMPro;
 using UI;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class UIPrepare : MonoBehaviour
 {
@@ -19,6 +20,7 @@ public class UIPrepare : MonoBehaviour
     public Sprite notReady;
     public Sprite ready;
     public Image readyIcon;
+    public TextMeshProUGUI title;
 
     private GameObject _UIMainObj;
     private CameraControl _cameraControl;
@@ -70,6 +72,11 @@ public class UIPrepare : MonoBehaviour
     {
         SpawnDisplayItems();
         RefreshStatus();
+        title.transform.localScale = Vector3.one;
+        title.transform
+            .DOScale(1.2f, 0.5f)
+            .SetEase(Ease.InOutSine)
+            .SetLoops(-1, LoopType.Yoyo); 
     }
 
     void RefreshStatus()

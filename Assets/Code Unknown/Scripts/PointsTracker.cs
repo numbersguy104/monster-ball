@@ -138,10 +138,11 @@ public class PointsTracker : MonoBehaviour
 
     public void RefreshPoint()
     {
-        GetComponent<TextMeshProUGUI>().text = GameStatsManager.Instance.score.ToString() + 
-                                               "\n" + 
-                                               ((float)GameStatsManager.Instance.score * 100 / (float)GameStatsManager.Instance.levelUpThreshold).ToString("F1") + 
-                                               "%";
+        // GetComponent<TextMeshProUGUI>().text = GameStatsManager.Instance.score.ToString() + 
+        //                                        "\n" + 
+        //                                        ((float)GameStatsManager.Instance.score * 100 / (float)GameStatsManager.Instance.levelUpThreshold).ToString("F1") + 
+        //                                        "%";
+        GetComponent<TextMeshProUGUI>().text = GameStatsManager.Instance.score.ToString();
     }
 
     //Get the points multiplier for however many balls are in play

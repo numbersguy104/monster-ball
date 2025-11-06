@@ -29,6 +29,7 @@ namespace UI
             // _currentTween = background.DOFillAmount(1f, duration).SetEase(Ease.OutCubic);
             // text.color = new Color(0, 0, 0, 1);
             // text.font = FontAsset1;
+            background.color = new Color(211f / 255, 174f / 255, 54f / 255);
         }
 
         public void OnPointerExit(PointerEventData eventData)
@@ -37,6 +38,7 @@ namespace UI
             // _currentTween = background.DOFillAmount(0f, duration).SetEase(Ease.OutCubic);
             // text.color = new Color(1, 1, 1, 1);
             // text.font = FontAsset0;
+            background.color = new Color(54f / 255, 192f / 255, 211f / 255);
         }
     }
 }
