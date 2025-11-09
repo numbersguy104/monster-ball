@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using DG.Tweening;
 
 
 namespace UI
@@ -114,7 +115,13 @@ namespace UI
             {
                 _UIShopPanel.SetActive(true);
             }
-            Time.timeScale = 0f;
+            // Time.timeScale = 0f;
+            
+            RectTransform rect = _UIShopPanel.GetComponent<RectTransform>();
+            rect.anchoredPosition = new Vector2(0, Screen.height);
+
+            rect.DOAnchorPos(Vector2.zero, 0.6f)
+                .SetEase(Ease.OutBack).OnComplete(() => Time.timeScale = 0f);
         }
 
         public void OpenGameOverPanel()

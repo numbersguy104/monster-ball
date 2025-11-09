@@ -1,6 +1,7 @@
 using System;
 using TMPro;
 using UnityEngine;
+using DG.Tweening;
 
 
 namespace UI
@@ -44,10 +45,22 @@ namespace UI
 
         public void OnBtnSkip()
         {
-            Time.timeScale = 1f;
-            gameObject.SetActive(false);
+            // Time.timeScale = 1f;
+            // gameObject.SetActive(false);
             var mainUI = FindFirstObjectByType<UIGameMain>();
             mainUI.Refresh();
+            
+            RectTransform rect = gameObject.GetComponent<RectTransform>();
+            // rect.anchoredPosition = new Vector2(0, Screen.height);
+            Time.timeScale = 1f;
+
+            rect.DOAnchorPos(new Vector2(0, Screen.height), 0.6f)
+                .SetEase(Ease.InBack).OnComplete(
+                    () =>
+                    {
+                        gameObject.SetActive(false);
+                    }
+                );
         }
 
         public void OnBtnReroll()
