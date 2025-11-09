@@ -1,12 +1,12 @@
 [
   {
-    "Bumper": 200,
-    "Spinner": 500,
+    "Bumper": 100,
+    "Spinner": 75,
     "SpinnerMulti": 1.25,
     "SpinnerCooldown": 5,
-    "DropSwitch": 300,
-    "BossDamager": 1000,
-    "PortalEnter": 750,
+    "DropSwitch": 150,
+    "BossDamager": 200,
+    "PortalEnter": 250,
     "SmokeClearer": 1000
   }
 ]
