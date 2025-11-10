@@ -19,6 +19,7 @@ public partial class Tables
     public TbMilestoneParam TbMilestoneParam {get; }
     public TbMonsterParam TbMonsterParam {get; }
     public TbPerson TbPerson {get; }
+    public TbStoryParam TbStoryParam {get; }
     public TbTerrainParam TbTerrainParam {get; }
     public TbUpgradeParam TbUpgradeParam {get; }
 
@@ -29,6 +30,7 @@ public partial class Tables
         TbMilestoneParam = new TbMilestoneParam(loader("tbmilestoneparam"));
         TbMonsterParam = new TbMonsterParam(loader("tbmonsterparam"));
         TbPerson = new TbPerson(loader("tbperson"));
+        TbStoryParam = new TbStoryParam(loader("tbstoryparam"));
         TbTerrainParam = new TbTerrainParam(loader("tbterrainparam"));
         TbUpgradeParam = new TbUpgradeParam(loader("tbupgradeparam"));
         ResolveRef();
@@ -41,6 +43,7 @@ public partial class Tables
         TbMilestoneParam.ResolveRef(this);
         TbMonsterParam.ResolveRef(this);
         TbPerson.ResolveRef(this);
+        TbStoryParam.ResolveRef(this);
         TbTerrainParam.ResolveRef(this);
         TbUpgradeParam.ResolveRef(this);
     }

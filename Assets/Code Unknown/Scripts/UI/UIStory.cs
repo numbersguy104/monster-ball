@@ -1,3 +1,4 @@
+using cfg;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -18,11 +19,15 @@ public class UIStory : MonoBehaviour
     [Tooltip("The text object that displays the contents of the current log")]
     [SerializeField] private TextMeshProUGUI logText;
 
+    private TbStoryParam storyData;
+
     private List<GameObject> titles = new List<GameObject>();
     private void Start()
     {
-        //TODO: Get the amount of titles from data sheets instead of just using 10
-        for (int i = 0; i < 10; i++)
+        storyData = LubanTablesMgr.Instance.tables.TbStoryParam;
+        
+        int amount = storyData.DataMap.Count;
+        for (int i = 0; i < amount; i++)
         {
             GameObject title = Instantiate(optionPrefab, optionsParent);
             int i_ = i; //necessary to "freeze" the variable for delegate
@@ -38,8 +43,7 @@ public class UIStory : MonoBehaviour
             bool unlocked = StoryUnlockManager.Instance.IsUnlocked(optionIndex);
             if (unlocked)
             {
-                //TODO: Get the title from data sheets instead of just "Log #1" "Log #2" etc.
-                titleText.text = "Log #" + (optionIndex + 1).ToString();
+                titleText.text = storyData.DataList[optionIndex].Title;
             }
             else
             {
@@ -68,9 +72,9 @@ public class UIStory : MonoBehaviour
         }
 
         //Display the title and text for this log entry
-        //TODO: Read from sheets instead of just displaying the log number
-        logTitle.text = "Log #" + (index+1).ToString();
-        logText.text = "This is log " + (index+1).ToString() + "!";
+        
+        logTitle.text = storyData.DataList[index].Title;
+        logText.text = storyData.DataList[index].Text;
 
         //Un-highlight the old selected entry, and highlight the new selected entry
         foreach (GameObject title in titles)

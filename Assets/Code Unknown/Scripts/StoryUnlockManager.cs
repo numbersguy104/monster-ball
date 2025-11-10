@@ -22,9 +22,9 @@ public class StoryUnlockManager : MonoBehaviour
 
     private void Start()
     {
-        //TODO: Check number of entries from a data table, instead of just using 10
-        entryUnlocks = new bool[10];
-        for (int i = 0; i < 10; i++)
+        int count = LubanTablesMgr.Instance.tables.TbStoryParam.DataList.Count;
+        entryUnlocks = new bool[count];
+        for (int i = 0; i < count; i++)
         {
             entryUnlocks[i] = false;
         }
@@ -33,8 +33,6 @@ public class StoryUnlockManager : MonoBehaviour
         entryUnlocks[0] = true;
         entryUnlocks[1] = true;
         entryUnlocks[3] = true;
-        entryUnlocks[6] = true;
-        entryUnlocks[7] = true;
     }
 
     //Mark a given log entry as unlocked
