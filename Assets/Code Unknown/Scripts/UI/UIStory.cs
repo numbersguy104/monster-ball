@@ -51,7 +51,7 @@ public class UIStory : MonoBehaviour
             else
             {
                 titleText.text = "[ Locked ]";
-                titleText.color = new Color(0.75f, 0.75f, 0.75f);
+                title.GetComponent<Button>().interactable = false;
             }
 
             optionIndex++;
@@ -82,10 +82,17 @@ public class UIStory : MonoBehaviour
         textScrollbar.value = 1;
 
         //Un-highlight the old selected entry, and highlight the new selected entry
-        foreach (GameObject title in titles)
+        for (int i = 0; i < titles.Count; i++)
         {
-            title.transform.GetChild(0).gameObject.SetActive(false);
+            TextMeshProUGUI titleText = titles[i].GetComponent<TextMeshProUGUI>();
+            if (i == index)
+            {
+                titleText.color = new Color(1.0f, 1.0f, 0.0f);
+            }
+            else if (StoryUnlockManager.Instance.IsUnlocked(index))
+            {
+                titleText.color = new Color(1.0f, 1.0f, 1.0f);
+            }
         }
-        titles[index].transform.GetChild(0).gameObject.SetActive(true);
     }
 }
