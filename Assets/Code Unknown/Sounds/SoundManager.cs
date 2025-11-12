@@ -89,6 +89,28 @@ public class SoundManager : MonoBehaviour
         UpdateAllVolumes();
     }
 
+    private void Update()
+    {
+        bool shouldPlayRolling = false;
+
+        AbstractBall[] balls = FindObjectsByType<AbstractBall>(FindObjectsSortMode.None);
+        foreach (AbstractBall ball in balls)
+        {
+            if (ball.GetVelocity().magnitude > 4.0f)
+            {
+                shouldPlayRolling = true;
+                break;
+            }
+        }
+
+        if (!rollingSource.isPlaying && shouldPlayRolling)
+        {
+            PlayLoopingSFX(rollingSource, rollingVolume);
+        } else if (rollingSource.isPlaying && !shouldPlayRolling)
+        {
+            rollingSource.Stop();
+        }
+    }
 
     public void PlaySFX(AudioSource source, float volume)
     {

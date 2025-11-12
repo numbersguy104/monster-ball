@@ -9,14 +9,16 @@ namespace UI
     {
         public TextMeshProUGUI title;
         public GameObject UIPrepare;
-
         private GameObject _UIPrepareObj;
+
+        public GameObject UIStory;
+        private GameObject _UIStoryObj;
         
         public void OnStartGameBtnClick()
         {
             if (_UIPrepareObj == null)
             {
-                Canvas canvas = FindObjectOfType<Canvas>();
+                Canvas canvas = FindAnyObjectByType<Canvas>();
                 _UIPrepareObj = Instantiate(UIPrepare, canvas.transform, false);
             }
             _UIPrepareObj.SetActive(true);
@@ -41,6 +43,17 @@ namespace UI
 
             seq.SetLoops(-1);
             */
+        }
+
+        public void OnCollectionBtnClick()
+        {
+            if (_UIStoryObj == null)
+            {
+                Canvas canvas = FindAnyObjectByType<Canvas>();
+                _UIStoryObj = Instantiate(UIStory, canvas.transform, false);
+            }
+            _UIStoryObj.SetActive(true);
+            gameObject.SetActive(false);
         }
     }
 }
