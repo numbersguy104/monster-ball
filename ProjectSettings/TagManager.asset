@@ -6,6 +6,7 @@ TagManager:
   tags:
   - canvas
   - level
+  - Terrain
   layers:
   - Default
   - TransparentFX

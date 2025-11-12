@@ -66,6 +66,7 @@ public class PinballQueue : MonoBehaviour
         AbstractBall ball = ballObject.GetComponent<AbstractBall>();
         ballQueue.Enqueue(ball);
         gameUI.UpdateBallQueue(ballQueue);
+        CheckAndMergeHalfBalls();
     }
     
     //Pop a ball from the queue and bring it into play
@@ -77,5 +78,28 @@ public class PinballQueue : MonoBehaviour
             newBall.Activate();
             gameUI.UpdateBallQueue(ballQueue);
         }
+    }
+    private void CheckAndMergeHalfBalls()
+    {
+        var HalfBalls = ballQueue.Where(b => b != null && b.name == "HalfBall").ToList();
+
+        if (HalfBalls.Count >= 2)
+        {
+            
+            AbstractBall first = HalfBalls[0];
+            AbstractBall second = HalfBalls[1];
+
+            ballQueue = new Queue<AbstractBall>(ballQueue.Where(b => b != first && b != second));
+
+            Destroy(first.gameObject);
+            Destroy(second.gameObject);
+
+           
+            AddBall("FullBall");
+
+            
+        }
+
+        gameUI.UpdateBallQueue(ballQueue);
     }
 }

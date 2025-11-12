@@ -133,5 +133,35 @@
     "AssetID": "ImpactBall",
     "BallDesc": "A ball with powerful base attack but cannot deal crit damage. Will be destroyed upon colliding 20 times. ",
     "BallIcon": "ImpactBall"
+  },
+  {
+    "ID": "HalfBall",
+    "BallAttack": 6,
+    "BallCritChance": 0.05,
+    "BallCritDmg": 1.25,
+    "BallSpd": 2,
+    "BallSize": 1,
+    "BallSkillReq": 0,
+    "BallSkillID": "",
+    "BallPrice": 50,
+    "BallShopChance": 30,
+    "AssetID": "HalfBall",
+    "BallDesc": "Only half of the ball may cause little damage but don't underestimate the potential of it.",
+    "BallIcon": ""
+  },
+  {
+    "ID": "FullBall",
+    "BallAttack": 27,
+    "BallCritChance": 0.25,
+    "BallCritDmg": 1.25,
+    "BallSpd": 1.5,
+    "BallSize": 1.4,
+    "BallSkillReq": 0,
+    "BallSkillID": "",
+    "BallPrice": 700,
+    "BallShopChance": 0,
+    "AssetID": "FullBall",
+    "BallDesc": "Behold, the mighty FullBall!",
+    "BallIcon": ""
   }
 ]
