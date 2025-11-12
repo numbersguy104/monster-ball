@@ -28,11 +28,6 @@ public class StoryUnlockManager : MonoBehaviour
         {
             entryUnlocks[i] = false;
         }
-
-        //DEBUG: Unlock some entries for testing
-        entryUnlocks[0] = true;
-        entryUnlocks[1] = true;
-        entryUnlocks[3] = true;
     }
 
     //Mark a given log entry as unlocked

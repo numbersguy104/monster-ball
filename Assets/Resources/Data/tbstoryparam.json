@@ -1,22 +1,32 @@
 [
   {
     "Index": 0,
-    "Title": "Alien Study #1",
-    "Text": "debug"
+    "Title": "Opes Falsus Study #1",
+    "Text": "Most of the life on this planet is fairly simple, but the violent lifeforms that resemble treasure chests continue to elude scientific explanation, including our own team’s efforts. Our team has managed to capture them on two separate occasions, but they’ve inexplicably gone missing, always leaving behind large mounds of solid waste. We plan to install cameras into our containment chambers to try and understand how this could be happening. What we have learned from the analysis we’ve done so far is that these lifeforms are much more genetically developed than the others. Their lineage may trace back millions of years."
   },
   {
     "Index": 1,
-    "Title": "Alien Study #2",
-    "Text": "test"
+    "Title": "Opes Falsus Study #2",
+    "Text": "Our team made a groundbreaking discovery yesterday. The “droppings” observed in the previous study were actually the aliens themselves, somehow shifted into an entirely different physical form. Experiments have proven these aliens to be remarkably clever behind their vicious disposition - some of our team is worried about them escaping into our headquarters. Perhaps most interesting is the form they return to when sleeping. This “default form” is structured, almost appearing to be manmade, but that can’t be the case… right?"
   },
   {
     "Index": 2,
-    "Title": "Explorer's Log",
-    "Text": "debugtest"
+    "Title": "Gensis Inc. Announcement",
+    "Text": "This is the announcement you’ve all been waiting for. After years of work and several hundreds of experiments, we did it. Two days ago, our scientists succeeded in creating synthetic life. This monumental achievement is the culmination of not just our facility, but the most brilliant minds of this world. Everyone, give yourselves a pat on the back - our mission has finally been accomplished."
   },
   {
     "Index": 3,
+    "Title": "Lunacy Admin Log",
+    "Text": "I can’t believe they pulled it off. Everyone said it would be a monumental undertaking. What Genesis Inc. did on top of it, making it able to change shape, should have been impossible. They’re taking all of the fame we’ve had, the fame we deserve. But it doesn’t matter. The Lunacy Foundation’s crowning achievement will dwarf even that accomplishment. We just need a bit more progress. Our genius - MY genius - will not be cast aside."
+  },
+  {
+    "Index": 4,
     "Title": "Chef's Notes",
-    "Text": "I think I took a wrong turn going to Earth. The aliens here are aggressive and don't speak any language I know, but it turns out they still enjoy a good pizza. Basil for the cacti, olives for the treasure chest, and (of course) mushrooms for the mushroom."
+    "Text": "I think I took a wrong turn going to Earth. The aliens here are aggressive and don't speak any language I know, but it turns out they still enjoy a good pizza. Basil for the cacti, olives for the eyeball, and (of course) mushrooms for the mushroom."
+  },
+  {
+    "Index": 5,
+    "Title": "Tattered Paper",
+    "Text": "This is it. This is the end. I’m one of the last survivors. They fired me, called me mad for pointing out the cataclysm their mission would bring. But tearing the moon from the sky has ruined our world. Our ecosystem, everything we depend on, is in chaos. The oceans have grown stagnant and the nights are dark. This note is for you, Lunacy Foundation, when you return and see what your hubris has done. I hope you’re happy on your crazy moon spaceship. You’ve doomed us all."
   }
 ]

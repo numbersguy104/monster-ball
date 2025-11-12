@@ -19,6 +19,9 @@ public class UIStory : MonoBehaviour
     [Tooltip("The text object that displays the contents of the current log")]
     [SerializeField] private TextMeshProUGUI logText;
 
+    [Tooltip("The scrollbar tied to the text that displays the log")]
+    [SerializeField] private Scrollbar textScrollbar;
+
     private TbStoryParam storyData;
 
     private List<GameObject> titles = new List<GameObject>();
@@ -72,9 +75,11 @@ public class UIStory : MonoBehaviour
         }
 
         //Display the title and text for this log entry
-        
         logTitle.text = storyData.DataList[index].Title;
         logText.text = storyData.DataList[index].Text;
+
+        //Reset the scrollbar's position to the start of the entry
+        textScrollbar.value = 1;
 
         //Un-highlight the old selected entry, and highlight the new selected entry
         foreach (GameObject title in titles)

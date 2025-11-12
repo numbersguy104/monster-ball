@@ -601,7 +601,7 @@ MonoBehaviour:
   m_Spacing: 10
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 0
-  m_ChildControlWidth: 1
+  m_ChildControlWidth: 0
   m_ChildControlHeight: 1
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
@@ -1443,6 +1443,7 @@ MonoBehaviour:
   optionsParent: {fileID: 8941861604379934104}
   logTitle: {fileID: 5519502512030443838}
   logText: {fileID: 3622991078966976309}
+  textScrollbar: {fileID: 7122603350663481245}
 --- !u!1 &7328070212161050936
 GameObject:
   m_ObjectHideFlags: 0
