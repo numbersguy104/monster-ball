@@ -5568,6 +5568,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 823776730481e9b4e877ad752cb937cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fullscreenRenderFeature: {fileID: 2100000, guid: d4075877fc0f82449ad969ec2d45aeae, type: 2}
   score: 0
   gold: 0
   totalGoldGained: 0

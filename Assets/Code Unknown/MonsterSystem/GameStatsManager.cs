@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using cfg;
 using UnityEngine;
 using UnityEngine.Events;
+using DG.Tweening;
 
 public class GameStatsManager : MonoBehaviour
 {
     public static GameStatsManager Instance { get; private set; }
 
+    public Material fullscreenRenderFeature;
+    
     [Header("Player Stats")]
     public long score = 0;         // Total score
     public long gold = 0;          // Total gold (can decrease)
@@ -354,6 +357,13 @@ public class GameStatsManager : MonoBehaviour
     {
         artifacts.Clear();
         artifacts.AddRange(af);
+    }
+
+    public void GlitchEffect()
+    {
+        fullscreenRenderFeature.SetFloat("_IsEnable", 1f);
+        
+        DOVirtual.DelayedCall(1f, () => fullscreenRenderFeature.SetFloat("_IsEnable", 0f));
     }
 }
 

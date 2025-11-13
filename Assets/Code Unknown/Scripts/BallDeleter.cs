@@ -17,6 +17,7 @@ public class BallDeleter : MonoBehaviour
         if (ball != null)
         {
             Destroy(ball.gameObject);
+            GameStatsManager.Instance.GlitchEffect();
 
             int ballsRemaining = FindObjectsByType<AbstractBall>(FindObjectsSortMode.None).Count();
 

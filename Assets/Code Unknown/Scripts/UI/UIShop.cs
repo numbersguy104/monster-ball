@@ -54,13 +54,14 @@ namespace UI
             // rect.anchoredPosition = new Vector2(0, Screen.height);
             Time.timeScale = 1f;
 
-            rect.DOAnchorPos(new Vector2(0, Screen.height), 0.6f)
-                .SetEase(Ease.InBack).OnComplete(
-                    () =>
-                    {
-                        gameObject.SetActive(false);
-                    }
-                );
+            gameObject.SetActive(false);
+            // rect.DOAnchorPos(new Vector2(0, Screen.height), 0.6f)
+            //     .SetEase(Ease.InBack).OnComplete(
+            //         () =>
+            //         {
+            //             gameObject.SetActive(false);
+            //         }
+            //     );
         }
 
         public void OnBtnReroll()
