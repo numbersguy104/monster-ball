@@ -792,6 +792,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0109af44c1793f4e87e25df200940ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  unlockChance: 0.1
+  unlockPopupPrefab: {fileID: 8222581615363437614, guid: 47d2df34a09e8ba4db0ce488b9d02ded, type: 3}
 --- !u!4 &1433523777
 Transform:
   m_ObjectHideFlags: 0

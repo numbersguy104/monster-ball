@@ -154,6 +154,8 @@ public class MonsterController : MonoBehaviour
         GameStatsManager.Instance.AddKill();
         GameStatsManager.Instance.AddScore(100, ScoreSource.Monster);
 
+        StoryUnlockManager.Instance.MaybeUnlockRandomNew(true);
+
         var mainUI = FindAnyObjectByType<UIGameMain>();
         mainUI?.Refresh();
         if (movement != null)
