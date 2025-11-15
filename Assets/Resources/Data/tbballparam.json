@@ -165,18 +165,18 @@
     "BallIcon": ""
   },
   {
-    "ID": "Nuclearball",
-    "BallAttack": 30,
-    "BallCritChance": 0.05,
-    "BallCritDmg": 1,
-    "BallSpd": 1.5,
-    "BallSize": 1.2,
-    "BallSkillReq": 1000,
-    "BallSkillID": "",
-    "BallPrice": 100,
+    "ID": "NucelarBall",
+    "BallAttack": 20,
+    "BallCritChance": 0.25,
+    "BallCritDmg": 2,
+    "BallSpd": 0.8,
+    "BallSize": 1.4,
+    "BallSkillReq": 5000,
+    "BallSkillID": "NuclearRaindown",
+    "BallPrice": 500,
     "BallShopChance": 20,
-    "AssetID": "Nuclearball",
-    "BallDesc": "A ball with powerful base attack but cannot deal crit damage. Will be destroyed upon colliding 20 times. ",
-    "BallIcon": "Nuclearball"
+    "AssetID": "NuclearBall",
+    "BallDesc": "Randomly calls down 3 missile bombarding areas on the map that deals damage over time to the enemies within.",
+    "BallIcon": "NuclearBall"
   }
 ]

@@ -25,9 +25,14 @@ namespace cfg.Artifacts
         LightningSize = 10,
         LightningFrequency = 11,
         LightingReq = 12,
-        Invester = 13,
-        Headhunter = 14,
-        Stargate = 15,
+        StartingGold = 13,
+        MonsterDamage = 14,
+        TeleportPoint = 15,
+        BumperPoint = 16,
+        SpinnerPoint = 17,
+        SwitchPoint = 18,
+        DamagerPoint = 19,
+        GoldIncrease = 20,
     }
 
 } 
