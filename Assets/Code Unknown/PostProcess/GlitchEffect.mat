@@ -46,6 +46,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _GlitchStrength: 1
+    - _IsEnable: 0
     - _NoiseAmount: 50
     - _ScanLinesStrength: 0
     m_Colors:
