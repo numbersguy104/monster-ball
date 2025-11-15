@@ -293,15 +293,15 @@ public class GameStatsManager : MonoBehaviour
     void ApplySpecialArtifact(ArtifactParam ap)
     {
         switch (ap.ID)
-        {
-            case cfg.Artifacts.ID.Invester:
+        {   
+            case cfg.Artifacts.ID.StartingGold:
                 startingGold = ap.ArtifactStat1;
                 break;
-            case cfg.Artifacts.ID.Headhunter:
+            case cfg.Artifacts.ID.MonsterDamage:
                 artifactDamageMulti = ap.ArtifactStat1;
                 artifactScoreMulti = ap.ArtifactStat2;
                 break;
-            case cfg.Artifacts.ID.Stargate:
+            case cfg.Artifacts.ID.TeleportPoint:
                 artifactScoreTeleporterMulti = ap.ArtifactStat1;
                 break;
         }
