@@ -117,7 +117,7 @@
     "BallShopChance": 20,
     "AssetID": "CrystalBall",
     "BallDesc": "Summons a crystal burst at the ball's current location, dealing ball's attack damage to enemies within.",
-    "BallIcon": "CrystalBall"
+    "BallIcon": "Crystalball"
   },
   {
     "ID": "ImpactBall",
@@ -147,7 +147,7 @@
     "BallShopChance": 30,
     "AssetID": "HalfBall",
     "BallDesc": "Only half of the ball may cause little damage but don't underestimate the potential of it.",
-    "BallIcon": ""
+    "BallIcon": "HalfBall"
   },
   {
     "ID": "FullBall",
@@ -155,28 +155,28 @@
     "BallCritChance": 0.25,
     "BallCritDmg": 1.25,
     "BallSpd": 1.5,
-    "BallSize": 1.4,
+    "BallSize": 1.3,
     "BallSkillReq": 0,
     "BallSkillID": "",
     "BallPrice": 700,
     "BallShopChance": 0,
     "AssetID": "FullBall",
     "BallDesc": "Behold, the mighty FullBall!",
-    "BallIcon": ""
+    "BallIcon": "FullBall"
   },
   {
-    "ID": "NucelarBall",
+    "ID": "Nuclearball",
     "BallAttack": 20,
     "BallCritChance": 0.25,
     "BallCritDmg": 2,
     "BallSpd": 0.8,
-    "BallSize": 1.4,
-    "BallSkillReq": 5000,
+    "BallSize": 1.3,
+    "BallSkillReq": 6000,
     "BallSkillID": "NuclearRaindown",
-    "BallPrice": 500,
+    "BallPrice": 550,
     "BallShopChance": 20,
-    "AssetID": "NuclearBall",
-    "BallDesc": "Randomly calls down 3 missile bombarding areas on the map that deals damage over time to the enemies within.",
-    "BallIcon": "NuclearBall"
+    "AssetID": "Nuclearball",
+    "BallDesc": "Randomly calls down missile bombarding areas on the map that deals damage over time to the enemies within.",
+    "BallIcon": "Nuclearball"
   }
 ]

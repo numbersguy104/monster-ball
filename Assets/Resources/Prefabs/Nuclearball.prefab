@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2386257326719710950, guid: 171d1fd32f5bbb143aaf88e292c46138, type: 3}
       propertyPath: m_Name
-      value: NuclearBall
+      value: Nuclearball
       objectReference: {fileID: 0}
     - target: {fileID: 4766571721223830443, guid: 171d1fd32f5bbb143aaf88e292c46138, type: 3}
       propertyPath: m_LocalPosition.x

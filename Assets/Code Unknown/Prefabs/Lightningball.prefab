@@ -9784,7 +9784,7 @@ Light:
   m_GameObject: {fileID: 2122478182625219548}
   m_Enabled: 1
   serializedVersion: 11
-  m_Type: 0
+  m_Type: 2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 0.25
   m_Range: 12
@@ -10017,9 +10017,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LightningBall
   strikePrefab: {fileID: 2157854177083322627, guid: fe98e937c8f4aae44aba97b132409725, type: 3}
   duringSkillIndicator: {fileID: 5394329113480595054}
-  enemyLayer:
-    serializedVersion: 2
-    m_Bits: 1
   skillDuration: 10
   skillRangeRadius: 2
   summonScale: 1

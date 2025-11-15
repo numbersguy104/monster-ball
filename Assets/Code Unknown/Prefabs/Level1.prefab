@@ -766,7 +766,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 4752
+  m_VersionIndex: 4761
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -1215,7 +1215,7 @@ GameObject:
   - component: {fileID: 7046130809295220885}
   m_Layer: 0
   m_Name: Computer1
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -1585,7 +1585,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 2088
+  m_VersionIndex: 2097
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -2071,7 +2071,7 @@ GameObject:
   - component: {fileID: 1794731864833897670}
   m_Layer: 0
   m_Name: PolyShape
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2331,7 +2331,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1594
+  m_VersionIndex: 1603
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -2561,7 +2561,7 @@ GameObject:
   - component: {fileID: 1136366685268808247}
   m_Layer: 0
   m_Name: Terrain_RightTop
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2620,7 +2620,7 @@ GameObject:
   - component: {fileID: 5942271704670628070}
   m_Layer: 0
   m_Name: Computer1 (9)
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -2963,7 +2963,7 @@ GameObject:
   - component: {fileID: 4926726384093054252}
   m_Layer: 0
   m_Name: floor_2
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3281,7 +3281,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 2088
+  m_VersionIndex: 2097
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -3556,7 +3556,7 @@ GameObject:
   - component: {fileID: 3476751362486977611}
   m_Layer: 0
   m_Name: generator
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3840,7 +3840,7 @@ GameObject:
   - component: {fileID: 690900739070162420}
   m_Layer: 0
   m_Name: Terrain_BottomRight
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4045,7 +4045,7 @@ GameObject:
   - component: {fileID: 2856870648499645149}
   m_Layer: 0
   m_Name: LeftTopRing
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4379,7 +4379,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 4752
+  m_VersionIndex: 4761
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -4670,7 +4670,7 @@ GameObject:
   - component: {fileID: 197239033940856842}
   m_Layer: 0
   m_Name: Computer1 (8)
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -4778,7 +4778,7 @@ GameObject:
   - component: {fileID: 4881483701499806286}
   m_Layer: 0
   m_Name: Computer1 (7)
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -5144,7 +5144,7 @@ GameObject:
   - component: {fileID: 12759305907544228}
   m_Layer: 0
   m_Name: Computer1 (11)
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -6034,7 +6034,7 @@ GameObject:
   - component: {fileID: 5433337550982714252}
   m_Layer: 0
   m_Name: Computer1 (2)
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -6476,7 +6476,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 4752
+  m_VersionIndex: 4761
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -6555,7 +6555,7 @@ GameObject:
   - component: {fileID: 238132239734242696}
   m_Layer: 0
   m_Name: Terrain_Trucks
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7077,7 +7077,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 4752
+  m_VersionIndex: 4761
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -8920,7 +8920,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 7819
+  m_VersionIndex: 7828
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -9078,7 +9078,7 @@ GameObject:
   - component: {fileID: 9127035925100027447}
   m_Layer: 0
   m_Name: TopDropSwitches
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9243,7 +9243,7 @@ GameObject:
   - component: {fileID: 7593487408323412183}
   m_Layer: 0
   m_Name: Computer1 (10)
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -9716,7 +9716,7 @@ GameObject:
   - component: {fileID: 4482606506237223929}
   m_Layer: 0
   m_Name: Computer1 (3)
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -10194,7 +10194,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 4752
+  m_VersionIndex: 4761
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -10711,7 +10711,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 3488
+  m_VersionIndex: 3497
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -10959,7 +10959,7 @@ GameObject:
   - component: {fileID: 6132590386882050945}
   m_Layer: 0
   m_Name: Computer1 (6)
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -11108,7 +11108,7 @@ GameObject:
   - component: {fileID: 8462541672274231286}
   m_Layer: 0
   m_Name: rotor
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11803,7 +11803,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 4752
+  m_VersionIndex: 4761
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -11852,7 +11852,7 @@ GameObject:
   - component: {fileID: 5075007226094921227}
   m_Layer: 0
   m_Name: Computer1 (5)
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -12315,7 +12315,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 4752
+  m_VersionIndex: 4761
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -12364,7 +12364,7 @@ GameObject:
   - component: {fileID: 3082658208497356031}
   m_Layer: 0
   m_Name: Computer1 (4)
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -12472,7 +12472,7 @@ GameObject:
   - component: {fileID: 8988998313726429376}
   m_Layer: 0
   m_Name: projector_2
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13160,7 +13160,7 @@ GameObject:
   - component: {fileID: 639550227959647908}
   m_Layer: 0
   m_Name: floor_2_LOD1
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13279,7 +13279,7 @@ GameObject:
   - component: {fileID: 2198479823518559406}
   m_Layer: 0
   m_Name: Terrain_BottomLeft
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14537,7 +14537,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 4748
+  m_VersionIndex: 4757
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -15014,7 +15014,7 @@ GameObject:
   - component: {fileID: 9054825541011775598}
   m_Layer: 0
   m_Name: Computer1 (12)
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -15122,7 +15122,7 @@ GameObject:
   - component: {fileID: 8186371962118668869}
   m_Layer: 9
   m_Name: Floor Tile 01
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15664,6 +15664,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SP_Ground02 (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 3030524114813791422, guid: 2832fc9f7f166a54194ea78cdfb504ac, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -15738,6 +15742,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SP_Ground02 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 3030524114813791422, guid: 2832fc9f7f166a54194ea78cdfb504ac, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -15759,6 +15767,10 @@ PrefabInstance:
     - target: {fileID: 4158896657898732746, guid: 46b6c5344fef0534e9e7c64d2d8c5b5f, type: 3}
       propertyPath: m_Name
       value: Missile Space Launcher 02
+      objectReference: {fileID: 0}
+    - target: {fileID: 4158896657898732746, guid: 46b6c5344fef0534e9e7c64d2d8c5b5f, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
       objectReference: {fileID: 0}
     - target: {fileID: 4297909351713855162, guid: 46b6c5344fef0534e9e7c64d2d8c5b5f, type: 3}
       propertyPath: m_LocalScale.x
@@ -16194,6 +16206,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SP_Ground04 (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 2106369490079618592, guid: 69d7cb07827d0044c98c6ffb66504823, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
+      objectReference: {fileID: 0}
     - target: {fileID: 3875618741703885428, guid: 69d7cb07827d0044c98c6ffb66504823, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.3681259
@@ -16345,6 +16361,10 @@ PrefabInstance:
     - target: {fileID: 1346269946354299776, guid: f7ddcbba01f75d64f8d64e88dcf5055f, type: 3}
       propertyPath: m_Name
       value: SP_Ground03 (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1346269946354299776, guid: f7ddcbba01f75d64f8d64e88dcf5055f, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
       objectReference: {fileID: 0}
     - target: {fileID: 9186774253835176218, guid: f7ddcbba01f75d64f8d64e88dcf5055f, type: 3}
       propertyPath: m_LocalScale.x
@@ -16758,6 +16778,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SP_Crystal01
       objectReference: {fileID: 0}
+    - target: {fileID: 5264324018865933514, guid: 47770c93e8863b14ba50ed57734bb724, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
+      objectReference: {fileID: 0}
     - target: {fileID: 7483782774544853846, guid: 47770c93e8863b14ba50ed57734bb724, type: 3}
       propertyPath: m_LocalScale.x
       value: 2.234173
@@ -16884,6 +16908,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SP_Tree04
       objectReference: {fileID: 0}
+    - target: {fileID: 6436764472764345019, guid: 472a7583b37cc8041ac90140b442f12b, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -16905,6 +16933,10 @@ PrefabInstance:
     - target: {fileID: 1346269946354299776, guid: f7ddcbba01f75d64f8d64e88dcf5055f, type: 3}
       propertyPath: m_Name
       value: SP_Ground03 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1346269946354299776, guid: f7ddcbba01f75d64f8d64e88dcf5055f, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
       objectReference: {fileID: 0}
     - target: {fileID: 9186774253835176218, guid: f7ddcbba01f75d64f8d64e88dcf5055f, type: 3}
       propertyPath: m_LocalScale.x
@@ -16979,6 +17011,10 @@ PrefabInstance:
     - target: {fileID: 6202063561599604884, guid: 478e3c7a68435d04a9bacbbc58427a64, type: 3}
       propertyPath: m_Name
       value: floor_5 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6202063561599604884, guid: 478e3c7a68435d04a9bacbbc58427a64, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
       objectReference: {fileID: 0}
     - target: {fileID: 6874070777470278554, guid: 478e3c7a68435d04a9bacbbc58427a64, type: 3}
       propertyPath: m_Enabled
@@ -17131,6 +17167,10 @@ PrefabInstance:
     - target: {fileID: 2753608001097531220, guid: 4452f273d3539d4429b515b17db1b65e, type: 3}
       propertyPath: m_Name
       value: SP_Mountain01 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2753608001097531220, guid: 4452f273d3539d4429b515b17db1b65e, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
       objectReference: {fileID: 0}
     - target: {fileID: 3660130537010022569, guid: 4452f273d3539d4429b515b17db1b65e, type: 3}
       propertyPath: m_LocalScale.x
@@ -17660,6 +17700,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SP_Rock01
       objectReference: {fileID: 0}
+    - target: {fileID: 4489632812496013207, guid: 1f5ec96c750246340aeebf4336f7a0f7, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
+      objectReference: {fileID: 0}
     - target: {fileID: 5519537232358221468, guid: 1f5ec96c750246340aeebf4336f7a0f7, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.152505
@@ -17807,6 +17851,10 @@ PrefabInstance:
     - target: {fileID: 1346269946354299776, guid: f7ddcbba01f75d64f8d64e88dcf5055f, type: 3}
       propertyPath: m_Name
       value: SP_Ground03 (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1346269946354299776, guid: f7ddcbba01f75d64f8d64e88dcf5055f, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
       objectReference: {fileID: 0}
     - target: {fileID: 9186774253835176218, guid: f7ddcbba01f75d64f8d64e88dcf5055f, type: 3}
       propertyPath: m_LocalScale.x
@@ -17968,6 +18016,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SP_Crystal01 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5264324018865933514, guid: 47770c93e8863b14ba50ed57734bb724, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
+      objectReference: {fileID: 0}
     - target: {fileID: 7483782774544853846, guid: 47770c93e8863b14ba50ed57734bb724, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.2705071
@@ -18041,6 +18093,10 @@ PrefabInstance:
     - target: {fileID: 6202063561599604884, guid: 478e3c7a68435d04a9bacbbc58427a64, type: 3}
       propertyPath: m_Name
       value: floor_5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6202063561599604884, guid: 478e3c7a68435d04a9bacbbc58427a64, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
       objectReference: {fileID: 0}
     - target: {fileID: 6874070777470278554, guid: 478e3c7a68435d04a9bacbbc58427a64, type: 3}
       propertyPath: m_Enabled
@@ -18632,6 +18688,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SP_Ground03 (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 1346269946354299776, guid: f7ddcbba01f75d64f8d64e88dcf5055f, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
+      objectReference: {fileID: 0}
     - target: {fileID: 9186774253835176218, guid: f7ddcbba01f75d64f8d64e88dcf5055f, type: 3}
       propertyPath: m_LocalScale.x
       value: 2.6362298
@@ -18902,6 +18962,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SP_Rock09
       objectReference: {fileID: 0}
+    - target: {fileID: 3471715344827755971, guid: a38a20ebee4e0c140b54ad55cf96242b, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -19050,6 +19114,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SP_Mountain02
       objectReference: {fileID: 0}
+    - target: {fileID: 4221276301137022272, guid: da7e65a7fceacc44fbdaf7f0902b52f6, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -19124,6 +19192,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SP_Mountain03 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8300739438008659348, guid: d290be78271029347aedc74602998f27, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -19145,6 +19217,10 @@ PrefabInstance:
     - target: {fileID: 322849772231436916, guid: f850811c9f9658f4ba803b4148cdb654, type: 3}
       propertyPath: m_Name
       value: SP_Plant07
+      objectReference: {fileID: 0}
+    - target: {fileID: 322849772231436916, guid: f850811c9f9658f4ba803b4148cdb654, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
       objectReference: {fileID: 0}
     - target: {fileID: 2675581196433945546, guid: f850811c9f9658f4ba803b4148cdb654, type: 3}
       propertyPath: m_LocalScale.x
@@ -19298,6 +19374,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SP_Rock06
       objectReference: {fileID: 0}
+    - target: {fileID: 2006641178286200965, guid: bd0d646a2957f8648a07898bdf337117, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
+      objectReference: {fileID: 0}
     - target: {fileID: 7556049656257799200, guid: bd0d646a2957f8648a07898bdf337117, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.6114058
@@ -19450,6 +19530,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Barrel_Large_Blue (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 1246744205424970467, guid: 95c15a3fa3cbef542900594c63ae7586, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
+      objectReference: {fileID: 0}
     - target: {fileID: 4113070932814750715, guid: 95c15a3fa3cbef542900594c63ae7586, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5782272
@@ -19576,6 +19660,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Monitor_Red
       objectReference: {fileID: 0}
+    - target: {fileID: 8291567748398885181, guid: 760b016664e048d45882d084d6e6049e, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -19649,6 +19737,10 @@ PrefabInstance:
     - target: {fileID: 7936776159073188221, guid: e1602fca831642147819188457bd9f40, type: 3}
       propertyPath: m_Name
       value: SP_Stone01
+      objectReference: {fileID: 0}
+    - target: {fileID: 7936776159073188221, guid: e1602fca831642147819188457bd9f40, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -19938,6 +20030,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SP_Plant09
       objectReference: {fileID: 0}
+    - target: {fileID: 2013154084794539381, guid: 2fbc813342dca004db5f6868aede5d4e, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -20108,6 +20204,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SP_Rock01 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4489632812496013207, guid: 1f5ec96c750246340aeebf4336f7a0f7, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
+      objectReference: {fileID: 0}
     - target: {fileID: 5519537232358221468, guid: 1f5ec96c750246340aeebf4336f7a0f7, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.152505
@@ -20233,6 +20333,10 @@ PrefabInstance:
     - target: {fileID: 4187606219668524844, guid: 4fc124f10b2d1684aa352d0c6586f3fe, type: 3}
       propertyPath: m_Name
       value: SP_Rock03
+      objectReference: {fileID: 0}
+    - target: {fileID: 4187606219668524844, guid: 4fc124f10b2d1684aa352d0c6586f3fe, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -20424,6 +20528,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SP_Rock01 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4489632812496013207, guid: 1f5ec96c750246340aeebf4336f7a0f7, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
+      objectReference: {fileID: 0}
     - target: {fileID: 5519537232358221468, guid: 1f5ec96c750246340aeebf4336f7a0f7, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.7066295
@@ -20604,6 +20712,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SP_Crystal02
       objectReference: {fileID: 0}
+    - target: {fileID: 768095984863026963, guid: 210d635079711274fb360850f735f6ca, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
+      objectReference: {fileID: 0}
     - target: {fileID: 8003186435013854120, guid: 210d635079711274fb360850f735f6ca, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.6602966
@@ -20729,6 +20841,10 @@ PrefabInstance:
     - target: {fileID: 3030524114813791422, guid: 2832fc9f7f166a54194ea78cdfb504ac, type: 3}
       propertyPath: m_Name
       value: SP_Ground02 (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3030524114813791422, guid: 2832fc9f7f166a54194ea78cdfb504ac, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -20998,6 +21114,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Solar Panel (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1185813794180163260, guid: a11a83a15c70c704fb2a33c71ba15006, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
+      objectReference: {fileID: 0}
     - target: {fileID: 1963301089745681414, guid: a11a83a15c70c704fb2a33c71ba15006, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.6098742
@@ -21186,6 +21306,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SP_Ground02 (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 3030524114813791422, guid: 2832fc9f7f166a54194ea78cdfb504ac, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -21345,6 +21469,10 @@ PrefabInstance:
     - target: {fileID: 4221276301137022272, guid: da7e65a7fceacc44fbdaf7f0902b52f6, type: 3}
       propertyPath: m_Name
       value: SP_Mountain02 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4221276301137022272, guid: da7e65a7fceacc44fbdaf7f0902b52f6, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -21641,6 +21769,10 @@ PrefabInstance:
     - target: {fileID: 4187606219668524844, guid: 4fc124f10b2d1684aa352d0c6586f3fe, type: 3}
       propertyPath: m_Name
       value: SP_Rock03
+      objectReference: {fileID: 0}
+    - target: {fileID: 4187606219668524844, guid: 4fc124f10b2d1684aa352d0c6586f3fe, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -22016,6 +22148,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SP_Ground02
       objectReference: {fileID: 0}
+    - target: {fileID: 3030524114813791422, guid: 2832fc9f7f166a54194ea78cdfb504ac, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -22107,6 +22243,10 @@ PrefabInstance:
     - target: {fileID: 1346269946354299776, guid: f7ddcbba01f75d64f8d64e88dcf5055f, type: 3}
       propertyPath: m_Name
       value: SP_Ground03
+      objectReference: {fileID: 0}
+    - target: {fileID: 1346269946354299776, guid: f7ddcbba01f75d64f8d64e88dcf5055f, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
       objectReference: {fileID: 0}
     - target: {fileID: 9186774253835176218, guid: f7ddcbba01f75d64f8d64e88dcf5055f, type: 3}
       propertyPath: m_LocalScale.x
@@ -22272,6 +22412,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SP_Ground03 (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 1346269946354299776, guid: f7ddcbba01f75d64f8d64e88dcf5055f, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
+      objectReference: {fileID: 0}
     - target: {fileID: 9186774253835176218, guid: f7ddcbba01f75d64f8d64e88dcf5055f, type: 3}
       propertyPath: m_LocalScale.x
       value: 2.1267722
@@ -22420,6 +22564,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SP_Mountain01 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2753608001097531220, guid: 4452f273d3539d4429b515b17db1b65e, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
+      objectReference: {fileID: 0}
     - target: {fileID: 3660130537010022569, guid: 4452f273d3539d4429b515b17db1b65e, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.7976564
@@ -22567,6 +22715,10 @@ PrefabInstance:
     - target: {fileID: 1346269946354299776, guid: f7ddcbba01f75d64f8d64e88dcf5055f, type: 3}
       propertyPath: m_Name
       value: SP_Ground03 (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1346269946354299776, guid: f7ddcbba01f75d64f8d64e88dcf5055f, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
       objectReference: {fileID: 0}
     - target: {fileID: 9186774253835176218, guid: f7ddcbba01f75d64f8d64e88dcf5055f, type: 3}
       propertyPath: m_LocalScale.x
@@ -22806,6 +22958,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dome Conection (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3582900105841404785, guid: c99b8c908b8fef34f829818c77ca0182, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
+      objectReference: {fileID: 0}
     - target: {fileID: 4511384870744560059, guid: c99b8c908b8fef34f829818c77ca0182, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.22607896
@@ -22879,6 +23035,10 @@ PrefabInstance:
     - target: {fileID: 2106369490079618592, guid: 69d7cb07827d0044c98c6ffb66504823, type: 3}
       propertyPath: m_Name
       value: SP_Ground04
+      objectReference: {fileID: 0}
+    - target: {fileID: 2106369490079618592, guid: 69d7cb07827d0044c98c6ffb66504823, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
       objectReference: {fileID: 0}
     - target: {fileID: 3875618741703885428, guid: 69d7cb07827d0044c98c6ffb66504823, type: 3}
       propertyPath: m_LocalScale.x
@@ -23106,6 +23266,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SP_Ground03 (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 1346269946354299776, guid: f7ddcbba01f75d64f8d64e88dcf5055f, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
+      objectReference: {fileID: 0}
     - target: {fileID: 9186774253835176218, guid: f7ddcbba01f75d64f8d64e88dcf5055f, type: 3}
       propertyPath: m_LocalScale.x
       value: 2.2805452
@@ -23306,6 +23470,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SP_Ground02 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3030524114813791422, guid: 2832fc9f7f166a54194ea78cdfb504ac, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -23488,6 +23656,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SP_Ground03 (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 1346269946354299776, guid: f7ddcbba01f75d64f8d64e88dcf5055f, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
+      objectReference: {fileID: 0}
     - target: {fileID: 9186774253835176218, guid: f7ddcbba01f75d64f8d64e88dcf5055f, type: 3}
       propertyPath: m_LocalScale.x
       value: 2.1267722
@@ -23639,6 +23811,10 @@ PrefabInstance:
     - target: {fileID: 1346269946354299776, guid: f7ddcbba01f75d64f8d64e88dcf5055f, type: 3}
       propertyPath: m_Name
       value: SP_Ground03 (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1346269946354299776, guid: f7ddcbba01f75d64f8d64e88dcf5055f, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
       objectReference: {fileID: 0}
     - target: {fileID: 9186774253835176218, guid: f7ddcbba01f75d64f8d64e88dcf5055f, type: 3}
       propertyPath: m_LocalScale.x
@@ -23840,6 +24016,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SP_Rock05
       objectReference: {fileID: 0}
+    - target: {fileID: 2632305290783040334, guid: 8207ff4e14f95014bba90748a99ef899, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -23935,6 +24115,10 @@ PrefabInstance:
     - target: {fileID: 2106369490079618592, guid: 69d7cb07827d0044c98c6ffb66504823, type: 3}
       propertyPath: m_Name
       value: SP_Ground04 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2106369490079618592, guid: 69d7cb07827d0044c98c6ffb66504823, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
       objectReference: {fileID: 0}
     - target: {fileID: 3875618741703885428, guid: 69d7cb07827d0044c98c6ffb66504823, type: 3}
       propertyPath: m_LocalScale.x
@@ -24466,6 +24650,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SP_Ground02 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 3030524114813791422, guid: 2832fc9f7f166a54194ea78cdfb504ac, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -24540,6 +24728,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SP_Rock09 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 3471715344827755971, guid: a38a20ebee4e0c140b54ad55cf96242b, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -24561,6 +24753,10 @@ PrefabInstance:
     - target: {fileID: 2106369490079618592, guid: 69d7cb07827d0044c98c6ffb66504823, type: 3}
       propertyPath: m_Name
       value: SP_Ground04 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2106369490079618592, guid: 69d7cb07827d0044c98c6ffb66504823, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
       objectReference: {fileID: 0}
     - target: {fileID: 3875618741703885428, guid: 69d7cb07827d0044c98c6ffb66504823, type: 3}
       propertyPath: m_LocalScale.x
@@ -24636,6 +24832,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SP_Crystal01 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 5264324018865933514, guid: 47770c93e8863b14ba50ed57734bb724, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
+      objectReference: {fileID: 0}
     - target: {fileID: 7483782774544853846, guid: 47770c93e8863b14ba50ed57734bb724, type: 3}
       propertyPath: m_LocalScale.x
       value: 2.234173
@@ -24709,6 +24909,10 @@ PrefabInstance:
     - target: {fileID: 2106369490079618592, guid: 69d7cb07827d0044c98c6ffb66504823, type: 3}
       propertyPath: m_Name
       value: SP_Ground04 (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2106369490079618592, guid: 69d7cb07827d0044c98c6ffb66504823, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
       objectReference: {fileID: 0}
     - target: {fileID: 3875618741703885428, guid: 69d7cb07827d0044c98c6ffb66504823, type: 3}
       propertyPath: m_LocalScale.x
@@ -24836,6 +25040,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SP_Rock05
       objectReference: {fileID: 0}
+    - target: {fileID: 2632305290783040334, guid: 8207ff4e14f95014bba90748a99ef899, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -24909,6 +25117,10 @@ PrefabInstance:
     - target: {fileID: 3030524114813791422, guid: 2832fc9f7f166a54194ea78cdfb504ac, type: 3}
       propertyPath: m_Name
       value: SP_Ground02 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3030524114813791422, guid: 2832fc9f7f166a54194ea78cdfb504ac, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -25088,6 +25300,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SP_Ground03 (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 1346269946354299776, guid: f7ddcbba01f75d64f8d64e88dcf5055f, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
+      objectReference: {fileID: 0}
     - target: {fileID: 9186774253835176218, guid: f7ddcbba01f75d64f8d64e88dcf5055f, type: 3}
       propertyPath: m_LocalScale.x
       value: 2.1267722
@@ -25213,6 +25429,10 @@ PrefabInstance:
     - target: {fileID: 4876083889387463549, guid: 18ef0fe110e05cd40875b24e3ccd3a37, type: 3}
       propertyPath: m_Name
       value: PipeJointMedium_Red
+      objectReference: {fileID: 0}
+    - target: {fileID: 4876083889387463549, guid: 18ef0fe110e05cd40875b24e3ccd3a37, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -25564,6 +25784,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SP_Ground03 (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 1346269946354299776, guid: f7ddcbba01f75d64f8d64e88dcf5055f, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
+      objectReference: {fileID: 0}
     - target: {fileID: 9186774253835176218, guid: f7ddcbba01f75d64f8d64e88dcf5055f, type: 3}
       propertyPath: m_LocalScale.x
       value: 2.6362298
@@ -25638,6 +25862,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SP_Mountain01
       objectReference: {fileID: 0}
+    - target: {fileID: 2753608001097531220, guid: 4452f273d3539d4429b515b17db1b65e, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
+      objectReference: {fileID: 0}
     - target: {fileID: 3660130537010022569, guid: 4452f273d3539d4429b515b17db1b65e, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.3013674
@@ -25711,6 +25939,10 @@ PrefabInstance:
     - target: {fileID: 1346269946354299776, guid: f7ddcbba01f75d64f8d64e88dcf5055f, type: 3}
       propertyPath: m_Name
       value: SP_Ground03 (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1346269946354299776, guid: f7ddcbba01f75d64f8d64e88dcf5055f, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
       objectReference: {fileID: 0}
     - target: {fileID: 9186774253835176218, guid: f7ddcbba01f75d64f8d64e88dcf5055f, type: 3}
       propertyPath: m_LocalScale.x
@@ -26020,6 +26252,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SP_Ground03 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 1346269946354299776, guid: f7ddcbba01f75d64f8d64e88dcf5055f, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
+      objectReference: {fileID: 0}
     - target: {fileID: 9186774253835176218, guid: f7ddcbba01f75d64f8d64e88dcf5055f, type: 3}
       propertyPath: m_LocalScale.x
       value: 2.1267722
@@ -26172,6 +26408,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SP_Ground03 (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 1346269946354299776, guid: f7ddcbba01f75d64f8d64e88dcf5055f, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
+      objectReference: {fileID: 0}
     - target: {fileID: 9186774253835176218, guid: f7ddcbba01f75d64f8d64e88dcf5055f, type: 3}
       propertyPath: m_LocalScale.x
       value: 2.6362298
@@ -26298,6 +26538,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Building01 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8243216774389418129, guid: 272de87b86f0167479a3edde2f4cabee, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -26398,6 +26642,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Solar Panel (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1185813794180163260, guid: a11a83a15c70c704fb2a33c71ba15006, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
+      objectReference: {fileID: 0}
     - target: {fileID: 1963301089745681414, guid: a11a83a15c70c704fb2a33c71ba15006, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.6098742
@@ -26471,6 +26719,10 @@ PrefabInstance:
     - target: {fileID: 3640494397372886749, guid: 29c1ad292e46f71438fc68fa77ff953c, type: 3}
       propertyPath: m_Name
       value: SP_Sci-fi_Antenna
+      objectReference: {fileID: 0}
+    - target: {fileID: 3640494397372886749, guid: 29c1ad292e46f71438fc68fa77ff953c, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
       objectReference: {fileID: 0}
     - target: {fileID: 6275840950781925780, guid: 29c1ad292e46f71438fc68fa77ff953c, type: 3}
       propertyPath: m_LocalScale.x
@@ -26624,6 +26876,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 'Missile '
       objectReference: {fileID: 0}
+    - target: {fileID: 5585470309546348497, guid: ab9e0f9afd0515742b32db2b0a88a231, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
+      objectReference: {fileID: 0}
     - target: {fileID: 5959274612089242860, guid: ab9e0f9afd0515742b32db2b0a88a231, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.4059284
@@ -26750,6 +27006,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SP_Ground02 (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 3030524114813791422, guid: 2832fc9f7f166a54194ea78cdfb504ac, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -26823,6 +27083,10 @@ PrefabInstance:
     - target: {fileID: 6871899762241951177, guid: 49a4f48f61ef90b4e91662eab79c96fe, type: 3}
       propertyPath: m_Name
       value: SP_Plant08
+      objectReference: {fileID: 0}
+    - target: {fileID: 6871899762241951177, guid: 49a4f48f61ef90b4e91662eab79c96fe, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -26919,6 +27183,10 @@ PrefabInstance:
     - target: {fileID: 2106369490079618592, guid: 69d7cb07827d0044c98c6ffb66504823, type: 3}
       propertyPath: m_Name
       value: SP_Ground04 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2106369490079618592, guid: 69d7cb07827d0044c98c6ffb66504823, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
       objectReference: {fileID: 0}
     - target: {fileID: 3875618741703885428, guid: 69d7cb07827d0044c98c6ffb66504823, type: 3}
       propertyPath: m_LocalScale.x
@@ -27308,6 +27576,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SP_Plant01
       objectReference: {fileID: 0}
+    - target: {fileID: 1097787338813512171, guid: 755dbccd9bdaa9541882ed6e1d49a6c2, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
+      objectReference: {fileID: 0}
     - target: {fileID: 6252864243838501280, guid: 755dbccd9bdaa9541882ed6e1d49a6c2, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.2195202
@@ -27448,6 +27720,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SP_Ground03 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1346269946354299776, guid: f7ddcbba01f75d64f8d64e88dcf5055f, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
+      objectReference: {fileID: 0}
     - target: {fileID: 9186774253835176218, guid: f7ddcbba01f75d64f8d64e88dcf5055f, type: 3}
       propertyPath: m_LocalScale.x
       value: 2.6362298
@@ -27521,6 +27797,10 @@ PrefabInstance:
     - target: {fileID: 2106369490079618592, guid: 69d7cb07827d0044c98c6ffb66504823, type: 3}
       propertyPath: m_Name
       value: SP_Ground04 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2106369490079618592, guid: 69d7cb07827d0044c98c6ffb66504823, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
       objectReference: {fileID: 0}
     - target: {fileID: 3875618741703885428, guid: 69d7cb07827d0044c98c6ffb66504823, type: 3}
       propertyPath: m_LocalScale.x
@@ -27722,6 +28002,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SP_Ground02 (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 3030524114813791422, guid: 2832fc9f7f166a54194ea78cdfb504ac, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -27796,6 +28080,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SP_Tree04 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6436764472764345019, guid: 472a7583b37cc8041ac90140b442f12b, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -27869,6 +28157,10 @@ PrefabInstance:
     - target: {fileID: 8300739438008659348, guid: d290be78271029347aedc74602998f27, type: 3}
       propertyPath: m_Name
       value: SP_Mountain03
+      objectReference: {fileID: 0}
+    - target: {fileID: 8300739438008659348, guid: d290be78271029347aedc74602998f27, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -28100,6 +28392,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SP_Tree03 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 8404623553545990634, guid: 23b7d92761d7a1949bbc8badc0b62901, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -28173,6 +28469,10 @@ PrefabInstance:
     - target: {fileID: 6436764472764345019, guid: 472a7583b37cc8041ac90140b442f12b, type: 3}
       propertyPath: m_Name
       value: SP_Tree04 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6436764472764345019, guid: 472a7583b37cc8041ac90140b442f12b, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -28403,6 +28703,10 @@ PrefabInstance:
     - target: {fileID: 2756030379737711774, guid: 43c3eb70d43e8884bae8e42964b0da2b, type: 3}
       propertyPath: m_Name
       value: Control Tower
+      objectReference: {fileID: 0}
+    - target: {fileID: 2756030379737711774, guid: 43c3eb70d43e8884bae8e42964b0da2b, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -28850,6 +29154,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SP_Rock08
       objectReference: {fileID: 0}
+    - target: {fileID: 7746001789926177984, guid: 5841ac0d2593bbe45b662715287ee488, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -29060,6 +29368,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SP_Plant06
       objectReference: {fileID: 0}
+    - target: {fileID: 8532970025986355871, guid: dbda976cbe83a144fa1864e059305c14, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -29081,6 +29393,10 @@ PrefabInstance:
     - target: {fileID: 1185813794180163260, guid: a11a83a15c70c704fb2a33c71ba15006, type: 3}
       propertyPath: m_Name
       value: Solar Panel
+      objectReference: {fileID: 0}
+    - target: {fileID: 1185813794180163260, guid: a11a83a15c70c704fb2a33c71ba15006, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
       objectReference: {fileID: 0}
     - target: {fileID: 1963301089745681414, guid: a11a83a15c70c704fb2a33c71ba15006, type: 3}
       propertyPath: m_LocalScale.x
@@ -29326,6 +29642,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SP_Ground04 (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 2106369490079618592, guid: 69d7cb07827d0044c98c6ffb66504823, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
+      objectReference: {fileID: 0}
     - target: {fileID: 3875618741703885428, guid: 69d7cb07827d0044c98c6ffb66504823, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.3681259
@@ -29478,6 +29798,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SP_Ground04 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 2106369490079618592, guid: 69d7cb07827d0044c98c6ffb66504823, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
+      objectReference: {fileID: 0}
     - target: {fileID: 3875618741703885428, guid: 69d7cb07827d0044c98c6ffb66504823, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.3681259
@@ -29551,6 +29875,10 @@ PrefabInstance:
     - target: {fileID: 2106369490079618592, guid: 69d7cb07827d0044c98c6ffb66504823, type: 3}
       propertyPath: m_Name
       value: SP_Ground04 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2106369490079618592, guid: 69d7cb07827d0044c98c6ffb66504823, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
       objectReference: {fileID: 0}
     - target: {fileID: 3875618741703885428, guid: 69d7cb07827d0044c98c6ffb66504823, type: 3}
       propertyPath: m_LocalScale.x
@@ -29916,6 +30244,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SP_Rock09 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 3471715344827755971, guid: a38a20ebee4e0c140b54ad55cf96242b, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -30023,6 +30355,10 @@ PrefabInstance:
     - target: {fileID: 2106369490079618592, guid: 69d7cb07827d0044c98c6ffb66504823, type: 3}
       propertyPath: m_Name
       value: SP_Ground04 (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2106369490079618592, guid: 69d7cb07827d0044c98c6ffb66504823, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
       objectReference: {fileID: 0}
     - target: {fileID: 3875618741703885428, guid: 69d7cb07827d0044c98c6ffb66504823, type: 3}
       propertyPath: m_LocalScale.x
@@ -30250,6 +30586,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SP_Mountain01 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 2753608001097531220, guid: 4452f273d3539d4429b515b17db1b65e, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
+      objectReference: {fileID: 0}
     - target: {fileID: 3660130537010022569, guid: 4452f273d3539d4429b515b17db1b65e, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.8740895
@@ -30390,6 +30730,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SP_Ground04 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 2106369490079618592, guid: 69d7cb07827d0044c98c6ffb66504823, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
+      objectReference: {fileID: 0}
     - target: {fileID: 3875618741703885428, guid: 69d7cb07827d0044c98c6ffb66504823, type: 3}
       propertyPath: m_LocalScale.x
       value: 2.6362305
@@ -30515,6 +30859,10 @@ PrefabInstance:
     - target: {fileID: 8404623553545990634, guid: 23b7d92761d7a1949bbc8badc0b62901, type: 3}
       propertyPath: m_Name
       value: SP_Tree03
+      objectReference: {fileID: 0}
+    - target: {fileID: 8404623553545990634, guid: 23b7d92761d7a1949bbc8badc0b62901, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -31045,6 +31393,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SP_Rock09 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3471715344827755971, guid: a38a20ebee4e0c140b54ad55cf96242b, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -31219,6 +31571,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SP_Ground04 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 2106369490079618592, guid: 69d7cb07827d0044c98c6ffb66504823, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
+      objectReference: {fileID: 0}
     - target: {fileID: 3875618741703885428, guid: 69d7cb07827d0044c98c6ffb66504823, type: 3}
       propertyPath: m_LocalScale.x
       value: 2.3193293
@@ -31292,6 +31648,10 @@ PrefabInstance:
     - target: {fileID: 1346269946354299776, guid: f7ddcbba01f75d64f8d64e88dcf5055f, type: 3}
       propertyPath: m_Name
       value: SP_Ground03 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1346269946354299776, guid: f7ddcbba01f75d64f8d64e88dcf5055f, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
       objectReference: {fileID: 0}
     - target: {fileID: 9186774253835176218, guid: f7ddcbba01f75d64f8d64e88dcf5055f, type: 3}
       propertyPath: m_LocalScale.x
@@ -31419,6 +31779,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SP_Plant08
       objectReference: {fileID: 0}
+    - target: {fileID: 6871899762241951177, guid: 49a4f48f61ef90b4e91662eab79c96fe, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -31440,6 +31804,10 @@ PrefabInstance:
     - target: {fileID: 1346269946354299776, guid: f7ddcbba01f75d64f8d64e88dcf5055f, type: 3}
       propertyPath: m_Name
       value: SP_Ground03 (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1346269946354299776, guid: f7ddcbba01f75d64f8d64e88dcf5055f, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
       objectReference: {fileID: 0}
     - target: {fileID: 9186774253835176218, guid: f7ddcbba01f75d64f8d64e88dcf5055f, type: 3}
       propertyPath: m_LocalScale.x
@@ -31641,6 +32009,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Launching Pad01
       objectReference: {fileID: 0}
+    - target: {fileID: 9190974006166272344, guid: c9bc4d7f5a8b2e14686a450f20cb749d, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -31715,6 +32087,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SP_Rock09
       objectReference: {fileID: 0}
+    - target: {fileID: 3471715344827755971, guid: a38a20ebee4e0c140b54ad55cf96242b, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -31788,6 +32164,10 @@ PrefabInstance:
     - target: {fileID: 5409894100384603254, guid: 7967544bdda3bab4da795fb6c3db8126, type: 3}
       propertyPath: m_Name
       value: SP_Plant02
+      objectReference: {fileID: 0}
+    - target: {fileID: 5409894100384603254, guid: 7967544bdda3bab4da795fb6c3db8126, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -31941,6 +32321,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SP_Tree03 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8404623553545990634, guid: 23b7d92761d7a1949bbc8badc0b62901, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -32014,6 +32398,10 @@ PrefabInstance:
     - target: {fileID: 8300739438008659348, guid: d290be78271029347aedc74602998f27, type: 3}
       propertyPath: m_Name
       value: SP_Mountain03
+      objectReference: {fileID: 0}
+    - target: {fileID: 8300739438008659348, guid: d290be78271029347aedc74602998f27, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
