@@ -110,6 +110,23 @@ public class GameStatsManager : MonoBehaviour
     //Stargate
     [HideInInspector] 
     public float artifactScoreTeleporterMulti = 1;
+    //BumperPoint
+    [HideInInspector] 
+    public float artifactScoreBumperMulti = 1;
+    //SpinnerPoint
+    [HideInInspector] 
+    public float artifactScoreSpinnerMulti = 1;
+    //SwitchPoint
+    [HideInInspector] 
+    public float artifactScoreSwitchMulti = 1;
+    //DamagerPoint
+    [HideInInspector] 
+    public float artifactScoreDamagerMulti = 1;
+    //GoldIncrease
+    [HideInInspector] 
+    public float GoldMulti = 1;
+    public float BallPriceMulti = 1;
+    
     #endregion
     
     void Awake()
@@ -304,6 +321,22 @@ public class GameStatsManager : MonoBehaviour
             case cfg.Artifacts.ID.TeleportPoint:
                 artifactScoreTeleporterMulti = ap.ArtifactStat1;
                 break;
+            case cfg.Artifacts.ID.BumperPoint:
+                artifactScoreBumperMulti = ap.ArtifactStat1;
+                break;
+            case cfg.Artifacts.ID.SpinnerPoint:
+                artifactScoreSpinnerMulti = ap.ArtifactStat1;
+                break;
+            case cfg.Artifacts.ID.SwitchPoint:
+                artifactScoreSwitchMulti = ap.ArtifactStat1;
+                break;
+            case cfg.Artifacts.ID.DamagerPoint:
+                artifactScoreDamagerMulti = ap.ArtifactStat1;
+                break;
+            case cfg.Artifacts.ID.GoldIncrease:
+                GoldMulti = ap.ArtifactStat1;
+                BallPriceMulti = ap.ArtifactStat2;
+                break;
         }
     }
 
@@ -326,6 +359,7 @@ public class GameStatsManager : MonoBehaviour
 
     public void AddGold(long amount)
     {
+        amount *= (long)GoldMulti;
         gold += amount;
         totalGoldGained += amount;
         SoundManager.Instance.PlaySFX(SoundManager.Instance.goldAccumulateSource,SoundManager.Instance.goldAccumulateVolume);

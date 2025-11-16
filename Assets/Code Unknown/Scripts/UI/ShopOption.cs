@@ -39,7 +39,8 @@ namespace UI
             var index = GetRandomIndex(ballWeights);
             var ball = LubanTablesMgr.Instance.tables.TbBallParam.DataList[index];
             _ballName = ball.ID;
-            _price = (int)(ball.ID == "Lightningball" ? ball.BallPrice * GameStatsManager.Instance.Lightningball_BallPrice : ball.BallPrice);
+            _price = (int)((ball.ID == "Lightningball" ? ball.BallPrice * GameStatsManager.Instance.Lightningball_BallPrice : ball.BallPrice) 
+                     * GameStatsManager.Instance.BallPriceMulti);
             BallName.text = _ballName;
             BallPrice.text = _price.ToString();
 

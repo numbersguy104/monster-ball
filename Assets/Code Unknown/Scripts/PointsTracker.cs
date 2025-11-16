@@ -93,7 +93,29 @@ public class PointsTracker : MonoBehaviour
     //Add base points associated with a given type of terrain
     public void AddTerrainPoints(PointSources source, AbstractBall ball = null)
     {
-        long points = pointsDictionary[source] * (source == PointSources.Portal ? (long)GameStatsManager.Instance.artifactScoreTeleporterMulti : 1);
+        long multi = 1L;
+        switch (source)
+        {
+            case PointSources.Portal:
+                multi = (long)GameStatsManager.Instance.artifactScoreTeleporterMulti;
+                break;
+            case PointSources.Bumper:
+                multi = (long)GameStatsManager.Instance.artifactScoreBumperMulti;
+                break;
+            case PointSources.Spinner:
+                multi = (long)GameStatsManager.Instance.artifactScoreSpinnerMulti;
+                break;
+            case PointSources.SwitchGroup:
+                multi = (long)GameStatsManager.Instance.artifactScoreSwitchMulti;
+                break;
+            case PointSources.SwitchOne:
+                multi = (long)GameStatsManager.Instance.artifactScoreSwitchMulti;
+                break;
+            case PointSources.BossDamager:
+                multi = (long)GameStatsManager.Instance.artifactScoreDamagerMulti;
+                break;
+        }
+        long points = pointsDictionary[source] * multi;
         points = (long)(points * terrainPointsMult * GetMultiballMult());
 
         terrainPoints += points;
