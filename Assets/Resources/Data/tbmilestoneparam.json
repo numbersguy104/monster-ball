@@ -2,7 +2,7 @@
   {
     "id": 0,
     "MilstoneLevel": 1,
-    "MilestoneReq": 9000,
+    "MilestoneReq": 30000,
     "MonsterKillReq": 3,
     "MilestoneMulti": 1.25,
     "MonHPInc": 1,
