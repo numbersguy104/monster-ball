@@ -229,7 +229,7 @@ public class GameStatsManager : MonoBehaviour
             }
         }
 
-        levelUpThreshold = (long)(multi * levelUpThreshold);
+        levelUpThreshold = (long)((multi + 1) * levelUpThreshold);
 
         print("DEBUG: Level " + level + " reached. Threshold is " + levelUpThreshold);
         
