@@ -155,7 +155,7 @@ public class MonsterController : MonoBehaviour
         GameStatsManager.Instance.AddScore(100, ScoreSource.Monster);
 
         StoryUnlockManager.Instance.MaybeUnlockRandomNew(true);
-
+        GetComponent<MonsterAudio>()?.PlayDeathSound();
         var mainUI = FindAnyObjectByType<UIGameMain>();
         mainUI?.Refresh();
         if (movement != null)
