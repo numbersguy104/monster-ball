@@ -13,6 +13,9 @@ namespace UI
 
         public GameObject UIStory;
         private GameObject _UIStoryObj;
+
+        public GameObject UIGuide;
+        private GameObject _UIGuideObj;
         
         public void OnStartGameBtnClick()
         {
@@ -55,6 +58,21 @@ namespace UI
             _UIStoryObj.SetActive(true);
             gameObject.SetActive(false);
         }
+
+        public void OnGuideBtnClick()
+        {
+            if (_UIGuideObj == null)
+            {
+                Canvas canvas = FindAnyObjectByType<Canvas>();
+                _UIGuideObj = Instantiate(UIGuide, canvas.transform, false);
+            }
+            _UIGuideObj.SetActive(true);
+            gameObject.SetActive(false);
+        }
+
+        public void OnExitBtnClick()
+        {
+            Application.Quit();
+        }
     }
 }
-
