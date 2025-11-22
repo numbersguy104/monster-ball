@@ -55,5 +55,31 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2386257326719710950, guid: 2b35fcd81960a26478e25859ada015bf, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1415521601927915608}
   m_SourcePrefab: {fileID: 100100000, guid: 2b35fcd81960a26478e25859ada015bf, type: 3}
+--- !u!1 &2692618171897017413 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2386257326719710950, guid: 2b35fcd81960a26478e25859ada015bf, type: 3}
+  m_PrefabInstance: {fileID: 307275650000208547}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1415521601927915608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2692618171897017413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83cbac6e5dff1ef4a92710b711aa4331, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillSource: {fileID: 7370924542727863121}
+--- !u!82 &7370924542727863121 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 7064284429923088882, guid: 2b35fcd81960a26478e25859ada015bf, type: 3}
+  m_PrefabInstance: {fileID: 307275650000208547}
+  m_PrefabAsset: {fileID: 0}

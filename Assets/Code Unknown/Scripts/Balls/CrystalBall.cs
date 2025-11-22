@@ -23,6 +23,7 @@ public class CrystalBall : AbstractAbilityBall
     {
         CreateSkillObject();
         damageTimer = crystalDamageFrequency;
+        GetComponent<BallAudio>()?.PlaySkillSound();
     }
 
     protected override void Awake()

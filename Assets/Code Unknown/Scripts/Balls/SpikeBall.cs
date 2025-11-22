@@ -22,6 +22,7 @@ public class SpikeBall : AbstractAbilityBall
     protected override void Skill()
     {
         CreateSkillObjects();
+        GetComponent<BallAudio>()?.PlaySkillSound();
     }
 
     protected override void Awake()

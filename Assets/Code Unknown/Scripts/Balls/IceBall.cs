@@ -12,6 +12,7 @@ public class IceBall : AbstractAbilityBall
     protected override void Skill()
     {
         CreateTrail();
+        GetComponent<BallAudio>()?.PlaySkillSound();
     }
 
     protected override void Awake()

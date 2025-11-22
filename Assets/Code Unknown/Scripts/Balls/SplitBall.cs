@@ -28,6 +28,7 @@ public class SplitBall : AbstractAbilityBall
         }
 
         PostSplit();
+        GetComponent<BallAudio>()?.PlaySkillSound();
     }
 
     public void PostSplit()

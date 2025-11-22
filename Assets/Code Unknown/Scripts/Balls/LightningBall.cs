@@ -36,6 +36,7 @@ public class LightningBall : AbstractAbilityBall
         {
             duringSkillIndicator.SetActive(true);
         }
+        GetComponent<BallAudio>()?.PlaySkillSound();
     }
 
     private void Start()

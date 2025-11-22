@@ -43,6 +43,7 @@ public class FireBall : AbstractAbilityBall
     {
         durationTimer = LEAVE_DURATION;
         damageTimer = DAMAGE_FREQUENCY;
+        GetComponent<BallAudio>()?.PlaySkillSound();
     }
 
     protected override void Awake()
