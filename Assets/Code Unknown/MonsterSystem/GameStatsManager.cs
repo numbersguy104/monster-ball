@@ -403,10 +403,10 @@ public class GameStatsManager : MonoBehaviour
         switch (source)
         {
             case ScoreSource.Monster:
-                score += amount * (long)monsMulti * (long)artifactScoreMulti;
+                score += (long)(amount * monsMulti * artifactScoreMulti);
                 break;
             case ScoreSource.Terrain:
-                score += amount * (long)terMulti * (long)artifactScoreMulti;
+                score += (long)(amount * terMulti * artifactScoreMulti);
                 break;
         }
         
@@ -415,7 +415,7 @@ public class GameStatsManager : MonoBehaviour
 
     public void AddGold(long amount)
     {
-        amount *= (long)GoldMulti * (long)UnityEngine.Random.Range(artifactrandomGoldMin, artifactrandomGoldMax);;
+        amount *= (long)(GoldMulti * UnityEngine.Random.Range(artifactrandomGoldMin, artifactrandomGoldMax));;
         gold += amount;
         totalGoldGained += amount;
         SoundManager.Instance.PlaySFX(SoundManager.Instance.goldAccumulateSource,SoundManager.Instance.goldAccumulateVolume);
