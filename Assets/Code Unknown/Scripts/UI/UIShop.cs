@@ -19,6 +19,11 @@ namespace UI
             RefreshStatus();
         }
 
+        private void OnEnable()
+        {
+            RefreshStatus();
+        }
+
         void RefreshStatus()
         {
             var score = GameStatsManager.Instance.score;

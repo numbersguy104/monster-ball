@@ -33,6 +33,13 @@ namespace cfg.Artifacts
         SwitchPoint = 18,
         DamagerPoint = 19,
         GoldIncrease = 20,
+        BallSizeChange = 21,
+        BallSpeedChange = 22,
+        ExtraGold = 23,
+        BallCritChange = 24,
+        DeathZone = 25,
+        GoldChange = 26,
+        MonsterSpawn = 27,
     }
 
 } 

@@ -26,6 +26,7 @@ public sealed partial class MilestoneParam : Luban.BeanBase
         { if(!_buf["MonPointInc"].IsNumber) { throw new SerializationException(); }  MonPointInc = _buf["MonPointInc"]; }
         { if(!_buf["TerPointInc"].IsNumber) { throw new SerializationException(); }  TerPointInc = _buf["TerPointInc"]; }
         { if(!_buf["MonsterSpawnSCount"].IsNumber) { throw new SerializationException(); }  MonsterSpawnSCount = _buf["MonsterSpawnSCount"]; }
+        { if(!_buf["PriceMulti"].IsNumber) { throw new SerializationException(); }  PriceMulti = _buf["PriceMulti"]; }
     }
 
     public static MilestoneParam DeserializeMilestoneParam(JSONNode _buf)
@@ -42,6 +43,7 @@ public sealed partial class MilestoneParam : Luban.BeanBase
     public readonly float MonPointInc;
     public readonly float TerPointInc;
     public readonly int MonsterSpawnSCount;
+    public readonly float PriceMulti;
    
     public const int __ID__ = 589185309;
     public override int GetTypeId() => __ID__;
@@ -62,6 +64,7 @@ public sealed partial class MilestoneParam : Luban.BeanBase
         + "MonPointInc:" + MonPointInc + ","
         + "TerPointInc:" + TerPointInc + ","
         + "MonsterSpawnSCount:" + MonsterSpawnSCount + ","
+        + "PriceMulti:" + PriceMulti + ","
         + "}";
     }
 }

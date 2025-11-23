@@ -175,25 +175,25 @@ public abstract class AbstractBall : MonoBehaviour
     //Speed
     public virtual float GetSpeed()
     {
-        return baseSpeed * GetUpgradeMult("UpgradeSpd", upgradesSpeed);
+        return baseSpeed * GetUpgradeMult("UpgradeSpd", upgradesSpeed) * GameStatsManager.Instance.artifactBallSpeed;
     }
 
     //Size
     public virtual float GetSize()
     {
-        return baseSize * GetUpgradeMult("UpgradeSize", upgradesSize);
+        return baseSize * GetUpgradeMult("UpgradeSize", upgradesSize) * GameStatsManager.Instance.artifactBallSize;
     }
 
     //Crit damage
     public virtual float GetCritDamage()
     {
-        return baseCritDamage * GetUpgradeMult("UpgradeCDmg", upgradesCritDamage);
+        return baseCritDamage * GetUpgradeMult("UpgradeCDmg", upgradesCritDamage) * GameStatsManager.Instance.artifactBallCritDmg;
     }
 
     //Crit chance
     public virtual float GetCritChance()
     {
-        return baseCritChance * GetUpgradeMult("UpgradeCChance", upgradesCritChance);
+        return baseCritChance * GetUpgradeMult("UpgradeCChance", upgradesCritChance) * GameStatsManager.Instance.artifactBallCritChance;
     }
 
     //Upgrade one of the ball's stats...
