@@ -766,7 +766,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 4761
+  m_VersionIndex: 4764
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -1585,7 +1585,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 2097
+  m_VersionIndex: 2100
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -2331,7 +2331,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1603
+  m_VersionIndex: 1606
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -3281,7 +3281,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 2097
+  m_VersionIndex: 2100
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -4379,7 +4379,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 4761
+  m_VersionIndex: 4764
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -4619,7 +4619,7 @@ MonoBehaviour:
   bumper2Source: {fileID: 6897337965311137346}
   bumper2Volume: 0.702
   rollingSource: {fileID: 3430942337101054736}
-  rollingVolume: 0.672
+  rollingVolume: 0.351
   monsterCollide1Source: {fileID: 5657158499132013621}
   monsterCollide1Volume: 0.794
   monsterCollide2Source: {fileID: 7713201592728230271}
@@ -5607,6 +5607,19 @@ MonoBehaviour:
   artifactDamageMulti: 1
   artifactScoreMulti: 1
   artifactScoreTeleporterMulti: 1
+  artifactScoreBumperMulti: 1
+  artifactScoreSpinnerMulti: 1
+  artifactScoreSwitchMulti: 1
+  artifactScoreDamagerMulti: 1
+  GoldMulti: 1
+  BallPriceMulti: 1
+  artifactBallSize: 1
+  artifactBallSpeed: 1
+  artifactBallCritDmg: 1
+  artifactBallCritChance: 1
+  artifactrandomGoldMin: 1
+  artifactrandomGoldMax: 1
+  artifactMonsterSpawnSCount: 1
 --- !u!1 &3012132678049943181
 GameObject:
   m_ObjectHideFlags: 0
@@ -6476,7 +6489,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 4761
+  m_VersionIndex: 4764
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -7077,7 +7090,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 4761
+  m_VersionIndex: 4764
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -8920,7 +8933,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 7828
+  m_VersionIndex: 7831
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -10194,7 +10207,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 4761
+  m_VersionIndex: 4764
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -10711,7 +10724,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 3497
+  m_VersionIndex: 3500
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -11803,7 +11816,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 4761
+  m_VersionIndex: 4764
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -12315,7 +12328,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 4761
+  m_VersionIndex: 4764
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -14537,7 +14550,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 4757
+  m_VersionIndex: 4760
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
