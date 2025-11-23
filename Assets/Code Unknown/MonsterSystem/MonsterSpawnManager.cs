@@ -67,7 +67,7 @@ public class MonsterSpawnManager : MonoBehaviour
     //(This is called by the GameStatsManager's OnLevelUp listener)
     private void LevelUp()
     {
-        monsterCount = monsterCounts[0];
+        monsterCount = monsterCounts[0] + (int)GameStatsManager.Instance.artifactMonsterSpawnSCount;
         monsterCounts.RemoveAt(0);
     }
 }

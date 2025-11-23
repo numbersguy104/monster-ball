@@ -125,7 +125,38 @@ public class GameStatsManager : MonoBehaviour
     //GoldIncrease
     [HideInInspector] 
     public float GoldMulti = 1;
+    [HideInInspector] 
     public float BallPriceMulti = 1;
+
+    //BallSizeChange
+    [HideInInspector] 
+    public float artifactBallSize = 1;
+    
+    //BallSpeedChange
+    [HideInInspector] 
+    public float artifactBallSpeed = 1;
+    
+    //ExtraGold
+    //Gold
+    
+    //BallCritChange
+    [HideInInspector] 
+    public float artifactBallCritDmg = 1;
+    [HideInInspector] 
+    public float artifactBallCritChance = 1;
+    
+    //DeadZone
+    //?
+    
+    //GoldChange
+    [HideInInspector] 
+    public float artifactrandomGoldMin = 1;
+    [HideInInspector] 
+    public float artifactrandomGoldMax = 1;
+    
+    //MonsterSpawn
+    [HideInInspector] 
+    public float artifactMonsterSpawnSCount = 1;
     
     #endregion
     
@@ -312,30 +343,55 @@ public class GameStatsManager : MonoBehaviour
         switch (ap.ID)
         {   
             case cfg.Artifacts.ID.StartingGold:
-                startingGold = ap.ArtifactStat1;
+                startingGold += ap.ArtifactStat1;
                 break;
             case cfg.Artifacts.ID.MonsterDamage:
-                artifactDamageMulti = ap.ArtifactStat1;
-                artifactScoreMulti = ap.ArtifactStat2;
+                artifactDamageMulti *= ap.ArtifactStat1;
+                artifactScoreMulti *= ap.ArtifactStat2;
                 break;
             case cfg.Artifacts.ID.TeleportPoint:
-                artifactScoreTeleporterMulti = ap.ArtifactStat1;
+                artifactScoreTeleporterMulti *= ap.ArtifactStat1;
                 break;
             case cfg.Artifacts.ID.BumperPoint:
-                artifactScoreBumperMulti = ap.ArtifactStat1;
+                artifactScoreBumperMulti *= ap.ArtifactStat1;
                 break;
             case cfg.Artifacts.ID.SpinnerPoint:
-                artifactScoreSpinnerMulti = ap.ArtifactStat1;
+                artifactScoreSpinnerMulti *= ap.ArtifactStat1;
                 break;
             case cfg.Artifacts.ID.SwitchPoint:
-                artifactScoreSwitchMulti = ap.ArtifactStat1;
+                artifactScoreSwitchMulti *= ap.ArtifactStat1;
                 break;
             case cfg.Artifacts.ID.DamagerPoint:
-                artifactScoreDamagerMulti = ap.ArtifactStat1;
+                artifactScoreDamagerMulti *= ap.ArtifactStat1;
                 break;
             case cfg.Artifacts.ID.GoldIncrease:
-                GoldMulti = ap.ArtifactStat1;
-                BallPriceMulti = ap.ArtifactStat2;
+                GoldMulti *= ap.ArtifactStat1;
+                BallPriceMulti *= ap.ArtifactStat2;
+                break;
+            case cfg.Artifacts.ID.BallSizeChange:
+                artifactBallSize *= ap.ArtifactStat1;
+                BallPriceMulti *= ap.ArtifactStat2;
+                break;
+            case cfg.Artifacts.ID.BallSpeedChange:
+                artifactBallSpeed *= ap.ArtifactStat1;
+                artifactScoreMulti *= ap.ArtifactStat2;
+                break;
+            case cfg.Artifacts.ID.ExtraGold:
+                startingGold += ap.ArtifactStat1;
+                break;
+            case cfg.Artifacts.ID.BallCritChange:
+                artifactBallCritDmg *= ap.ArtifactStat1;
+                artifactBallCritChance *= ap.ArtifactStat2;
+                break;
+            case cfg.Artifacts.ID.DeathZone:
+                
+                break;
+            case cfg.Artifacts.ID.GoldChange:
+                artifactrandomGoldMin = ap.ArtifactStat1;
+                artifactrandomGoldMax = ap.ArtifactStat2;
+                break;
+            case cfg.Artifacts.ID.MonsterSpawn:
+                artifactMonsterSpawnSCount += 1;
                 break;
         }
     }
@@ -359,7 +415,7 @@ public class GameStatsManager : MonoBehaviour
 
     public void AddGold(long amount)
     {
-        amount *= (long)GoldMulti;
+        amount *= (long)GoldMulti * (long)UnityEngine.Random.Range(artifactrandomGoldMin, artifactrandomGoldMax);;
         gold += amount;
         totalGoldGained += amount;
         SoundManager.Instance.PlaySFX(SoundManager.Instance.goldAccumulateSource,SoundManager.Instance.goldAccumulateVolume);
