@@ -9,7 +9,7 @@
     "MonPointInc": 1,
     "TerPointInc": 1,
     "MonsterSpawnSCount": 5,
-    "PriceMulti": 2
+    "PriceMulti": 1
   },
   {
     "id": 1,
@@ -17,11 +17,11 @@
     "MilestoneReq": 0,
     "MonsterKillReq": 3,
     "MilestoneMulti": 1.25,
-    "MonHPInc": 1,
+    "MonHPInc": 4,
     "MonPointInc": 1,
     "TerPointInc": 1,
     "MonsterSpawnSCount": 5,
-    "PriceMulti": 2
+    "PriceMulti": 1
   },
   {
     "id": 2,
@@ -29,11 +29,11 @@
     "MilestoneReq": 0,
     "MonsterKillReq": 4,
     "MilestoneMulti": 1.25,
-    "MonHPInc": 1.25,
+    "MonHPInc": 4,
     "MonPointInc": 1,
     "TerPointInc": 1,
     "MonsterSpawnSCount": 5,
-    "PriceMulti": 2
+    "PriceMulti": 1
   },
   {
     "id": 3,
@@ -41,11 +41,11 @@
     "MilestoneReq": 0,
     "MonsterKillReq": 4,
     "MilestoneMulti": 1.3,
-    "MonHPInc": 1.5,
+    "MonHPInc": 5,
     "MonPointInc": 1.25,
     "TerPointInc": 1.5,
     "MonsterSpawnSCount": 5,
-    "PriceMulti": 2
+    "PriceMulti": 1.5
   },
   {
     "id": 4,
@@ -53,11 +53,11 @@
     "MilestoneReq": 0,
     "MonsterKillReq": 5,
     "MilestoneMulti": 1.3,
-    "MonHPInc": 1.5,
+    "MonHPInc": 5,
     "MonPointInc": 1.25,
     "TerPointInc": 1.5,
     "MonsterSpawnSCount": 6,
-    "PriceMulti": 2
+    "PriceMulti": 1.5
   },
   {
     "id": 5,
@@ -65,11 +65,11 @@
     "MilestoneReq": 0,
     "MonsterKillReq": 5,
     "MilestoneMulti": 1.3,
-    "MonHPInc": 1.5,
+    "MonHPInc": 5,
     "MonPointInc": 1.25,
     "TerPointInc": 1.5,
     "MonsterSpawnSCount": 6,
-    "PriceMulti": 2
+    "PriceMulti": 1.5
   },
   {
     "id": 6,
@@ -77,11 +77,11 @@
     "MilestoneReq": 0,
     "MonsterKillReq": 6,
     "MilestoneMulti": 1.3,
-    "MonHPInc": 1.5,
+    "MonHPInc": 5,
     "MonPointInc": 1.25,
     "TerPointInc": 1.5,
     "MonsterSpawnSCount": 6,
-    "PriceMulti": 2
+    "PriceMulti": 1.5
   },
   {
     "id": 7,
@@ -89,11 +89,11 @@
     "MilestoneReq": 0,
     "MonsterKillReq": 6,
     "MilestoneMulti": 1.3,
-    "MonHPInc": 1.5,
+    "MonHPInc": 5,
     "MonPointInc": 1.25,
     "TerPointInc": 1.5,
     "MonsterSpawnSCount": 6,
-    "PriceMulti": 2
+    "PriceMulti": 1.5
   },
   {
     "id": 8,
@@ -101,7 +101,7 @@
     "MilestoneReq": 0,
     "MonsterKillReq": 7,
     "MilestoneMulti": 1.3,
-    "MonHPInc": 1.5,
+    "MonHPInc": 5,
     "MonPointInc": 1.25,
     "TerPointInc": 1.5,
     "MonsterSpawnSCount": 6,
@@ -113,7 +113,7 @@
     "MilestoneReq": 0,
     "MonsterKillReq": 7,
     "MilestoneMulti": 1.35,
-    "MonHPInc": 1.3,
+    "MonHPInc": 7,
     "MonPointInc": 2,
     "TerPointInc": 2,
     "MonsterSpawnSCount": 7,
@@ -125,7 +125,7 @@
     "MilestoneReq": 0,
     "MonsterKillReq": 8,
     "MilestoneMulti": 1.35,
-    "MonHPInc": 1.3,
+    "MonHPInc": 7,
     "MonPointInc": 2,
     "TerPointInc": 2,
     "MonsterSpawnSCount": 7,
@@ -137,7 +137,7 @@
     "MilestoneReq": 0,
     "MonsterKillReq": 8,
     "MilestoneMulti": 1.35,
-    "MonHPInc": 1.3,
+    "MonHPInc": 7,
     "MonPointInc": 2,
     "TerPointInc": 2,
     "MonsterSpawnSCount": 7,
@@ -149,7 +149,7 @@
     "MilestoneReq": 0,
     "MonsterKillReq": 9,
     "MilestoneMulti": 1.35,
-    "MonHPInc": 1.3,
+    "MonHPInc": 10,
     "MonPointInc": 2,
     "TerPointInc": 2,
     "MonsterSpawnSCount": 7,
@@ -161,11 +161,11 @@
     "MilestoneReq": 0,
     "MonsterKillReq": 9,
     "MilestoneMulti": 1.35,
-    "MonHPInc": 1.3,
+    "MonHPInc": 10,
     "MonPointInc": 2,
     "TerPointInc": 2,
     "MonsterSpawnSCount": 7,
-    "PriceMulti": 2
+    "PriceMulti": 4
   },
   {
     "id": 14,
@@ -173,11 +173,11 @@
     "MilestoneReq": 0,
     "MonsterKillReq": 10,
     "MilestoneMulti": 1.35,
-    "MonHPInc": 1.3,
+    "MonHPInc": 10,
     "MonPointInc": 2,
     "TerPointInc": 2,
     "MonsterSpawnSCount": 7,
-    "PriceMulti": 2
+    "PriceMulti": 4
   },
   {
     "id": 15,
@@ -185,11 +185,11 @@
     "MilestoneReq": 0,
     "MonsterKillReq": 10,
     "MilestoneMulti": 1.35,
-    "MonHPInc": 1.3,
+    "MonHPInc": 10,
     "MonPointInc": 2,
     "TerPointInc": 2,
     "MonsterSpawnSCount": 8,
-    "PriceMulti": 2
+    "PriceMulti": 4
   },
   {
     "id": 16,
@@ -197,11 +197,11 @@
     "MilestoneReq": 0,
     "MonsterKillReq": 11,
     "MilestoneMulti": 1.35,
-    "MonHPInc": 1.3,
+    "MonHPInc": 12,
     "MonPointInc": 2,
     "TerPointInc": 2,
     "MonsterSpawnSCount": 8,
-    "PriceMulti": 2
+    "PriceMulti": 4
   },
   {
     "id": 17,
@@ -209,11 +209,11 @@
     "MilestoneReq": 0,
     "MonsterKillReq": 11,
     "MilestoneMulti": 1.4,
-    "MonHPInc": 1.35,
+    "MonHPInc": 12,
     "MonPointInc": 2.5,
     "TerPointInc": 2.5,
     "MonsterSpawnSCount": 8,
-    "PriceMulti": 2
+    "PriceMulti": 4
   },
   {
     "id": 18,
@@ -221,11 +221,11 @@
     "MilestoneReq": 0,
     "MonsterKillReq": 11,
     "MilestoneMulti": 1.4,
-    "MonHPInc": 1.35,
+    "MonHPInc": 12,
     "MonPointInc": 2.5,
     "TerPointInc": 2.5,
     "MonsterSpawnSCount": 8,
-    "PriceMulti": 2
+    "PriceMulti": 4
   },
   {
     "id": 19,
@@ -233,11 +233,11 @@
     "MilestoneReq": 0,
     "MonsterKillReq": 12,
     "MilestoneMulti": 1.4,
-    "MonHPInc": 1.35,
+    "MonHPInc": 12,
     "MonPointInc": 2.5,
     "TerPointInc": 2.5,
     "MonsterSpawnSCount": 8,
-    "PriceMulti": 2
+    "PriceMulti": 5
   },
   {
     "id": 20,
@@ -245,11 +245,11 @@
     "MilestoneReq": 0,
     "MonsterKillReq": 12,
     "MilestoneMulti": 1.4,
-    "MonHPInc": 1.35,
+    "MonHPInc": 12,
     "MonPointInc": 2.5,
     "TerPointInc": 2.5,
     "MonsterSpawnSCount": 8,
-    "PriceMulti": 2
+    "PriceMulti": 5
   },
   {
     "id": 21,
@@ -257,11 +257,11 @@
     "MilestoneReq": 0,
     "MonsterKillReq": 13,
     "MilestoneMulti": 1.4,
-    "MonHPInc": 1.35,
+    "MonHPInc": 12,
     "MonPointInc": 2.5,
     "TerPointInc": 2.5,
     "MonsterSpawnSCount": 9,
-    "PriceMulti": 2
+    "PriceMulti": 5
   },
   {
     "id": 22,
@@ -269,11 +269,11 @@
     "MilestoneReq": 0,
     "MonsterKillReq": 13,
     "MilestoneMulti": 1.5,
-    "MonHPInc": 1.4,
+    "MonHPInc": 15,
     "MonPointInc": 3,
     "TerPointInc": 3,
     "MonsterSpawnSCount": 9,
-    "PriceMulti": 2
+    "PriceMulti": 5
   },
   {
     "id": 23,
@@ -281,11 +281,11 @@
     "MilestoneReq": 0,
     "MonsterKillReq": 13,
     "MilestoneMulti": 1.5,
-    "MonHPInc": 1.4,
+    "MonHPInc": 15,
     "MonPointInc": 3,
     "TerPointInc": 3,
     "MonsterSpawnSCount": 9,
-    "PriceMulti": 2
+    "PriceMulti": 5
   },
   {
     "id": 24,
@@ -293,11 +293,11 @@
     "MilestoneReq": 0,
     "MonsterKillReq": 14,
     "MilestoneMulti": 1.5,
-    "MonHPInc": 1.4,
+    "MonHPInc": 15,
     "MonPointInc": 3,
     "TerPointInc": 3,
     "MonsterSpawnSCount": 9,
-    "PriceMulti": 2
+    "PriceMulti": 5
   },
   {
     "id": 25,
@@ -305,10 +305,10 @@
     "MilestoneReq": 0,
     "MonsterKillReq": 14,
     "MilestoneMulti": 1.5,
-    "MonHPInc": 1.4,
+    "MonHPInc": 15,
     "MonPointInc": 3,
     "TerPointInc": 3,
     "MonsterSpawnSCount": 10,
-    "PriceMulti": 2
+    "PriceMulti": 5
   }
 ]
