@@ -53,15 +53,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 100
-    m_Right: 100
-    m_Top: 100
-    m_Bottom: 100
+    m_Left: 125
+    m_Right: 125
+    m_Top: 50
+    m_Bottom: 150
   m_ChildAlignment: 0
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 1130, y: 350}
-  m_Spacing: {x: 100, y: 100}
+  m_CellSize: {x: 1130, y: 425}
+  m_Spacing: {x: 50, y: 50}
   m_Constraint: 0
   m_ConstraintCount: 2
 --- !u!1 &1271681853516399064
@@ -130,7 +130,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: You can launch extra pinballs even if one is already active. Doing this
-    will let you score more points!
+    will add to your multiplier and let you score more points!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 937fa77cbc49c3f478f9b40238343316, type: 2}
   m_sharedMaterial: {fileID: 5221812718875079178, guid: 937fa77cbc49c3f478f9b40238343316, type: 2}
@@ -528,7 +528,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: Before each run starts, you can pick artifacts to help you. Some artifacts
-    will only affect certain balls.
+    will only affect certain balls, while others are general purpose.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 937fa77cbc49c3f478f9b40238343316, type: 2}
   m_sharedMaterial: {fileID: 5221812718875079178, guid: 937fa77cbc49c3f478f9b40238343316, type: 2}
@@ -930,7 +930,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: After killing enough monsters and scoring enough points, you can upgrade
-    your pinball stats and buy new pinballs!
+    your pinball stats and buy new pinballs! Manage your resources carefully!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 937fa77cbc49c3f478f9b40238343316, type: 2}
   m_sharedMaterial: {fileID: 5221812718875079178, guid: 937fa77cbc49c3f478f9b40238343316, type: 2}
@@ -1217,7 +1217,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: Hold and release the down arrow key to launch pinballs. Use the left and
-    right arrow keys to control the flippers.
+    right arrow keys to control the flippers, and T to get pinballs unstuck.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 937fa77cbc49c3f478f9b40238343316, type: 2}
   m_sharedMaterial: {fileID: 5221812718875079178, guid: 937fa77cbc49c3f478f9b40238343316, type: 2}

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BallCounter : MonoBehaviour
 {
+    float nudgeTimer = 0.0f;
+
     public int CountActive()
     {
         return ballsActive.Count;
@@ -46,15 +48,23 @@ public class BallCounter : MonoBehaviour
         }
     }
 
-    //PLAYTEST FEATURE: Add random velocity to get balls unstuck
+    //Pressing T adds random velocity to get balls unstuck
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.T))
+        if (nudgeTimer < Mathf.Epsilon)
         {
-            foreach (AbstractBall b in ballsActive)
+            if (Input.GetKeyDown(KeyCode.T))
             {
-                b.AddVelocity(Random.value, Random.value, Random.value);
+                foreach (AbstractBall b in ballsActive)
+                {
+                    b.AddVelocity(Random.value, Random.value, Random.value);
+                }
+                nudgeTimer = 5.0f;
             }
+        }
+        else
+        {
+            nudgeTimer -= Time.deltaTime;
         }
     }
 }
