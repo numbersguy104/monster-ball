@@ -11,6 +11,7 @@ namespace UI
         public ShopOption[] ShopOptions;
         public TextMeshProUGUI scoreText;
         public TextMeshProUGUI goldText;
+        public TextMeshProUGUI rerollText;
         
         private void Start()
         {
@@ -71,8 +72,21 @@ namespace UI
 
         public void OnBtnReroll()
         {
-            RefreshNewBalls();
-            RefreshStatus();
+            long price = GameStatsManager.Instance.rerollCost;
+            if (GameStatsManager.Instance.gold < price)
+            {
+                return;
+            }
+
+            if (GameStatsManager.Instance.SpendGold(price))
+            {
+                RefreshNewBalls();
+                RefreshStatus();
+                GameStatsManager.Instance.rerollCost = 
+                    (long)(GameStatsManager.Instance.rerollCost * 1.5f);
+            }
+
+            rerollText.text = $"{GameStatsManager.Instance.rerollCost} to REROLL";
         } 
     }
 }

@@ -21,6 +21,7 @@ public class GameStatsManager : MonoBehaviour
     public float terMulti = 1f;    // All terrain's point multiplier value at this milestone
     public float monsMulti = 1f;   // All monster's point multiplier value at this milestone
     public List<ArtifactParam> artifacts = new List<ArtifactParam>();
+    public long rerollCost = 50;
 
     /*
      * Level Up Example:

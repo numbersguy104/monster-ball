@@ -635,7 +635,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: free for playtest
+  m_text: 50 to REROLL
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3aba3431dc441e742893af2a05a9f630, type: 2}
   m_sharedMaterial: {fileID: -3901689061031730059, guid: 3aba3431dc441e742893af2a05a9f630, type: 2}
@@ -1608,6 +1608,7 @@ MonoBehaviour:
   - {fileID: 2763856333722685138}
   scoreText: {fileID: 1743021105826536864}
   goldText: {fileID: 270137452658146769}
+  rerollText: {fileID: 5105174684905458909}
 --- !u!1 &7207229102092951142
 GameObject:
   m_ObjectHideFlags: 0
